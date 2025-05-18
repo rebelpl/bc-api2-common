@@ -1,0 +1,26 @@
+{
+  "name": "rebelpl/bc-api2-common",
+  "description": "Business Central API common entities (Microsoft.NAV)",
+  "type": "library",
+  "license": "GPLv3",
+  "authors": [
+    {
+      "name": "Artur Jedlinski",
+      "email": "artur.jedlinski@rebel.pl"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "rebelpl/bc-api2-client": "dev-main"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^11.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Rebel\\BCApi2\\": "src/",
+      "Rebel\\Test\\BCApi2\\": "tests/src/",
+      "Microsoft\\": "build/Microsoft"
+    }
+  }
+}

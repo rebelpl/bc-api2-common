@@ -1,0 +1,63 @@
+<?php
+namespace Microsoft\NAV\PurchaseOrder;
+
+enum Properties
+{
+    case id;
+    case number;
+    case orderDate;
+    case postingDate;
+    case vendorId;
+    case vendorNumber;
+    case vendorName;
+    case payToName;
+    case payToVendorId;
+    case payToVendorNumber;
+    case shipToName;
+    case shipToContact;
+    case buyFromAddressLine1;
+    case buyFromAddressLine2;
+    case buyFromCity;
+    case buyFromCountry;
+    case buyFromState;
+    case buyFromPostCode;
+    case payToAddressLine1;
+    case payToAddressLine2;
+    case payToCity;
+    case payToCountry;
+    case payToState;
+    case payToPostCode;
+    case shipToAddressLine1;
+    case shipToAddressLine2;
+    case shipToCity;
+    case shipToCountry;
+    case shipToState;
+    case shipToPostCode;
+    case shortcutDimension1Code;
+    case shortcutDimension2Code;
+    case currencyId;
+    case currencyCode;
+    case pricesIncludeTax;
+    case paymentTermsId;
+    case shipmentMethodId;
+    case purchaser;
+    case requestedReceiptDate;
+    case discountAmount;
+    case discountAppliedBeforeTax;
+    case totalAmountExcludingTax;
+    case totalTaxAmount;
+    case totalAmountIncludingTax;
+    case fullyReceived;
+    case status;
+    case lastModifiedDateTime;
+
+    case vendor;
+    case dimensionValue;
+    case currency;
+    case paymentTerm;
+    case shipmentMethod;
+    case purchaseOrderLines;
+    case attachments;
+    case dimensionSetLines;
+    case documentAttachments;
+}

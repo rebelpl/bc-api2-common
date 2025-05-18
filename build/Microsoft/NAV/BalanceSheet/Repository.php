@@ -1,0 +1,13 @@
+<?php
+namespace Microsoft\NAV\BalanceSheet;
+
+use Rebel\BCApi2\Client;
+use Rebel\BCApi2\Entity\Repository as EntityRepository;
+
+readonly class Repository extends EntityRepository
+{
+    public function __construct(Client $client)
+    {
+        parent::__construct($client, 'balanceSheets', 'v2.0', Record::class);
+    }
+}

@@ -1,0 +1,67 @@
+<?php
+namespace Microsoft\NAV\SalesQuote;
+
+enum Properties
+{
+    case id;
+    case number;
+    case externalDocumentNumber;
+    case documentDate;
+    case postingDate;
+    case dueDate;
+    case customerId;
+    case customerNumber;
+    case customerName;
+    case billToName;
+    case billToCustomerId;
+    case billToCustomerNumber;
+    case shipToName;
+    case shipToContact;
+    case sellToAddressLine1;
+    case sellToAddressLine2;
+    case sellToCity;
+    case sellToCountry;
+    case sellToState;
+    case sellToPostCode;
+    case billToAddressLine1;
+    case billToAddressLine2;
+    case billToCity;
+    case billToCountry;
+    case billToState;
+    case billToPostCode;
+    case shipToAddressLine1;
+    case shipToAddressLine2;
+    case shipToCity;
+    case shipToCountry;
+    case shipToState;
+    case shipToPostCode;
+    case shortcutDimension1Code;
+    case shortcutDimension2Code;
+    case currencyId;
+    case currencyCode;
+    case paymentTermsId;
+    case shipmentMethodId;
+    case salesperson;
+    case discountAmount;
+    case totalAmountExcludingTax;
+    case totalTaxAmount;
+    case totalAmountIncludingTax;
+    case status;
+    case sentDate;
+    case validUntilDate;
+    case acceptedDate;
+    case lastModifiedDateTime;
+    case phoneNumber;
+    case email;
+
+    case customer;
+    case dimensionValue;
+    case currency;
+    case paymentTerm;
+    case shipmentMethod;
+    case dimensionSetLines;
+    case salesQuoteLines;
+    case pdfDocument;
+    case attachments;
+    case documentAttachments;
+}

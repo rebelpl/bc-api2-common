@@ -1,0 +1,60 @@
+<?php
+namespace Microsoft\NAV\PurchaseCreditMemo;
+
+enum Properties
+{
+    case id;
+    case number;
+    case creditMemoDate;
+    case postingDate;
+    case dueDate;
+    case vendorId;
+    case vendorNumber;
+    case vendorName;
+    case vendorCreditMemoNumber;
+    case payToVendorId;
+    case payToVendorNumber;
+    case payToName;
+    case buyFromAddressLine1;
+    case buyFromAddressLine2;
+    case buyFromCity;
+    case buyFromCountry;
+    case buyFromState;
+    case buyFromPostCode;
+    case payToAddressLine1;
+    case payToAddressLine2;
+    case payToCity;
+    case payToCountry;
+    case payToState;
+    case payToPostCode;
+    case shortcutDimension1Code;
+    case shortcutDimension2Code;
+    case currencyId;
+    case currencyCode;
+    case paymentTermsId;
+    case shipmentMethodId;
+    case purchaser;
+    case pricesIncludeTax;
+    case discountAmount;
+    case discountAppliedBeforeTax;
+    case totalAmountExcludingTax;
+    case totalTaxAmount;
+    case totalAmountIncludingTax;
+    case status;
+    case lastModifiedDateTime;
+    case invoiceId;
+    case invoiceNumber;
+    case vendorReturnReasonId;
+
+    case vendor;
+    case dimensionValue;
+    case currency;
+    case paymentTerm;
+    case shipmentMethod;
+    case customerReturnReason;
+    case dimensionSetLines;
+    case purchaseCreditMemoLines;
+    case pdfDocument;
+    case attachments;
+    case documentAttachments;
+}

@@ -1,0 +1,54 @@
+<?php
+namespace Microsoft\NAV\JobQueueEntry;
+
+enum Properties
+{
+    case id;
+    case jobQueueEntryId;
+    case userId;
+    case lastReadyState;
+    case expirationDateTime;
+    case earliestStartDateTime;
+    case objectTypeToRun;
+    case objectIdToRun;
+    case objectCaptionToRun;
+    case reportOutputType;
+    case maxNumberAttemptsToRun;
+    case numberOfAttemptsToRun;
+    case status;
+    case recordIdToProcess;
+    case parameterString;
+    case recurringJob;
+    case numberOfMinutesBetweenRuns;
+    case runOnMonday;
+    case runOnTuesday;
+    case runOnWednesday;
+    case runOnThursday;
+    case runOnFridays;
+    case runOnSaturdays;
+    case runOnSundays;
+    case startingTime;
+    case endingTime;
+    case referenceStartingTime;
+    case nextRunDateFormula;
+    case description;
+    case runInUserSession;
+    case userSessionId;
+    case jobQueueCategoryCode;
+    case errorMessage;
+    case userServiceInstanceId;
+    case userSessionStarted;
+    case notifyOnSuccess;
+    case userLanguageId;
+    case printerName;
+    case reportRequestPageOptions;
+    case rerunDelay;
+    case systemTaskId;
+    case scheduled;
+    case manualRecurrence;
+    case jobTimeOut;
+    case priorityWithinCategory;
+    case lastModifiedDateTime;
+
+    case jobQueueLogEntries;
+}
