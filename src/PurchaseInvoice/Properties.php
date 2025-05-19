@@ -1,0 +1,63 @@
+<?php
+namespace Rebel\BCApi2\Entity\PurchaseInvoice;
+
+enum Properties
+{
+    case id;
+    case number;
+    case postingDate;
+    case invoiceDate;
+    case dueDate;
+    case vendorInvoiceNumber;
+    case vendorId;
+    case vendorNumber;
+    case vendorName;
+    case payToName;
+    case payToContact;
+    case payToVendorId;
+    case payToVendorNumber;
+    case shipToName;
+    case shipToContact;
+    case buyFromAddressLine1;
+    case buyFromAddressLine2;
+    case buyFromCity;
+    case buyFromCountry;
+    case buyFromState;
+    case buyFromPostCode;
+    case shipToAddressLine1;
+    case shipToAddressLine2;
+    case shipToCity;
+    case shipToCountry;
+    case shipToState;
+    case shipToPostCode;
+    case payToAddressLine1;
+    case payToAddressLine2;
+    case payToCity;
+    case payToCountry;
+    case payToState;
+    case payToPostCode;
+    case shortcutDimension1Code;
+    case shortcutDimension2Code;
+    case currencyId;
+    case currencyCode;
+    case orderId;
+    case orderNumber;
+    case purchaser;
+    case pricesIncludeTax;
+    case discountAmount;
+    case discountAppliedBeforeTax;
+    case totalAmountExcludingTax;
+    case totalTaxAmount;
+    case totalAmountIncludingTax;
+    case status;
+    case lastModifiedDateTime;
+
+    case vendor;
+    case dimensionValue;
+    case currency;
+    case dimensionSetLines;
+    case purchaseInvoiceLines;
+    case pdfDocument;
+    case attachments;
+    case documentAttachments;
+}

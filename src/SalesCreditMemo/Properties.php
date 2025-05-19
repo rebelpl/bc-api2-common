@@ -1,0 +1,62 @@
+<?php
+namespace Rebel\BCApi2\Entity\SalesCreditMemo;
+
+enum Properties
+{
+    case id;
+    case number;
+    case externalDocumentNumber;
+    case creditMemoDate;
+    case postingDate;
+    case dueDate;
+    case customerId;
+    case customerNumber;
+    case customerName;
+    case billToName;
+    case billToCustomerId;
+    case billToCustomerNumber;
+    case sellToAddressLine1;
+    case sellToAddressLine2;
+    case sellToCity;
+    case sellToCountry;
+    case sellToState;
+    case sellToPostCode;
+    case billToAddressLine1;
+    case billToAddressLine2;
+    case billToCity;
+    case billToCountry;
+    case billToState;
+    case billToPostCode;
+    case shortcutDimension1Code;
+    case shortcutDimension2Code;
+    case currencyId;
+    case currencyCode;
+    case paymentTermsId;
+    case shipmentMethodId;
+    case salesperson;
+    case pricesIncludeTax;
+    case discountAmount;
+    case discountAppliedBeforeTax;
+    case totalAmountExcludingTax;
+    case totalTaxAmount;
+    case totalAmountIncludingTax;
+    case status;
+    case lastModifiedDateTime;
+    case invoiceId;
+    case invoiceNumber;
+    case phoneNumber;
+    case email;
+    case customerReturnReasonId;
+
+    case customer;
+    case dimensionValue;
+    case currency;
+    case paymentTerm;
+    case shipmentMethod;
+    case customerReturnReason;
+    case dimensionSetLines;
+    case salesCreditMemoLines;
+    case pdfDocument;
+    case attachments;
+    case documentAttachments;
+}
