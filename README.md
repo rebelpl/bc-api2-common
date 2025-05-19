@@ -18,8 +18,8 @@ $client = new Rebel\BCApi2\Client(
 );
 
 $repository = new SalesOrder\Repository($client);
-$criteria = [ SalesOrder\Properties::customerNumber->name => '30000' ];
-$orderBy = [ SalesOrder\Properties::orderDate->name => 'DESC' ];
+$criteria = [ 'customerNumber' => '30000' ];
+$orderBy = [ 'orderDate' => 'DESC' ];
 $expand = [ SalesOrder\Properties::salesOrderLines, SalesOrder\Properties::customer ];
 $salesOrders = $repository->findBy($criteria, $orderBy, 10, null, $expand);
 foreach ($salesOrders as $salesOrder) {
