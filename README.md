@@ -27,18 +27,12 @@ foreach ($salesOrders as $salesOrder) {
 }
 ```
 
-## Generate models for your API
+## Download metadata for your API
 ```shell
 curl -X GET "https://api.businesscentral.dynamics.com/v2.0/<environment>/api/<api_ublisher>/<api_group>/<api_version>/$metadata" \
   -H "Authorization: Bearer <access_token>" \
   -H "Accept: application/xml" \
   -o files/metadata.xml
-
-./vendor/bin/generate \
-    --metadata="files/metadata.xml" \
-    --output="src/Models/" \
-    --namespace="Foo\\Bar"
-    --apipath="<api_publisher>/<api_group>/<api_version>"
 ```
 
 ## Tests
