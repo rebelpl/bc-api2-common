@@ -5,23 +5,21 @@ use Rebel\BCApi2\Entity;
 
 class Record extends Entity
 {
-    public function getId(): ?string
-    {
-        return $this->get(Properties::id->name);
-    }
+	public ?string $id {
+		get => $this->get('id');
+	}
 
-    public function getCode(): ?string
-    {
-        return $this->get(Properties::code->name);
-    }
+	public ?string $code {
+		get => $this->get('code');
+	}
 
-    public function getDescription(): ?string
-    {
-        return $this->get(Properties::description->name);
-    }
+	public ?string $description {
+		get => $this->get('description');
+	}
 
-    public function getLastModifiedDateTime(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::lastModifiedDateTime->name);
-    }
+	public ?\DateTime $lastModifiedDateTime {
+		get => $this->get('lastModifiedDateTime', 'datetime');
+	}
+
+
 }

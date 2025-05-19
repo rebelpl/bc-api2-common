@@ -7,166 +7,88 @@ use Rebel\BCApi2\Entity\Employee;
 
 class Record extends Entity
 {
-    public function __construct(array $data = [], protected ?string $context = null)
+	public ?string $id {
+		get => $this->get('id');
+		set => $this->set('id', $value);
+	}
+
+	public ?string $number {
+		get => $this->get('number');
+		set => $this->set('number', $value);
+	}
+
+	public ?string $displayName {
+		get => $this->get('displayName');
+		set => $this->set('displayName', $value);
+	}
+
+	public ?string $fixedAssetLocationCode {
+		get => $this->get('fixedAssetLocationCode');
+		set => $this->set('fixedAssetLocationCode', $value);
+	}
+
+	public ?string $fixedAssetLocationId {
+		get => $this->get('fixedAssetLocationId');
+		set => $this->set('fixedAssetLocationId', $value);
+	}
+
+	public ?string $classCode {
+		get => $this->get('classCode');
+		set => $this->set('classCode', $value);
+	}
+
+	public ?string $subclassCode {
+		get => $this->get('subclassCode');
+		set => $this->set('subclassCode', $value);
+	}
+
+	public ?bool $blocked {
+		get => $this->get('blocked');
+		set => $this->set('blocked', $value);
+	}
+
+	public ?string $serialNumber {
+		get => $this->get('serialNumber');
+		set => $this->set('serialNumber', $value);
+	}
+
+	public ?string $employeeNumber {
+		get => $this->get('employeeNumber');
+		set => $this->set('employeeNumber', $value);
+	}
+
+	public ?string $employeeId {
+		get => $this->get('employeeId');
+		set => $this->set('employeeId', $value);
+	}
+
+	public ?bool $underMaintenance {
+		get => $this->get('underMaintenance');
+		set => $this->set('underMaintenance', $value);
+	}
+
+	public ?\DateTime $lastModifiedDateTime {
+		get => $this->get('lastModifiedDateTime', 'datetime');
+		set => $this->set('lastModifiedDateTime', $value);
+	}
+
+	public ?FixedAssetLocation\Record $fixedAssetLocation {
+		get => $this->get('fixedAssetLocation');
+		set => $this->set('fixedAssetLocation', $value);
+	}
+
+	public ?Employee\Record $employee {
+		get => $this->get('employee');
+		set => $this->set('employee', $value);
+	}
+
+    public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-            Properties::fixedAssetLocation->name => FixedAssetLocation\Record::class,
-            Properties::employee->name => Employee\Record::class,
+			'fixedAssetLocation' => FixedAssetLocation\Record::class,
+			'employee' => Employee\Record::class,
         ];
-    }
-
-    public function getId(): ?string
-    {
-        return $this->get(Properties::id->name);
-    }
-
-    public function setId(?string $value): self
-    {
-        $this->set(Properties::id->name, $value);
-        return $this;
-    }
-
-    public function getNumber(): ?string
-    {
-        return $this->get(Properties::number->name);
-    }
-
-    public function setNumber(?string $value): self
-    {
-        $this->set(Properties::number->name, $value);
-        return $this;
-    }
-
-    public function getDisplayName(): ?string
-    {
-        return $this->get(Properties::displayName->name);
-    }
-
-    public function setDisplayName(?string $value): self
-    {
-        $this->set(Properties::displayName->name, $value);
-        return $this;
-    }
-
-    public function getFixedAssetLocationCode(): ?string
-    {
-        return $this->get(Properties::fixedAssetLocationCode->name);
-    }
-
-    public function setFixedAssetLocationCode(?string $value): self
-    {
-        $this->set(Properties::fixedAssetLocationCode->name, $value);
-        return $this;
-    }
-
-    public function getFixedAssetLocationId(): ?string
-    {
-        return $this->get(Properties::fixedAssetLocationId->name);
-    }
-
-    public function setFixedAssetLocationId(?string $value): self
-    {
-        $this->set(Properties::fixedAssetLocationId->name, $value);
-        return $this;
-    }
-
-    public function getClassCode(): ?string
-    {
-        return $this->get(Properties::classCode->name);
-    }
-
-    public function setClassCode(?string $value): self
-    {
-        $this->set(Properties::classCode->name, $value);
-        return $this;
-    }
-
-    public function getSubclassCode(): ?string
-    {
-        return $this->get(Properties::subclassCode->name);
-    }
-
-    public function setSubclassCode(?string $value): self
-    {
-        $this->set(Properties::subclassCode->name, $value);
-        return $this;
-    }
-
-    public function isBlocked(): ?bool
-    {
-        return $this->get(Properties::blocked->name);
-    }
-
-    public function setBlocked(?bool $value): self
-    {
-        $this->set(Properties::blocked->name, $value);
-        return $this;
-    }
-
-    public function getSerialNumber(): ?string
-    {
-        return $this->get(Properties::serialNumber->name);
-    }
-
-    public function setSerialNumber(?string $value): self
-    {
-        $this->set(Properties::serialNumber->name, $value);
-        return $this;
-    }
-
-    public function getEmployeeNumber(): ?string
-    {
-        return $this->get(Properties::employeeNumber->name);
-    }
-
-    public function setEmployeeNumber(?string $value): self
-    {
-        $this->set(Properties::employeeNumber->name, $value);
-        return $this;
-    }
-
-    public function getEmployeeId(): ?string
-    {
-        return $this->get(Properties::employeeId->name);
-    }
-
-    public function setEmployeeId(?string $value): self
-    {
-        $this->set(Properties::employeeId->name, $value);
-        return $this;
-    }
-
-    public function isUnderMaintenance(): ?bool
-    {
-        return $this->get(Properties::underMaintenance->name);
-    }
-
-    public function setUnderMaintenance(?bool $value): self
-    {
-        $this->set(Properties::underMaintenance->name, $value);
-        return $this;
-    }
-
-    public function getLastModifiedDateTime(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::lastModifiedDateTime->name);
-    }
-
-    public function setLastModifiedDateTime(?\DateTime $value): self
-    {
-        $this->set(Properties::lastModifiedDateTime->name, $value);
-        return $this;
-    }
-
-    public function getFixedAssetLocation(): ?FixedAssetLocation\Record
-    {
-        return $this->get(Properties::fixedAssetLocation->name);
-    }
-
-    public function getEmployee(): ?Employee\Record
-    {
-        return $this->get(Properties::employee->name);
     }
 }

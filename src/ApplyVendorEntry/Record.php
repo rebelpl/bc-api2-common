@@ -6,135 +6,65 @@ use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public function getId(): ?string
-    {
-        return $this->get(Properties::id->name);
-    }
+	public ?string $id {
+		get => $this->get('id');
+		set => $this->set('id', $value);
+	}
 
-    public function setId(?string $value): self
-    {
-        $this->set(Properties::id->name, $value);
-        return $this;
-    }
+	public ?bool $applied {
+		get => $this->get('applied');
+		set => $this->set('applied', $value);
+	}
 
-    public function isApplied(): ?bool
-    {
-        return $this->get(Properties::applied->name);
-    }
+	public ?string $appliesToId {
+		get => $this->get('appliesToId');
+		set => $this->set('appliesToId', $value);
+	}
 
-    public function setApplied(?bool $value): self
-    {
-        $this->set(Properties::applied->name, $value);
-        return $this;
-    }
+	public ?\DateTime $postingDate {
+		get => $this->get('postingDate', 'date');
+		set => $this->set('postingDate', $value);
+	}
 
-    public function getAppliesToId(): ?string
-    {
-        return $this->get(Properties::appliesToId->name);
-    }
+	public ?Enums\GenJournalDocumentType $documentType {
+		get => $this->get('documentType', Enums\GenJournalDocumentType::class);
+		set => $this->set('documentType', $value);
+	}
 
-    public function setAppliesToId(?string $value): self
-    {
-        $this->set(Properties::appliesToId->name, $value);
-        return $this;
-    }
+	public ?string $documentNumber {
+		get => $this->get('documentNumber');
+		set => $this->set('documentNumber', $value);
+	}
 
-    public function getPostingDate(): ?\DateTime
-    {
-        return $this->getAsDate(Properties::postingDate->name);
-    }
+	public ?string $externalDocumentNumber {
+		get => $this->get('externalDocumentNumber');
+		set => $this->set('externalDocumentNumber', $value);
+	}
 
-    public function setPostingDate(?\DateTime $value): self
-    {
-        $this->set(Properties::postingDate->name, $value);
-        return $this;
-    }
+	public ?string $vendorNumber {
+		get => $this->get('vendorNumber');
+		set => $this->set('vendorNumber', $value);
+	}
 
-    public function getDocumentType(): ?Enums\GenJournalDocumentType
-    {
-        return $this->getAsEnum(Properties::documentType->name, Enums\GenJournalDocumentType::class);
-    }
+	public ?string $vendorName {
+		get => $this->get('vendorName');
+		set => $this->set('vendorName', $value);
+	}
 
-    public function setDocumentType(?Enums\GenJournalDocumentType $value): self
-    {
-        $this->set(Properties::documentType->name, $value);
-        return $this;
-    }
+	public ?string $description {
+		get => $this->get('description');
+		set => $this->set('description', $value);
+	}
 
-    public function getDocumentNumber(): ?string
-    {
-        return $this->get(Properties::documentNumber->name);
-    }
+	public ?float $remainingAmount {
+		get => $this->get('remainingAmount');
+		set => $this->set('remainingAmount', $value);
+	}
 
-    public function setDocumentNumber(?string $value): self
-    {
-        $this->set(Properties::documentNumber->name, $value);
-        return $this;
-    }
+	public ?\DateTime $lastModifiedDateTime {
+		get => $this->get('lastModifiedDateTime', 'datetime');
+		set => $this->set('lastModifiedDateTime', $value);
+	}
 
-    public function getExternalDocumentNumber(): ?string
-    {
-        return $this->get(Properties::externalDocumentNumber->name);
-    }
 
-    public function setExternalDocumentNumber(?string $value): self
-    {
-        $this->set(Properties::externalDocumentNumber->name, $value);
-        return $this;
-    }
-
-    public function getVendorNumber(): ?string
-    {
-        return $this->get(Properties::vendorNumber->name);
-    }
-
-    public function setVendorNumber(?string $value): self
-    {
-        $this->set(Properties::vendorNumber->name, $value);
-        return $this;
-    }
-
-    public function getVendorName(): ?string
-    {
-        return $this->get(Properties::vendorName->name);
-    }
-
-    public function setVendorName(?string $value): self
-    {
-        $this->set(Properties::vendorName->name, $value);
-        return $this;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->get(Properties::description->name);
-    }
-
-    public function setDescription(?string $value): self
-    {
-        $this->set(Properties::description->name, $value);
-        return $this;
-    }
-
-    public function getRemainingAmount(): ?float
-    {
-        return $this->get(Properties::remainingAmount->name);
-    }
-
-    public function setRemainingAmount(?float $value): self
-    {
-        $this->set(Properties::remainingAmount->name, $value);
-        return $this;
-    }
-
-    public function getLastModifiedDateTime(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::lastModifiedDateTime->name);
-    }
-
-    public function setLastModifiedDateTime(?\DateTime $value): self
-    {
-        $this->set(Properties::lastModifiedDateTime->name, $value);
-        return $this;
-    }
 }

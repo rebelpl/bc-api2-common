@@ -6,58 +6,30 @@ use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public function getId(): ?string
-    {
-        return $this->get(Properties::id->name);
-    }
+	public ?string $id {
+		get => $this->get('id');
+		set => $this->set('id', $value);
+	}
 
-    public function setId(?string $value): self
-    {
-        $this->set(Properties::id->name, $value);
-        return $this;
-    }
+	public ?string $code {
+		get => $this->get('code');
+		set => $this->set('code', $value);
+	}
 
-    public function getCode(): ?string
-    {
-        return $this->get(Properties::code->name);
-    }
+	public ?string $displayName {
+		get => $this->get('displayName');
+		set => $this->set('displayName', $value);
+	}
 
-    public function setCode(?string $value): self
-    {
-        $this->set(Properties::code->name, $value);
-        return $this;
-    }
+	public ?Enums\CountryRegionAddressFormat $addressFormat {
+		get => $this->get('addressFormat', Enums\CountryRegionAddressFormat::class);
+		set => $this->set('addressFormat', $value);
+	}
 
-    public function getDisplayName(): ?string
-    {
-        return $this->get(Properties::displayName->name);
-    }
+	public ?\DateTime $lastModifiedDateTime {
+		get => $this->get('lastModifiedDateTime', 'datetime');
+		set => $this->set('lastModifiedDateTime', $value);
+	}
 
-    public function setDisplayName(?string $value): self
-    {
-        $this->set(Properties::displayName->name, $value);
-        return $this;
-    }
 
-    public function getAddressFormat(): ?Enums\CountryRegionAddressFormat
-    {
-        return $this->getAsEnum(Properties::addressFormat->name, Enums\CountryRegionAddressFormat::class);
-    }
-
-    public function setAddressFormat(?Enums\CountryRegionAddressFormat $value): self
-    {
-        $this->set(Properties::addressFormat->name, $value);
-        return $this;
-    }
-
-    public function getLastModifiedDateTime(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::lastModifiedDateTime->name);
-    }
-
-    public function setLastModifiedDateTime(?\DateTime $value): self
-    {
-        $this->set(Properties::lastModifiedDateTime->name, $value);
-        return $this;
-    }
 }

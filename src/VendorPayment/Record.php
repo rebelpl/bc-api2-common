@@ -10,212 +10,116 @@ use Rebel\BCApi2\Entity\VendorPaymentJournal;
 
 class Record extends Entity
 {
-    public function __construct(array $data = [], protected ?string $context = null)
+	public ?string $id {
+		get => $this->get('id');
+		set => $this->set('id', $value);
+	}
+
+	public ?string $journalId {
+		get => $this->get('journalId');
+		set => $this->set('journalId', $value);
+	}
+
+	public ?string $journalDisplayName {
+		get => $this->get('journalDisplayName');
+		set => $this->set('journalDisplayName', $value);
+	}
+
+	public ?int $lineNumber {
+		get => $this->get('lineNumber');
+		set => $this->set('lineNumber', $value);
+	}
+
+	public ?string $vendorId {
+		get => $this->get('vendorId');
+		set => $this->set('vendorId', $value);
+	}
+
+	public ?string $vendorNumber {
+		get => $this->get('vendorNumber');
+		set => $this->set('vendorNumber', $value);
+	}
+
+	public ?\DateTime $postingDate {
+		get => $this->get('postingDate', 'date');
+		set => $this->set('postingDate', $value);
+	}
+
+	public ?string $documentNumber {
+		get => $this->get('documentNumber');
+		set => $this->set('documentNumber', $value);
+	}
+
+	public ?string $externalDocumentNumber {
+		get => $this->get('externalDocumentNumber');
+		set => $this->set('externalDocumentNumber', $value);
+	}
+
+	public ?float $amount {
+		get => $this->get('amount');
+		set => $this->set('amount', $value);
+	}
+
+	public ?string $appliesToInvoiceId {
+		get => $this->get('appliesToInvoiceId');
+		set => $this->set('appliesToInvoiceId', $value);
+	}
+
+	public ?string $appliesToInvoiceNumber {
+		get => $this->get('appliesToInvoiceNumber');
+		set => $this->set('appliesToInvoiceNumber', $value);
+	}
+
+	public ?string $description {
+		get => $this->get('description');
+		set => $this->set('description', $value);
+	}
+
+	public ?string $comment {
+		get => $this->get('comment');
+		set => $this->set('comment', $value);
+	}
+
+	public ?\DateTime $lastModifiedDateTime {
+		get => $this->get('lastModifiedDateTime', 'datetime');
+		set => $this->set('lastModifiedDateTime', $value);
+	}
+
+	public ?CustomerPaymentJournal\Record $customerPaymentJournal {
+		get => $this->get('customerPaymentJournal');
+		set => $this->set('customerPaymentJournal', $value);
+	}
+
+	public ?Vendor\Record $vendor {
+		get => $this->get('vendor');
+		set => $this->set('vendor', $value);
+	}
+
+	/** @var Entity\Collection<DimensionSetLine\Record> */
+	public Entity\Collection $dimensionSetLines {
+		get => $this->get('dimensionSetLines', 'collection');
+	}
+
+	/** @var Entity\Collection<ApplyVendorEntry\Record> */
+	public Entity\Collection $applyVendorEntries {
+		get => $this->get('applyVendorEntries', 'collection');
+	}
+
+	public ?VendorPaymentJournal\Record $vendorPaymentJournal {
+		get => $this->get('vendorPaymentJournal');
+		set => $this->set('vendorPaymentJournal', $value);
+	}
+
+    public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-            Properties::customerPaymentJournal->name => CustomerPaymentJournal\Record::class,
-            Properties::vendor->name => Vendor\Record::class,
-            Properties::dimensionSetLines->name => DimensionSetLine\Record::class,
-            Properties::applyVendorEntries->name => ApplyVendorEntry\Record::class,
-            Properties::vendorPaymentJournal->name => VendorPaymentJournal\Record::class,
+			'customerPaymentJournal' => CustomerPaymentJournal\Record::class,
+			'vendor' => Vendor\Record::class,
+			'dimensionSetLines' => DimensionSetLine\Record::class,
+			'applyVendorEntries' => ApplyVendorEntry\Record::class,
+			'vendorPaymentJournal' => VendorPaymentJournal\Record::class,
         ];
-    }
-
-    public function getId(): ?string
-    {
-        return $this->get(Properties::id->name);
-    }
-
-    public function setId(?string $value): self
-    {
-        $this->set(Properties::id->name, $value);
-        return $this;
-    }
-
-    public function getJournalId(): ?string
-    {
-        return $this->get(Properties::journalId->name);
-    }
-
-    public function setJournalId(?string $value): self
-    {
-        $this->set(Properties::journalId->name, $value);
-        return $this;
-    }
-
-    public function getJournalDisplayName(): ?string
-    {
-        return $this->get(Properties::journalDisplayName->name);
-    }
-
-    public function setJournalDisplayName(?string $value): self
-    {
-        $this->set(Properties::journalDisplayName->name, $value);
-        return $this;
-    }
-
-    public function getLineNumber(): ?int
-    {
-        return $this->get(Properties::lineNumber->name);
-    }
-
-    public function setLineNumber(?int $value): self
-    {
-        $this->set(Properties::lineNumber->name, $value);
-        return $this;
-    }
-
-    public function getVendorId(): ?string
-    {
-        return $this->get(Properties::vendorId->name);
-    }
-
-    public function setVendorId(?string $value): self
-    {
-        $this->set(Properties::vendorId->name, $value);
-        return $this;
-    }
-
-    public function getVendorNumber(): ?string
-    {
-        return $this->get(Properties::vendorNumber->name);
-    }
-
-    public function setVendorNumber(?string $value): self
-    {
-        $this->set(Properties::vendorNumber->name, $value);
-        return $this;
-    }
-
-    public function getPostingDate(): ?\DateTime
-    {
-        return $this->getAsDate(Properties::postingDate->name);
-    }
-
-    public function setPostingDate(?\DateTime $value): self
-    {
-        $this->set(Properties::postingDate->name, $value);
-        return $this;
-    }
-
-    public function getDocumentNumber(): ?string
-    {
-        return $this->get(Properties::documentNumber->name);
-    }
-
-    public function setDocumentNumber(?string $value): self
-    {
-        $this->set(Properties::documentNumber->name, $value);
-        return $this;
-    }
-
-    public function getExternalDocumentNumber(): ?string
-    {
-        return $this->get(Properties::externalDocumentNumber->name);
-    }
-
-    public function setExternalDocumentNumber(?string $value): self
-    {
-        $this->set(Properties::externalDocumentNumber->name, $value);
-        return $this;
-    }
-
-    public function getAmount(): ?float
-    {
-        return $this->get(Properties::amount->name);
-    }
-
-    public function setAmount(?float $value): self
-    {
-        $this->set(Properties::amount->name, $value);
-        return $this;
-    }
-
-    public function getAppliesToInvoiceId(): ?string
-    {
-        return $this->get(Properties::appliesToInvoiceId->name);
-    }
-
-    public function setAppliesToInvoiceId(?string $value): self
-    {
-        $this->set(Properties::appliesToInvoiceId->name, $value);
-        return $this;
-    }
-
-    public function getAppliesToInvoiceNumber(): ?string
-    {
-        return $this->get(Properties::appliesToInvoiceNumber->name);
-    }
-
-    public function setAppliesToInvoiceNumber(?string $value): self
-    {
-        $this->set(Properties::appliesToInvoiceNumber->name, $value);
-        return $this;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->get(Properties::description->name);
-    }
-
-    public function setDescription(?string $value): self
-    {
-        $this->set(Properties::description->name, $value);
-        return $this;
-    }
-
-    public function getComment(): ?string
-    {
-        return $this->get(Properties::comment->name);
-    }
-
-    public function setComment(?string $value): self
-    {
-        $this->set(Properties::comment->name, $value);
-        return $this;
-    }
-
-    public function getLastModifiedDateTime(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::lastModifiedDateTime->name);
-    }
-
-    public function setLastModifiedDateTime(?\DateTime $value): self
-    {
-        $this->set(Properties::lastModifiedDateTime->name, $value);
-        return $this;
-    }
-
-    public function getCustomerPaymentJournal(): ?CustomerPaymentJournal\Record
-    {
-        return $this->get(Properties::customerPaymentJournal->name);
-    }
-
-    public function getVendor(): ?Vendor\Record
-    {
-        return $this->get(Properties::vendor->name);
-    }
-
-    /**
-     * @return Entity\Collection<DimensionSetLine\Record>
-     */
-    public function getDimensionSetLines(): Entity\Collection
-    {
-        return $this->get(Properties::dimensionSetLines->name) ?? new Entity\Collection();
-    }
-
-    /**
-     * @return Entity\Collection<ApplyVendorEntry\Record>
-     */
-    public function getApplyVendorEntries(): Entity\Collection
-    {
-        return $this->get(Properties::applyVendorEntries->name) ?? new Entity\Collection();
-    }
-
-    public function getVendorPaymentJournal(): ?VendorPaymentJournal\Record
-    {
-        return $this->get(Properties::vendorPaymentJournal->name);
     }
 }

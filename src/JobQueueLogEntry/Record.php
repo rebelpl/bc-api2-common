@@ -5,88 +5,73 @@ use Rebel\BCApi2\Entity;
 
 class Record extends Entity
 {
-    public function getId(): ?string
-    {
-        return $this->get(Properties::id->name);
-    }
+	public ?string $id {
+		get => $this->get('id');
+	}
 
-    public function getJobQueueEntryId(): ?string
-    {
-        return $this->get(Properties::jobQueueEntryId->name);
-    }
+	public ?string $jobQueueEntryId {
+		get => $this->get('jobQueueEntryId');
+	}
 
-    public function getUserId(): ?string
-    {
-        return $this->get(Properties::userId->name);
-    }
+	public ?string $userId {
+		get => $this->get('userId');
+	}
 
-    public function getStartDateTime(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::startDateTime->name);
-    }
+	public ?\DateTime $startDateTime {
+		get => $this->get('startDateTime', 'datetime');
+	}
 
-    public function getEndDateTime(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::endDateTime->name);
-    }
+	public ?\DateTime $endDateTime {
+		get => $this->get('endDateTime', 'datetime');
+	}
 
-    public function getObjectIdToRun(): ?int
-    {
-        return $this->get(Properties::objectIdToRun->name);
-    }
+	public ?int $objectIdToRun {
+		get => $this->get('objectIdToRun');
+	}
 
-    public function getObjectTypeToRun(): ?string
-    {
-        return $this->get(Properties::objectTypeToRun->name);
-    }
+	public ?string $objectTypeToRun {
+		get => $this->get('objectTypeToRun');
+	}
 
-    public function getStatus(): ?string
-    {
-        return $this->get(Properties::status->name);
-    }
+	public ?string $status {
+		get => $this->get('status');
+	}
 
-    public function getDescription(): ?string
-    {
-        return $this->get(Properties::description->name);
-    }
+	public ?string $description {
+		get => $this->get('description');
+	}
 
-    public function getErrorMessage(): ?string
-    {
-        return $this->get(Properties::errorMessage->name);
-    }
+	public ?string $errorMessage {
+		get => $this->get('errorMessage');
+	}
 
-    public function getJobQueueCategoryCode(): ?string
-    {
-        return $this->get(Properties::jobQueueCategoryCode->name);
-    }
+	public ?string $jobQueueCategoryCode {
+		get => $this->get('jobQueueCategoryCode');
+	}
 
-    public function getErrorCallStack(): ?string
-    {
-        return $this->get(Properties::errorCallStack->name);
-    }
+	public ?string $errorCallStack {
+		get => $this->get('errorCallStack');
+	}
 
-    public function getParameterString(): ?string
-    {
-        return $this->get(Properties::parameterString->name);
-    }
+	public ?string $parameterString {
+		get => $this->get('parameterString');
+	}
 
-    public function getSystemTaskId(): ?string
-    {
-        return $this->get(Properties::systemTaskId->name);
-    }
+	public ?string $systemTaskId {
+		get => $this->get('systemTaskId');
+	}
 
-    public function getUserSessionId(): ?int
-    {
-        return $this->get(Properties::userSessionId->name);
-    }
+	public ?int $userSessionId {
+		get => $this->get('userSessionId');
+	}
 
-    public function getUserServiceInstanceId(): ?int
-    {
-        return $this->get(Properties::userServiceInstanceId->name);
-    }
+	public ?int $userServiceInstanceId {
+		get => $this->get('userServiceInstanceId');
+	}
 
-    public function getLastModifiedDateTime(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::lastModifiedDateTime->name);
-    }
+	public ?\DateTime $lastModifiedDateTime {
+		get => $this->get('lastModifiedDateTime', 'datetime');
+	}
+
+
 }

@@ -6,73 +6,61 @@ use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public function getId(): ?string
-    {
-        return $this->get(Properties::id->name);
-    }
+	public ?string $id {
+		get => $this->get('id');
+	}
 
-    public function getEntryNumber(): ?int
-    {
-        return $this->get(Properties::entryNumber->name);
-    }
+	public ?int $entryNumber {
+		get => $this->get('entryNumber');
+	}
 
-    public function getItemNumber(): ?string
-    {
-        return $this->get(Properties::itemNumber->name);
-    }
+	public ?string $itemNumber {
+		get => $this->get('itemNumber');
+	}
 
-    public function getPostingDate(): ?\DateTime
-    {
-        return $this->getAsDate(Properties::postingDate->name);
-    }
+	public ?\DateTime $postingDate {
+		get => $this->get('postingDate', 'date');
+	}
 
-    public function getEntryType(): ?Enums\ItemLedgerEntryType
-    {
-        return $this->getAsEnum(Properties::entryType->name, Enums\ItemLedgerEntryType::class);
-    }
+	public ?Enums\ItemLedgerEntryType $entryType {
+		get => $this->get('entryType', Enums\ItemLedgerEntryType::class);
+	}
 
-    public function getSourceNumber(): ?string
-    {
-        return $this->get(Properties::sourceNumber->name);
-    }
+	public ?string $sourceNumber {
+		get => $this->get('sourceNumber');
+	}
 
-    public function getSourceType(): ?Enums\AnalysisSourceType
-    {
-        return $this->getAsEnum(Properties::sourceType->name, Enums\AnalysisSourceType::class);
-    }
+	public ?Enums\AnalysisSourceType $sourceType {
+		get => $this->get('sourceType', Enums\AnalysisSourceType::class);
+	}
 
-    public function getDocumentNumber(): ?string
-    {
-        return $this->get(Properties::documentNumber->name);
-    }
+	public ?string $documentNumber {
+		get => $this->get('documentNumber');
+	}
 
-    public function getDocumentType(): ?Enums\ItemLedgerDocumentType
-    {
-        return $this->getAsEnum(Properties::documentType->name, Enums\ItemLedgerDocumentType::class);
-    }
+	public ?Enums\ItemLedgerDocumentType $documentType {
+		get => $this->get('documentType', Enums\ItemLedgerDocumentType::class);
+	}
 
-    public function getDescription(): ?string
-    {
-        return $this->get(Properties::description->name);
-    }
+	public ?string $description {
+		get => $this->get('description');
+	}
 
-    public function getQuantity(): ?float
-    {
-        return $this->get(Properties::quantity->name);
-    }
+	public ?float $quantity {
+		get => $this->get('quantity');
+	}
 
-    public function getSalesAmountActual(): ?float
-    {
-        return $this->get(Properties::salesAmountActual->name);
-    }
+	public ?float $salesAmountActual {
+		get => $this->get('salesAmountActual');
+	}
 
-    public function getCostAmountActual(): ?float
-    {
-        return $this->get(Properties::costAmountActual->name);
-    }
+	public ?float $costAmountActual {
+		get => $this->get('costAmountActual');
+	}
 
-    public function getLastModifiedDateTime(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::lastModifiedDateTime->name);
-    }
+	public ?\DateTime $lastModifiedDateTime {
+		get => $this->get('lastModifiedDateTime', 'datetime');
+	}
+
+
 }

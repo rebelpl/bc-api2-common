@@ -2,6 +2,7 @@
 namespace Rebel\BCApi2\Entity\Vendor;
 
 use Rebel\BCApi2\Entity;
+use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\Currency;
 use Rebel\BCApi2\Entity\PaymentTerm;
 use Rebel\BCApi2\Entity\PaymentMethod;
@@ -10,314 +11,172 @@ use Rebel\BCApi2\Entity\DefaultDimension;
 use Rebel\BCApi2\Entity\AgedAccountsPayable;
 use Rebel\BCApi2\Entity\ContactInformation;
 use Rebel\BCApi2\Entity\DocumentAttachment;
-use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public function __construct(array $data = [], protected ?string $context = null)
+	public ?string $id {
+		get => $this->get('id');
+		set => $this->set('id', $value);
+	}
+
+	public ?string $number {
+		get => $this->get('number');
+		set => $this->set('number', $value);
+	}
+
+	public ?string $displayName {
+		get => $this->get('displayName');
+		set => $this->set('displayName', $value);
+	}
+
+	public ?string $addressLine1 {
+		get => $this->get('addressLine1');
+		set => $this->set('addressLine1', $value);
+	}
+
+	public ?string $addressLine2 {
+		get => $this->get('addressLine2');
+		set => $this->set('addressLine2', $value);
+	}
+
+	public ?string $city {
+		get => $this->get('city');
+		set => $this->set('city', $value);
+	}
+
+	public ?string $state {
+		get => $this->get('state');
+		set => $this->set('state', $value);
+	}
+
+	public ?string $country {
+		get => $this->get('country');
+		set => $this->set('country', $value);
+	}
+
+	public ?string $postalCode {
+		get => $this->get('postalCode');
+		set => $this->set('postalCode', $value);
+	}
+
+	public ?string $phoneNumber {
+		get => $this->get('phoneNumber');
+		set => $this->set('phoneNumber', $value);
+	}
+
+	public ?string $email {
+		get => $this->get('email');
+		set => $this->set('email', $value);
+	}
+
+	public ?string $website {
+		get => $this->get('website');
+		set => $this->set('website', $value);
+	}
+
+	public ?string $taxRegistrationNumber {
+		get => $this->get('taxRegistrationNumber');
+		set => $this->set('taxRegistrationNumber', $value);
+	}
+
+	public ?string $currencyId {
+		get => $this->get('currencyId');
+		set => $this->set('currencyId', $value);
+	}
+
+	public ?string $currencyCode {
+		get => $this->get('currencyCode');
+		set => $this->set('currencyCode', $value);
+	}
+
+	public ?string $irs1099Code {
+		get => $this->get('irs1099Code');
+		set => $this->set('irs1099Code', $value);
+	}
+
+	public ?string $paymentTermsId {
+		get => $this->get('paymentTermsId');
+		set => $this->set('paymentTermsId', $value);
+	}
+
+	public ?string $paymentMethodId {
+		get => $this->get('paymentMethodId');
+		set => $this->set('paymentMethodId', $value);
+	}
+
+	public ?bool $taxLiable {
+		get => $this->get('taxLiable');
+		set => $this->set('taxLiable', $value);
+	}
+
+	public ?Enums\VendorBlocked $blocked {
+		get => $this->get('blocked', Enums\VendorBlocked::class);
+		set => $this->set('blocked', $value);
+	}
+
+	public ?float $balance {
+		get => $this->get('balance');
+		set => $this->set('balance', $value);
+	}
+
+	public ?\DateTime $lastModifiedDateTime {
+		get => $this->get('lastModifiedDateTime', 'datetime');
+		set => $this->set('lastModifiedDateTime', $value);
+	}
+
+	public ?Currency\Record $currency {
+		get => $this->get('currency');
+		set => $this->set('currency', $value);
+	}
+
+	public ?PaymentTerm\Record $paymentTerm {
+		get => $this->get('paymentTerm');
+		set => $this->set('paymentTerm', $value);
+	}
+
+	public ?PaymentMethod\Record $paymentMethod {
+		get => $this->get('paymentMethod');
+		set => $this->set('paymentMethod', $value);
+	}
+
+	public ?Picture\Record $picture {
+		get => $this->get('picture');
+		set => $this->set('picture', $value);
+	}
+
+	/** @var Entity\Collection<DefaultDimension\Record> */
+	public Entity\Collection $defaultDimensions {
+		get => $this->get('defaultDimensions', 'collection');
+	}
+
+	public ?AgedAccountsPayable\Record $agedAccountsPayable {
+		get => $this->get('agedAccountsPayable');
+		set => $this->set('agedAccountsPayable', $value);
+	}
+
+	/** @var Entity\Collection<ContactInformation\Record> */
+	public Entity\Collection $contactsInformation {
+		get => $this->get('contactsInformation', 'collection');
+	}
+
+	/** @var Entity\Collection<DocumentAttachment\Record> */
+	public Entity\Collection $documentAttachments {
+		get => $this->get('documentAttachments', 'collection');
+	}
+
+    public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-            Properties::currency->name => Currency\Record::class,
-            Properties::paymentTerm->name => PaymentTerm\Record::class,
-            Properties::paymentMethod->name => PaymentMethod\Record::class,
-            Properties::picture->name => Picture\Record::class,
-            Properties::defaultDimensions->name => DefaultDimension\Record::class,
-            Properties::agedAccountsPayable->name => AgedAccountsPayable\Record::class,
-            Properties::contactsInformation->name => ContactInformation\Record::class,
-            Properties::documentAttachments->name => DocumentAttachment\Record::class,
+			'currency' => Currency\Record::class,
+			'paymentTerm' => PaymentTerm\Record::class,
+			'paymentMethod' => PaymentMethod\Record::class,
+			'picture' => Picture\Record::class,
+			'defaultDimensions' => DefaultDimension\Record::class,
+			'agedAccountsPayable' => AgedAccountsPayable\Record::class,
+			'contactsInformation' => ContactInformation\Record::class,
+			'documentAttachments' => DocumentAttachment\Record::class,
         ];
-    }
-
-    public function getId(): ?string
-    {
-        return $this->get(Properties::id->name);
-    }
-
-    public function setId(?string $value): self
-    {
-        $this->set(Properties::id->name, $value);
-        return $this;
-    }
-
-    public function getNumber(): ?string
-    {
-        return $this->get(Properties::number->name);
-    }
-
-    public function setNumber(?string $value): self
-    {
-        $this->set(Properties::number->name, $value);
-        return $this;
-    }
-
-    public function getDisplayName(): ?string
-    {
-        return $this->get(Properties::displayName->name);
-    }
-
-    public function setDisplayName(?string $value): self
-    {
-        $this->set(Properties::displayName->name, $value);
-        return $this;
-    }
-
-    public function getAddressLine1(): ?string
-    {
-        return $this->get(Properties::addressLine1->name);
-    }
-
-    public function setAddressLine1(?string $value): self
-    {
-        $this->set(Properties::addressLine1->name, $value);
-        return $this;
-    }
-
-    public function getAddressLine2(): ?string
-    {
-        return $this->get(Properties::addressLine2->name);
-    }
-
-    public function setAddressLine2(?string $value): self
-    {
-        $this->set(Properties::addressLine2->name, $value);
-        return $this;
-    }
-
-    public function getCity(): ?string
-    {
-        return $this->get(Properties::city->name);
-    }
-
-    public function setCity(?string $value): self
-    {
-        $this->set(Properties::city->name, $value);
-        return $this;
-    }
-
-    public function getState(): ?string
-    {
-        return $this->get(Properties::state->name);
-    }
-
-    public function setState(?string $value): self
-    {
-        $this->set(Properties::state->name, $value);
-        return $this;
-    }
-
-    public function getCountry(): ?string
-    {
-        return $this->get(Properties::country->name);
-    }
-
-    public function setCountry(?string $value): self
-    {
-        $this->set(Properties::country->name, $value);
-        return $this;
-    }
-
-    public function getPostalCode(): ?string
-    {
-        return $this->get(Properties::postalCode->name);
-    }
-
-    public function setPostalCode(?string $value): self
-    {
-        $this->set(Properties::postalCode->name, $value);
-        return $this;
-    }
-
-    public function getPhoneNumber(): ?string
-    {
-        return $this->get(Properties::phoneNumber->name);
-    }
-
-    public function setPhoneNumber(?string $value): self
-    {
-        $this->set(Properties::phoneNumber->name, $value);
-        return $this;
-    }
-
-    public function getEmail(): ?string
-    {
-        return $this->get(Properties::email->name);
-    }
-
-    public function setEmail(?string $value): self
-    {
-        $this->set(Properties::email->name, $value);
-        return $this;
-    }
-
-    public function getWebsite(): ?string
-    {
-        return $this->get(Properties::website->name);
-    }
-
-    public function setWebsite(?string $value): self
-    {
-        $this->set(Properties::website->name, $value);
-        return $this;
-    }
-
-    public function getTaxRegistrationNumber(): ?string
-    {
-        return $this->get(Properties::taxRegistrationNumber->name);
-    }
-
-    public function setTaxRegistrationNumber(?string $value): self
-    {
-        $this->set(Properties::taxRegistrationNumber->name, $value);
-        return $this;
-    }
-
-    public function getCurrencyId(): ?string
-    {
-        return $this->get(Properties::currencyId->name);
-    }
-
-    public function setCurrencyId(?string $value): self
-    {
-        $this->set(Properties::currencyId->name, $value);
-        return $this;
-    }
-
-    public function getCurrencyCode(): ?string
-    {
-        return $this->get(Properties::currencyCode->name);
-    }
-
-    public function setCurrencyCode(?string $value): self
-    {
-        $this->set(Properties::currencyCode->name, $value);
-        return $this;
-    }
-
-    public function getIrs1099Code(): ?string
-    {
-        return $this->get(Properties::irs1099Code->name);
-    }
-
-    public function setIrs1099Code(?string $value): self
-    {
-        $this->set(Properties::irs1099Code->name, $value);
-        return $this;
-    }
-
-    public function getPaymentTermsId(): ?string
-    {
-        return $this->get(Properties::paymentTermsId->name);
-    }
-
-    public function setPaymentTermsId(?string $value): self
-    {
-        $this->set(Properties::paymentTermsId->name, $value);
-        return $this;
-    }
-
-    public function getPaymentMethodId(): ?string
-    {
-        return $this->get(Properties::paymentMethodId->name);
-    }
-
-    public function setPaymentMethodId(?string $value): self
-    {
-        $this->set(Properties::paymentMethodId->name, $value);
-        return $this;
-    }
-
-    public function isTaxLiable(): ?bool
-    {
-        return $this->get(Properties::taxLiable->name);
-    }
-
-    public function setTaxLiable(?bool $value): self
-    {
-        $this->set(Properties::taxLiable->name, $value);
-        return $this;
-    }
-
-    public function getBlocked(): ?Enums\VendorBlocked
-    {
-        return $this->getAsEnum(Properties::blocked->name, Enums\VendorBlocked::class);
-    }
-
-    public function setBlocked(?Enums\VendorBlocked $value): self
-    {
-        $this->set(Properties::blocked->name, $value);
-        return $this;
-    }
-
-    public function getBalance(): ?float
-    {
-        return $this->get(Properties::balance->name);
-    }
-
-    public function setBalance(?float $value): self
-    {
-        $this->set(Properties::balance->name, $value);
-        return $this;
-    }
-
-    public function getLastModifiedDateTime(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::lastModifiedDateTime->name);
-    }
-
-    public function setLastModifiedDateTime(?\DateTime $value): self
-    {
-        $this->set(Properties::lastModifiedDateTime->name, $value);
-        return $this;
-    }
-
-    public function getCurrency(): ?Currency\Record
-    {
-        return $this->get(Properties::currency->name);
-    }
-
-    public function getPaymentTerm(): ?PaymentTerm\Record
-    {
-        return $this->get(Properties::paymentTerm->name);
-    }
-
-    public function getPaymentMethod(): ?PaymentMethod\Record
-    {
-        return $this->get(Properties::paymentMethod->name);
-    }
-
-    public function getPicture(): ?Picture\Record
-    {
-        return $this->get(Properties::picture->name);
-    }
-
-    /**
-     * @return Entity\Collection<DefaultDimension\Record>
-     */
-    public function getDefaultDimensions(): Entity\Collection
-    {
-        return $this->get(Properties::defaultDimensions->name) ?? new Entity\Collection();
-    }
-
-    public function getAgedAccountsPayable(): ?AgedAccountsPayable\Record
-    {
-        return $this->get(Properties::agedAccountsPayable->name);
-    }
-
-    /**
-     * @return Entity\Collection<ContactInformation\Record>
-     */
-    public function getContactsInformation(): Entity\Collection
-    {
-        return $this->get(Properties::contactsInformation->name) ?? new Entity\Collection();
-    }
-
-    /**
-     * @return Entity\Collection<DocumentAttachment\Record>
-     */
-    public function getDocumentAttachments(): Entity\Collection
-    {
-        return $this->get(Properties::documentAttachments->name) ?? new Entity\Collection();
     }
 }

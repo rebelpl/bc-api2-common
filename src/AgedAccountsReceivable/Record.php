@@ -6,82 +6,69 @@ use Rebel\BCApi2\Entity\Customer;
 
 class Record extends Entity
 {
-    public function __construct(array $data = [], protected ?string $context = null)
+	public ?string $customerId {
+		get => $this->get('customerId');
+	}
+
+	public ?string $customerNumber {
+		get => $this->get('customerNumber');
+	}
+
+	public ?string $name {
+		get => $this->get('name');
+	}
+
+	public ?string $currencyCode {
+		get => $this->get('currencyCode');
+	}
+
+	public ?float $balanceDue {
+		get => $this->get('balanceDue');
+	}
+
+	public ?float $currentAmount {
+		get => $this->get('currentAmount');
+	}
+
+	public ?string $period1Label {
+		get => $this->get('period1Label');
+	}
+
+	public ?float $period1Amount {
+		get => $this->get('period1Amount');
+	}
+
+	public ?string $period2Label {
+		get => $this->get('period2Label');
+	}
+
+	public ?float $period2Amount {
+		get => $this->get('period2Amount');
+	}
+
+	public ?string $period3Label {
+		get => $this->get('period3Label');
+	}
+
+	public ?float $period3Amount {
+		get => $this->get('period3Amount');
+	}
+
+	public ?\DateTime $agedAsOfDate {
+		get => $this->get('agedAsOfDate', 'date');
+	}
+
+	public ?Customer\Record $customer {
+		get => $this->get('customer');
+		set => $this->set('customer', $value);
+	}
+
+    public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-            Properties::customer->name => Customer\Record::class,
+			'customer' => Customer\Record::class,
         ];
-    }
-
-    public function getCustomerId(): ?string
-    {
-        return $this->get(Properties::customerId->name);
-    }
-
-    public function getCustomerNumber(): ?string
-    {
-        return $this->get(Properties::customerNumber->name);
-    }
-
-    public function getName(): ?string
-    {
-        return $this->get(Properties::name->name);
-    }
-
-    public function getCurrencyCode(): ?string
-    {
-        return $this->get(Properties::currencyCode->name);
-    }
-
-    public function getBalanceDue(): ?float
-    {
-        return $this->get(Properties::balanceDue->name);
-    }
-
-    public function getCurrentAmount(): ?float
-    {
-        return $this->get(Properties::currentAmount->name);
-    }
-
-    public function getPeriod1Label(): ?string
-    {
-        return $this->get(Properties::period1Label->name);
-    }
-
-    public function getPeriod1Amount(): ?float
-    {
-        return $this->get(Properties::period1Amount->name);
-    }
-
-    public function getPeriod2Label(): ?string
-    {
-        return $this->get(Properties::period2Label->name);
-    }
-
-    public function getPeriod2Amount(): ?float
-    {
-        return $this->get(Properties::period2Amount->name);
-    }
-
-    public function getPeriod3Label(): ?string
-    {
-        return $this->get(Properties::period3Label->name);
-    }
-
-    public function getPeriod3Amount(): ?float
-    {
-        return $this->get(Properties::period3Amount->name);
-    }
-
-    public function getAgedAsOfDate(): ?\DateTime
-    {
-        return $this->getAsDate(Properties::agedAsOfDate->name);
-    }
-
-    public function getCustomer(): ?Customer\Record
-    {
-        return $this->get(Properties::customer->name);
     }
 }

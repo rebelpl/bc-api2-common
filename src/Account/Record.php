@@ -2,92 +2,78 @@
 namespace Rebel\BCApi2\Entity\Account;
 
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\TrialBalance;
 use Rebel\BCApi2\Entity\Enums;
+use Rebel\BCApi2\Entity\TrialBalance;
 
 class Record extends Entity
 {
-    public function __construct(array $data = [], protected ?string $context = null)
+	public ?string $id {
+		get => $this->get('id');
+	}
+
+	public ?string $number {
+		get => $this->get('number');
+	}
+
+	public ?string $displayName {
+		get => $this->get('displayName');
+	}
+
+	public ?Enums\GlAccountCategory $category {
+		get => $this->get('category', Enums\GlAccountCategory::class);
+	}
+
+	public ?string $subCategory {
+		get => $this->get('subCategory');
+	}
+
+	public ?bool $blocked {
+		get => $this->get('blocked');
+	}
+
+	public ?Enums\GlAccountType $accountType {
+		get => $this->get('accountType', Enums\GlAccountType::class);
+	}
+
+	public ?bool $directPosting {
+		get => $this->get('directPosting');
+	}
+
+	public ?float $netChange {
+		get => $this->get('netChange');
+	}
+
+	public ?string $consolidationTranslationMethod {
+		get => $this->get('consolidationTranslationMethod');
+	}
+
+	public ?string $consolidationDebitAccount {
+		get => $this->get('consolidationDebitAccount');
+	}
+
+	public ?string $consolidationCreditAccount {
+		get => $this->get('consolidationCreditAccount');
+	}
+
+	public ?bool $excludeFromConsolidation {
+		get => $this->get('excludeFromConsolidation');
+	}
+
+	public ?\DateTime $lastModifiedDateTime {
+		get => $this->get('lastModifiedDateTime', 'datetime');
+	}
+
+	public ?TrialBalance\Record $trialBalance {
+		get => $this->get('trialBalance');
+		set => $this->set('trialBalance', $value);
+	}
+
+    public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-            Properties::trialBalance->name => TrialBalance\Record::class,
+			'trialBalance' => TrialBalance\Record::class,
         ];
-    }
-
-    public function getId(): ?string
-    {
-        return $this->get(Properties::id->name);
-    }
-
-    public function getNumber(): ?string
-    {
-        return $this->get(Properties::number->name);
-    }
-
-    public function getDisplayName(): ?string
-    {
-        return $this->get(Properties::displayName->name);
-    }
-
-    public function getCategory(): ?Enums\GlAccountCategory
-    {
-        return $this->getAsEnum(Properties::category->name, Enums\GlAccountCategory::class);
-    }
-
-    public function getSubCategory(): ?string
-    {
-        return $this->get(Properties::subCategory->name);
-    }
-
-    public function isBlocked(): ?bool
-    {
-        return $this->get(Properties::blocked->name);
-    }
-
-    public function getAccountType(): ?Enums\GlAccountType
-    {
-        return $this->getAsEnum(Properties::accountType->name, Enums\GlAccountType::class);
-    }
-
-    public function isDirectPosting(): ?bool
-    {
-        return $this->get(Properties::directPosting->name);
-    }
-
-    public function getNetChange(): ?float
-    {
-        return $this->get(Properties::netChange->name);
-    }
-
-    public function getConsolidationTranslationMethod(): ?string
-    {
-        return $this->get(Properties::consolidationTranslationMethod->name);
-    }
-
-    public function getConsolidationDebitAccount(): ?string
-    {
-        return $this->get(Properties::consolidationDebitAccount->name);
-    }
-
-    public function getConsolidationCreditAccount(): ?string
-    {
-        return $this->get(Properties::consolidationCreditAccount->name);
-    }
-
-    public function isExcludeFromConsolidation(): ?bool
-    {
-        return $this->get(Properties::excludeFromConsolidation->name);
-    }
-
-    public function getLastModifiedDateTime(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::lastModifiedDateTime->name);
-    }
-
-    public function getTrialBalance(): ?TrialBalance\Record
-    {
-        return $this->get(Properties::trialBalance->name);
     }
 }

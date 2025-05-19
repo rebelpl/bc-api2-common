@@ -2,6 +2,7 @@
 namespace Rebel\BCApi2\Entity\DimensionSetLine;
 
 use Rebel\BCApi2\Entity;
+use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\SalesInvoice;
 use Rebel\BCApi2\Entity\SalesInvoiceLine;
 use Rebel\BCApi2\Entity\CustomerPayment;
@@ -25,263 +26,202 @@ use Rebel\BCApi2\Entity\PurchaseOrder;
 use Rebel\BCApi2\Entity\PurchaseOrderLine;
 use Rebel\BCApi2\Entity\PurchaseCreditMemo;
 use Rebel\BCApi2\Entity\PurchaseCreditMemoLine;
-use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public function __construct(array $data = [], protected ?string $context = null)
+	public ?string $id {
+		get => $this->get('id');
+		set => $this->set('id', $value);
+	}
+
+	public ?string $code {
+		get => $this->get('code');
+		set => $this->set('code', $value);
+	}
+
+	public ?string $consolidationCode {
+		get => $this->get('consolidationCode');
+		set => $this->set('consolidationCode', $value);
+	}
+
+	public ?string $parentId {
+		get => $this->get('parentId');
+		set => $this->set('parentId', $value);
+	}
+
+	public ?Enums\DimensionSetEntryBufferParentType $parentType {
+		get => $this->get('parentType', Enums\DimensionSetEntryBufferParentType::class);
+		set => $this->set('parentType', $value);
+	}
+
+	public ?string $displayName {
+		get => $this->get('displayName');
+		set => $this->set('displayName', $value);
+	}
+
+	public ?string $valueId {
+		get => $this->get('valueId');
+		set => $this->set('valueId', $value);
+	}
+
+	public ?string $valueCode {
+		get => $this->get('valueCode');
+		set => $this->set('valueCode', $value);
+	}
+
+	public ?string $valueConsolidationCode {
+		get => $this->get('valueConsolidationCode');
+		set => $this->set('valueConsolidationCode', $value);
+	}
+
+	public ?string $valueDisplayName {
+		get => $this->get('valueDisplayName');
+		set => $this->set('valueDisplayName', $value);
+	}
+
+	public ?SalesInvoice\Record $salesInvoice {
+		get => $this->get('salesInvoice');
+		set => $this->set('salesInvoice', $value);
+	}
+
+	public ?SalesInvoiceLine\Record $salesInvoiceLine {
+		get => $this->get('salesInvoiceLine');
+		set => $this->set('salesInvoiceLine', $value);
+	}
+
+	public ?CustomerPayment\Record $customerPayment {
+		get => $this->get('customerPayment');
+		set => $this->set('customerPayment', $value);
+	}
+
+	public ?JournalLine\Record $journalLine {
+		get => $this->get('journalLine');
+		set => $this->set('journalLine', $value);
+	}
+
+	public ?TimeRegistrationEntry\Record $timeRegistrationEntry {
+		get => $this->get('timeRegistrationEntry');
+		set => $this->set('timeRegistrationEntry', $value);
+	}
+
+	public ?GeneralLedgerEntry\Record $generalLedgerEntry {
+		get => $this->get('generalLedgerEntry');
+		set => $this->set('generalLedgerEntry', $value);
+	}
+
+	public ?SalesOrder\Record $salesOrder {
+		get => $this->get('salesOrder');
+		set => $this->set('salesOrder', $value);
+	}
+
+	public ?SalesOrderLine\Record $salesOrderLine {
+		get => $this->get('salesOrderLine');
+		set => $this->set('salesOrderLine', $value);
+	}
+
+	public ?SalesQuote\Record $salesQuote {
+		get => $this->get('salesQuote');
+		set => $this->set('salesQuote', $value);
+	}
+
+	public ?SalesQuoteLine\Record $salesQuoteLine {
+		get => $this->get('salesQuoteLine');
+		set => $this->set('salesQuoteLine', $value);
+	}
+
+	public ?SalesCreditMemo\Record $salesCreditMemo {
+		get => $this->get('salesCreditMemo');
+		set => $this->set('salesCreditMemo', $value);
+	}
+
+	public ?SalesCreditMemoLine\Record $salesCreditMemoLine {
+		get => $this->get('salesCreditMemoLine');
+		set => $this->set('salesCreditMemoLine', $value);
+	}
+
+	public ?PurchaseInvoice\Record $purchaseInvoice {
+		get => $this->get('purchaseInvoice');
+		set => $this->set('purchaseInvoice', $value);
+	}
+
+	public ?PurchaseInvoiceLine\Record $purchaseInvoiceLine {
+		get => $this->get('purchaseInvoiceLine');
+		set => $this->set('purchaseInvoiceLine', $value);
+	}
+
+	public ?VendorPayment\Record $vendorPayment {
+		get => $this->get('vendorPayment');
+		set => $this->set('vendorPayment', $value);
+	}
+
+	public ?SalesShipment\Record $salesShipment {
+		get => $this->get('salesShipment');
+		set => $this->set('salesShipment', $value);
+	}
+
+	public ?SalesShipmentLine\Record $salesShipmentLine {
+		get => $this->get('salesShipmentLine');
+		set => $this->set('salesShipmentLine', $value);
+	}
+
+	public ?PurchaseReceipt\Record $purchaseReceipt {
+		get => $this->get('purchaseReceipt');
+		set => $this->set('purchaseReceipt', $value);
+	}
+
+	public ?PurchaseReceiptLine\Record $purchaseReceiptLine {
+		get => $this->get('purchaseReceiptLine');
+		set => $this->set('purchaseReceiptLine', $value);
+	}
+
+	public ?PurchaseOrder\Record $purchaseOrder {
+		get => $this->get('purchaseOrder');
+		set => $this->set('purchaseOrder', $value);
+	}
+
+	public ?PurchaseOrderLine\Record $purchaseOrderLine {
+		get => $this->get('purchaseOrderLine');
+		set => $this->set('purchaseOrderLine', $value);
+	}
+
+	public ?PurchaseCreditMemo\Record $purchaseCreditMemo {
+		get => $this->get('purchaseCreditMemo');
+		set => $this->set('purchaseCreditMemo', $value);
+	}
+
+	public ?PurchaseCreditMemoLine\Record $purchaseCreditMemoLine {
+		get => $this->get('purchaseCreditMemoLine');
+		set => $this->set('purchaseCreditMemoLine', $value);
+	}
+
+    public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-            Properties::salesInvoice->name => SalesInvoice\Record::class,
-            Properties::salesInvoiceLine->name => SalesInvoiceLine\Record::class,
-            Properties::customerPayment->name => CustomerPayment\Record::class,
-            Properties::journalLine->name => JournalLine\Record::class,
-            Properties::timeRegistrationEntry->name => TimeRegistrationEntry\Record::class,
-            Properties::generalLedgerEntry->name => GeneralLedgerEntry\Record::class,
-            Properties::salesOrder->name => SalesOrder\Record::class,
-            Properties::salesOrderLine->name => SalesOrderLine\Record::class,
-            Properties::salesQuote->name => SalesQuote\Record::class,
-            Properties::salesQuoteLine->name => SalesQuoteLine\Record::class,
-            Properties::salesCreditMemo->name => SalesCreditMemo\Record::class,
-            Properties::salesCreditMemoLine->name => SalesCreditMemoLine\Record::class,
-            Properties::purchaseInvoice->name => PurchaseInvoice\Record::class,
-            Properties::purchaseInvoiceLine->name => PurchaseInvoiceLine\Record::class,
-            Properties::vendorPayment->name => VendorPayment\Record::class,
-            Properties::salesShipment->name => SalesShipment\Record::class,
-            Properties::salesShipmentLine->name => SalesShipmentLine\Record::class,
-            Properties::purchaseReceipt->name => PurchaseReceipt\Record::class,
-            Properties::purchaseReceiptLine->name => PurchaseReceiptLine\Record::class,
-            Properties::purchaseOrder->name => PurchaseOrder\Record::class,
-            Properties::purchaseOrderLine->name => PurchaseOrderLine\Record::class,
-            Properties::purchaseCreditMemo->name => PurchaseCreditMemo\Record::class,
-            Properties::purchaseCreditMemoLine->name => PurchaseCreditMemoLine\Record::class,
+			'salesInvoice' => SalesInvoice\Record::class,
+			'salesInvoiceLine' => SalesInvoiceLine\Record::class,
+			'customerPayment' => CustomerPayment\Record::class,
+			'journalLine' => JournalLine\Record::class,
+			'timeRegistrationEntry' => TimeRegistrationEntry\Record::class,
+			'generalLedgerEntry' => GeneralLedgerEntry\Record::class,
+			'salesOrder' => SalesOrder\Record::class,
+			'salesOrderLine' => SalesOrderLine\Record::class,
+			'salesQuote' => SalesQuote\Record::class,
+			'salesQuoteLine' => SalesQuoteLine\Record::class,
+			'salesCreditMemo' => SalesCreditMemo\Record::class,
+			'salesCreditMemoLine' => SalesCreditMemoLine\Record::class,
+			'purchaseInvoice' => PurchaseInvoice\Record::class,
+			'purchaseInvoiceLine' => PurchaseInvoiceLine\Record::class,
+			'vendorPayment' => VendorPayment\Record::class,
+			'salesShipment' => SalesShipment\Record::class,
+			'salesShipmentLine' => SalesShipmentLine\Record::class,
+			'purchaseReceipt' => PurchaseReceipt\Record::class,
+			'purchaseReceiptLine' => PurchaseReceiptLine\Record::class,
+			'purchaseOrder' => PurchaseOrder\Record::class,
+			'purchaseOrderLine' => PurchaseOrderLine\Record::class,
+			'purchaseCreditMemo' => PurchaseCreditMemo\Record::class,
+			'purchaseCreditMemoLine' => PurchaseCreditMemoLine\Record::class,
         ];
-    }
-
-    public function getId(): ?string
-    {
-        return $this->get(Properties::id->name);
-    }
-
-    public function setId(?string $value): self
-    {
-        $this->set(Properties::id->name, $value);
-        return $this;
-    }
-
-    public function getCode(): ?string
-    {
-        return $this->get(Properties::code->name);
-    }
-
-    public function setCode(?string $value): self
-    {
-        $this->set(Properties::code->name, $value);
-        return $this;
-    }
-
-    public function getConsolidationCode(): ?string
-    {
-        return $this->get(Properties::consolidationCode->name);
-    }
-
-    public function setConsolidationCode(?string $value): self
-    {
-        $this->set(Properties::consolidationCode->name, $value);
-        return $this;
-    }
-
-    public function getParentId(): ?string
-    {
-        return $this->get(Properties::parentId->name);
-    }
-
-    public function setParentId(?string $value): self
-    {
-        $this->set(Properties::parentId->name, $value);
-        return $this;
-    }
-
-    public function getParentType(): ?Enums\DimensionSetEntryBufferParentType
-    {
-        return $this->getAsEnum(Properties::parentType->name, Enums\DimensionSetEntryBufferParentType::class);
-    }
-
-    public function setParentType(?Enums\DimensionSetEntryBufferParentType $value): self
-    {
-        $this->set(Properties::parentType->name, $value);
-        return $this;
-    }
-
-    public function getDisplayName(): ?string
-    {
-        return $this->get(Properties::displayName->name);
-    }
-
-    public function setDisplayName(?string $value): self
-    {
-        $this->set(Properties::displayName->name, $value);
-        return $this;
-    }
-
-    public function getValueId(): ?string
-    {
-        return $this->get(Properties::valueId->name);
-    }
-
-    public function setValueId(?string $value): self
-    {
-        $this->set(Properties::valueId->name, $value);
-        return $this;
-    }
-
-    public function getValueCode(): ?string
-    {
-        return $this->get(Properties::valueCode->name);
-    }
-
-    public function setValueCode(?string $value): self
-    {
-        $this->set(Properties::valueCode->name, $value);
-        return $this;
-    }
-
-    public function getValueConsolidationCode(): ?string
-    {
-        return $this->get(Properties::valueConsolidationCode->name);
-    }
-
-    public function setValueConsolidationCode(?string $value): self
-    {
-        $this->set(Properties::valueConsolidationCode->name, $value);
-        return $this;
-    }
-
-    public function getValueDisplayName(): ?string
-    {
-        return $this->get(Properties::valueDisplayName->name);
-    }
-
-    public function setValueDisplayName(?string $value): self
-    {
-        $this->set(Properties::valueDisplayName->name, $value);
-        return $this;
-    }
-
-    public function getSalesInvoice(): ?SalesInvoice\Record
-    {
-        return $this->get(Properties::salesInvoice->name);
-    }
-
-    public function getSalesInvoiceLine(): ?SalesInvoiceLine\Record
-    {
-        return $this->get(Properties::salesInvoiceLine->name);
-    }
-
-    public function getCustomerPayment(): ?CustomerPayment\Record
-    {
-        return $this->get(Properties::customerPayment->name);
-    }
-
-    public function getJournalLine(): ?JournalLine\Record
-    {
-        return $this->get(Properties::journalLine->name);
-    }
-
-    public function getTimeRegistrationEntry(): ?TimeRegistrationEntry\Record
-    {
-        return $this->get(Properties::timeRegistrationEntry->name);
-    }
-
-    public function getGeneralLedgerEntry(): ?GeneralLedgerEntry\Record
-    {
-        return $this->get(Properties::generalLedgerEntry->name);
-    }
-
-    public function getSalesOrder(): ?SalesOrder\Record
-    {
-        return $this->get(Properties::salesOrder->name);
-    }
-
-    public function getSalesOrderLine(): ?SalesOrderLine\Record
-    {
-        return $this->get(Properties::salesOrderLine->name);
-    }
-
-    public function getSalesQuote(): ?SalesQuote\Record
-    {
-        return $this->get(Properties::salesQuote->name);
-    }
-
-    public function getSalesQuoteLine(): ?SalesQuoteLine\Record
-    {
-        return $this->get(Properties::salesQuoteLine->name);
-    }
-
-    public function getSalesCreditMemo(): ?SalesCreditMemo\Record
-    {
-        return $this->get(Properties::salesCreditMemo->name);
-    }
-
-    public function getSalesCreditMemoLine(): ?SalesCreditMemoLine\Record
-    {
-        return $this->get(Properties::salesCreditMemoLine->name);
-    }
-
-    public function getPurchaseInvoice(): ?PurchaseInvoice\Record
-    {
-        return $this->get(Properties::purchaseInvoice->name);
-    }
-
-    public function getPurchaseInvoiceLine(): ?PurchaseInvoiceLine\Record
-    {
-        return $this->get(Properties::purchaseInvoiceLine->name);
-    }
-
-    public function getVendorPayment(): ?VendorPayment\Record
-    {
-        return $this->get(Properties::vendorPayment->name);
-    }
-
-    public function getSalesShipment(): ?SalesShipment\Record
-    {
-        return $this->get(Properties::salesShipment->name);
-    }
-
-    public function getSalesShipmentLine(): ?SalesShipmentLine\Record
-    {
-        return $this->get(Properties::salesShipmentLine->name);
-    }
-
-    public function getPurchaseReceipt(): ?PurchaseReceipt\Record
-    {
-        return $this->get(Properties::purchaseReceipt->name);
-    }
-
-    public function getPurchaseReceiptLine(): ?PurchaseReceiptLine\Record
-    {
-        return $this->get(Properties::purchaseReceiptLine->name);
-    }
-
-    public function getPurchaseOrder(): ?PurchaseOrder\Record
-    {
-        return $this->get(Properties::purchaseOrder->name);
-    }
-
-    public function getPurchaseOrderLine(): ?PurchaseOrderLine\Record
-    {
-        return $this->get(Properties::purchaseOrderLine->name);
-    }
-
-    public function getPurchaseCreditMemo(): ?PurchaseCreditMemo\Record
-    {
-        return $this->get(Properties::purchaseCreditMemo->name);
-    }
-
-    public function getPurchaseCreditMemoLine(): ?PurchaseCreditMemoLine\Record
-    {
-        return $this->get(Properties::purchaseCreditMemoLine->name);
     }
 }

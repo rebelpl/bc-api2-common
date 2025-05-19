@@ -5,83 +5,69 @@ use Rebel\BCApi2\Entity;
 
 class Record extends Entity
 {
-    public function getId(): ?string
-    {
-        return $this->get(Properties::id->name);
-    }
+	public ?string $id {
+		get => $this->get('id');
+	}
 
-    public function getAllowPostingFrom(): ?\DateTime
-    {
-        return $this->getAsDate(Properties::allowPostingFrom->name);
-    }
+	public ?\DateTime $allowPostingFrom {
+		get => $this->get('allowPostingFrom', 'date');
+	}
 
-    public function getAllowPostingTo(): ?\DateTime
-    {
-        return $this->getAsDate(Properties::allowPostingTo->name);
-    }
+	public ?\DateTime $allowPostingTo {
+		get => $this->get('allowPostingTo', 'date');
+	}
 
-    public function getAdditionalReportingCurrency(): ?string
-    {
-        return $this->get(Properties::additionalReportingCurrency->name);
-    }
+	public ?string $additionalReportingCurrency {
+		get => $this->get('additionalReportingCurrency');
+	}
 
-    public function getLocalCurrencyCode(): ?string
-    {
-        return $this->get(Properties::localCurrencyCode->name);
-    }
+	public ?string $localCurrencyCode {
+		get => $this->get('localCurrencyCode');
+	}
 
-    public function getLocalCurrencySymbol(): ?string
-    {
-        return $this->get(Properties::localCurrencySymbol->name);
-    }
+	public ?string $localCurrencySymbol {
+		get => $this->get('localCurrencySymbol');
+	}
 
-    public function getLastModifiedDateTime(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::lastModifiedDateTime->name);
-    }
+	public ?\DateTime $lastModifiedDateTime {
+		get => $this->get('lastModifiedDateTime', 'datetime');
+	}
 
-    public function isAllowQueryFromConsolidation(): ?bool
-    {
-        return $this->get(Properties::allowQueryFromConsolidation->name);
-    }
+	public ?bool $allowQueryFromConsolidation {
+		get => $this->get('allowQueryFromConsolidation');
+	}
 
-    public function getShortcutDimension1Code(): ?string
-    {
-        return $this->get(Properties::shortcutDimension1Code->name);
-    }
+	public ?string $shortcutDimension1Code {
+		get => $this->get('shortcutDimension1Code');
+	}
 
-    public function getShortcutDimension2Code(): ?string
-    {
-        return $this->get(Properties::shortcutDimension2Code->name);
-    }
+	public ?string $shortcutDimension2Code {
+		get => $this->get('shortcutDimension2Code');
+	}
 
-    public function getShortcutDimension3Code(): ?string
-    {
-        return $this->get(Properties::shortcutDimension3Code->name);
-    }
+	public ?string $shortcutDimension3Code {
+		get => $this->get('shortcutDimension3Code');
+	}
 
-    public function getShortcutDimension4Code(): ?string
-    {
-        return $this->get(Properties::shortcutDimension4Code->name);
-    }
+	public ?string $shortcutDimension4Code {
+		get => $this->get('shortcutDimension4Code');
+	}
 
-    public function getShortcutDimension5Code(): ?string
-    {
-        return $this->get(Properties::shortcutDimension5Code->name);
-    }
+	public ?string $shortcutDimension5Code {
+		get => $this->get('shortcutDimension5Code');
+	}
 
-    public function getShortcutDimension6Code(): ?string
-    {
-        return $this->get(Properties::shortcutDimension6Code->name);
-    }
+	public ?string $shortcutDimension6Code {
+		get => $this->get('shortcutDimension6Code');
+	}
 
-    public function getShortcutDimension7Code(): ?string
-    {
-        return $this->get(Properties::shortcutDimension7Code->name);
-    }
+	public ?string $shortcutDimension7Code {
+		get => $this->get('shortcutDimension7Code');
+	}
 
-    public function getShortcutDimension8Code(): ?string
-    {
-        return $this->get(Properties::shortcutDimension8Code->name);
-    }
+	public ?string $shortcutDimension8Code {
+		get => $this->get('shortcutDimension8Code');
+	}
+
+
 }

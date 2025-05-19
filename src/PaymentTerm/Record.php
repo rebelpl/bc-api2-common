@@ -5,91 +5,45 @@ use Rebel\BCApi2\Entity;
 
 class Record extends Entity
 {
-    public function getId(): ?string
-    {
-        return $this->get(Properties::id->name);
-    }
+	public ?string $id {
+		get => $this->get('id');
+		set => $this->set('id', $value);
+	}
 
-    public function setId(?string $value): self
-    {
-        $this->set(Properties::id->name, $value);
-        return $this;
-    }
+	public ?string $code {
+		get => $this->get('code');
+		set => $this->set('code', $value);
+	}
 
-    public function getCode(): ?string
-    {
-        return $this->get(Properties::code->name);
-    }
+	public ?string $displayName {
+		get => $this->get('displayName');
+		set => $this->set('displayName', $value);
+	}
 
-    public function setCode(?string $value): self
-    {
-        $this->set(Properties::code->name, $value);
-        return $this;
-    }
+	public ?string $dueDateCalculation {
+		get => $this->get('dueDateCalculation');
+		set => $this->set('dueDateCalculation', $value);
+	}
 
-    public function getDisplayName(): ?string
-    {
-        return $this->get(Properties::displayName->name);
-    }
+	public ?string $discountDateCalculation {
+		get => $this->get('discountDateCalculation');
+		set => $this->set('discountDateCalculation', $value);
+	}
 
-    public function setDisplayName(?string $value): self
-    {
-        $this->set(Properties::displayName->name, $value);
-        return $this;
-    }
+	public ?float $discountPercent {
+		get => $this->get('discountPercent');
+		set => $this->set('discountPercent', $value);
+	}
 
-    public function getDueDateCalculation(): ?string
-    {
-        return $this->get(Properties::dueDateCalculation->name);
-    }
+	public ?bool $calculateDiscountOnCreditMemos {
+		get => $this->get('calculateDiscountOnCreditMemos');
+		set => $this->set('calculateDiscountOnCreditMemos', $value);
+	}
 
-    public function setDueDateCalculation(?string $value): self
-    {
-        $this->set(Properties::dueDateCalculation->name, $value);
-        return $this;
-    }
+	public ?\DateTime $lastModifiedDateTime {
+		get => $this->get('lastModifiedDateTime', 'datetime');
+		set => $this->set('lastModifiedDateTime', $value);
+	}
 
-    public function getDiscountDateCalculation(): ?string
-    {
-        return $this->get(Properties::discountDateCalculation->name);
-    }
 
-    public function setDiscountDateCalculation(?string $value): self
-    {
-        $this->set(Properties::discountDateCalculation->name, $value);
-        return $this;
-    }
-
-    public function getDiscountPercent(): ?float
-    {
-        return $this->get(Properties::discountPercent->name);
-    }
-
-    public function setDiscountPercent(?float $value): self
-    {
-        $this->set(Properties::discountPercent->name, $value);
-        return $this;
-    }
-
-    public function isCalculateDiscountOnCreditMemos(): ?bool
-    {
-        return $this->get(Properties::calculateDiscountOnCreditMemos->name);
-    }
-
-    public function setCalculateDiscountOnCreditMemos(?bool $value): self
-    {
-        $this->set(Properties::calculateDiscountOnCreditMemos->name, $value);
-        return $this;
-    }
-
-    public function getLastModifiedDateTime(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::lastModifiedDateTime->name);
-    }
-
-    public function setLastModifiedDateTime(?\DateTime $value): self
-    {
-        $this->set(Properties::lastModifiedDateTime->name, $value);
-        return $this;
-    }
 }

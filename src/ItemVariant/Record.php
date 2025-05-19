@@ -6,83 +6,47 @@ use Rebel\BCApi2\Entity\Item;
 
 class Record extends Entity
 {
-    public function __construct(array $data = [], protected ?string $context = null)
+	public ?string $id {
+		get => $this->get('id');
+		set => $this->set('id', $value);
+	}
+
+	public ?string $itemId {
+		get => $this->get('itemId');
+		set => $this->set('itemId', $value);
+	}
+
+	public ?string $itemNumber {
+		get => $this->get('itemNumber');
+		set => $this->set('itemNumber', $value);
+	}
+
+	public ?string $code {
+		get => $this->get('code');
+		set => $this->set('code', $value);
+	}
+
+	public ?string $description {
+		get => $this->get('description');
+		set => $this->set('description', $value);
+	}
+
+	public ?\DateTime $lastModifiedDateTime {
+		get => $this->get('lastModifiedDateTime', 'datetime');
+		set => $this->set('lastModifiedDateTime', $value);
+	}
+
+	public ?Item\Record $item {
+		get => $this->get('item');
+		set => $this->set('item', $value);
+	}
+
+    public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-            Properties::item->name => Item\Record::class,
+			'item' => Item\Record::class,
         ];
-    }
-
-    public function getId(): ?string
-    {
-        return $this->get(Properties::id->name);
-    }
-
-    public function setId(?string $value): self
-    {
-        $this->set(Properties::id->name, $value);
-        return $this;
-    }
-
-    public function getItemId(): ?string
-    {
-        return $this->get(Properties::itemId->name);
-    }
-
-    public function setItemId(?string $value): self
-    {
-        $this->set(Properties::itemId->name, $value);
-        return $this;
-    }
-
-    public function getItemNumber(): ?string
-    {
-        return $this->get(Properties::itemNumber->name);
-    }
-
-    public function setItemNumber(?string $value): self
-    {
-        $this->set(Properties::itemNumber->name, $value);
-        return $this;
-    }
-
-    public function getCode(): ?string
-    {
-        return $this->get(Properties::code->name);
-    }
-
-    public function setCode(?string $value): self
-    {
-        $this->set(Properties::code->name, $value);
-        return $this;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->get(Properties::description->name);
-    }
-
-    public function setDescription(?string $value): self
-    {
-        $this->set(Properties::description->name, $value);
-        return $this;
-    }
-
-    public function getLastModifiedDateTime(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::lastModifiedDateTime->name);
-    }
-
-    public function setLastModifiedDateTime(?\DateTime $value): self
-    {
-        $this->set(Properties::lastModifiedDateTime->name, $value);
-        return $this;
-    }
-
-    public function getItem(): ?Item\Record
-    {
-        return $this->get(Properties::item->name);
     }
 }

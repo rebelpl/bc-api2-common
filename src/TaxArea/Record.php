@@ -6,58 +6,30 @@ use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public function getId(): ?string
-    {
-        return $this->get(Properties::id->name);
-    }
+	public ?string $id {
+		get => $this->get('id');
+		set => $this->set('id', $value);
+	}
 
-    public function setId(?string $value): self
-    {
-        $this->set(Properties::id->name, $value);
-        return $this;
-    }
+	public ?string $code {
+		get => $this->get('code');
+		set => $this->set('code', $value);
+	}
 
-    public function getCode(): ?string
-    {
-        return $this->get(Properties::code->name);
-    }
+	public ?string $displayName {
+		get => $this->get('displayName');
+		set => $this->set('displayName', $value);
+	}
 
-    public function setCode(?string $value): self
-    {
-        $this->set(Properties::code->name, $value);
-        return $this;
-    }
+	public ?Enums\TaxBufferType $taxType {
+		get => $this->get('taxType', Enums\TaxBufferType::class);
+		set => $this->set('taxType', $value);
+	}
 
-    public function getDisplayName(): ?string
-    {
-        return $this->get(Properties::displayName->name);
-    }
+	public ?\DateTime $lastModifiedDateTime {
+		get => $this->get('lastModifiedDateTime', 'datetime');
+		set => $this->set('lastModifiedDateTime', $value);
+	}
 
-    public function setDisplayName(?string $value): self
-    {
-        $this->set(Properties::displayName->name, $value);
-        return $this;
-    }
 
-    public function getTaxType(): ?Enums\TaxBufferType
-    {
-        return $this->getAsEnum(Properties::taxType->name, Enums\TaxBufferType::class);
-    }
-
-    public function setTaxType(?Enums\TaxBufferType $value): self
-    {
-        $this->set(Properties::taxType->name, $value);
-        return $this;
-    }
-
-    public function getLastModifiedDateTime(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::lastModifiedDateTime->name);
-    }
-
-    public function setLastModifiedDateTime(?\DateTime $value): self
-    {
-        $this->set(Properties::lastModifiedDateTime->name, $value);
-        return $this;
-    }
 }

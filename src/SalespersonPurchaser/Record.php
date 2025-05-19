@@ -5,124 +5,60 @@ use Rebel\BCApi2\Entity;
 
 class Record extends Entity
 {
-    public function getId(): ?string
-    {
-        return $this->get(Properties::id->name);
-    }
+	public ?string $id {
+		get => $this->get('id');
+		set => $this->set('id', $value);
+	}
 
-    public function setId(?string $value): self
-    {
-        $this->set(Properties::id->name, $value);
-        return $this;
-    }
+	public ?string $code {
+		get => $this->get('code');
+		set => $this->set('code', $value);
+	}
 
-    public function getCode(): ?string
-    {
-        return $this->get(Properties::code->name);
-    }
+	public ?string $displayName {
+		get => $this->get('displayName');
+		set => $this->set('displayName', $value);
+	}
 
-    public function setCode(?string $value): self
-    {
-        $this->set(Properties::code->name, $value);
-        return $this;
-    }
+	public ?string $email {
+		get => $this->get('email');
+		set => $this->set('email', $value);
+	}
 
-    public function getDisplayName(): ?string
-    {
-        return $this->get(Properties::displayName->name);
-    }
+	public ?string $email2 {
+		get => $this->get('email2');
+		set => $this->set('email2', $value);
+	}
 
-    public function setDisplayName(?string $value): self
-    {
-        $this->set(Properties::displayName->name, $value);
-        return $this;
-    }
+	public ?string $phoneNo {
+		get => $this->get('phoneNo');
+		set => $this->set('phoneNo', $value);
+	}
 
-    public function getEmail(): ?string
-    {
-        return $this->get(Properties::email->name);
-    }
+	public ?string $jobTitle {
+		get => $this->get('jobTitle');
+		set => $this->set('jobTitle', $value);
+	}
 
-    public function setEmail(?string $value): self
-    {
-        $this->set(Properties::email->name, $value);
-        return $this;
-    }
+	public ?float $commisionPercent {
+		get => $this->get('commisionPercent');
+		set => $this->set('commisionPercent', $value);
+	}
 
-    public function getEmail2(): ?string
-    {
-        return $this->get(Properties::email2->name);
-    }
+	public ?bool $privacyBlocked {
+		get => $this->get('privacyBlocked');
+		set => $this->set('privacyBlocked', $value);
+	}
 
-    public function setEmail2(?string $value): self
-    {
-        $this->set(Properties::email2->name, $value);
-        return $this;
-    }
+	public ?bool $blocked {
+		get => $this->get('blocked');
+		set => $this->set('blocked', $value);
+	}
 
-    public function getPhoneNo(): ?string
-    {
-        return $this->get(Properties::phoneNo->name);
-    }
+	public ?\DateTime $lastModifiedDateTime {
+		get => $this->get('lastModifiedDateTime', 'datetime');
+		set => $this->set('lastModifiedDateTime', $value);
+	}
 
-    public function setPhoneNo(?string $value): self
-    {
-        $this->set(Properties::phoneNo->name, $value);
-        return $this;
-    }
 
-    public function getJobTitle(): ?string
-    {
-        return $this->get(Properties::jobTitle->name);
-    }
-
-    public function setJobTitle(?string $value): self
-    {
-        $this->set(Properties::jobTitle->name, $value);
-        return $this;
-    }
-
-    public function getCommisionPercent(): ?float
-    {
-        return $this->get(Properties::commisionPercent->name);
-    }
-
-    public function setCommisionPercent(?float $value): self
-    {
-        $this->set(Properties::commisionPercent->name, $value);
-        return $this;
-    }
-
-    public function isPrivacyBlocked(): ?bool
-    {
-        return $this->get(Properties::privacyBlocked->name);
-    }
-
-    public function setPrivacyBlocked(?bool $value): self
-    {
-        $this->set(Properties::privacyBlocked->name, $value);
-        return $this;
-    }
-
-    public function isBlocked(): ?bool
-    {
-        return $this->get(Properties::blocked->name);
-    }
-
-    public function setBlocked(?bool $value): self
-    {
-        $this->set(Properties::blocked->name, $value);
-        return $this;
-    }
-
-    public function getLastModifiedDateTime(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::lastModifiedDateTime->name);
-    }
-
-    public function setLastModifiedDateTime(?\DateTime $value): self
-    {
-        $this->set(Properties::lastModifiedDateTime->name, $value);
-        return $this;
-    }
 }

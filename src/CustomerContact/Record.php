@@ -6,105 +6,57 @@ use Rebel\BCApi2\Entity\PdfDocument;
 
 class Record extends Entity
 {
-    public function __construct(array $data = [], protected ?string $context = null)
+	public ?string $id {
+		get => $this->get('id');
+		set => $this->set('id', $value);
+	}
+
+	public ?string $email {
+		get => $this->get('email');
+		set => $this->set('email', $value);
+	}
+
+	public ?string $firstName {
+		get => $this->get('firstName');
+		set => $this->set('firstName', $value);
+	}
+
+	public ?string $lastName {
+		get => $this->get('lastName');
+		set => $this->set('lastName', $value);
+	}
+
+	public ?string $professionalTitle {
+		get => $this->get('professionalTitle');
+		set => $this->set('professionalTitle', $value);
+	}
+
+	public ?string $customerId {
+		get => $this->get('customerId');
+		set => $this->set('customerId', $value);
+	}
+
+	public ?string $customerName {
+		get => $this->get('customerName');
+		set => $this->set('customerName', $value);
+	}
+
+	public ?string $primaryPhoneNumber {
+		get => $this->get('primaryPhoneNumber');
+		set => $this->set('primaryPhoneNumber', $value);
+	}
+
+	public ?PdfDocument\Record $pdfDocument {
+		get => $this->get('pdfDocument');
+		set => $this->set('pdfDocument', $value);
+	}
+
+    public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-            Properties::pdfDocument->name => PdfDocument\Record::class,
+			'pdfDocument' => PdfDocument\Record::class,
         ];
-    }
-
-    public function getId(): ?string
-    {
-        return $this->get(Properties::id->name);
-    }
-
-    public function setId(?string $value): self
-    {
-        $this->set(Properties::id->name, $value);
-        return $this;
-    }
-
-    public function getEmail(): ?string
-    {
-        return $this->get(Properties::email->name);
-    }
-
-    public function setEmail(?string $value): self
-    {
-        $this->set(Properties::email->name, $value);
-        return $this;
-    }
-
-    public function getFirstName(): ?string
-    {
-        return $this->get(Properties::firstName->name);
-    }
-
-    public function setFirstName(?string $value): self
-    {
-        $this->set(Properties::firstName->name, $value);
-        return $this;
-    }
-
-    public function getLastName(): ?string
-    {
-        return $this->get(Properties::lastName->name);
-    }
-
-    public function setLastName(?string $value): self
-    {
-        $this->set(Properties::lastName->name, $value);
-        return $this;
-    }
-
-    public function getProfessionalTitle(): ?string
-    {
-        return $this->get(Properties::professionalTitle->name);
-    }
-
-    public function setProfessionalTitle(?string $value): self
-    {
-        $this->set(Properties::professionalTitle->name, $value);
-        return $this;
-    }
-
-    public function getCustomerId(): ?string
-    {
-        return $this->get(Properties::customerId->name);
-    }
-
-    public function setCustomerId(?string $value): self
-    {
-        $this->set(Properties::customerId->name, $value);
-        return $this;
-    }
-
-    public function getCustomerName(): ?string
-    {
-        return $this->get(Properties::customerName->name);
-    }
-
-    public function setCustomerName(?string $value): self
-    {
-        $this->set(Properties::customerName->name, $value);
-        return $this;
-    }
-
-    public function getPrimaryPhoneNumber(): ?string
-    {
-        return $this->get(Properties::primaryPhoneNumber->name);
-    }
-
-    public function setPrimaryPhoneNumber(?string $value): self
-    {
-        $this->set(Properties::primaryPhoneNumber->name, $value);
-        return $this;
-    }
-
-    public function getPdfDocument(): ?PdfDocument\Record
-    {
-        return $this->get(Properties::pdfDocument->name);
     }
 }

@@ -5,38 +5,33 @@ use Rebel\BCApi2\Entity;
 
 class Record extends Entity
 {
-    public function getId(): ?string
-    {
-        return $this->get(Properties::id->name);
-    }
+	public ?string $id {
+		get => $this->get('id');
+	}
 
-    public function getStartingDate(): ?\DateTime
-    {
-        return $this->getAsDate(Properties::startingDate->name);
-    }
+	public ?\DateTime $startingDate {
+		get => $this->get('startingDate', 'date');
+	}
 
-    public function getName(): ?string
-    {
-        return $this->get(Properties::name->name);
-    }
+	public ?string $name {
+		get => $this->get('name');
+	}
 
-    public function isNewFiscalYear(): ?bool
-    {
-        return $this->get(Properties::newFiscalYear->name);
-    }
+	public ?bool $newFiscalYear {
+		get => $this->get('newFiscalYear');
+	}
 
-    public function isClosed(): ?bool
-    {
-        return $this->get(Properties::closed->name);
-    }
+	public ?bool $closed {
+		get => $this->get('closed');
+	}
 
-    public function isDateLocked(): ?bool
-    {
-        return $this->get(Properties::dateLocked->name);
-    }
+	public ?bool $dateLocked {
+		get => $this->get('dateLocked');
+	}
 
-    public function getLastModifiedDateTime(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::lastModifiedDateTime->name);
-    }
+	public ?\DateTime $lastModifiedDateTime {
+		get => $this->get('lastModifiedDateTime', 'datetime');
+	}
+
+
 }

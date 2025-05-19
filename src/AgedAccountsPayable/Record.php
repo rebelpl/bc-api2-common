@@ -6,67 +6,57 @@ use Rebel\BCApi2\Entity\Vendor;
 
 class Record extends Entity
 {
-    public function __construct(array $data = [], protected ?string $context = null)
+	public ?string $vendorId {
+		get => $this->get('vendorId');
+	}
+
+	public ?string $vendorNumber {
+		get => $this->get('vendorNumber');
+	}
+
+	public ?string $name {
+		get => $this->get('name');
+	}
+
+	public ?string $currencyCode {
+		get => $this->get('currencyCode');
+	}
+
+	public ?float $balanceDue {
+		get => $this->get('balanceDue');
+	}
+
+	public ?float $currentAmount {
+		get => $this->get('currentAmount');
+	}
+
+	public ?float $period1Amount {
+		get => $this->get('period1Amount');
+	}
+
+	public ?float $period2Amount {
+		get => $this->get('period2Amount');
+	}
+
+	public ?float $period3Amount {
+		get => $this->get('period3Amount');
+	}
+
+	public ?\DateTime $agedAsOfDate {
+		get => $this->get('agedAsOfDate', 'date');
+	}
+
+	public ?Vendor\Record $vendor {
+		get => $this->get('vendor');
+		set => $this->set('vendor', $value);
+	}
+
+    public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-            Properties::vendor->name => Vendor\Record::class,
+			'vendor' => Vendor\Record::class,
         ];
-    }
-
-    public function getVendorId(): ?string
-    {
-        return $this->get(Properties::vendorId->name);
-    }
-
-    public function getVendorNumber(): ?string
-    {
-        return $this->get(Properties::vendorNumber->name);
-    }
-
-    public function getName(): ?string
-    {
-        return $this->get(Properties::name->name);
-    }
-
-    public function getCurrencyCode(): ?string
-    {
-        return $this->get(Properties::currencyCode->name);
-    }
-
-    public function getBalanceDue(): ?float
-    {
-        return $this->get(Properties::balanceDue->name);
-    }
-
-    public function getCurrentAmount(): ?float
-    {
-        return $this->get(Properties::currentAmount->name);
-    }
-
-    public function getPeriod1Amount(): ?float
-    {
-        return $this->get(Properties::period1Amount->name);
-    }
-
-    public function getPeriod2Amount(): ?float
-    {
-        return $this->get(Properties::period2Amount->name);
-    }
-
-    public function getPeriod3Amount(): ?float
-    {
-        return $this->get(Properties::period3Amount->name);
-    }
-
-    public function getAgedAsOfDate(): ?\DateTime
-    {
-        return $this->getAsDate(Properties::agedAsOfDate->name);
-    }
-
-    public function getVendor(): ?Vendor\Record
-    {
-        return $this->get(Properties::vendor->name);
     }
 }

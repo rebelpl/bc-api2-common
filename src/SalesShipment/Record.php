@@ -8,245 +8,197 @@ use Rebel\BCApi2\Entity\DimensionSetLine;
 
 class Record extends Entity
 {
-    public function __construct(array $data = [], protected ?string $context = null)
+	public ?string $id {
+		get => $this->get('id');
+	}
+
+	public ?string $number {
+		get => $this->get('number');
+	}
+
+	public ?string $externalDocumentNumber {
+		get => $this->get('externalDocumentNumber');
+	}
+
+	public ?\DateTime $invoiceDate {
+		get => $this->get('invoiceDate', 'date');
+	}
+
+	public ?\DateTime $postingDate {
+		get => $this->get('postingDate', 'date');
+	}
+
+	public ?\DateTime $dueDate {
+		get => $this->get('dueDate', 'date');
+	}
+
+	public ?string $customerPurchaseOrderReference {
+		get => $this->get('customerPurchaseOrderReference');
+	}
+
+	public ?string $customerId {
+		get => $this->get('customerId');
+	}
+
+	public ?string $customerNumber {
+		get => $this->get('customerNumber');
+	}
+
+	public ?string $customerName {
+		get => $this->get('customerName');
+	}
+
+	public ?string $billToCustomerId {
+		get => $this->get('billToCustomerId');
+	}
+
+	public ?string $billToName {
+		get => $this->get('billToName');
+	}
+
+	public ?string $billToCustomerNumber {
+		get => $this->get('billToCustomerNumber');
+	}
+
+	public ?string $shipToName {
+		get => $this->get('shipToName');
+	}
+
+	public ?string $shipToContact {
+		get => $this->get('shipToContact');
+	}
+
+	public ?string $sellToAddressLine1 {
+		get => $this->get('sellToAddressLine1');
+	}
+
+	public ?string $sellToAddressLine2 {
+		get => $this->get('sellToAddressLine2');
+	}
+
+	public ?string $sellToCity {
+		get => $this->get('sellToCity');
+	}
+
+	public ?string $sellToCountry {
+		get => $this->get('sellToCountry');
+	}
+
+	public ?string $sellToState {
+		get => $this->get('sellToState');
+	}
+
+	public ?string $sellToPostCode {
+		get => $this->get('sellToPostCode');
+	}
+
+	public ?string $billToAddressLine1 {
+		get => $this->get('billToAddressLine1');
+	}
+
+	public ?string $billToAddressLine2 {
+		get => $this->get('billToAddressLine2');
+	}
+
+	public ?string $billToCity {
+		get => $this->get('billToCity');
+	}
+
+	public ?string $billToCountry {
+		get => $this->get('billToCountry');
+	}
+
+	public ?string $billToState {
+		get => $this->get('billToState');
+	}
+
+	public ?string $billToPostCode {
+		get => $this->get('billToPostCode');
+	}
+
+	public ?string $shipToAddressLine1 {
+		get => $this->get('shipToAddressLine1');
+	}
+
+	public ?string $shipToAddressLine2 {
+		get => $this->get('shipToAddressLine2');
+	}
+
+	public ?string $shipToCity {
+		get => $this->get('shipToCity');
+	}
+
+	public ?string $shipToCountry {
+		get => $this->get('shipToCountry');
+	}
+
+	public ?string $shipToState {
+		get => $this->get('shipToState');
+	}
+
+	public ?string $shipToPostCode {
+		get => $this->get('shipToPostCode');
+	}
+
+	public ?string $currencyCode {
+		get => $this->get('currencyCode');
+	}
+
+	public ?string $orderNumber {
+		get => $this->get('orderNumber');
+	}
+
+	public ?string $paymentTermsCode {
+		get => $this->get('paymentTermsCode');
+	}
+
+	public ?string $shipmentMethodCode {
+		get => $this->get('shipmentMethodCode');
+	}
+
+	public ?string $salesperson {
+		get => $this->get('salesperson');
+	}
+
+	public ?bool $pricesIncludeTax {
+		get => $this->get('pricesIncludeTax');
+	}
+
+	public ?\DateTime $lastModifiedDateTime {
+		get => $this->get('lastModifiedDateTime', 'datetime');
+	}
+
+	public ?string $phoneNumber {
+		get => $this->get('phoneNumber');
+	}
+
+	public ?string $email {
+		get => $this->get('email');
+	}
+
+	public ?Customer\Record $customer {
+		get => $this->get('customer');
+		set => $this->set('customer', $value);
+	}
+
+	/** @var Entity\Collection<SalesShipmentLine\Record> */
+	public Entity\Collection $salesShipmentLines {
+		get => $this->get('salesShipmentLines', 'collection');
+	}
+
+	/** @var Entity\Collection<DimensionSetLine\Record> */
+	public Entity\Collection $dimensionSetLines {
+		get => $this->get('dimensionSetLines', 'collection');
+	}
+
+    public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-            Properties::customer->name => Customer\Record::class,
-            Properties::salesShipmentLines->name => SalesShipmentLine\Record::class,
-            Properties::dimensionSetLines->name => DimensionSetLine\Record::class,
+			'customer' => Customer\Record::class,
+			'salesShipmentLines' => SalesShipmentLine\Record::class,
+			'dimensionSetLines' => DimensionSetLine\Record::class,
         ];
-    }
-
-    public function getId(): ?string
-    {
-        return $this->get(Properties::id->name);
-    }
-
-    public function getNumber(): ?string
-    {
-        return $this->get(Properties::number->name);
-    }
-
-    public function getExternalDocumentNumber(): ?string
-    {
-        return $this->get(Properties::externalDocumentNumber->name);
-    }
-
-    public function getInvoiceDate(): ?\DateTime
-    {
-        return $this->getAsDate(Properties::invoiceDate->name);
-    }
-
-    public function getPostingDate(): ?\DateTime
-    {
-        return $this->getAsDate(Properties::postingDate->name);
-    }
-
-    public function getDueDate(): ?\DateTime
-    {
-        return $this->getAsDate(Properties::dueDate->name);
-    }
-
-    public function getCustomerPurchaseOrderReference(): ?string
-    {
-        return $this->get(Properties::customerPurchaseOrderReference->name);
-    }
-
-    public function getCustomerId(): ?string
-    {
-        return $this->get(Properties::customerId->name);
-    }
-
-    public function getCustomerNumber(): ?string
-    {
-        return $this->get(Properties::customerNumber->name);
-    }
-
-    public function getCustomerName(): ?string
-    {
-        return $this->get(Properties::customerName->name);
-    }
-
-    public function getBillToCustomerId(): ?string
-    {
-        return $this->get(Properties::billToCustomerId->name);
-    }
-
-    public function getBillToName(): ?string
-    {
-        return $this->get(Properties::billToName->name);
-    }
-
-    public function getBillToCustomerNumber(): ?string
-    {
-        return $this->get(Properties::billToCustomerNumber->name);
-    }
-
-    public function getShipToName(): ?string
-    {
-        return $this->get(Properties::shipToName->name);
-    }
-
-    public function getShipToContact(): ?string
-    {
-        return $this->get(Properties::shipToContact->name);
-    }
-
-    public function getSellToAddressLine1(): ?string
-    {
-        return $this->get(Properties::sellToAddressLine1->name);
-    }
-
-    public function getSellToAddressLine2(): ?string
-    {
-        return $this->get(Properties::sellToAddressLine2->name);
-    }
-
-    public function getSellToCity(): ?string
-    {
-        return $this->get(Properties::sellToCity->name);
-    }
-
-    public function getSellToCountry(): ?string
-    {
-        return $this->get(Properties::sellToCountry->name);
-    }
-
-    public function getSellToState(): ?string
-    {
-        return $this->get(Properties::sellToState->name);
-    }
-
-    public function getSellToPostCode(): ?string
-    {
-        return $this->get(Properties::sellToPostCode->name);
-    }
-
-    public function getBillToAddressLine1(): ?string
-    {
-        return $this->get(Properties::billToAddressLine1->name);
-    }
-
-    public function getBillToAddressLine2(): ?string
-    {
-        return $this->get(Properties::billToAddressLine2->name);
-    }
-
-    public function getBillToCity(): ?string
-    {
-        return $this->get(Properties::billToCity->name);
-    }
-
-    public function getBillToCountry(): ?string
-    {
-        return $this->get(Properties::billToCountry->name);
-    }
-
-    public function getBillToState(): ?string
-    {
-        return $this->get(Properties::billToState->name);
-    }
-
-    public function getBillToPostCode(): ?string
-    {
-        return $this->get(Properties::billToPostCode->name);
-    }
-
-    public function getShipToAddressLine1(): ?string
-    {
-        return $this->get(Properties::shipToAddressLine1->name);
-    }
-
-    public function getShipToAddressLine2(): ?string
-    {
-        return $this->get(Properties::shipToAddressLine2->name);
-    }
-
-    public function getShipToCity(): ?string
-    {
-        return $this->get(Properties::shipToCity->name);
-    }
-
-    public function getShipToCountry(): ?string
-    {
-        return $this->get(Properties::shipToCountry->name);
-    }
-
-    public function getShipToState(): ?string
-    {
-        return $this->get(Properties::shipToState->name);
-    }
-
-    public function getShipToPostCode(): ?string
-    {
-        return $this->get(Properties::shipToPostCode->name);
-    }
-
-    public function getCurrencyCode(): ?string
-    {
-        return $this->get(Properties::currencyCode->name);
-    }
-
-    public function getOrderNumber(): ?string
-    {
-        return $this->get(Properties::orderNumber->name);
-    }
-
-    public function getPaymentTermsCode(): ?string
-    {
-        return $this->get(Properties::paymentTermsCode->name);
-    }
-
-    public function getShipmentMethodCode(): ?string
-    {
-        return $this->get(Properties::shipmentMethodCode->name);
-    }
-
-    public function getSalesperson(): ?string
-    {
-        return $this->get(Properties::salesperson->name);
-    }
-
-    public function isPricesIncludeTax(): ?bool
-    {
-        return $this->get(Properties::pricesIncludeTax->name);
-    }
-
-    public function getLastModifiedDateTime(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::lastModifiedDateTime->name);
-    }
-
-    public function getPhoneNumber(): ?string
-    {
-        return $this->get(Properties::phoneNumber->name);
-    }
-
-    public function getEmail(): ?string
-    {
-        return $this->get(Properties::email->name);
-    }
-
-    public function getCustomer(): ?Customer\Record
-    {
-        return $this->get(Properties::customer->name);
-    }
-
-    /**
-     * @return Entity\Collection<SalesShipmentLine\Record>
-     */
-    public function getSalesShipmentLines(): Entity\Collection
-    {
-        return $this->get(Properties::salesShipmentLines->name) ?? new Entity\Collection();
-    }
-
-    /**
-     * @return Entity\Collection<DimensionSetLine\Record>
-     */
-    public function getDimensionSetLines(): Entity\Collection
-    {
-        return $this->get(Properties::dimensionSetLines->name) ?? new Entity\Collection();
     }
 }

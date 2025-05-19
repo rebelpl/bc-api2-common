@@ -6,201 +6,95 @@ use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public function getId(): ?string
-    {
-        return $this->get(Properties::id->name);
-    }
+	public ?string $id {
+		get => $this->get('id');
+		set => $this->set('id', $value);
+	}
 
-    public function setId(?string $value): self
-    {
-        $this->set(Properties::id->name, $value);
-        return $this;
-    }
+	public ?string $number {
+		get => $this->get('number');
+		set => $this->set('number', $value);
+	}
 
-    public function getNumber(): ?string
-    {
-        return $this->get(Properties::number->name);
-    }
+	public ?string $contactNumber {
+		get => $this->get('contactNumber');
+		set => $this->set('contactNumber', $value);
+	}
 
-    public function setNumber(?string $value): self
-    {
-        $this->set(Properties::number->name, $value);
-        return $this;
-    }
+	public ?string $contactName {
+		get => $this->get('contactName');
+		set => $this->set('contactName', $value);
+	}
 
-    public function getContactNumber(): ?string
-    {
-        return $this->get(Properties::contactNumber->name);
-    }
+	public ?string $contactCompanyName {
+		get => $this->get('contactCompanyName');
+		set => $this->set('contactCompanyName', $value);
+	}
 
-    public function setContactNumber(?string $value): self
-    {
-        $this->set(Properties::contactNumber->name, $value);
-        return $this;
-    }
+	public ?string $salespersonCode {
+		get => $this->get('salespersonCode');
+		set => $this->set('salespersonCode', $value);
+	}
 
-    public function getContactName(): ?string
-    {
-        return $this->get(Properties::contactName->name);
-    }
+	public ?string $description {
+		get => $this->get('description');
+		set => $this->set('description', $value);
+	}
 
-    public function setContactName(?string $value): self
-    {
-        $this->set(Properties::contactName->name, $value);
-        return $this;
-    }
+	public ?Enums\OpportunityStatus $status {
+		get => $this->get('status', Enums\OpportunityStatus::class);
+		set => $this->set('status', $value);
+	}
 
-    public function getContactCompanyName(): ?string
-    {
-        return $this->get(Properties::contactCompanyName->name);
-    }
+	public ?bool $closed {
+		get => $this->get('closed');
+		set => $this->set('closed', $value);
+	}
 
-    public function setContactCompanyName(?string $value): self
-    {
-        $this->set(Properties::contactCompanyName->name, $value);
-        return $this;
-    }
+	public ?\DateTime $creationDate {
+		get => $this->get('creationDate', 'date');
+		set => $this->set('creationDate', $value);
+	}
 
-    public function getSalespersonCode(): ?string
-    {
-        return $this->get(Properties::salespersonCode->name);
-    }
+	public ?\DateTime $dateClosed {
+		get => $this->get('dateClosed', 'date');
+		set => $this->set('dateClosed', $value);
+	}
 
-    public function setSalespersonCode(?string $value): self
-    {
-        $this->set(Properties::salespersonCode->name, $value);
-        return $this;
-    }
+	public ?float $calculatedCurrentValue {
+		get => $this->get('calculatedCurrentValue');
+		set => $this->set('calculatedCurrentValue', $value);
+	}
 
-    public function getDescription(): ?string
-    {
-        return $this->get(Properties::description->name);
-    }
+	public ?float $chancesOfSuccessPrc {
+		get => $this->get('chancesOfSuccessPrc');
+		set => $this->set('chancesOfSuccessPrc', $value);
+	}
 
-    public function setDescription(?string $value): self
-    {
-        $this->set(Properties::description->name, $value);
-        return $this;
-    }
+	public ?float $completedPrc {
+		get => $this->get('completedPrc');
+		set => $this->set('completedPrc', $value);
+	}
 
-    public function getStatus(): ?Enums\OpportunityStatus
-    {
-        return $this->getAsEnum(Properties::status->name, Enums\OpportunityStatus::class);
-    }
+	public ?\DateTime $estimatedClosingDate {
+		get => $this->get('estimatedClosingDate', 'date');
+		set => $this->set('estimatedClosingDate', $value);
+	}
 
-    public function setStatus(?Enums\OpportunityStatus $value): self
-    {
-        $this->set(Properties::status->name, $value);
-        return $this;
-    }
+	public ?float $estimatedValue {
+		get => $this->get('estimatedValue');
+		set => $this->set('estimatedValue', $value);
+	}
 
-    public function isClosed(): ?bool
-    {
-        return $this->get(Properties::closed->name);
-    }
+	public ?\DateTime $systemCreatedAt {
+		get => $this->get('systemCreatedAt', 'datetime');
+		set => $this->set('systemCreatedAt', $value);
+	}
 
-    public function setClosed(?bool $value): self
-    {
-        $this->set(Properties::closed->name, $value);
-        return $this;
-    }
+	public ?\DateTime $lastModifiedDateTime {
+		get => $this->get('lastModifiedDateTime', 'datetime');
+		set => $this->set('lastModifiedDateTime', $value);
+	}
 
-    public function getCreationDate(): ?\DateTime
-    {
-        return $this->getAsDate(Properties::creationDate->name);
-    }
 
-    public function setCreationDate(?\DateTime $value): self
-    {
-        $this->set(Properties::creationDate->name, $value);
-        return $this;
-    }
-
-    public function getDateClosed(): ?\DateTime
-    {
-        return $this->getAsDate(Properties::dateClosed->name);
-    }
-
-    public function setDateClosed(?\DateTime $value): self
-    {
-        $this->set(Properties::dateClosed->name, $value);
-        return $this;
-    }
-
-    public function getCalculatedCurrentValue(): ?float
-    {
-        return $this->get(Properties::calculatedCurrentValue->name);
-    }
-
-    public function setCalculatedCurrentValue(?float $value): self
-    {
-        $this->set(Properties::calculatedCurrentValue->name, $value);
-        return $this;
-    }
-
-    public function getChancesOfSuccessPrc(): ?float
-    {
-        return $this->get(Properties::chancesOfSuccessPrc->name);
-    }
-
-    public function setChancesOfSuccessPrc(?float $value): self
-    {
-        $this->set(Properties::chancesOfSuccessPrc->name, $value);
-        return $this;
-    }
-
-    public function getCompletedPrc(): ?float
-    {
-        return $this->get(Properties::completedPrc->name);
-    }
-
-    public function setCompletedPrc(?float $value): self
-    {
-        $this->set(Properties::completedPrc->name, $value);
-        return $this;
-    }
-
-    public function getEstimatedClosingDate(): ?\DateTime
-    {
-        return $this->getAsDate(Properties::estimatedClosingDate->name);
-    }
-
-    public function setEstimatedClosingDate(?\DateTime $value): self
-    {
-        $this->set(Properties::estimatedClosingDate->name, $value);
-        return $this;
-    }
-
-    public function getEstimatedValue(): ?float
-    {
-        return $this->get(Properties::estimatedValue->name);
-    }
-
-    public function setEstimatedValue(?float $value): self
-    {
-        $this->set(Properties::estimatedValue->name, $value);
-        return $this;
-    }
-
-    public function getSystemCreatedAt(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::systemCreatedAt->name);
-    }
-
-    public function setSystemCreatedAt(?\DateTime $value): self
-    {
-        $this->set(Properties::systemCreatedAt->name, $value);
-        return $this;
-    }
-
-    public function getLastModifiedDateTime(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::lastModifiedDateTime->name);
-    }
-
-    public function setLastModifiedDateTime(?\DateTime $value): self
-    {
-        $this->set(Properties::lastModifiedDateTime->name, $value);
-        return $this;
-    }
 }

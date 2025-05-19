@@ -5,80 +5,40 @@ use Rebel\BCApi2\Entity;
 
 class Record extends Entity
 {
-    public function getId(): ?string
-    {
-        return $this->get(Properties::id->name);
-    }
+	public ?string $id {
+		get => $this->get('id');
+		set => $this->set('id', $value);
+	}
 
-    public function setId(?string $value): self
-    {
-        $this->set(Properties::id->name, $value);
-        return $this;
-    }
+	public ?string $code {
+		get => $this->get('code');
+		set => $this->set('code', $value);
+	}
 
-    public function getCode(): ?string
-    {
-        return $this->get(Properties::code->name);
-    }
+	public ?string $displayName {
+		get => $this->get('displayName');
+		set => $this->set('displayName', $value);
+	}
 
-    public function setCode(?string $value): self
-    {
-        $this->set(Properties::code->name, $value);
-        return $this;
-    }
+	public ?string $symbol {
+		get => $this->get('symbol');
+		set => $this->set('symbol', $value);
+	}
 
-    public function getDisplayName(): ?string
-    {
-        return $this->get(Properties::displayName->name);
-    }
+	public ?string $amountDecimalPlaces {
+		get => $this->get('amountDecimalPlaces');
+		set => $this->set('amountDecimalPlaces', $value);
+	}
 
-    public function setDisplayName(?string $value): self
-    {
-        $this->set(Properties::displayName->name, $value);
-        return $this;
-    }
+	public ?float $amountRoundingPrecision {
+		get => $this->get('amountRoundingPrecision');
+		set => $this->set('amountRoundingPrecision', $value);
+	}
 
-    public function getSymbol(): ?string
-    {
-        return $this->get(Properties::symbol->name);
-    }
+	public ?\DateTime $lastModifiedDateTime {
+		get => $this->get('lastModifiedDateTime', 'datetime');
+		set => $this->set('lastModifiedDateTime', $value);
+	}
 
-    public function setSymbol(?string $value): self
-    {
-        $this->set(Properties::symbol->name, $value);
-        return $this;
-    }
 
-    public function getAmountDecimalPlaces(): ?string
-    {
-        return $this->get(Properties::amountDecimalPlaces->name);
-    }
-
-    public function setAmountDecimalPlaces(?string $value): self
-    {
-        $this->set(Properties::amountDecimalPlaces->name, $value);
-        return $this;
-    }
-
-    public function getAmountRoundingPrecision(): ?float
-    {
-        return $this->get(Properties::amountRoundingPrecision->name);
-    }
-
-    public function setAmountRoundingPrecision(?float $value): self
-    {
-        $this->set(Properties::amountRoundingPrecision->name, $value);
-        return $this;
-    }
-
-    public function getLastModifiedDateTime(): ?\DateTime
-    {
-        return $this->getAsDateTime(Properties::lastModifiedDateTime->name);
-    }
-
-    public function setLastModifiedDateTime(?\DateTime $value): self
-    {
-        $this->set(Properties::lastModifiedDateTime->name, $value);
-        return $this;
-    }
 }

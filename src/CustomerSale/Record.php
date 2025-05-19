@@ -5,28 +5,25 @@ use Rebel\BCApi2\Entity;
 
 class Record extends Entity
 {
-    public function getCustomerId(): ?string
-    {
-        return $this->get(Properties::customerId->name);
-    }
+	public ?string $customerId {
+		get => $this->get('customerId');
+	}
 
-    public function getCustomerNumber(): ?string
-    {
-        return $this->get(Properties::customerNumber->name);
-    }
+	public ?string $customerNumber {
+		get => $this->get('customerNumber');
+	}
 
-    public function getName(): ?string
-    {
-        return $this->get(Properties::name->name);
-    }
+	public ?string $name {
+		get => $this->get('name');
+	}
 
-    public function getTotalSalesAmount(): ?float
-    {
-        return $this->get(Properties::totalSalesAmount->name);
-    }
+	public ?float $totalSalesAmount {
+		get => $this->get('totalSalesAmount');
+	}
 
-    public function getDateFilter_FilterOnly(): ?\DateTime
-    {
-        return $this->getAsDate(Properties::dateFilter_FilterOnly->name);
-    }
+	public ?\DateTime $dateFilter_FilterOnly {
+		get => $this->get('dateFilter_FilterOnly', 'date');
+	}
+
+
 }
