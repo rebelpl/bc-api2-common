@@ -9,7 +9,7 @@ composer require rebelpl/bc-api2-common
 
 ## Usage
 ```php
-use Microsoft\NAV\SalesOrder;
+use Rebel\BCApi2\Entity\SalesOrder;
 
 $client = new Rebel\BCApi2\Client(
     accessToken: '<access_token>',
@@ -23,7 +23,7 @@ $orderBy = [ SalesOrder\Properties::orderDate->name => 'DESC' ];
 $expand = [ SalesOrder\Properties::salesOrderLines, SalesOrder\Properties::customer ];
 $salesOrders = $repository->findBy($criteria, $orderBy, 10, null, $expand);
 foreach ($salesOrders as $salesOrder) {
-    echo " - {$salesOrder->getNumber()}:\t{$salesOrder->getTotalAmountIncludingTax()} {$salesOrder->getCurrencyCode()}\n"; 
+    echo " - {$salesOrder->number}:\t{$salesOrder->totalAmountIncludingTax} {$salesOrder->currencyCode}\n"; 
 }
 ```
 
