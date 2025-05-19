@@ -18,9 +18,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Rebel\\BCApi2\\": "src/",
-      "Rebel\\Test\\BCApi2\\": "tests/src/",
-      "Microsoft\\": "build/Microsoft"
+      "Rebel\\BCApi2\\Entity\\": "src/",
+      "Rebel\\Test\\BCApi2\\Entity\\": "tests/src/"
     }
   }
 }
