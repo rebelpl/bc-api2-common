@@ -11,5 +11,4 @@ enum Properties
     case discountPercent;
     case calculateDiscountOnCreditMemos;
     case lastModifiedDateTime;
-
 }

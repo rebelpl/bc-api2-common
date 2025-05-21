@@ -1,39 +1,46 @@
 <?php
 namespace Rebel\BCApi2\Entity\UnitOfMeasure;
 
+use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
+use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-	public ?string $id {
-		get => $this->get('id');
-		set => $this->set('id', $value);
-	}
+    public ?string $id {
+        get => $this->get('id');
+    }
 
-	public ?string $code {
-		get => $this->get('code');
-		set => $this->set('code', $value);
-	}
+    public ?string $code {
+        set => $this->set('code', $value);
+        get => $this->get('code');
+    }
 
-	public ?string $displayName {
-		get => $this->get('displayName');
-		set => $this->set('displayName', $value);
-	}
+    public ?string $displayName {
+        set => $this->set('displayName', $value);
+        get => $this->get('displayName');
+    }
 
-	public ?string $internationalStandardCode {
-		get => $this->get('internationalStandardCode');
-		set => $this->set('internationalStandardCode', $value);
-	}
+    public ?string $internationalStandardCode {
+        set => $this->set('internationalStandardCode', $value);
+        get => $this->get('internationalStandardCode');
+    }
 
-	public ?string $symbol {
-		get => $this->get('symbol');
-		set => $this->set('symbol', $value);
-	}
+    public ?string $symbol {
+        set => $this->set('symbol', $value);
+        get => $this->get('symbol');
+    }
 
-	public ?\DateTime $lastModifiedDateTime {
-		get => $this->get('lastModifiedDateTime', 'datetime');
-		set => $this->set('lastModifiedDateTime', $value);
-	}
+    public ?Carbon $lastModifiedDateTime {
+        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        get => $this->getAsDateTime('lastModifiedDateTime');
+    }
 
+    public function __construct(array $data = [], ?string $context = null)
+    {
+        parent::__construct($data, $context);
 
+        $this->classMap = [
+        ];
+    }
 }

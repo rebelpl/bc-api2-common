@@ -1,59 +1,66 @@
 <?php
 namespace Rebel\BCApi2\Entity\BankAccount;
 
+use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
+use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-	public ?string $id {
-		get => $this->get('id');
-		set => $this->set('id', $value);
-	}
+    public ?string $id {
+        get => $this->get('id');
+    }
 
-	public ?string $number {
-		get => $this->get('number');
-		set => $this->set('number', $value);
-	}
+    public ?string $number {
+        set => $this->set('number', $value);
+        get => $this->get('number');
+    }
 
-	public ?string $displayName {
-		get => $this->get('displayName');
-		set => $this->set('displayName', $value);
-	}
+    public ?string $displayName {
+        set => $this->set('displayName', $value);
+        get => $this->get('displayName');
+    }
 
-	public ?\DateTime $lastModifiedDateTime {
-		get => $this->get('lastModifiedDateTime', 'datetime');
-		set => $this->set('lastModifiedDateTime', $value);
-	}
+    public ?Carbon $lastModifiedDateTime {
+        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        get => $this->getAsDateTime('lastModifiedDateTime');
+    }
 
-	public ?string $bankAccountNumber {
-		get => $this->get('bankAccountNumber');
-		set => $this->set('bankAccountNumber', $value);
-	}
+    public ?string $bankAccountNumber {
+        set => $this->set('bankAccountNumber', $value);
+        get => $this->get('bankAccountNumber');
+    }
 
-	public ?bool $blocked {
-		get => $this->get('blocked');
-		set => $this->set('blocked', $value);
-	}
+    public ?bool $blocked {
+        set => $this->set('blocked', $value);
+        get => $this->get('blocked');
+    }
 
-	public ?string $currencyCode {
-		get => $this->get('currencyCode');
-		set => $this->set('currencyCode', $value);
-	}
+    public ?string $currencyCode {
+        set => $this->set('currencyCode', $value);
+        get => $this->get('currencyCode');
+    }
 
-	public ?string $currencyId {
-		get => $this->get('currencyId');
-		set => $this->set('currencyId', $value);
-	}
+    public ?string $currencyId {
+        set => $this->set('currencyId', $value);
+        get => $this->get('currencyId');
+    }
 
-	public ?string $iban {
-		get => $this->get('iban');
-		set => $this->set('iban', $value);
-	}
+    public ?string $iban {
+        set => $this->set('iban', $value);
+        get => $this->get('iban');
+    }
 
-	public ?bool $intercompanyEnabled {
-		get => $this->get('intercompanyEnabled');
-		set => $this->set('intercompanyEnabled', $value);
-	}
+    public ?bool $intercompanyEnabled {
+        set => $this->set('intercompanyEnabled', $value);
+        get => $this->get('intercompanyEnabled');
+    }
 
+    public function __construct(array $data = [], ?string $context = null)
+    {
+        parent::__construct($data, $context);
 
+        $this->classMap = [
+        ];
+    }
 }

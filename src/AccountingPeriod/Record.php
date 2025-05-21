@@ -1,37 +1,45 @@
 <?php
 namespace Rebel\BCApi2\Entity\AccountingPeriod;
 
+use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
+use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-	public ?string $id {
-		get => $this->get('id');
-	}
+    public ?string $id {
+        get => $this->get('id');
+    }
 
-	public ?\DateTime $startingDate {
-		get => $this->get('startingDate', 'date');
-	}
+    public ?Carbon $startingDate {
+        get => $this->getAsDateTime('startingDate');
+    }
 
-	public ?string $name {
-		get => $this->get('name');
-	}
+    public ?string $name {
+        get => $this->get('name');
+    }
 
-	public ?bool $newFiscalYear {
-		get => $this->get('newFiscalYear');
-	}
+    public ?bool $newFiscalYear {
+        get => $this->get('newFiscalYear');
+    }
 
-	public ?bool $closed {
-		get => $this->get('closed');
-	}
+    public ?bool $closed {
+        get => $this->get('closed');
+    }
 
-	public ?bool $dateLocked {
-		get => $this->get('dateLocked');
-	}
+    public ?bool $dateLocked {
+        get => $this->get('dateLocked');
+    }
 
-	public ?\DateTime $lastModifiedDateTime {
-		get => $this->get('lastModifiedDateTime', 'datetime');
-	}
+    public ?Carbon $lastModifiedDateTime {
+        get => $this->getAsDateTime('lastModifiedDateTime');
+    }
 
+    public function __construct(array $data = [], ?string $context = null)
+    {
+        parent::__construct($data, $context);
 
+        $this->classMap = [
+        ];
+    }
 }

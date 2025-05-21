@@ -1,114 +1,114 @@
 <?php
 namespace Rebel\BCApi2\Entity\Attachment;
 
+use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\Enums;
-use Rebel\BCApi2\Entity\SalesInvoice;
-use Rebel\BCApi2\Entity\JournalLine;
 use Rebel\BCApi2\Entity\GeneralLedgerEntry;
-use Rebel\BCApi2\Entity\SalesOrder;
-use Rebel\BCApi2\Entity\SalesQuote;
-use Rebel\BCApi2\Entity\SalesCreditMemo;
+use Rebel\BCApi2\Entity\JournalLine;
+use Rebel\BCApi2\Entity\PurchaseCreditMemo;
 use Rebel\BCApi2\Entity\PurchaseInvoice;
 use Rebel\BCApi2\Entity\PurchaseOrder;
-use Rebel\BCApi2\Entity\PurchaseCreditMemo;
+use Rebel\BCApi2\Entity\SalesCreditMemo;
+use Rebel\BCApi2\Entity\SalesInvoice;
+use Rebel\BCApi2\Entity\SalesOrder;
+use Rebel\BCApi2\Entity\SalesQuote;
 
 class Record extends Entity
 {
-	public ?string $id {
-		get => $this->get('id');
-		set => $this->set('id', $value);
-	}
+    public ?string $id {
+        get => $this->get('id');
+    }
 
-	public ?string $parentId {
-		get => $this->get('parentId');
-		set => $this->set('parentId', $value);
-	}
+    public ?string $parentId {
+        set => $this->set('parentId', $value);
+        get => $this->get('parentId');
+    }
 
-	public ?string $fileName {
-		get => $this->get('fileName');
-		set => $this->set('fileName', $value);
-	}
+    public ?string $fileName {
+        set => $this->set('fileName', $value);
+        get => $this->get('fileName');
+    }
 
-	public ?int $byteSize {
-		get => $this->get('byteSize');
-		set => $this->set('byteSize', $value);
-	}
+    public ?int $byteSize {
+        set => $this->set('byteSize', $value);
+        get => $this->get('byteSize');
+    }
 
-	public ?string $attachmentContent {
-		get => $this->get('attachmentContent');
-		set => $this->set('attachmentContent', $value);
-	}
+    public ?string $attachmentContent {
+        set => $this->set('attachmentContent', $value);
+        get => $this->get('attachmentContent');
+    }
 
-	public ?\DateTime $lastModifiedDateTime {
-		get => $this->get('lastModifiedDateTime', 'datetime');
-		set => $this->set('lastModifiedDateTime', $value);
-	}
+    public ?Carbon $lastModifiedDateTime {
+        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        get => $this->getAsDateTime('lastModifiedDateTime');
+    }
 
-	public ?Enums\AttachmentEntityBufferDocumentType $parentType {
-		get => $this->get('parentType', Enums\AttachmentEntityBufferDocumentType::class);
-		set => $this->set('parentType', $value);
-	}
+    public ?Enums\AttachmentEntityBufferDocumentType $parentType {
+        set => $this->set('parentType', $value);
+        get => $this->getAsEnum('parentType', Enums\AttachmentEntityBufferDocumentType::class);
+    }
 
-	public ?SalesInvoice\Record $salesInvoice {
-		get => $this->get('salesInvoice');
-		set => $this->set('salesInvoice', $value);
-	}
+    /** @var ?SalesInvoice\Record */
+    public ?SalesInvoice\Record $salesInvoice {
+        get => $this->get('salesInvoice');
+    }
 
-	public ?JournalLine\Record $journalLine {
-		get => $this->get('journalLine');
-		set => $this->set('journalLine', $value);
-	}
+    /** @var ?JournalLine\Record */
+    public ?JournalLine\Record $journalLine {
+        get => $this->get('journalLine');
+    }
 
-	public ?GeneralLedgerEntry\Record $generalLedgerEntry {
-		get => $this->get('generalLedgerEntry');
-		set => $this->set('generalLedgerEntry', $value);
-	}
+    /** @var ?GeneralLedgerEntry\Record */
+    public ?GeneralLedgerEntry\Record $generalLedgerEntry {
+        get => $this->get('generalLedgerEntry');
+    }
 
-	public ?SalesOrder\Record $salesOrder {
-		get => $this->get('salesOrder');
-		set => $this->set('salesOrder', $value);
-	}
+    /** @var ?SalesOrder\Record */
+    public ?SalesOrder\Record $salesOrder {
+        get => $this->get('salesOrder');
+    }
 
-	public ?SalesQuote\Record $salesQuote {
-		get => $this->get('salesQuote');
-		set => $this->set('salesQuote', $value);
-	}
+    /** @var ?SalesQuote\Record */
+    public ?SalesQuote\Record $salesQuote {
+        get => $this->get('salesQuote');
+    }
 
-	public ?SalesCreditMemo\Record $salesCreditMemo {
-		get => $this->get('salesCreditMemo');
-		set => $this->set('salesCreditMemo', $value);
-	}
+    /** @var ?SalesCreditMemo\Record */
+    public ?SalesCreditMemo\Record $salesCreditMemo {
+        get => $this->get('salesCreditMemo');
+    }
 
-	public ?PurchaseInvoice\Record $purchaseInvoice {
-		get => $this->get('purchaseInvoice');
-		set => $this->set('purchaseInvoice', $value);
-	}
+    /** @var ?PurchaseInvoice\Record */
+    public ?PurchaseInvoice\Record $purchaseInvoice {
+        get => $this->get('purchaseInvoice');
+    }
 
-	public ?PurchaseOrder\Record $purchaseOrder {
-		get => $this->get('purchaseOrder');
-		set => $this->set('purchaseOrder', $value);
-	}
+    /** @var ?PurchaseOrder\Record */
+    public ?PurchaseOrder\Record $purchaseOrder {
+        get => $this->get('purchaseOrder');
+    }
 
-	public ?PurchaseCreditMemo\Record $purchaseCreditMemo {
-		get => $this->get('purchaseCreditMemo');
-		set => $this->set('purchaseCreditMemo', $value);
-	}
+    /** @var ?PurchaseCreditMemo\Record */
+    public ?PurchaseCreditMemo\Record $purchaseCreditMemo {
+        get => $this->get('purchaseCreditMemo');
+    }
 
     public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-			'salesInvoice' => SalesInvoice\Record::class,
-			'journalLine' => JournalLine\Record::class,
-			'generalLedgerEntry' => GeneralLedgerEntry\Record::class,
-			'salesOrder' => SalesOrder\Record::class,
-			'salesQuote' => SalesQuote\Record::class,
-			'salesCreditMemo' => SalesCreditMemo\Record::class,
-			'purchaseInvoice' => PurchaseInvoice\Record::class,
-			'purchaseOrder' => PurchaseOrder\Record::class,
-			'purchaseCreditMemo' => PurchaseCreditMemo\Record::class,
+            'salesInvoice' => SalesInvoice\Record::class,
+            'journalLine' => JournalLine\Record::class,
+            'generalLedgerEntry' => GeneralLedgerEntry\Record::class,
+            'salesOrder' => SalesOrder\Record::class,
+            'salesQuote' => SalesQuote\Record::class,
+            'salesCreditMemo' => SalesCreditMemo\Record::class,
+            'purchaseInvoice' => PurchaseInvoice\Record::class,
+            'purchaseOrder' => PurchaseOrder\Record::class,
+            'purchaseCreditMemo' => PurchaseCreditMemo\Record::class,
         ];
     }
 }

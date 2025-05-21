@@ -10,5 +10,4 @@ enum Properties
     case lineType;
     case indentation;
     case dateFilter;
-
 }

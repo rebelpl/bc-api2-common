@@ -10,7 +10,6 @@ enum Properties
     case attachmentContent;
     case lastModifiedDateTime;
     case parentType;
-
     case salesInvoice;
     case journalLine;
     case generalLedgerEntry;

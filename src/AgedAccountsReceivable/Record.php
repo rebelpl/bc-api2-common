@@ -1,74 +1,76 @@
 <?php
 namespace Rebel\BCApi2\Entity\AgedAccountsReceivable;
 
+use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\Customer;
+use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-	public ?string $customerId {
-		get => $this->get('customerId');
-	}
+    public ?string $customerId {
+        get => $this->get('customerId');
+    }
 
-	public ?string $customerNumber {
-		get => $this->get('customerNumber');
-	}
+    public ?string $customerNumber {
+        get => $this->get('customerNumber');
+    }
 
-	public ?string $name {
-		get => $this->get('name');
-	}
+    public ?string $name {
+        get => $this->get('name');
+    }
 
-	public ?string $currencyCode {
-		get => $this->get('currencyCode');
-	}
+    public ?string $currencyCode {
+        get => $this->get('currencyCode');
+    }
 
-	public ?float $balanceDue {
-		get => $this->get('balanceDue');
-	}
+    public ?float $balanceDue {
+        get => $this->get('balanceDue');
+    }
 
-	public ?float $currentAmount {
-		get => $this->get('currentAmount');
-	}
+    public ?float $currentAmount {
+        get => $this->get('currentAmount');
+    }
 
-	public ?string $period1Label {
-		get => $this->get('period1Label');
-	}
+    public ?string $period1Label {
+        get => $this->get('period1Label');
+    }
 
-	public ?float $period1Amount {
-		get => $this->get('period1Amount');
-	}
+    public ?float $period1Amount {
+        get => $this->get('period1Amount');
+    }
 
-	public ?string $period2Label {
-		get => $this->get('period2Label');
-	}
+    public ?string $period2Label {
+        get => $this->get('period2Label');
+    }
 
-	public ?float $period2Amount {
-		get => $this->get('period2Amount');
-	}
+    public ?float $period2Amount {
+        get => $this->get('period2Amount');
+    }
 
-	public ?string $period3Label {
-		get => $this->get('period3Label');
-	}
+    public ?string $period3Label {
+        get => $this->get('period3Label');
+    }
 
-	public ?float $period3Amount {
-		get => $this->get('period3Amount');
-	}
+    public ?float $period3Amount {
+        get => $this->get('period3Amount');
+    }
 
-	public ?\DateTime $agedAsOfDate {
-		get => $this->get('agedAsOfDate', 'date');
-	}
+    public ?Carbon $agedAsOfDate {
+        get => $this->getAsDateTime('agedAsOfDate');
+    }
 
-	public ?Customer\Record $customer {
-		get => $this->get('customer');
-		set => $this->set('customer', $value);
-	}
+    /** @var ?Customer\Record */
+    public ?Customer\Record $customer {
+        get => $this->get('customer');
+    }
 
     public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-			'customer' => Customer\Record::class,
+            'customer' => Customer\Record::class,
         ];
     }
 }

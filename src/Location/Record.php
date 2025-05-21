@@ -1,79 +1,86 @@
 <?php
 namespace Rebel\BCApi2\Entity\Location;
 
+use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
+use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-	public ?string $id {
-		get => $this->get('id');
-		set => $this->set('id', $value);
-	}
+    public ?string $id {
+        get => $this->get('id');
+    }
 
-	public ?string $code {
-		get => $this->get('code');
-		set => $this->set('code', $value);
-	}
+    public ?string $code {
+        set => $this->set('code', $value);
+        get => $this->get('code');
+    }
 
-	public ?string $displayName {
-		get => $this->get('displayName');
-		set => $this->set('displayName', $value);
-	}
+    public ?string $displayName {
+        set => $this->set('displayName', $value);
+        get => $this->get('displayName');
+    }
 
-	public ?string $contact {
-		get => $this->get('contact');
-		set => $this->set('contact', $value);
-	}
+    public ?string $contact {
+        set => $this->set('contact', $value);
+        get => $this->get('contact');
+    }
 
-	public ?string $addressLine1 {
-		get => $this->get('addressLine1');
-		set => $this->set('addressLine1', $value);
-	}
+    public ?string $addressLine1 {
+        set => $this->set('addressLine1', $value);
+        get => $this->get('addressLine1');
+    }
 
-	public ?string $addressLine2 {
-		get => $this->get('addressLine2');
-		set => $this->set('addressLine2', $value);
-	}
+    public ?string $addressLine2 {
+        set => $this->set('addressLine2', $value);
+        get => $this->get('addressLine2');
+    }
 
-	public ?string $city {
-		get => $this->get('city');
-		set => $this->set('city', $value);
-	}
+    public ?string $city {
+        set => $this->set('city', $value);
+        get => $this->get('city');
+    }
 
-	public ?string $state {
-		get => $this->get('state');
-		set => $this->set('state', $value);
-	}
+    public ?string $state {
+        set => $this->set('state', $value);
+        get => $this->get('state');
+    }
 
-	public ?string $country {
-		get => $this->get('country');
-		set => $this->set('country', $value);
-	}
+    public ?string $country {
+        set => $this->set('country', $value);
+        get => $this->get('country');
+    }
 
-	public ?string $postalCode {
-		get => $this->get('postalCode');
-		set => $this->set('postalCode', $value);
-	}
+    public ?string $postalCode {
+        set => $this->set('postalCode', $value);
+        get => $this->get('postalCode');
+    }
 
-	public ?string $phoneNumber {
-		get => $this->get('phoneNumber');
-		set => $this->set('phoneNumber', $value);
-	}
+    public ?string $phoneNumber {
+        set => $this->set('phoneNumber', $value);
+        get => $this->get('phoneNumber');
+    }
 
-	public ?string $email {
-		get => $this->get('email');
-		set => $this->set('email', $value);
-	}
+    public ?string $email {
+        set => $this->set('email', $value);
+        get => $this->get('email');
+    }
 
-	public ?string $website {
-		get => $this->get('website');
-		set => $this->set('website', $value);
-	}
+    public ?string $website {
+        set => $this->set('website', $value);
+        get => $this->get('website');
+    }
 
-	public ?\DateTime $lastModifiedDateTime {
-		get => $this->get('lastModifiedDateTime', 'datetime');
-		set => $this->set('lastModifiedDateTime', $value);
-	}
+    public ?Carbon $lastModifiedDateTime {
+        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        get => $this->getAsDateTime('lastModifiedDateTime');
+    }
 
+    public function __construct(array $data = [], ?string $context = null)
+    {
+        parent::__construct($data, $context);
 
+        $this->classMap = [
+        ];
+    }
 }

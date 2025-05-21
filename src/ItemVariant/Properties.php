@@ -9,6 +9,5 @@ enum Properties
     case code;
     case description;
     case lastModifiedDateTime;
-
     case item;
 }

@@ -21,5 +21,4 @@ enum Properties
     case estimatedValue;
     case systemCreatedAt;
     case lastModifiedDateTime;
-
 }

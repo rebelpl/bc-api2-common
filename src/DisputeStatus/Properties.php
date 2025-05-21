@@ -6,5 +6,4 @@ enum Properties
     case id;
     case code;
     case displayName;
-
 }

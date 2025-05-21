@@ -1,49 +1,56 @@
 <?php
 namespace Rebel\BCApi2\Entity\PaymentTerm;
 
+use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
+use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-	public ?string $id {
-		get => $this->get('id');
-		set => $this->set('id', $value);
-	}
+    public ?string $id {
+        get => $this->get('id');
+    }
 
-	public ?string $code {
-		get => $this->get('code');
-		set => $this->set('code', $value);
-	}
+    public ?string $code {
+        set => $this->set('code', $value);
+        get => $this->get('code');
+    }
 
-	public ?string $displayName {
-		get => $this->get('displayName');
-		set => $this->set('displayName', $value);
-	}
+    public ?string $displayName {
+        set => $this->set('displayName', $value);
+        get => $this->get('displayName');
+    }
 
-	public ?string $dueDateCalculation {
-		get => $this->get('dueDateCalculation');
-		set => $this->set('dueDateCalculation', $value);
-	}
+    public ?string $dueDateCalculation {
+        set => $this->set('dueDateCalculation', $value);
+        get => $this->get('dueDateCalculation');
+    }
 
-	public ?string $discountDateCalculation {
-		get => $this->get('discountDateCalculation');
-		set => $this->set('discountDateCalculation', $value);
-	}
+    public ?string $discountDateCalculation {
+        set => $this->set('discountDateCalculation', $value);
+        get => $this->get('discountDateCalculation');
+    }
 
-	public ?float $discountPercent {
-		get => $this->get('discountPercent');
-		set => $this->set('discountPercent', $value);
-	}
+    public ?float $discountPercent {
+        set => $this->set('discountPercent', $value);
+        get => $this->get('discountPercent');
+    }
 
-	public ?bool $calculateDiscountOnCreditMemos {
-		get => $this->get('calculateDiscountOnCreditMemos');
-		set => $this->set('calculateDiscountOnCreditMemos', $value);
-	}
+    public ?bool $calculateDiscountOnCreditMemos {
+        set => $this->set('calculateDiscountOnCreditMemos', $value);
+        get => $this->get('calculateDiscountOnCreditMemos');
+    }
 
-	public ?\DateTime $lastModifiedDateTime {
-		get => $this->get('lastModifiedDateTime', 'datetime');
-		set => $this->set('lastModifiedDateTime', $value);
-	}
+    public ?Carbon $lastModifiedDateTime {
+        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        get => $this->getAsDateTime('lastModifiedDateTime');
+    }
 
+    public function __construct(array $data = [], ?string $context = null)
+    {
+        parent::__construct($data, $context);
 
+        $this->classMap = [
+        ];
+    }
 }

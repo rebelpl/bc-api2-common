@@ -17,6 +17,5 @@ enum Properties
     case period3Amount;
     case agedAsOfDate;
     case periodLengthFilter;
-
     case customer;
 }

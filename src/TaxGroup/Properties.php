@@ -8,5 +8,4 @@ enum Properties
     case displayName;
     case taxType;
     case lastModifiedDateTime;
-
 }

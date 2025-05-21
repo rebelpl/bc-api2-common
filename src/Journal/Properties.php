@@ -10,6 +10,5 @@ enum Properties
     case lastModifiedDateTime;
     case balancingAccountId;
     case balancingAccountNumber;
-
     case journalLines;
 }

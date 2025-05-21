@@ -7,5 +7,4 @@ enum Properties
     case code;
     case displayName;
     case lastModifiedDateTime;
-
 }

@@ -17,6 +17,5 @@ enum Properties
     case consolidationCreditAccount;
     case excludeFromConsolidation;
     case lastModifiedDateTime;
-
     case trialBalance;
 }

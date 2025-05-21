@@ -20,7 +20,7 @@ class SalesOrderTest extends TestCase
         }
     }
 
-    public function testProperties(): void
+    public function testBasicProperties(): void
     {
         foreach ($this->salesOrders as $salesOrder) {
             $this->assertNotEmpty($salesOrder->number);
@@ -28,10 +28,14 @@ class SalesOrderTest extends TestCase
             $this->assertInstanceOf(Enums\SalesOrderEntityBufferStatus::class, $salesOrder->status);
             $this->assertNull($salesOrder->fooBar);
         }
+    }
 
+    public function testNewInstance(): void
+    {
         $salesOrder = new SalesOrder\Record();
         $this->assertNull($salesOrder->etag);
         $this->assertNull($salesOrder->orderDate);
+        $this->assertEmpty($salesOrder->toUpdate());
     }
 
     public function testRepositoryHasCorrectEntityClass(): void

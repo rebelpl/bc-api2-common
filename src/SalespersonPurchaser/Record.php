@@ -1,64 +1,71 @@
 <?php
 namespace Rebel\BCApi2\Entity\SalespersonPurchaser;
 
+use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
+use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-	public ?string $id {
-		get => $this->get('id');
-		set => $this->set('id', $value);
-	}
+    public ?string $id {
+        get => $this->get('id');
+    }
 
-	public ?string $code {
-		get => $this->get('code');
-		set => $this->set('code', $value);
-	}
+    public ?string $code {
+        set => $this->set('code', $value);
+        get => $this->get('code');
+    }
 
-	public ?string $displayName {
-		get => $this->get('displayName');
-		set => $this->set('displayName', $value);
-	}
+    public ?string $displayName {
+        set => $this->set('displayName', $value);
+        get => $this->get('displayName');
+    }
 
-	public ?string $email {
-		get => $this->get('email');
-		set => $this->set('email', $value);
-	}
+    public ?string $email {
+        set => $this->set('email', $value);
+        get => $this->get('email');
+    }
 
-	public ?string $email2 {
-		get => $this->get('email2');
-		set => $this->set('email2', $value);
-	}
+    public ?string $email2 {
+        set => $this->set('email2', $value);
+        get => $this->get('email2');
+    }
 
-	public ?string $phoneNo {
-		get => $this->get('phoneNo');
-		set => $this->set('phoneNo', $value);
-	}
+    public ?string $phoneNo {
+        set => $this->set('phoneNo', $value);
+        get => $this->get('phoneNo');
+    }
 
-	public ?string $jobTitle {
-		get => $this->get('jobTitle');
-		set => $this->set('jobTitle', $value);
-	}
+    public ?string $jobTitle {
+        set => $this->set('jobTitle', $value);
+        get => $this->get('jobTitle');
+    }
 
-	public ?float $commisionPercent {
-		get => $this->get('commisionPercent');
-		set => $this->set('commisionPercent', $value);
-	}
+    public ?float $commisionPercent {
+        set => $this->set('commisionPercent', $value);
+        get => $this->get('commisionPercent');
+    }
 
-	public ?bool $privacyBlocked {
-		get => $this->get('privacyBlocked');
-		set => $this->set('privacyBlocked', $value);
-	}
+    public ?bool $privacyBlocked {
+        set => $this->set('privacyBlocked', $value);
+        get => $this->get('privacyBlocked');
+    }
 
-	public ?bool $blocked {
-		get => $this->get('blocked');
-		set => $this->set('blocked', $value);
-	}
+    public ?bool $blocked {
+        set => $this->set('blocked', $value);
+        get => $this->get('blocked');
+    }
 
-	public ?\DateTime $lastModifiedDateTime {
-		get => $this->get('lastModifiedDateTime', 'datetime');
-		set => $this->set('lastModifiedDateTime', $value);
-	}
+    public ?Carbon $lastModifiedDateTime {
+        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        get => $this->getAsDateTime('lastModifiedDateTime');
+    }
 
+    public function __construct(array $data = [], ?string $context = null)
+    {
+        parent::__construct($data, $context);
 
+        $this->classMap = [
+        ];
+    }
 }

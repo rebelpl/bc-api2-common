@@ -7,7 +7,6 @@ enum Properties
     case parentId;
     case parentType;
     case pdfDocumentContent;
-
     case salesInvoice;
     case salesQuote;
     case salesCreditMemo;

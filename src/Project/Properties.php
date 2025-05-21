@@ -7,6 +7,5 @@ enum Properties
     case number;
     case displayName;
     case lastModifiedDateTime;
-
     case documentAttachments;
 }

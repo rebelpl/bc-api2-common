@@ -35,7 +35,6 @@ enum Properties
     case receiveQuantity;
     case itemVariantId;
     case locationId;
-
     case purchaseOrder;
     case item;
     case account;

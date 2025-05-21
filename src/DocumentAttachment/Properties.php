@@ -13,7 +13,6 @@ enum Properties
     case documentFlowSales;
     case documentFlowPurchase;
     case lastModifiedDateTime;
-
     case item;
     case customer;
     case vendor;

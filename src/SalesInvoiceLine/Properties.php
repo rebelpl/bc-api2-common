@@ -31,7 +31,6 @@ enum Properties
     case shipmentDate;
     case itemVariantId;
     case locationId;
-
     case salesInvoice;
     case item;
     case account;

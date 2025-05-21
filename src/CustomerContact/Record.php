@@ -1,62 +1,63 @@
 <?php
 namespace Rebel\BCApi2\Entity\CustomerContact;
 
+use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
+use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\PdfDocument;
 
 class Record extends Entity
 {
-	public ?string $id {
-		get => $this->get('id');
-		set => $this->set('id', $value);
-	}
+    public ?string $id {
+        get => $this->get('id');
+    }
 
-	public ?string $email {
-		get => $this->get('email');
-		set => $this->set('email', $value);
-	}
+    public ?string $email {
+        set => $this->set('email', $value);
+        get => $this->get('email');
+    }
 
-	public ?string $firstName {
-		get => $this->get('firstName');
-		set => $this->set('firstName', $value);
-	}
+    public ?string $firstName {
+        set => $this->set('firstName', $value);
+        get => $this->get('firstName');
+    }
 
-	public ?string $lastName {
-		get => $this->get('lastName');
-		set => $this->set('lastName', $value);
-	}
+    public ?string $lastName {
+        set => $this->set('lastName', $value);
+        get => $this->get('lastName');
+    }
 
-	public ?string $professionalTitle {
-		get => $this->get('professionalTitle');
-		set => $this->set('professionalTitle', $value);
-	}
+    public ?string $professionalTitle {
+        set => $this->set('professionalTitle', $value);
+        get => $this->get('professionalTitle');
+    }
 
-	public ?string $customerId {
-		get => $this->get('customerId');
-		set => $this->set('customerId', $value);
-	}
+    public ?string $customerId {
+        set => $this->set('customerId', $value);
+        get => $this->get('customerId');
+    }
 
-	public ?string $customerName {
-		get => $this->get('customerName');
-		set => $this->set('customerName', $value);
-	}
+    public ?string $customerName {
+        set => $this->set('customerName', $value);
+        get => $this->get('customerName');
+    }
 
-	public ?string $primaryPhoneNumber {
-		get => $this->get('primaryPhoneNumber');
-		set => $this->set('primaryPhoneNumber', $value);
-	}
+    public ?string $primaryPhoneNumber {
+        set => $this->set('primaryPhoneNumber', $value);
+        get => $this->get('primaryPhoneNumber');
+    }
 
-	public ?PdfDocument\Record $pdfDocument {
-		get => $this->get('pdfDocument');
-		set => $this->set('pdfDocument', $value);
-	}
+    /** @var ?PdfDocument\Record */
+    public ?PdfDocument\Record $pdfDocument {
+        get => $this->get('pdfDocument');
+    }
 
     public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-			'pdfDocument' => PdfDocument\Record::class,
+            'pdfDocument' => PdfDocument\Record::class,
         ];
     }
 }

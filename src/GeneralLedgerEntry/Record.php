@@ -1,89 +1,90 @@
 <?php
 namespace Rebel\BCApi2\Entity\GeneralLedgerEntry;
 
+use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\Account;
 use Rebel\BCApi2\Entity\Attachment;
 use Rebel\BCApi2\Entity\DimensionSetLine;
+use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-	public ?string $id {
-		get => $this->get('id');
-	}
+    public ?string $id {
+        get => $this->get('id');
+    }
 
-	public ?int $entryNumber {
-		get => $this->get('entryNumber');
-	}
+    public ?int $entryNumber {
+        get => $this->get('entryNumber');
+    }
 
-	public ?\DateTime $postingDate {
-		get => $this->get('postingDate', 'date');
-	}
+    public ?Carbon $postingDate {
+        get => $this->getAsDateTime('postingDate');
+    }
 
-	public ?string $documentNumber {
-		get => $this->get('documentNumber');
-	}
+    public ?string $documentNumber {
+        get => $this->get('documentNumber');
+    }
 
-	public ?Enums\GenJournalDocumentType $documentType {
-		get => $this->get('documentType', Enums\GenJournalDocumentType::class);
-	}
+    public ?Enums\GenJournalDocumentType $documentType {
+        get => $this->getAsEnum('documentType', Enums\GenJournalDocumentType::class);
+    }
 
-	public ?string $accountId {
-		get => $this->get('accountId');
-	}
+    public ?string $accountId {
+        get => $this->get('accountId');
+    }
 
-	public ?string $accountNumber {
-		get => $this->get('accountNumber');
-	}
+    public ?string $accountNumber {
+        get => $this->get('accountNumber');
+    }
 
-	public ?string $description {
-		get => $this->get('description');
-	}
+    public ?string $description {
+        get => $this->get('description');
+    }
 
-	public ?float $debitAmount {
-		get => $this->get('debitAmount');
-	}
+    public ?float $debitAmount {
+        get => $this->get('debitAmount');
+    }
 
-	public ?float $creditAmount {
-		get => $this->get('creditAmount');
-	}
+    public ?float $creditAmount {
+        get => $this->get('creditAmount');
+    }
 
-	public ?float $additionalCurrencyDebitAmount {
-		get => $this->get('additionalCurrencyDebitAmount');
-	}
+    public ?float $additionalCurrencyDebitAmount {
+        get => $this->get('additionalCurrencyDebitAmount');
+    }
 
-	public ?float $additionalCurrencyCreditAmount {
-		get => $this->get('additionalCurrencyCreditAmount');
-	}
+    public ?float $additionalCurrencyCreditAmount {
+        get => $this->get('additionalCurrencyCreditAmount');
+    }
 
-	public ?\DateTime $lastModifiedDateTime {
-		get => $this->get('lastModifiedDateTime', 'datetime');
-	}
+    public ?Carbon $lastModifiedDateTime {
+        get => $this->getAsDateTime('lastModifiedDateTime');
+    }
 
-	public ?Account\Record $account {
-		get => $this->get('account');
-		set => $this->set('account', $value);
-	}
+    /** @var ?Account\Record */
+    public ?Account\Record $account {
+        get => $this->get('account');
+    }
 
-	/** @var Entity\Collection<Attachment\Record> */
-	public Entity\Collection $attachments {
-		get => $this->get('attachments', 'collection');
-	}
+    /** @var ?Entity\Collection<Attachment\Record> */
+    public ?Entity\Collection $attachments {
+        get => $this->get('attachments');
+    }
 
-	/** @var Entity\Collection<DimensionSetLine\Record> */
-	public Entity\Collection $dimensionSetLines {
-		get => $this->get('dimensionSetLines', 'collection');
-	}
+    /** @var ?Entity\Collection<DimensionSetLine\Record> */
+    public ?Entity\Collection $dimensionSetLines {
+        get => $this->get('dimensionSetLines');
+    }
 
     public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-			'account' => Account\Record::class,
-			'attachments' => Attachment\Record::class,
-			'dimensionSetLines' => DimensionSetLine\Record::class,
+            'account' => Account\Record::class,
+            'attachments' => Attachment\Record::class,
+            'dimensionSetLines' => DimensionSetLine\Record::class,
         ];
     }
 }

@@ -25,7 +25,6 @@ enum Properties
     case blocked;
     case balance;
     case lastModifiedDateTime;
-
     case currency;
     case paymentTerm;
     case paymentMethod;

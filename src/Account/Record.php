@@ -1,79 +1,80 @@
 <?php
 namespace Rebel\BCApi2\Entity\Account;
 
+use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\TrialBalance;
 
 class Record extends Entity
 {
-	public ?string $id {
-		get => $this->get('id');
-	}
+    public ?string $id {
+        get => $this->get('id');
+    }
 
-	public ?string $number {
-		get => $this->get('number');
-	}
+    public ?string $number {
+        get => $this->get('number');
+    }
 
-	public ?string $displayName {
-		get => $this->get('displayName');
-	}
+    public ?string $displayName {
+        get => $this->get('displayName');
+    }
 
-	public ?Enums\GlAccountCategory $category {
-		get => $this->get('category', Enums\GlAccountCategory::class);
-	}
+    public ?Enums\GlAccountCategory $category {
+        get => $this->getAsEnum('category', Enums\GlAccountCategory::class);
+    }
 
-	public ?string $subCategory {
-		get => $this->get('subCategory');
-	}
+    public ?string $subCategory {
+        get => $this->get('subCategory');
+    }
 
-	public ?bool $blocked {
-		get => $this->get('blocked');
-	}
+    public ?bool $blocked {
+        get => $this->get('blocked');
+    }
 
-	public ?Enums\GlAccountType $accountType {
-		get => $this->get('accountType', Enums\GlAccountType::class);
-	}
+    public ?Enums\GlAccountType $accountType {
+        get => $this->getAsEnum('accountType', Enums\GlAccountType::class);
+    }
 
-	public ?bool $directPosting {
-		get => $this->get('directPosting');
-	}
+    public ?bool $directPosting {
+        get => $this->get('directPosting');
+    }
 
-	public ?float $netChange {
-		get => $this->get('netChange');
-	}
+    public ?float $netChange {
+        get => $this->get('netChange');
+    }
 
-	public ?string $consolidationTranslationMethod {
-		get => $this->get('consolidationTranslationMethod');
-	}
+    public ?string $consolidationTranslationMethod {
+        get => $this->get('consolidationTranslationMethod');
+    }
 
-	public ?string $consolidationDebitAccount {
-		get => $this->get('consolidationDebitAccount');
-	}
+    public ?string $consolidationDebitAccount {
+        get => $this->get('consolidationDebitAccount');
+    }
 
-	public ?string $consolidationCreditAccount {
-		get => $this->get('consolidationCreditAccount');
-	}
+    public ?string $consolidationCreditAccount {
+        get => $this->get('consolidationCreditAccount');
+    }
 
-	public ?bool $excludeFromConsolidation {
-		get => $this->get('excludeFromConsolidation');
-	}
+    public ?bool $excludeFromConsolidation {
+        get => $this->get('excludeFromConsolidation');
+    }
 
-	public ?\DateTime $lastModifiedDateTime {
-		get => $this->get('lastModifiedDateTime', 'datetime');
-	}
+    public ?Carbon $lastModifiedDateTime {
+        get => $this->getAsDateTime('lastModifiedDateTime');
+    }
 
-	public ?TrialBalance\Record $trialBalance {
-		get => $this->get('trialBalance');
-		set => $this->set('trialBalance', $value);
-	}
+    /** @var ?TrialBalance\Record */
+    public ?TrialBalance\Record $trialBalance {
+        get => $this->get('trialBalance');
+    }
 
     public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-			'trialBalance' => TrialBalance\Record::class,
+            'trialBalance' => TrialBalance\Record::class,
         ];
     }
 }

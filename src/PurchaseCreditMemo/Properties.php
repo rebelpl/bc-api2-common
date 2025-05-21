@@ -45,7 +45,6 @@ enum Properties
     case invoiceId;
     case invoiceNumber;
     case vendorReturnReasonId;
-
     case vendor;
     case dimensionValue;
     case currency;

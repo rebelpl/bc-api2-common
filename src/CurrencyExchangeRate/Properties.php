@@ -10,5 +10,4 @@ enum Properties
     case relationalCurrencyCode;
     case relationalExchangeRateAmount;
     case lastModifiedDateTime;
-
 }

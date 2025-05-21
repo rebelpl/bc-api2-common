@@ -16,7 +16,6 @@ enum Properties
     case employeeId;
     case underMaintenance;
     case lastModifiedDateTime;
-
     case fixedAssetLocation;
     case employee;
 }

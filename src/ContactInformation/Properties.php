@@ -9,7 +9,6 @@ enum Properties
     case contactType;
     case relatedId;
     case relatedType;
-
     case customer;
     case contact;
     case vendor;

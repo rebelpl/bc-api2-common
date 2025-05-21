@@ -9,6 +9,5 @@ enum Properties
     case totalSalesExcludingTax;
     case overdueAmount;
     case lastModifiedDateTime;
-
     case customer;
 }

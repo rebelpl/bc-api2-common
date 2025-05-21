@@ -25,7 +25,6 @@ enum Properties
     case inventoryPostingGroupId;
     case inventoryPostingGroupCode;
     case lastModifiedDateTime;
-
     case itemCategory;
     case inventoryPostingGroup;
     case generalProductPostingGroup;

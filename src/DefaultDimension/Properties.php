@@ -12,7 +12,6 @@ enum Properties
     case dimensionValueCode;
     case postingValidation;
     case lastModifiedDateTime;
-
     case item;
     case account;
     case dimension;

@@ -1,52 +1,53 @@
 <?php
 namespace Rebel\BCApi2\Entity\VendorPaymentJournal;
 
+use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
+use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\VendorPayment;
 
 class Record extends Entity
 {
-	public ?string $id {
-		get => $this->get('id');
-		set => $this->set('id', $value);
-	}
+    public ?string $id {
+        get => $this->get('id');
+    }
 
-	public ?string $code {
-		get => $this->get('code');
-		set => $this->set('code', $value);
-	}
+    public ?string $code {
+        set => $this->set('code', $value);
+        get => $this->get('code');
+    }
 
-	public ?string $displayName {
-		get => $this->get('displayName');
-		set => $this->set('displayName', $value);
-	}
+    public ?string $displayName {
+        set => $this->set('displayName', $value);
+        get => $this->get('displayName');
+    }
 
-	public ?string $balancingAccountId {
-		get => $this->get('balancingAccountId');
-		set => $this->set('balancingAccountId', $value);
-	}
+    public ?string $balancingAccountId {
+        set => $this->set('balancingAccountId', $value);
+        get => $this->get('balancingAccountId');
+    }
 
-	public ?string $balancingAccountNumber {
-		get => $this->get('balancingAccountNumber');
-		set => $this->set('balancingAccountNumber', $value);
-	}
+    public ?string $balancingAccountNumber {
+        set => $this->set('balancingAccountNumber', $value);
+        get => $this->get('balancingAccountNumber');
+    }
 
-	public ?\DateTime $lastModifiedDateTime {
-		get => $this->get('lastModifiedDateTime', 'datetime');
-		set => $this->set('lastModifiedDateTime', $value);
-	}
+    public ?Carbon $lastModifiedDateTime {
+        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        get => $this->getAsDateTime('lastModifiedDateTime');
+    }
 
-	/** @var Entity\Collection<VendorPayment\Record> */
-	public Entity\Collection $vendorPayments {
-		get => $this->get('vendorPayments', 'collection');
-	}
+    /** @var ?Entity\Collection<VendorPayment\Record> */
+    public ?Entity\Collection $vendorPayments {
+        get => $this->get('vendorPayments');
+    }
 
     public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-			'vendorPayments' => VendorPayment\Record::class,
+            'vendorPayments' => VendorPayment\Record::class,
         ];
     }
 }

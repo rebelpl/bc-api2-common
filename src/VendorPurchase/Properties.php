@@ -8,5 +8,4 @@ enum Properties
     case name;
     case totalPurchaseAmount;
     case dateFilter_FilterOnly;
-
 }

@@ -10,5 +10,4 @@ enum Properties
     case amountDecimalPlaces;
     case amountRoundingPrecision;
     case lastModifiedDateTime;
-
 }

@@ -35,7 +35,6 @@ enum Properties
     case shipQuantity;
     case itemVariantId;
     case locationId;
-
     case salesOrder;
     case item;
     case account;

@@ -49,6 +49,5 @@ enum Properties
     case jobTimeOut;
     case priorityWithinCategory;
     case lastModifiedDateTime;
-
     case jobQueueLogEntries;
 }

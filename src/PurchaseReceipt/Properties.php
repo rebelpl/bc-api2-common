@@ -36,7 +36,6 @@ enum Properties
     case currencyCode;
     case orderNumber;
     case lastModifiedDateTime;
-
     case purchaseReceiptLines;
     case dimensionSetLines;
 }

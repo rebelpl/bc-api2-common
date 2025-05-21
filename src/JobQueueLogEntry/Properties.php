@@ -20,5 +20,4 @@ enum Properties
     case userSessionId;
     case userServiceInstanceId;
     case lastModifiedDateTime;
-
 }

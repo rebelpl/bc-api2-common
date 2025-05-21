@@ -21,7 +21,6 @@ enum Properties
     case balancingAccountId;
     case balancingAccountNumber;
     case lastModifiedDateTime;
-
     case journal;
     case customerPaymentJournal;
     case account;

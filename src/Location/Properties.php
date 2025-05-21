@@ -17,5 +17,4 @@ enum Properties
     case email;
     case website;
     case lastModifiedDateTime;
-
 }

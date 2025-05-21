@@ -8,6 +8,5 @@ enum Properties
     case displayName;
     case consolidationCode;
     case lastModifiedDateTime;
-
     case dimensionValues;
 }

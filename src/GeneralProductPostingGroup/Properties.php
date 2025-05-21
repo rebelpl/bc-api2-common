@@ -9,5 +9,4 @@ enum Properties
     case defaultVATProductPostingGroup;
     case autoInsertDefault;
     case lastModifiedDateTime;
-
 }

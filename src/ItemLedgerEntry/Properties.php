@@ -17,5 +17,4 @@ enum Properties
     case salesAmountActual;
     case costAmountActual;
     case lastModifiedDateTime;
-
 }

@@ -31,7 +31,6 @@ enum Properties
     case shipmentDate;
     case itemVariantId;
     case locationId;
-
     case salesCreditMemo;
     case item;
     case account;

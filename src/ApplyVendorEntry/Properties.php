@@ -15,5 +15,4 @@ enum Properties
     case description;
     case remainingAmount;
     case lastModifiedDateTime;
-
 }

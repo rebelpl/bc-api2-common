@@ -50,7 +50,6 @@ enum Properties
     case fullyReceived;
     case status;
     case lastModifiedDateTime;
-
     case vendor;
     case dimensionValue;
     case currency;

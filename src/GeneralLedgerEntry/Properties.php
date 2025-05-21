@@ -16,7 +16,6 @@ enum Properties
     case additionalCurrencyDebitAmount;
     case additionalCurrencyCreditAmount;
     case lastModifiedDateTime;
-
     case account;
     case attachments;
     case dimensionSetLines;

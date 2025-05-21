@@ -26,7 +26,6 @@ enum Properties
     case birthDate;
     case statisticsGroupCode;
     case lastModifiedDateTime;
-
     case picture;
     case defaultDimensions;
     case timeRegistrationEntries;

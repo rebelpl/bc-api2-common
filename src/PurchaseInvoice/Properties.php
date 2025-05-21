@@ -51,7 +51,6 @@ enum Properties
     case totalAmountIncludingTax;
     case status;
     case lastModifiedDateTime;
-
     case vendor;
     case dimensionValue;
     case currency;

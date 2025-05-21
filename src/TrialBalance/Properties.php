@@ -12,6 +12,5 @@ enum Properties
     case balanceAtDateDebit;
     case balanceAtDateCredit;
     case dateFilter;
-
     case account;
 }

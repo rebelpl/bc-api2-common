@@ -9,5 +9,4 @@ enum Properties
     case internationalStandardCode;
     case symbol;
     case lastModifiedDateTime;
-
 }

@@ -17,7 +17,6 @@ enum Properties
     case unitOfMeasureId;
     case unitOfMeasureCode;
     case lastModfiedDateTime;
-
     case employee;
     case dimensionSetLines;
 }

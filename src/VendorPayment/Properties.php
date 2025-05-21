@@ -18,7 +18,6 @@ enum Properties
     case description;
     case comment;
     case lastModifiedDateTime;
-
     case customerPaymentJournal;
     case vendor;
     case dimensionSetLines;

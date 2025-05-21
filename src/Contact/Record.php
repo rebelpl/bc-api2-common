@@ -1,145 +1,145 @@
 <?php
 namespace Rebel\BCApi2\Entity\Contact;
 
+use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\ContactInformation;
+use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\Picture;
 
 class Record extends Entity
 {
-	public ?string $id {
-		get => $this->get('id');
-		set => $this->set('id', $value);
-	}
+    public ?string $id {
+        get => $this->get('id');
+    }
 
-	public ?string $number {
-		get => $this->get('number');
-		set => $this->set('number', $value);
-	}
+    public ?string $number {
+        set => $this->set('number', $value);
+        get => $this->get('number');
+    }
 
-	public ?Enums\ContactType $type {
-		get => $this->get('type', Enums\ContactType::class);
-		set => $this->set('type', $value);
-	}
+    public ?Enums\ContactType $type {
+        set => $this->set('type', $value);
+        get => $this->getAsEnum('type', Enums\ContactType::class);
+    }
 
-	public ?string $displayName {
-		get => $this->get('displayName');
-		set => $this->set('displayName', $value);
-	}
+    public ?string $displayName {
+        set => $this->set('displayName', $value);
+        get => $this->get('displayName');
+    }
 
-	public ?string $jobTitle {
-		get => $this->get('jobTitle');
-		set => $this->set('jobTitle', $value);
-	}
+    public ?string $jobTitle {
+        set => $this->set('jobTitle', $value);
+        get => $this->get('jobTitle');
+    }
 
-	public ?string $companyNumber {
-		get => $this->get('companyNumber');
-		set => $this->set('companyNumber', $value);
-	}
+    public ?string $companyNumber {
+        set => $this->set('companyNumber', $value);
+        get => $this->get('companyNumber');
+    }
 
-	public ?string $companyName {
-		get => $this->get('companyName');
-		set => $this->set('companyName', $value);
-	}
+    public ?string $companyName {
+        set => $this->set('companyName', $value);
+        get => $this->get('companyName');
+    }
 
-	public ?Enums\ContactBusinessRelation $contactBusinessRelation {
-		get => $this->get('contactBusinessRelation', Enums\ContactBusinessRelation::class);
-		set => $this->set('contactBusinessRelation', $value);
-	}
+    public ?Enums\ContactBusinessRelation $contactBusinessRelation {
+        set => $this->set('contactBusinessRelation', $value);
+        get => $this->getAsEnum('contactBusinessRelation', Enums\ContactBusinessRelation::class);
+    }
 
-	public ?string $addressLine1 {
-		get => $this->get('addressLine1');
-		set => $this->set('addressLine1', $value);
-	}
+    public ?string $addressLine1 {
+        set => $this->set('addressLine1', $value);
+        get => $this->get('addressLine1');
+    }
 
-	public ?string $addressLine2 {
-		get => $this->get('addressLine2');
-		set => $this->set('addressLine2', $value);
-	}
+    public ?string $addressLine2 {
+        set => $this->set('addressLine2', $value);
+        get => $this->get('addressLine2');
+    }
 
-	public ?string $city {
-		get => $this->get('city');
-		set => $this->set('city', $value);
-	}
+    public ?string $city {
+        set => $this->set('city', $value);
+        get => $this->get('city');
+    }
 
-	public ?string $state {
-		get => $this->get('state');
-		set => $this->set('state', $value);
-	}
+    public ?string $state {
+        set => $this->set('state', $value);
+        get => $this->get('state');
+    }
 
-	public ?string $country {
-		get => $this->get('country');
-		set => $this->set('country', $value);
-	}
+    public ?string $country {
+        set => $this->set('country', $value);
+        get => $this->get('country');
+    }
 
-	public ?string $postalCode {
-		get => $this->get('postalCode');
-		set => $this->set('postalCode', $value);
-	}
+    public ?string $postalCode {
+        set => $this->set('postalCode', $value);
+        get => $this->get('postalCode');
+    }
 
-	public ?string $phoneNumber {
-		get => $this->get('phoneNumber');
-		set => $this->set('phoneNumber', $value);
-	}
+    public ?string $phoneNumber {
+        set => $this->set('phoneNumber', $value);
+        get => $this->get('phoneNumber');
+    }
 
-	public ?string $mobilePhoneNumber {
-		get => $this->get('mobilePhoneNumber');
-		set => $this->set('mobilePhoneNumber', $value);
-	}
+    public ?string $mobilePhoneNumber {
+        set => $this->set('mobilePhoneNumber', $value);
+        get => $this->get('mobilePhoneNumber');
+    }
 
-	public ?string $email {
-		get => $this->get('email');
-		set => $this->set('email', $value);
-	}
+    public ?string $email {
+        set => $this->set('email', $value);
+        get => $this->get('email');
+    }
 
-	public ?string $website {
-		get => $this->get('website');
-		set => $this->set('website', $value);
-	}
+    public ?string $website {
+        set => $this->set('website', $value);
+        get => $this->get('website');
+    }
 
-	public ?string $searchName {
-		get => $this->get('searchName');
-		set => $this->set('searchName', $value);
-	}
+    public ?string $searchName {
+        set => $this->set('searchName', $value);
+        get => $this->get('searchName');
+    }
 
-	public ?bool $privacyBlocked {
-		get => $this->get('privacyBlocked');
-		set => $this->set('privacyBlocked', $value);
-	}
+    public ?bool $privacyBlocked {
+        set => $this->set('privacyBlocked', $value);
+        get => $this->get('privacyBlocked');
+    }
 
-	public ?string $taxRegistrationNumber {
-		get => $this->get('taxRegistrationNumber');
-		set => $this->set('taxRegistrationNumber', $value);
-	}
+    public ?string $taxRegistrationNumber {
+        set => $this->set('taxRegistrationNumber', $value);
+        get => $this->get('taxRegistrationNumber');
+    }
 
-	public ?\DateTime $lastInteractionDate {
-		get => $this->get('lastInteractionDate', 'date');
-		set => $this->set('lastInteractionDate', $value);
-	}
+    public ?Carbon $lastInteractionDate {
+        set => $this->setAsDateTime('lastInteractionDate', $value);
+        get => $this->getAsDateTime('lastInteractionDate');
+    }
 
-	public ?\DateTime $lastModifiedDateTime {
-		get => $this->get('lastModifiedDateTime', 'datetime');
-		set => $this->set('lastModifiedDateTime', $value);
-	}
+    public ?Carbon $lastModifiedDateTime {
+        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        get => $this->getAsDateTime('lastModifiedDateTime');
+    }
 
-	public ?ContactInformation\Record $contactInformation {
-		get => $this->get('contactInformation');
-		set => $this->set('contactInformation', $value);
-	}
+    /** @var ?ContactInformation\Record */
+    public ?ContactInformation\Record $contactInformation {
+        get => $this->get('contactInformation');
+    }
 
-	public ?Picture\Record $picture {
-		get => $this->get('picture');
-		set => $this->set('picture', $value);
-	}
+    /** @var ?Picture\Record */
+    public ?Picture\Record $picture {
+        get => $this->get('picture');
+    }
 
     public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-			'contactInformation' => ContactInformation\Record::class,
-			'picture' => Picture\Record::class,
+            'contactInformation' => ContactInformation\Record::class,
+            'picture' => Picture\Record::class,
         ];
     }
 }

@@ -16,7 +16,6 @@ enum Properties
     case discountPercent;
     case taxPercent;
     case expectedReceiptDate;
-
     case purchaseReceipt;
     case dimensionSetLines;
 }

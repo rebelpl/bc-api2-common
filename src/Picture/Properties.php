@@ -9,7 +9,6 @@ enum Properties
     case height;
     case contentType;
     case pictureContent;
-
     case item;
     case customer;
     case contact;

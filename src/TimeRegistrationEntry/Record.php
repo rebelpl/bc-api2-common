@@ -1,100 +1,100 @@
 <?php
 namespace Rebel\BCApi2\Entity\TimeRegistrationEntry;
 
+use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
-use Rebel\BCApi2\Entity\Employee;
 use Rebel\BCApi2\Entity\DimensionSetLine;
+use Rebel\BCApi2\Entity\Employee;
+use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-	public ?string $id {
-		get => $this->get('id');
-		set => $this->set('id', $value);
-	}
+    public ?string $id {
+        get => $this->get('id');
+    }
 
-	public ?string $employeeId {
-		get => $this->get('employeeId');
-		set => $this->set('employeeId', $value);
-	}
+    public ?string $employeeId {
+        set => $this->set('employeeId', $value);
+        get => $this->get('employeeId');
+    }
 
-	public ?string $employeeNumber {
-		get => $this->get('employeeNumber');
-		set => $this->set('employeeNumber', $value);
-	}
+    public ?string $employeeNumber {
+        set => $this->set('employeeNumber', $value);
+        get => $this->get('employeeNumber');
+    }
 
-	public ?string $jobId {
-		get => $this->get('jobId');
-		set => $this->set('jobId', $value);
-	}
+    public ?string $jobId {
+        set => $this->set('jobId', $value);
+        get => $this->get('jobId');
+    }
 
-	public ?string $jobNumber {
-		get => $this->get('jobNumber');
-		set => $this->set('jobNumber', $value);
-	}
+    public ?string $jobNumber {
+        set => $this->set('jobNumber', $value);
+        get => $this->get('jobNumber');
+    }
 
-	public ?string $jobTaskNumber {
-		get => $this->get('jobTaskNumber');
-		set => $this->set('jobTaskNumber', $value);
-	}
+    public ?string $jobTaskNumber {
+        set => $this->set('jobTaskNumber', $value);
+        get => $this->get('jobTaskNumber');
+    }
 
-	public ?string $absence {
-		get => $this->get('absence');
-		set => $this->set('absence', $value);
-	}
+    public ?string $absence {
+        set => $this->set('absence', $value);
+        get => $this->get('absence');
+    }
 
-	public ?int $lineNumber {
-		get => $this->get('lineNumber');
-		set => $this->set('lineNumber', $value);
-	}
+    public ?int $lineNumber {
+        set => $this->set('lineNumber', $value);
+        get => $this->get('lineNumber');
+    }
 
-	public ?\DateTime $date {
-		get => $this->get('date', 'date');
-		set => $this->set('date', $value);
-	}
+    public ?Carbon $date {
+        set => $this->setAsDateTime('date', $value);
+        get => $this->getAsDateTime('date');
+    }
 
-	public ?float $quantity {
-		get => $this->get('quantity');
-		set => $this->set('quantity', $value);
-	}
+    public ?float $quantity {
+        set => $this->set('quantity', $value);
+        get => $this->get('quantity');
+    }
 
-	public ?Enums\EmployeeTimeRegStatus $status {
-		get => $this->get('status', Enums\EmployeeTimeRegStatus::class);
-		set => $this->set('status', $value);
-	}
+    public ?Enums\EmployeeTimeRegStatus $status {
+        set => $this->set('status', $value);
+        get => $this->getAsEnum('status', Enums\EmployeeTimeRegStatus::class);
+    }
 
-	public ?string $unitOfMeasureId {
-		get => $this->get('unitOfMeasureId');
-		set => $this->set('unitOfMeasureId', $value);
-	}
+    public ?string $unitOfMeasureId {
+        set => $this->set('unitOfMeasureId', $value);
+        get => $this->get('unitOfMeasureId');
+    }
 
-	public ?string $unitOfMeasureCode {
-		get => $this->get('unitOfMeasureCode');
-		set => $this->set('unitOfMeasureCode', $value);
-	}
+    public ?string $unitOfMeasureCode {
+        set => $this->set('unitOfMeasureCode', $value);
+        get => $this->get('unitOfMeasureCode');
+    }
 
-	public ?\DateTime $lastModfiedDateTime {
-		get => $this->get('lastModfiedDateTime', 'datetime');
-		set => $this->set('lastModfiedDateTime', $value);
-	}
+    public ?Carbon $lastModfiedDateTime {
+        set => $this->setAsDateTime('lastModfiedDateTime', $value);
+        get => $this->getAsDateTime('lastModfiedDateTime');
+    }
 
-	public ?Employee\Record $employee {
-		get => $this->get('employee');
-		set => $this->set('employee', $value);
-	}
+    /** @var ?Employee\Record */
+    public ?Employee\Record $employee {
+        get => $this->get('employee');
+    }
 
-	/** @var Entity\Collection<DimensionSetLine\Record> */
-	public Entity\Collection $dimensionSetLines {
-		get => $this->get('dimensionSetLines', 'collection');
-	}
+    /** @var ?Entity\Collection<DimensionSetLine\Record> */
+    public ?Entity\Collection $dimensionSetLines {
+        get => $this->get('dimensionSetLines');
+    }
 
     public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-			'employee' => Employee\Record::class,
-			'dimensionSetLines' => DimensionSetLine\Record::class,
+            'employee' => Employee\Record::class,
+            'dimensionSetLines' => DimensionSetLine\Record::class,
         ];
     }
 }

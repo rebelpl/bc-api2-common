@@ -45,7 +45,6 @@ enum Properties
     case lastModifiedDateTime;
     case phoneNumber;
     case email;
-
     case customer;
     case salesShipmentLines;
     case dimensionSetLines;

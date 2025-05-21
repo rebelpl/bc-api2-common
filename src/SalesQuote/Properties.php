@@ -53,7 +53,6 @@ enum Properties
     case lastModifiedDateTime;
     case phoneNumber;
     case email;
-
     case customer;
     case dimensionValue;
     case currency;

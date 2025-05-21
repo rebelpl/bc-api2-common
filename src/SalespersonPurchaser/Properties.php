@@ -14,5 +14,4 @@ enum Properties
     case privacyBlocked;
     case blocked;
     case lastModifiedDateTime;
-
 }

@@ -30,7 +30,6 @@ enum Properties
     case paymentMethodId;
     case blocked;
     case lastModifiedDateTime;
-
     case currency;
     case paymentTerm;
     case shipmentMethod;

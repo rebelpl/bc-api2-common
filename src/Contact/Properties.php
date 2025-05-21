@@ -26,7 +26,6 @@ enum Properties
     case taxRegistrationNumber;
     case lastInteractionDate;
     case lastModifiedDateTime;
-
     case contactInformation;
     case picture;
 }

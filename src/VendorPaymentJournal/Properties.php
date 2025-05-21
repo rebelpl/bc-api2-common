@@ -9,6 +9,5 @@ enum Properties
     case balancingAccountId;
     case balancingAccountNumber;
     case lastModifiedDateTime;
-
     case vendorPayments;
 }

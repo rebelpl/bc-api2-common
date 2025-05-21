@@ -1,70 +1,76 @@
 <?php
 namespace Rebel\BCApi2\Entity\ApplyVendorEntry;
 
+use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-	public ?string $id {
-		get => $this->get('id');
-		set => $this->set('id', $value);
-	}
+    public ?string $id {
+        get => $this->get('id');
+    }
 
-	public ?bool $applied {
-		get => $this->get('applied');
-		set => $this->set('applied', $value);
-	}
+    public ?bool $applied {
+        set => $this->set('applied', $value);
+        get => $this->get('applied');
+    }
 
-	public ?string $appliesToId {
-		get => $this->get('appliesToId');
-		set => $this->set('appliesToId', $value);
-	}
+    public ?string $appliesToId {
+        set => $this->set('appliesToId', $value);
+        get => $this->get('appliesToId');
+    }
 
-	public ?\DateTime $postingDate {
-		get => $this->get('postingDate', 'date');
-		set => $this->set('postingDate', $value);
-	}
+    public ?Carbon $postingDate {
+        set => $this->setAsDateTime('postingDate', $value);
+        get => $this->getAsDateTime('postingDate');
+    }
 
-	public ?Enums\GenJournalDocumentType $documentType {
-		get => $this->get('documentType', Enums\GenJournalDocumentType::class);
-		set => $this->set('documentType', $value);
-	}
+    public ?Enums\GenJournalDocumentType $documentType {
+        set => $this->set('documentType', $value);
+        get => $this->getAsEnum('documentType', Enums\GenJournalDocumentType::class);
+    }
 
-	public ?string $documentNumber {
-		get => $this->get('documentNumber');
-		set => $this->set('documentNumber', $value);
-	}
+    public ?string $documentNumber {
+        set => $this->set('documentNumber', $value);
+        get => $this->get('documentNumber');
+    }
 
-	public ?string $externalDocumentNumber {
-		get => $this->get('externalDocumentNumber');
-		set => $this->set('externalDocumentNumber', $value);
-	}
+    public ?string $externalDocumentNumber {
+        set => $this->set('externalDocumentNumber', $value);
+        get => $this->get('externalDocumentNumber');
+    }
 
-	public ?string $vendorNumber {
-		get => $this->get('vendorNumber');
-		set => $this->set('vendorNumber', $value);
-	}
+    public ?string $vendorNumber {
+        set => $this->set('vendorNumber', $value);
+        get => $this->get('vendorNumber');
+    }
 
-	public ?string $vendorName {
-		get => $this->get('vendorName');
-		set => $this->set('vendorName', $value);
-	}
+    public ?string $vendorName {
+        set => $this->set('vendorName', $value);
+        get => $this->get('vendorName');
+    }
 
-	public ?string $description {
-		get => $this->get('description');
-		set => $this->set('description', $value);
-	}
+    public ?string $description {
+        set => $this->set('description', $value);
+        get => $this->get('description');
+    }
 
-	public ?float $remainingAmount {
-		get => $this->get('remainingAmount');
-		set => $this->set('remainingAmount', $value);
-	}
+    public ?float $remainingAmount {
+        set => $this->set('remainingAmount', $value);
+        get => $this->get('remainingAmount');
+    }
 
-	public ?\DateTime $lastModifiedDateTime {
-		get => $this->get('lastModifiedDateTime', 'datetime');
-		set => $this->set('lastModifiedDateTime', $value);
-	}
+    public ?Carbon $lastModifiedDateTime {
+        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        get => $this->getAsDateTime('lastModifiedDateTime');
+    }
 
+    public function __construct(array $data = [], ?string $context = null)
+    {
+        parent::__construct($data, $context);
 
+        $this->classMap = [
+        ];
+    }
 }

@@ -1,111 +1,112 @@
 <?php
 namespace Rebel\BCApi2\Entity\CustomerPayment;
 
+use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\CustomerPaymentJournal;
 use Rebel\BCApi2\Entity\Customer;
+use Rebel\BCApi2\Entity\CustomerPaymentJournal;
 use Rebel\BCApi2\Entity\DimensionSetLine;
+use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-	public ?string $id {
-		get => $this->get('id');
-		set => $this->set('id', $value);
-	}
+    public ?string $id {
+        get => $this->get('id');
+    }
 
-	public ?string $journalId {
-		get => $this->get('journalId');
-		set => $this->set('journalId', $value);
-	}
+    public ?string $journalId {
+        set => $this->set('journalId', $value);
+        get => $this->get('journalId');
+    }
 
-	public ?string $journalDisplayName {
-		get => $this->get('journalDisplayName');
-		set => $this->set('journalDisplayName', $value);
-	}
+    public ?string $journalDisplayName {
+        set => $this->set('journalDisplayName', $value);
+        get => $this->get('journalDisplayName');
+    }
 
-	public ?int $lineNumber {
-		get => $this->get('lineNumber');
-		set => $this->set('lineNumber', $value);
-	}
+    public ?int $lineNumber {
+        set => $this->set('lineNumber', $value);
+        get => $this->get('lineNumber');
+    }
 
-	public ?string $customerId {
-		get => $this->get('customerId');
-		set => $this->set('customerId', $value);
-	}
+    public ?string $customerId {
+        set => $this->set('customerId', $value);
+        get => $this->get('customerId');
+    }
 
-	public ?string $customerNumber {
-		get => $this->get('customerNumber');
-		set => $this->set('customerNumber', $value);
-	}
+    public ?string $customerNumber {
+        set => $this->set('customerNumber', $value);
+        get => $this->get('customerNumber');
+    }
 
-	public ?\DateTime $postingDate {
-		get => $this->get('postingDate', 'date');
-		set => $this->set('postingDate', $value);
-	}
+    public ?Carbon $postingDate {
+        set => $this->setAsDateTime('postingDate', $value);
+        get => $this->getAsDateTime('postingDate');
+    }
 
-	public ?string $documentNumber {
-		get => $this->get('documentNumber');
-		set => $this->set('documentNumber', $value);
-	}
+    public ?string $documentNumber {
+        set => $this->set('documentNumber', $value);
+        get => $this->get('documentNumber');
+    }
 
-	public ?string $externalDocumentNumber {
-		get => $this->get('externalDocumentNumber');
-		set => $this->set('externalDocumentNumber', $value);
-	}
+    public ?string $externalDocumentNumber {
+        set => $this->set('externalDocumentNumber', $value);
+        get => $this->get('externalDocumentNumber');
+    }
 
-	public ?float $amount {
-		get => $this->get('amount');
-		set => $this->set('amount', $value);
-	}
+    public ?float $amount {
+        set => $this->set('amount', $value);
+        get => $this->get('amount');
+    }
 
-	public ?string $appliesToInvoiceId {
-		get => $this->get('appliesToInvoiceId');
-		set => $this->set('appliesToInvoiceId', $value);
-	}
+    public ?string $appliesToInvoiceId {
+        set => $this->set('appliesToInvoiceId', $value);
+        get => $this->get('appliesToInvoiceId');
+    }
 
-	public ?string $appliesToInvoiceNumber {
-		get => $this->get('appliesToInvoiceNumber');
-		set => $this->set('appliesToInvoiceNumber', $value);
-	}
+    public ?string $appliesToInvoiceNumber {
+        set => $this->set('appliesToInvoiceNumber', $value);
+        get => $this->get('appliesToInvoiceNumber');
+    }
 
-	public ?string $description {
-		get => $this->get('description');
-		set => $this->set('description', $value);
-	}
+    public ?string $description {
+        set => $this->set('description', $value);
+        get => $this->get('description');
+    }
 
-	public ?string $comment {
-		get => $this->get('comment');
-		set => $this->set('comment', $value);
-	}
+    public ?string $comment {
+        set => $this->set('comment', $value);
+        get => $this->get('comment');
+    }
 
-	public ?\DateTime $lastModifiedDateTime {
-		get => $this->get('lastModifiedDateTime', 'datetime');
-		set => $this->set('lastModifiedDateTime', $value);
-	}
+    public ?Carbon $lastModifiedDateTime {
+        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        get => $this->getAsDateTime('lastModifiedDateTime');
+    }
 
-	public ?CustomerPaymentJournal\Record $customerPaymentJournal {
-		get => $this->get('customerPaymentJournal');
-		set => $this->set('customerPaymentJournal', $value);
-	}
+    /** @var ?CustomerPaymentJournal\Record */
+    public ?CustomerPaymentJournal\Record $customerPaymentJournal {
+        get => $this->get('customerPaymentJournal');
+    }
 
-	public ?Customer\Record $customer {
-		get => $this->get('customer');
-		set => $this->set('customer', $value);
-	}
+    /** @var ?Customer\Record */
+    public ?Customer\Record $customer {
+        get => $this->get('customer');
+    }
 
-	/** @var Entity\Collection<DimensionSetLine\Record> */
-	public Entity\Collection $dimensionSetLines {
-		get => $this->get('dimensionSetLines', 'collection');
-	}
+    /** @var ?Entity\Collection<DimensionSetLine\Record> */
+    public ?Entity\Collection $dimensionSetLines {
+        get => $this->get('dimensionSetLines');
+    }
 
     public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-			'customerPaymentJournal' => CustomerPaymentJournal\Record::class,
-			'customer' => Customer\Record::class,
-			'dimensionSetLines' => DimensionSetLine\Record::class,
+            'customerPaymentJournal' => CustomerPaymentJournal\Record::class,
+            'customer' => Customer\Record::class,
+            'dimensionSetLines' => DimensionSetLine\Record::class,
         ];
     }
 }

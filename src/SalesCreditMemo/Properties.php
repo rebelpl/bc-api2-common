@@ -47,7 +47,6 @@ enum Properties
     case phoneNumber;
     case email;
     case customerReturnReasonId;
-
     case customer;
     case dimensionValue;
     case currency;

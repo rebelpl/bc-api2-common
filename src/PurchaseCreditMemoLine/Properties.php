@@ -29,7 +29,6 @@ enum Properties
     case netAmountIncludingTax;
     case itemVariantId;
     case locationId;
-
     case purchaseCreditMemo;
     case item;
     case account;

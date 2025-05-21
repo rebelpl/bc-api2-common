@@ -22,5 +22,4 @@ enum Properties
     case picture;
     case experience;
     case lastModifiedDateTime;
-
 }

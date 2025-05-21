@@ -13,5 +13,4 @@ enum Properties
     case currencyId;
     case iban;
     case intercompanyEnabled;
-
 }

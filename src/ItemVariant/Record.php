@@ -1,52 +1,53 @@
 <?php
 namespace Rebel\BCApi2\Entity\ItemVariant;
 
+use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
+use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\Item;
 
 class Record extends Entity
 {
-	public ?string $id {
-		get => $this->get('id');
-		set => $this->set('id', $value);
-	}
+    public ?string $id {
+        get => $this->get('id');
+    }
 
-	public ?string $itemId {
-		get => $this->get('itemId');
-		set => $this->set('itemId', $value);
-	}
+    public ?string $itemId {
+        set => $this->set('itemId', $value);
+        get => $this->get('itemId');
+    }
 
-	public ?string $itemNumber {
-		get => $this->get('itemNumber');
-		set => $this->set('itemNumber', $value);
-	}
+    public ?string $itemNumber {
+        set => $this->set('itemNumber', $value);
+        get => $this->get('itemNumber');
+    }
 
-	public ?string $code {
-		get => $this->get('code');
-		set => $this->set('code', $value);
-	}
+    public ?string $code {
+        set => $this->set('code', $value);
+        get => $this->get('code');
+    }
 
-	public ?string $description {
-		get => $this->get('description');
-		set => $this->set('description', $value);
-	}
+    public ?string $description {
+        set => $this->set('description', $value);
+        get => $this->get('description');
+    }
 
-	public ?\DateTime $lastModifiedDateTime {
-		get => $this->get('lastModifiedDateTime', 'datetime');
-		set => $this->set('lastModifiedDateTime', $value);
-	}
+    public ?Carbon $lastModifiedDateTime {
+        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        get => $this->getAsDateTime('lastModifiedDateTime');
+    }
 
-	public ?Item\Record $item {
-		get => $this->get('item');
-		set => $this->set('item', $value);
-	}
+    /** @var ?Item\Record */
+    public ?Item\Record $item {
+        get => $this->get('item');
+    }
 
     public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-			'item' => Item\Record::class,
+            'item' => Item\Record::class,
         ];
     }
 }

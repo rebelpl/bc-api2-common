@@ -1,33 +1,41 @@
 <?php
 namespace Rebel\BCApi2\Entity\GeneralProductPostingGroup;
 
+use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
+use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-	public ?string $id {
-		get => $this->get('id');
-	}
+    public ?string $id {
+        get => $this->get('id');
+    }
 
-	public ?string $code {
-		get => $this->get('code');
-	}
+    public ?string $code {
+        get => $this->get('code');
+    }
 
-	public ?string $description {
-		get => $this->get('description');
-	}
+    public ?string $description {
+        get => $this->get('description');
+    }
 
-	public ?string $defaultVATProductPostingGroup {
-		get => $this->get('defaultVATProductPostingGroup');
-	}
+    public ?string $defaultVATProductPostingGroup {
+        get => $this->get('defaultVATProductPostingGroup');
+    }
 
-	public ?bool $autoInsertDefault {
-		get => $this->get('autoInsertDefault');
-	}
+    public ?bool $autoInsertDefault {
+        get => $this->get('autoInsertDefault');
+    }
 
-	public ?\DateTime $lastModifiedDateTime {
-		get => $this->get('lastModifiedDateTime', 'datetime');
-	}
+    public ?Carbon $lastModifiedDateTime {
+        get => $this->getAsDateTime('lastModifiedDateTime');
+    }
 
+    public function __construct(array $data = [], ?string $context = null)
+    {
+        parent::__construct($data, $context);
 
+        $this->classMap = [
+        ];
+    }
 }

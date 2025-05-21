@@ -19,5 +19,4 @@ enum Properties
     case shortcutDimension6Code;
     case shortcutDimension7Code;
     case shortcutDimension8Code;
-
 }

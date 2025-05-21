@@ -11,6 +11,5 @@ enum Properties
     case customerId;
     case customerName;
     case primaryPhoneNumber;
-
     case pdfDocument;
 }

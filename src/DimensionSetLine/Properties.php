@@ -13,7 +13,6 @@ enum Properties
     case valueCode;
     case valueConsolidationCode;
     case valueDisplayName;
-
     case salesInvoice;
     case salesInvoiceLine;
     case customerPayment;

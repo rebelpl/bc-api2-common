@@ -17,7 +17,6 @@ enum Properties
     case discountPercent;
     case taxPercent;
     case shipmentDate;
-
     case salesShipment;
     case dimensionSetLines;
 }

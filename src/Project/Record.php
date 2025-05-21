@@ -1,42 +1,43 @@
 <?php
 namespace Rebel\BCApi2\Entity\Project;
 
+use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\DocumentAttachment;
+use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-	public ?string $id {
-		get => $this->get('id');
-		set => $this->set('id', $value);
-	}
+    public ?string $id {
+        get => $this->get('id');
+    }
 
-	public ?string $number {
-		get => $this->get('number');
-		set => $this->set('number', $value);
-	}
+    public ?string $number {
+        set => $this->set('number', $value);
+        get => $this->get('number');
+    }
 
-	public ?string $displayName {
-		get => $this->get('displayName');
-		set => $this->set('displayName', $value);
-	}
+    public ?string $displayName {
+        set => $this->set('displayName', $value);
+        get => $this->get('displayName');
+    }
 
-	public ?\DateTime $lastModifiedDateTime {
-		get => $this->get('lastModifiedDateTime', 'datetime');
-		set => $this->set('lastModifiedDateTime', $value);
-	}
+    public ?Carbon $lastModifiedDateTime {
+        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        get => $this->getAsDateTime('lastModifiedDateTime');
+    }
 
-	/** @var Entity\Collection<DocumentAttachment\Record> */
-	public Entity\Collection $documentAttachments {
-		get => $this->get('documentAttachments', 'collection');
-	}
+    /** @var ?Entity\Collection<DocumentAttachment\Record> */
+    public ?Entity\Collection $documentAttachments {
+        get => $this->get('documentAttachments');
+    }
 
     public function __construct(array $data = [], ?string $context = null)
     {
         parent::__construct($data, $context);
 
         $this->classMap = [
-			'documentAttachments' => DocumentAttachment\Record::class,
+            'documentAttachments' => DocumentAttachment\Record::class,
         ];
     }
 }

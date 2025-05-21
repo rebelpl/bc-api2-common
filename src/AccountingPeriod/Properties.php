@@ -10,5 +10,4 @@ enum Properties
     case closed;
     case dateLocked;
     case lastModifiedDateTime;
-
 }
