@@ -8,6 +8,6 @@ readonly class Repository extends EntityRepository
 {
     public function __construct(Client $client)
     {
-        parent::__construct($client, 'taxAreas', 'v2.0', Record::class);
+        parent::__construct($client, entitySetName: 'taxAreas', entityClass: Record::class);
     }
 }
