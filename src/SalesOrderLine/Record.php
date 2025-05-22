@@ -88,53 +88,54 @@ class Record extends Entity
         get => $this->get('discountPercent');
     }
 
+    /* read-only property */
     public ?bool $discountAppliedBeforeTax {
-        set => $this->set('discountAppliedBeforeTax', $value);
         get => $this->get('discountAppliedBeforeTax');
     }
 
+    /* read-only property */
     public ?float $amountExcludingTax {
-        set => $this->set('amountExcludingTax', $value);
         get => $this->get('amountExcludingTax');
     }
 
+    /* when inserted: VAT Prod. Posting Group */
     public ?string $taxCode {
         set => $this->set('taxCode', $value);
         get => $this->get('taxCode');
     }
 
+    /* read-only property */
     public ?float $taxPercent {
-        set => $this->set('taxPercent', $value);
         get => $this->get('taxPercent');
     }
 
+    /* read-only property */
     public ?float $totalTaxAmount {
-        set => $this->set('totalTaxAmount', $value);
         get => $this->get('totalTaxAmount');
     }
 
+    /* read-only property */
     public ?float $amountIncludingTax {
-        set => $this->set('amountIncludingTax', $value);
         get => $this->get('amountIncludingTax');
     }
 
+    /* read-only property */
     public ?float $invoiceDiscountAllocation {
-        set => $this->set('invoiceDiscountAllocation', $value);
         get => $this->get('invoiceDiscountAllocation');
     }
 
+    /* read-only property */
     public ?float $netAmount {
-        set => $this->set('netAmount', $value);
         get => $this->get('netAmount');
     }
 
+    /* read-only property */
     public ?float $netTaxAmount {
-        set => $this->set('netTaxAmount', $value);
         get => $this->get('netTaxAmount');
     }
 
+    /* read-only property */
     public ?float $netAmountIncludingTax {
-        set => $this->set('netAmountIncludingTax', $value);
         get => $this->get('netAmountIncludingTax');
     }
 
@@ -143,13 +144,13 @@ class Record extends Entity
         get => $this->getAsDateTime('shipmentDate');
     }
 
+    /* read-only property */
     public ?float $shippedQuantity {
-        set => $this->set('shippedQuantity', $value);
         get => $this->get('shippedQuantity');
     }
 
+    /* read-only property */
     public ?float $invoicedQuantity {
-        set => $this->set('invoicedQuantity', $value);
         get => $this->get('invoicedQuantity');
     }
 

@@ -50,13 +50,13 @@ class Record extends Entity
         get => $this->get('customerNumber');
     }
 
+    /* read-only property */
     public ?string $customerName {
-        set => $this->set('customerName', $value);
         get => $this->get('customerName');
     }
 
+    /* read-only property */
     public ?string $billToName {
-        set => $this->set('billToName', $value);
         get => $this->get('billToName');
     }
 
@@ -110,33 +110,33 @@ class Record extends Entity
         get => $this->get('sellToPostCode');
     }
 
+    /* read-only property */
     public ?string $billToAddressLine1 {
-        set => $this->set('billToAddressLine1', $value);
         get => $this->get('billToAddressLine1');
     }
 
+    /* read-only property */
     public ?string $billToAddressLine2 {
-        set => $this->set('billToAddressLine2', $value);
         get => $this->get('billToAddressLine2');
     }
 
+    /* read-only property */
     public ?string $billToCity {
-        set => $this->set('billToCity', $value);
         get => $this->get('billToCity');
     }
 
+    /* read-only property */
     public ?string $billToCountry {
-        set => $this->set('billToCountry', $value);
         get => $this->get('billToCountry');
     }
 
+    /* read-only property */
     public ?string $billToState {
-        set => $this->set('billToState', $value);
         get => $this->get('billToState');
     }
 
+    /* read-only property */
     public ?string $billToPostCode {
-        set => $this->set('billToPostCode', $value);
         get => $this->get('billToPostCode');
     }
 
@@ -225,38 +225,38 @@ class Record extends Entity
         get => $this->get('discountAmount');
     }
 
+    /* read-only property */
     public ?bool $discountAppliedBeforeTax {
-        set => $this->set('discountAppliedBeforeTax', $value);
         get => $this->get('discountAppliedBeforeTax');
     }
 
+    /* read-only property */
     public ?float $totalAmountExcludingTax {
-        set => $this->set('totalAmountExcludingTax', $value);
         get => $this->get('totalAmountExcludingTax');
     }
 
+    /* read-only property */
     public ?float $totalTaxAmount {
-        set => $this->set('totalTaxAmount', $value);
         get => $this->get('totalTaxAmount');
     }
 
+    /* read-only property */
     public ?float $totalAmountIncludingTax {
-        set => $this->set('totalAmountIncludingTax', $value);
         get => $this->get('totalAmountIncludingTax');
     }
 
+    /* read-only property */
     public ?bool $fullyShipped {
-        set => $this->set('fullyShipped', $value);
         get => $this->get('fullyShipped');
     }
 
+    /* read-only property */
     public ?Enums\SalesOrderEntityBufferStatus $status {
-        set => $this->set('status', $value);
         get => $this->getAsEnum('status', Enums\SalesOrderEntityBufferStatus::class);
     }
 
+    /* read-only property */
     public ?Carbon $lastModifiedDateTime {
-        set => $this->setAsDateTime('lastModifiedDateTime', $value);
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
