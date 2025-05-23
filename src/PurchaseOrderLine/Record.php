@@ -19,207 +19,197 @@ class Record extends Entity
     }
 
     public ?string $documentId {
-        set => $this->set('documentId', $value);
+        set { $this->set('documentId', $value); }
         get => $this->get('documentId');
     }
 
     public ?int $sequence {
-        set => $this->set('sequence', $value);
+        set { $this->set('sequence', $value); }
         get => $this->get('sequence');
     }
 
     public ?string $itemId {
-        set => $this->set('itemId', $value);
+        set { $this->set('itemId', $value); }
         get => $this->get('itemId');
     }
 
     public ?string $accountId {
-        set => $this->set('accountId', $value);
+        set { $this->set('accountId', $value); }
         get => $this->get('accountId');
     }
 
     public ?Enums\InvoiceLineAggLineType $lineType {
-        set => $this->set('lineType', $value);
+        set { $this->set('lineType', $value); }
         get => $this->getAsEnum('lineType', Enums\InvoiceLineAggLineType::class);
     }
 
     public ?string $lineObjectNumber {
-        set => $this->set('lineObjectNumber', $value);
+        set { $this->set('lineObjectNumber', $value); }
         get => $this->get('lineObjectNumber');
     }
 
     public ?string $description {
-        set => $this->set('description', $value);
+        set { $this->set('description', $value); }
         get => $this->get('description');
     }
 
     public ?string $description2 {
-        set => $this->set('description2', $value);
+        set { $this->set('description2', $value); }
         get => $this->get('description2');
     }
 
     public ?string $unitOfMeasureId {
-        set => $this->set('unitOfMeasureId', $value);
+        set { $this->set('unitOfMeasureId', $value); }
         get => $this->get('unitOfMeasureId');
     }
 
     public ?string $unitOfMeasureCode {
-        set => $this->set('unitOfMeasureCode', $value);
+        set { $this->set('unitOfMeasureCode', $value); }
         get => $this->get('unitOfMeasureCode');
     }
 
     public ?float $quantity {
-        set => $this->set('quantity', $value);
+        set { $this->set('quantity', $value); }
         get => $this->get('quantity');
     }
 
     public ?float $directUnitCost {
-        set => $this->set('directUnitCost', $value);
+        set { $this->set('directUnitCost', $value); }
         get => $this->get('directUnitCost');
     }
 
     public ?float $discountAmount {
-        set => $this->set('discountAmount', $value);
+        set { $this->set('discountAmount', $value); }
         get => $this->get('discountAmount');
     }
 
     public ?float $discountPercent {
-        set => $this->set('discountPercent', $value);
+        set { $this->set('discountPercent', $value); }
         get => $this->get('discountPercent');
     }
 
     public ?bool $discountAppliedBeforeTax {
-        set => $this->set('discountAppliedBeforeTax', $value);
+        set { $this->set('discountAppliedBeforeTax', $value); }
         get => $this->get('discountAppliedBeforeTax');
     }
 
     public ?float $amountExcludingTax {
-        set => $this->set('amountExcludingTax', $value);
+        set { $this->set('amountExcludingTax', $value); }
         get => $this->get('amountExcludingTax');
     }
 
     public ?string $taxCode {
-        set => $this->set('taxCode', $value);
+        set { $this->set('taxCode', $value); }
         get => $this->get('taxCode');
     }
 
     public ?float $taxPercent {
-        set => $this->set('taxPercent', $value);
+        set { $this->set('taxPercent', $value); }
         get => $this->get('taxPercent');
     }
 
     public ?float $totalTaxAmount {
-        set => $this->set('totalTaxAmount', $value);
+        set { $this->set('totalTaxAmount', $value); }
         get => $this->get('totalTaxAmount');
     }
 
     public ?float $amountIncludingTax {
-        set => $this->set('amountIncludingTax', $value);
+        set { $this->set('amountIncludingTax', $value); }
         get => $this->get('amountIncludingTax');
     }
 
     public ?float $invoiceDiscountAllocation {
-        set => $this->set('invoiceDiscountAllocation', $value);
+        set { $this->set('invoiceDiscountAllocation', $value); }
         get => $this->get('invoiceDiscountAllocation');
     }
 
     public ?float $netAmount {
-        set => $this->set('netAmount', $value);
+        set { $this->set('netAmount', $value); }
         get => $this->get('netAmount');
     }
 
     public ?float $netTaxAmount {
-        set => $this->set('netTaxAmount', $value);
+        set { $this->set('netTaxAmount', $value); }
         get => $this->get('netTaxAmount');
     }
 
     public ?float $netAmountIncludingTax {
-        set => $this->set('netAmountIncludingTax', $value);
+        set { $this->set('netAmountIncludingTax', $value); }
         get => $this->get('netAmountIncludingTax');
     }
 
     public ?Carbon $expectedReceiptDate {
-        set => $this->setAsDateTime('expectedReceiptDate', $value);
+        set {
+            $this->setAsDateTime('expectedReceiptDate', $value); }
         get => $this->getAsDateTime('expectedReceiptDate');
     }
 
     public ?float $receivedQuantity {
-        set => $this->set('receivedQuantity', $value);
+        set { $this->set('receivedQuantity', $value); }
         get => $this->get('receivedQuantity');
     }
 
     public ?float $invoicedQuantity {
-        set => $this->set('invoicedQuantity', $value);
+        set { $this->set('invoicedQuantity', $value); }
         get => $this->get('invoicedQuantity');
     }
 
     public ?float $invoiceQuantity {
-        set => $this->set('invoiceQuantity', $value);
+        set { $this->set('invoiceQuantity', $value); }
         get => $this->get('invoiceQuantity');
     }
 
     public ?float $receiveQuantity {
-        set => $this->set('receiveQuantity', $value);
+        set { $this->set('receiveQuantity', $value); }
         get => $this->get('receiveQuantity');
     }
 
     public ?string $itemVariantId {
-        set => $this->set('itemVariantId', $value);
+        set { $this->set('itemVariantId', $value); }
         get => $this->get('itemVariantId');
     }
 
     public ?string $locationId {
-        set => $this->set('locationId', $value);
+        set { $this->set('locationId', $value); }
         get => $this->get('locationId');
     }
 
-    /** @var ?PurchaseOrder\Record */
     public ?PurchaseOrder\Record $purchaseOrder {
         get => $this->get('purchaseOrder');
     }
 
-    /** @var ?Item\Record */
     public ?Item\Record $item {
         get => $this->get('item');
     }
 
-    /** @var ?Account\Record */
     public ?Account\Record $account {
         get => $this->get('account');
     }
 
-    /** @var ?UnitOfMeasure\Record */
     public ?UnitOfMeasure\Record $unitOfMeasure {
         get => $this->get('unitOfMeasure');
     }
 
-    /** @var ?ItemVariant\Record */
     public ?ItemVariant\Record $itemVariant {
         get => $this->get('itemVariant');
     }
 
     /** @var ?Entity\Collection<DimensionSetLine\Record> */
     public ?Entity\Collection $dimensionSetLines {
-        get => $this->get('dimensionSetLines');
+        get => $this->get('dimensionSetLines', 'collection');
     }
 
-    /** @var ?Location\Record */
     public ?Location\Record $location {
         get => $this->get('location');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'purchaseOrder' => PurchaseOrder\Record::class,
-            'item' => Item\Record::class,
-            'account' => Account\Record::class,
-            'unitOfMeasure' => UnitOfMeasure\Record::class,
-            'itemVariant' => ItemVariant\Record::class,
-            'dimensionSetLines' => DimensionSetLine\Record::class,
-            'location' => Location\Record::class,
-        ];
-    }
+    protected array $classMap = [
+        'purchaseOrder' => PurchaseOrder\Record::class,
+        'item' => Item\Record::class,
+        'account' => Account\Record::class,
+        'unitOfMeasure' => UnitOfMeasure\Record::class,
+        'itemVariant' => ItemVariant\Record::class,
+        'dimensionSetLines' => DimensionSetLine\Record::class,
+        'location' => Location\Record::class,
+    ];
 }

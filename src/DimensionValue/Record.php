@@ -32,17 +32,9 @@ class Record extends Entity
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    /** @var ?Dimension\Record */
     public ?Dimension\Record $dimension {
         get => $this->get('dimension');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'dimension' => Dimension\Record::class,
-        ];
-    }
+    protected array $classMap = ['dimension' => Dimension\Record::class];
 }

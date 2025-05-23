@@ -30,12 +30,4 @@ class Record extends Entity
     public ?int $indentation {
         get => $this->get('indentation');
     }
-
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-        ];
-    }
 }

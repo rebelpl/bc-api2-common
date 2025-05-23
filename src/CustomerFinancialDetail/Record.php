@@ -32,17 +32,9 @@ class Record extends Entity
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    /** @var ?Customer\Record */
     public ?Customer\Record $customer {
         get => $this->get('customer');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'customer' => Customer\Record::class,
-        ];
-    }
+    protected array $classMap = ['customer' => Customer\Record::class];
 }

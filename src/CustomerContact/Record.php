@@ -13,51 +13,43 @@ class Record extends Entity
     }
 
     public ?string $email {
-        set => $this->set('email', $value);
+        set { $this->set('email', $value); }
         get => $this->get('email');
     }
 
     public ?string $firstName {
-        set => $this->set('firstName', $value);
+        set { $this->set('firstName', $value); }
         get => $this->get('firstName');
     }
 
     public ?string $lastName {
-        set => $this->set('lastName', $value);
+        set { $this->set('lastName', $value); }
         get => $this->get('lastName');
     }
 
     public ?string $professionalTitle {
-        set => $this->set('professionalTitle', $value);
+        set { $this->set('professionalTitle', $value); }
         get => $this->get('professionalTitle');
     }
 
     public ?string $customerId {
-        set => $this->set('customerId', $value);
+        set { $this->set('customerId', $value); }
         get => $this->get('customerId');
     }
 
     public ?string $customerName {
-        set => $this->set('customerName', $value);
+        set { $this->set('customerName', $value); }
         get => $this->get('customerName');
     }
 
     public ?string $primaryPhoneNumber {
-        set => $this->set('primaryPhoneNumber', $value);
+        set { $this->set('primaryPhoneNumber', $value); }
         get => $this->get('primaryPhoneNumber');
     }
 
-    /** @var ?PdfDocument\Record */
     public ?PdfDocument\Record $pdfDocument {
         get => $this->get('pdfDocument');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'pdfDocument' => PdfDocument\Record::class,
-        ];
-    }
+    protected array $classMap = ['pdfDocument' => PdfDocument\Record::class];
 }

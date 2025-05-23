@@ -12,40 +12,33 @@ class Record extends Entity
     }
 
     public ?string $code {
-        set => $this->set('code', $value);
+        set { $this->set('code', $value); }
         get => $this->get('code');
     }
 
     public ?string $displayName {
-        set => $this->set('displayName', $value);
+        set { $this->set('displayName', $value); }
         get => $this->get('displayName');
     }
 
     public ?string $symbol {
-        set => $this->set('symbol', $value);
+        set { $this->set('symbol', $value); }
         get => $this->get('symbol');
     }
 
     public ?string $amountDecimalPlaces {
-        set => $this->set('amountDecimalPlaces', $value);
+        set { $this->set('amountDecimalPlaces', $value); }
         get => $this->get('amountDecimalPlaces');
     }
 
     public ?float $amountRoundingPrecision {
-        set => $this->set('amountRoundingPrecision', $value);
+        set { $this->set('amountRoundingPrecision', $value); }
         get => $this->get('amountRoundingPrecision');
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        set {
+            $this->setAsDateTime('lastModifiedDateTime', $value); }
         get => $this->getAsDateTime('lastModifiedDateTime');
-    }
-
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-        ];
     }
 }

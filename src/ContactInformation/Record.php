@@ -34,29 +34,21 @@ class Record extends Entity
         get => $this->getAsEnum('relatedType', Enums\ContactBusinessRelationLinkToTable::class);
     }
 
-    /** @var ?Customer\Record */
     public ?Customer\Record $customer {
         get => $this->get('customer');
     }
 
-    /** @var ?Contact\Record */
     public ?Contact\Record $contact {
         get => $this->get('contact');
     }
 
-    /** @var ?Vendor\Record */
     public ?Vendor\Record $vendor {
         get => $this->get('vendor');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'customer' => Customer\Record::class,
-            'contact' => Contact\Record::class,
-            'vendor' => Vendor\Record::class,
-        ];
-    }
+    protected array $classMap = [
+        'customer' => Customer\Record::class,
+        'contact' => Contact\Record::class,
+        'vendor' => Vendor\Record::class,
+    ];
 }

@@ -64,17 +64,9 @@ class Record extends Entity
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    /** @var ?TrialBalance\Record */
     public ?TrialBalance\Record $trialBalance {
         get => $this->get('trialBalance');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'trialBalance' => TrialBalance\Record::class,
-        ];
-    }
+    protected array $classMap = ['trialBalance' => TrialBalance\Record::class];
 }

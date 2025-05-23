@@ -143,21 +143,16 @@ class Record extends Entity
 
     /** @var ?Entity\Collection<PurchaseReceiptLine\Record> */
     public ?Entity\Collection $purchaseReceiptLines {
-        get => $this->get('purchaseReceiptLines');
+        get => $this->get('purchaseReceiptLines', 'collection');
     }
 
     /** @var ?Entity\Collection<DimensionSetLine\Record> */
     public ?Entity\Collection $dimensionSetLines {
-        get => $this->get('dimensionSetLines');
+        get => $this->get('dimensionSetLines', 'collection');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'purchaseReceiptLines' => PurchaseReceiptLine\Record::class,
-            'dimensionSetLines' => DimensionSetLine\Record::class,
-        ];
-    }
+    protected array $classMap = [
+        'purchaseReceiptLines' => PurchaseReceiptLine\Record::class,
+        'dimensionSetLines' => DimensionSetLine\Record::class,
+    ];
 }

@@ -62,29 +62,23 @@ class Record extends Entity
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    /** @var ?Account\Record */
     public ?Account\Record $account {
         get => $this->get('account');
     }
 
     /** @var ?Entity\Collection<Attachment\Record> */
     public ?Entity\Collection $attachments {
-        get => $this->get('attachments');
+        get => $this->get('attachments', 'collection');
     }
 
     /** @var ?Entity\Collection<DimensionSetLine\Record> */
     public ?Entity\Collection $dimensionSetLines {
-        get => $this->get('dimensionSetLines');
+        get => $this->get('dimensionSetLines', 'collection');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'account' => Account\Record::class,
-            'attachments' => Attachment\Record::class,
-            'dimensionSetLines' => DimensionSetLine\Record::class,
-        ];
-    }
+    protected array $classMap = [
+        'account' => Account\Record::class,
+        'attachments' => Attachment\Record::class,
+        'dimensionSetLines' => DimensionSetLine\Record::class,
+    ];
 }

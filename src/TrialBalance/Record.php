@@ -40,17 +40,9 @@ class Record extends Entity
         get => $this->get('balanceAtDateCredit');
     }
 
-    /** @var ?Account\Record */
     public ?Account\Record $account {
         get => $this->get('account');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'account' => Account\Record::class,
-        ];
-    }
+    protected array $classMap = ['account' => Account\Record::class];
 }

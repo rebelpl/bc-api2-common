@@ -34,12 +34,4 @@ class Record extends Entity
     public ?Carbon $lastModifiedDateTime {
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
-
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-        ];
-    }
 }

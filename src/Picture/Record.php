@@ -17,65 +17,55 @@ class Record extends Entity
     }
 
     public ?Enums\PictureEntityParentType $parentType {
-        set => $this->set('parentType', $value);
+        set { $this->set('parentType', $value); }
         get => $this->getAsEnum('parentType', Enums\PictureEntityParentType::class);
     }
 
     public ?int $width {
-        set => $this->set('width', $value);
+        set { $this->set('width', $value); }
         get => $this->get('width');
     }
 
     public ?int $height {
-        set => $this->set('height', $value);
+        set { $this->set('height', $value); }
         get => $this->get('height');
     }
 
     public ?string $contentType {
-        set => $this->set('contentType', $value);
+        set { $this->set('contentType', $value); }
         get => $this->get('contentType');
     }
 
     public ?string $pictureContent {
-        set => $this->set('pictureContent', $value);
+        set { $this->set('pictureContent', $value); }
         get => $this->get('pictureContent');
     }
 
-    /** @var ?Item\Record */
     public ?Item\Record $item {
         get => $this->get('item');
     }
 
-    /** @var ?Customer\Record */
     public ?Customer\Record $customer {
         get => $this->get('customer');
     }
 
-    /** @var ?Contact\Record */
     public ?Contact\Record $contact {
         get => $this->get('contact');
     }
 
-    /** @var ?Vendor\Record */
     public ?Vendor\Record $vendor {
         get => $this->get('vendor');
     }
 
-    /** @var ?Employee\Record */
     public ?Employee\Record $employee {
         get => $this->get('employee');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'item' => Item\Record::class,
-            'customer' => Customer\Record::class,
-            'contact' => Contact\Record::class,
-            'vendor' => Vendor\Record::class,
-            'employee' => Employee\Record::class,
-        ];
-    }
+    protected array $classMap = [
+        'item' => Item\Record::class,
+        'customer' => Customer\Record::class,
+        'contact' => Contact\Record::class,
+        'vendor' => Vendor\Record::class,
+        'employee' => Employee\Record::class,
+    ];
 }

@@ -48,17 +48,9 @@ class Record extends Entity
         get => $this->getAsDateTime('agedAsOfDate');
     }
 
-    /** @var ?Vendor\Record */
     public ?Vendor\Record $vendor {
         get => $this->get('vendor');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'vendor' => Vendor\Record::class,
-        ];
-    }
+    protected array $classMap = ['vendor' => Vendor\Record::class];
 }

@@ -14,82 +14,76 @@ class Record extends Entity
     }
 
     public ?string $number {
-        set => $this->set('number', $value);
+        set { $this->set('number', $value); }
         get => $this->get('number');
     }
 
     public ?string $displayName {
-        set => $this->set('displayName', $value);
+        set { $this->set('displayName', $value); }
         get => $this->get('displayName');
     }
 
     public ?string $fixedAssetLocationCode {
-        set => $this->set('fixedAssetLocationCode', $value);
+        set { $this->set('fixedAssetLocationCode', $value); }
         get => $this->get('fixedAssetLocationCode');
     }
 
     public ?string $fixedAssetLocationId {
-        set => $this->set('fixedAssetLocationId', $value);
+        set { $this->set('fixedAssetLocationId', $value); }
         get => $this->get('fixedAssetLocationId');
     }
 
     public ?string $classCode {
-        set => $this->set('classCode', $value);
+        set { $this->set('classCode', $value); }
         get => $this->get('classCode');
     }
 
     public ?string $subclassCode {
-        set => $this->set('subclassCode', $value);
+        set { $this->set('subclassCode', $value); }
         get => $this->get('subclassCode');
     }
 
     public ?bool $blocked {
-        set => $this->set('blocked', $value);
+        set { $this->set('blocked', $value); }
         get => $this->get('blocked');
     }
 
     public ?string $serialNumber {
-        set => $this->set('serialNumber', $value);
+        set { $this->set('serialNumber', $value); }
         get => $this->get('serialNumber');
     }
 
     public ?string $employeeNumber {
-        set => $this->set('employeeNumber', $value);
+        set { $this->set('employeeNumber', $value); }
         get => $this->get('employeeNumber');
     }
 
     public ?string $employeeId {
-        set => $this->set('employeeId', $value);
+        set { $this->set('employeeId', $value); }
         get => $this->get('employeeId');
     }
 
     public ?bool $underMaintenance {
-        set => $this->set('underMaintenance', $value);
+        set { $this->set('underMaintenance', $value); }
         get => $this->get('underMaintenance');
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        set {
+            $this->setAsDateTime('lastModifiedDateTime', $value); }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    /** @var ?FixedAssetLocation\Record */
     public ?FixedAssetLocation\Record $fixedAssetLocation {
         get => $this->get('fixedAssetLocation');
     }
 
-    /** @var ?Employee\Record */
     public ?Employee\Record $employee {
         get => $this->get('employee');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'fixedAssetLocation' => FixedAssetLocation\Record::class,
-            'employee' => Employee\Record::class,
-        ];
-    }
+    protected array $classMap = [
+        'fixedAssetLocation' => FixedAssetLocation\Record::class,
+        'employee' => Employee\Record::class,
+    ];
 }

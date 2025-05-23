@@ -30,15 +30,8 @@ class Record extends Entity
 
     /** @var ?Entity\Collection<DimensionValue\Record> */
     public ?Entity\Collection $dimensionValues {
-        get => $this->get('dimensionValues');
+        get => $this->get('dimensionValues', 'collection');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'dimensionValues' => DimensionValue\Record::class,
-        ];
-    }
+    protected array $classMap = ['dimensionValues' => DimensionValue\Record::class];
 }

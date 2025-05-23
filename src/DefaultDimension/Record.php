@@ -19,92 +19,81 @@ class Record extends Entity
     }
 
     public ?Enums\DefaultDimensionParentType $parentType {
-        set => $this->set('parentType', $value);
+        set { $this->set('parentType', $value); }
         get => $this->getAsEnum('parentType', Enums\DefaultDimensionParentType::class);
     }
 
     public ?string $parentId {
-        set => $this->set('parentId', $value);
+        set { $this->set('parentId', $value); }
         get => $this->get('parentId');
     }
 
     public ?string $dimensionId {
-        set => $this->set('dimensionId', $value);
+        set { $this->set('dimensionId', $value); }
         get => $this->get('dimensionId');
     }
 
     public ?string $dimensionCode {
-        set => $this->set('dimensionCode', $value);
+        set { $this->set('dimensionCode', $value); }
         get => $this->get('dimensionCode');
     }
 
     public ?string $dimensionValueId {
-        set => $this->set('dimensionValueId', $value);
+        set { $this->set('dimensionValueId', $value); }
         get => $this->get('dimensionValueId');
     }
 
     public ?string $dimensionValueCode {
-        set => $this->set('dimensionValueCode', $value);
+        set { $this->set('dimensionValueCode', $value); }
         get => $this->get('dimensionValueCode');
     }
 
     public ?Enums\DefaultDimensionValuePostingType $postingValidation {
-        set => $this->set('postingValidation', $value);
+        set { $this->set('postingValidation', $value); }
         get => $this->getAsEnum('postingValidation', Enums\DefaultDimensionValuePostingType::class);
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        set {
+            $this->setAsDateTime('lastModifiedDateTime', $value); }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    /** @var ?Item\Record */
     public ?Item\Record $item {
         get => $this->get('item');
     }
 
-    /** @var ?Account\Record */
     public ?Account\Record $account {
         get => $this->get('account');
     }
 
-    /** @var ?Dimension\Record */
     public ?Dimension\Record $dimension {
         get => $this->get('dimension');
     }
 
-    /** @var ?DimensionValue\Record */
     public ?DimensionValue\Record $dimensionValue {
         get => $this->get('dimensionValue');
     }
 
-    /** @var ?Customer\Record */
     public ?Customer\Record $customer {
         get => $this->get('customer');
     }
 
-    /** @var ?Vendor\Record */
     public ?Vendor\Record $vendor {
         get => $this->get('vendor');
     }
 
-    /** @var ?Employee\Record */
     public ?Employee\Record $employee {
         get => $this->get('employee');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'item' => Item\Record::class,
-            'account' => Account\Record::class,
-            'dimension' => Dimension\Record::class,
-            'dimensionValue' => DimensionValue\Record::class,
-            'customer' => Customer\Record::class,
-            'vendor' => Vendor\Record::class,
-            'employee' => Employee\Record::class,
-        ];
-    }
+    protected array $classMap = [
+        'item' => Item\Record::class,
+        'account' => Account\Record::class,
+        'dimension' => Dimension\Record::class,
+        'dimensionValue' => DimensionValue\Record::class,
+        'customer' => Customer\Record::class,
+        'vendor' => Vendor\Record::class,
+        'employee' => Employee\Record::class,
+    ];
 }

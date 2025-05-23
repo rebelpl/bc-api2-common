@@ -17,110 +17,104 @@ class Record extends Entity
     }
 
     public ?string $journalId {
-        set => $this->set('journalId', $value);
+        set { $this->set('journalId', $value); }
         get => $this->get('journalId');
     }
 
     public ?string $journalDisplayName {
-        set => $this->set('journalDisplayName', $value);
+        set { $this->set('journalDisplayName', $value); }
         get => $this->get('journalDisplayName');
     }
 
     public ?int $lineNumber {
-        set => $this->set('lineNumber', $value);
+        set { $this->set('lineNumber', $value); }
         get => $this->get('lineNumber');
     }
 
     public ?string $vendorId {
-        set => $this->set('vendorId', $value);
+        set { $this->set('vendorId', $value); }
         get => $this->get('vendorId');
     }
 
     public ?string $vendorNumber {
-        set => $this->set('vendorNumber', $value);
+        set { $this->set('vendorNumber', $value); }
         get => $this->get('vendorNumber');
     }
 
     public ?Carbon $postingDate {
-        set => $this->setAsDateTime('postingDate', $value);
+        set {
+            $this->setAsDateTime('postingDate', $value); }
         get => $this->getAsDateTime('postingDate');
     }
 
     public ?string $documentNumber {
-        set => $this->set('documentNumber', $value);
+        set { $this->set('documentNumber', $value); }
         get => $this->get('documentNumber');
     }
 
     public ?string $externalDocumentNumber {
-        set => $this->set('externalDocumentNumber', $value);
+        set { $this->set('externalDocumentNumber', $value); }
         get => $this->get('externalDocumentNumber');
     }
 
     public ?float $amount {
-        set => $this->set('amount', $value);
+        set { $this->set('amount', $value); }
         get => $this->get('amount');
     }
 
     public ?string $appliesToInvoiceId {
-        set => $this->set('appliesToInvoiceId', $value);
+        set { $this->set('appliesToInvoiceId', $value); }
         get => $this->get('appliesToInvoiceId');
     }
 
     public ?string $appliesToInvoiceNumber {
-        set => $this->set('appliesToInvoiceNumber', $value);
+        set { $this->set('appliesToInvoiceNumber', $value); }
         get => $this->get('appliesToInvoiceNumber');
     }
 
     public ?string $description {
-        set => $this->set('description', $value);
+        set { $this->set('description', $value); }
         get => $this->get('description');
     }
 
     public ?string $comment {
-        set => $this->set('comment', $value);
+        set { $this->set('comment', $value); }
         get => $this->get('comment');
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        set {
+            $this->setAsDateTime('lastModifiedDateTime', $value); }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    /** @var ?CustomerPaymentJournal\Record */
     public ?CustomerPaymentJournal\Record $customerPaymentJournal {
         get => $this->get('customerPaymentJournal');
     }
 
-    /** @var ?Vendor\Record */
     public ?Vendor\Record $vendor {
         get => $this->get('vendor');
     }
 
     /** @var ?Entity\Collection<DimensionSetLine\Record> */
     public ?Entity\Collection $dimensionSetLines {
-        get => $this->get('dimensionSetLines');
+        get => $this->get('dimensionSetLines', 'collection');
     }
 
     /** @var ?Entity\Collection<ApplyVendorEntry\Record> */
     public ?Entity\Collection $applyVendorEntries {
-        get => $this->get('applyVendorEntries');
+        get => $this->get('applyVendorEntries', 'collection');
     }
 
-    /** @var ?VendorPaymentJournal\Record */
     public ?VendorPaymentJournal\Record $vendorPaymentJournal {
         get => $this->get('vendorPaymentJournal');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'customerPaymentJournal' => CustomerPaymentJournal\Record::class,
-            'vendor' => Vendor\Record::class,
-            'dimensionSetLines' => DimensionSetLine\Record::class,
-            'applyVendorEntries' => ApplyVendorEntry\Record::class,
-            'vendorPaymentJournal' => VendorPaymentJournal\Record::class,
-        ];
-    }
+    protected array $classMap = [
+        'customerPaymentJournal' => CustomerPaymentJournal\Record::class,
+        'vendor' => Vendor\Record::class,
+        'dimensionSetLines' => DimensionSetLine\Record::class,
+        'applyVendorEntries' => ApplyVendorEntry\Record::class,
+        'vendorPaymentJournal' => VendorPaymentJournal\Record::class,
+    ];
 }

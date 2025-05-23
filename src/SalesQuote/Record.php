@@ -22,315 +22,311 @@ class Record extends Entity
     }
 
     public ?string $number {
-        set => $this->set('number', $value);
+        set { $this->set('number', $value); }
         get => $this->get('number');
     }
 
     public ?string $externalDocumentNumber {
-        set => $this->set('externalDocumentNumber', $value);
+        set { $this->set('externalDocumentNumber', $value); }
         get => $this->get('externalDocumentNumber');
     }
 
     public ?Carbon $documentDate {
-        set => $this->setAsDateTime('documentDate', $value);
+        set {
+            $this->setAsDateTime('documentDate', $value); }
         get => $this->getAsDateTime('documentDate');
     }
 
     public ?Carbon $postingDate {
-        set => $this->setAsDateTime('postingDate', $value);
+        set {
+            $this->setAsDateTime('postingDate', $value); }
         get => $this->getAsDateTime('postingDate');
     }
 
     public ?Carbon $dueDate {
-        set => $this->setAsDateTime('dueDate', $value);
+        set {
+            $this->setAsDateTime('dueDate', $value); }
         get => $this->getAsDateTime('dueDate');
     }
 
     public ?string $customerId {
-        set => $this->set('customerId', $value);
+        set { $this->set('customerId', $value); }
         get => $this->get('customerId');
     }
 
     public ?string $customerNumber {
-        set => $this->set('customerNumber', $value);
+        set { $this->set('customerNumber', $value); }
         get => $this->get('customerNumber');
     }
 
     public ?string $customerName {
-        set => $this->set('customerName', $value);
+        set { $this->set('customerName', $value); }
         get => $this->get('customerName');
     }
 
     public ?string $billToName {
-        set => $this->set('billToName', $value);
+        set { $this->set('billToName', $value); }
         get => $this->get('billToName');
     }
 
     public ?string $billToCustomerId {
-        set => $this->set('billToCustomerId', $value);
+        set { $this->set('billToCustomerId', $value); }
         get => $this->get('billToCustomerId');
     }
 
     public ?string $billToCustomerNumber {
-        set => $this->set('billToCustomerNumber', $value);
+        set { $this->set('billToCustomerNumber', $value); }
         get => $this->get('billToCustomerNumber');
     }
 
     public ?string $shipToName {
-        set => $this->set('shipToName', $value);
+        set { $this->set('shipToName', $value); }
         get => $this->get('shipToName');
     }
 
     public ?string $shipToContact {
-        set => $this->set('shipToContact', $value);
+        set { $this->set('shipToContact', $value); }
         get => $this->get('shipToContact');
     }
 
     public ?string $sellToAddressLine1 {
-        set => $this->set('sellToAddressLine1', $value);
+        set { $this->set('sellToAddressLine1', $value); }
         get => $this->get('sellToAddressLine1');
     }
 
     public ?string $sellToAddressLine2 {
-        set => $this->set('sellToAddressLine2', $value);
+        set { $this->set('sellToAddressLine2', $value); }
         get => $this->get('sellToAddressLine2');
     }
 
     public ?string $sellToCity {
-        set => $this->set('sellToCity', $value);
+        set { $this->set('sellToCity', $value); }
         get => $this->get('sellToCity');
     }
 
     public ?string $sellToCountry {
-        set => $this->set('sellToCountry', $value);
+        set { $this->set('sellToCountry', $value); }
         get => $this->get('sellToCountry');
     }
 
     public ?string $sellToState {
-        set => $this->set('sellToState', $value);
+        set { $this->set('sellToState', $value); }
         get => $this->get('sellToState');
     }
 
     public ?string $sellToPostCode {
-        set => $this->set('sellToPostCode', $value);
+        set { $this->set('sellToPostCode', $value); }
         get => $this->get('sellToPostCode');
     }
 
     public ?string $billToAddressLine1 {
-        set => $this->set('billToAddressLine1', $value);
+        set { $this->set('billToAddressLine1', $value); }
         get => $this->get('billToAddressLine1');
     }
 
     public ?string $billToAddressLine2 {
-        set => $this->set('billToAddressLine2', $value);
+        set { $this->set('billToAddressLine2', $value); }
         get => $this->get('billToAddressLine2');
     }
 
     public ?string $billToCity {
-        set => $this->set('billToCity', $value);
+        set { $this->set('billToCity', $value); }
         get => $this->get('billToCity');
     }
 
     public ?string $billToCountry {
-        set => $this->set('billToCountry', $value);
+        set { $this->set('billToCountry', $value); }
         get => $this->get('billToCountry');
     }
 
     public ?string $billToState {
-        set => $this->set('billToState', $value);
+        set { $this->set('billToState', $value); }
         get => $this->get('billToState');
     }
 
     public ?string $billToPostCode {
-        set => $this->set('billToPostCode', $value);
+        set { $this->set('billToPostCode', $value); }
         get => $this->get('billToPostCode');
     }
 
     public ?string $shipToAddressLine1 {
-        set => $this->set('shipToAddressLine1', $value);
+        set { $this->set('shipToAddressLine1', $value); }
         get => $this->get('shipToAddressLine1');
     }
 
     public ?string $shipToAddressLine2 {
-        set => $this->set('shipToAddressLine2', $value);
+        set { $this->set('shipToAddressLine2', $value); }
         get => $this->get('shipToAddressLine2');
     }
 
     public ?string $shipToCity {
-        set => $this->set('shipToCity', $value);
+        set { $this->set('shipToCity', $value); }
         get => $this->get('shipToCity');
     }
 
     public ?string $shipToCountry {
-        set => $this->set('shipToCountry', $value);
+        set { $this->set('shipToCountry', $value); }
         get => $this->get('shipToCountry');
     }
 
     public ?string $shipToState {
-        set => $this->set('shipToState', $value);
+        set { $this->set('shipToState', $value); }
         get => $this->get('shipToState');
     }
 
     public ?string $shipToPostCode {
-        set => $this->set('shipToPostCode', $value);
+        set { $this->set('shipToPostCode', $value); }
         get => $this->get('shipToPostCode');
     }
 
     public ?string $shortcutDimension1Code {
-        set => $this->set('shortcutDimension1Code', $value);
+        set { $this->set('shortcutDimension1Code', $value); }
         get => $this->get('shortcutDimension1Code');
     }
 
     public ?string $shortcutDimension2Code {
-        set => $this->set('shortcutDimension2Code', $value);
+        set { $this->set('shortcutDimension2Code', $value); }
         get => $this->get('shortcutDimension2Code');
     }
 
     public ?string $currencyId {
-        set => $this->set('currencyId', $value);
+        set { $this->set('currencyId', $value); }
         get => $this->get('currencyId');
     }
 
     public ?string $currencyCode {
-        set => $this->set('currencyCode', $value);
+        set { $this->set('currencyCode', $value); }
         get => $this->get('currencyCode');
     }
 
     public ?string $paymentTermsId {
-        set => $this->set('paymentTermsId', $value);
+        set { $this->set('paymentTermsId', $value); }
         get => $this->get('paymentTermsId');
     }
 
     public ?string $shipmentMethodId {
-        set => $this->set('shipmentMethodId', $value);
+        set { $this->set('shipmentMethodId', $value); }
         get => $this->get('shipmentMethodId');
     }
 
     public ?string $salesperson {
-        set => $this->set('salesperson', $value);
+        set { $this->set('salesperson', $value); }
         get => $this->get('salesperson');
     }
 
     public ?float $discountAmount {
-        set => $this->set('discountAmount', $value);
+        set { $this->set('discountAmount', $value); }
         get => $this->get('discountAmount');
     }
 
     public ?float $totalAmountExcludingTax {
-        set => $this->set('totalAmountExcludingTax', $value);
+        set { $this->set('totalAmountExcludingTax', $value); }
         get => $this->get('totalAmountExcludingTax');
     }
 
     public ?float $totalTaxAmount {
-        set => $this->set('totalTaxAmount', $value);
+        set { $this->set('totalTaxAmount', $value); }
         get => $this->get('totalTaxAmount');
     }
 
     public ?float $totalAmountIncludingTax {
-        set => $this->set('totalAmountIncludingTax', $value);
+        set { $this->set('totalAmountIncludingTax', $value); }
         get => $this->get('totalAmountIncludingTax');
     }
 
     public ?Enums\SalesQuoteEntityBufferStatus $status {
-        set => $this->set('status', $value);
+        set { $this->set('status', $value); }
         get => $this->getAsEnum('status', Enums\SalesQuoteEntityBufferStatus::class);
     }
 
     public ?Carbon $sentDate {
-        set => $this->setAsDateTime('sentDate', $value);
+        set {
+            $this->setAsDateTime('sentDate', $value); }
         get => $this->getAsDateTime('sentDate');
     }
 
     public ?Carbon $validUntilDate {
-        set => $this->setAsDateTime('validUntilDate', $value);
+        set {
+            $this->setAsDateTime('validUntilDate', $value); }
         get => $this->getAsDateTime('validUntilDate');
     }
 
     public ?Carbon $acceptedDate {
-        set => $this->setAsDateTime('acceptedDate', $value);
+        set {
+            $this->setAsDateTime('acceptedDate', $value); }
         get => $this->getAsDateTime('acceptedDate');
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        set {
+            $this->setAsDateTime('lastModifiedDateTime', $value); }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
     public ?string $phoneNumber {
-        set => $this->set('phoneNumber', $value);
+        set { $this->set('phoneNumber', $value); }
         get => $this->get('phoneNumber');
     }
 
     public ?string $email {
-        set => $this->set('email', $value);
+        set { $this->set('email', $value); }
         get => $this->get('email');
     }
 
-    /** @var ?Customer\Record */
     public ?Customer\Record $customer {
         get => $this->get('customer');
     }
 
-    /** @var ?DimensionValue\Record */
     public ?DimensionValue\Record $dimensionValue {
         get => $this->get('dimensionValue');
     }
 
-    /** @var ?Currency\Record */
     public ?Currency\Record $currency {
         get => $this->get('currency');
     }
 
-    /** @var ?PaymentTerm\Record */
     public ?PaymentTerm\Record $paymentTerm {
         get => $this->get('paymentTerm');
     }
 
-    /** @var ?ShipmentMethod\Record */
     public ?ShipmentMethod\Record $shipmentMethod {
         get => $this->get('shipmentMethod');
     }
 
     /** @var ?Entity\Collection<DimensionSetLine\Record> */
     public ?Entity\Collection $dimensionSetLines {
-        get => $this->get('dimensionSetLines');
+        get => $this->get('dimensionSetLines', 'collection');
     }
 
     /** @var ?Entity\Collection<SalesQuoteLine\Record> */
     public ?Entity\Collection $salesQuoteLines {
-        get => $this->get('salesQuoteLines');
+        get => $this->get('salesQuoteLines', 'collection');
     }
 
-    /** @var ?PdfDocument\Record */
     public ?PdfDocument\Record $pdfDocument {
         get => $this->get('pdfDocument');
     }
 
     /** @var ?Entity\Collection<Attachment\Record> */
     public ?Entity\Collection $attachments {
-        get => $this->get('attachments');
+        get => $this->get('attachments', 'collection');
     }
 
     /** @var ?Entity\Collection<DocumentAttachment\Record> */
     public ?Entity\Collection $documentAttachments {
-        get => $this->get('documentAttachments');
+        get => $this->get('documentAttachments', 'collection');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'customer' => Customer\Record::class,
-            'dimensionValue' => DimensionValue\Record::class,
-            'currency' => Currency\Record::class,
-            'paymentTerm' => PaymentTerm\Record::class,
-            'shipmentMethod' => ShipmentMethod\Record::class,
-            'dimensionSetLines' => DimensionSetLine\Record::class,
-            'salesQuoteLines' => SalesQuoteLine\Record::class,
-            'pdfDocument' => PdfDocument\Record::class,
-            'attachments' => Attachment\Record::class,
-            'documentAttachments' => DocumentAttachment\Record::class,
-        ];
-    }
+    protected array $classMap = [
+        'customer' => Customer\Record::class,
+        'dimensionValue' => DimensionValue\Record::class,
+        'currency' => Currency\Record::class,
+        'paymentTerm' => PaymentTerm\Record::class,
+        'shipmentMethod' => ShipmentMethod\Record::class,
+        'dimensionSetLines' => DimensionSetLine\Record::class,
+        'salesQuoteLines' => SalesQuoteLine\Record::class,
+        'pdfDocument' => PdfDocument\Record::class,
+        'attachments' => Attachment\Record::class,
+        'documentAttachments' => DocumentAttachment\Record::class,
+    ];
 }

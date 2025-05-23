@@ -178,29 +178,23 @@ class Record extends Entity
         get => $this->get('email');
     }
 
-    /** @var ?Customer\Record */
     public ?Customer\Record $customer {
         get => $this->get('customer');
     }
 
     /** @var ?Entity\Collection<SalesShipmentLine\Record> */
     public ?Entity\Collection $salesShipmentLines {
-        get => $this->get('salesShipmentLines');
+        get => $this->get('salesShipmentLines', 'collection');
     }
 
     /** @var ?Entity\Collection<DimensionSetLine\Record> */
     public ?Entity\Collection $dimensionSetLines {
-        get => $this->get('dimensionSetLines');
+        get => $this->get('dimensionSetLines', 'collection');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'customer' => Customer\Record::class,
-            'salesShipmentLines' => SalesShipmentLine\Record::class,
-            'dimensionSetLines' => DimensionSetLine\Record::class,
-        ];
-    }
+    protected array $classMap = [
+        'customer' => Customer\Record::class,
+        'salesShipmentLines' => SalesShipmentLine\Record::class,
+        'dimensionSetLines' => DimensionSetLine\Record::class,
+    ];
 }

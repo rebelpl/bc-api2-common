@@ -12,75 +12,68 @@ class Record extends Entity
     }
 
     public ?string $code {
-        set => $this->set('code', $value);
+        set { $this->set('code', $value); }
         get => $this->get('code');
     }
 
     public ?string $displayName {
-        set => $this->set('displayName', $value);
+        set { $this->set('displayName', $value); }
         get => $this->get('displayName');
     }
 
     public ?string $contact {
-        set => $this->set('contact', $value);
+        set { $this->set('contact', $value); }
         get => $this->get('contact');
     }
 
     public ?string $addressLine1 {
-        set => $this->set('addressLine1', $value);
+        set { $this->set('addressLine1', $value); }
         get => $this->get('addressLine1');
     }
 
     public ?string $addressLine2 {
-        set => $this->set('addressLine2', $value);
+        set { $this->set('addressLine2', $value); }
         get => $this->get('addressLine2');
     }
 
     public ?string $city {
-        set => $this->set('city', $value);
+        set { $this->set('city', $value); }
         get => $this->get('city');
     }
 
     public ?string $state {
-        set => $this->set('state', $value);
+        set { $this->set('state', $value); }
         get => $this->get('state');
     }
 
     public ?string $country {
-        set => $this->set('country', $value);
+        set { $this->set('country', $value); }
         get => $this->get('country');
     }
 
     public ?string $postalCode {
-        set => $this->set('postalCode', $value);
+        set { $this->set('postalCode', $value); }
         get => $this->get('postalCode');
     }
 
     public ?string $phoneNumber {
-        set => $this->set('phoneNumber', $value);
+        set { $this->set('phoneNumber', $value); }
         get => $this->get('phoneNumber');
     }
 
     public ?string $email {
-        set => $this->set('email', $value);
+        set { $this->set('email', $value); }
         get => $this->get('email');
     }
 
     public ?string $website {
-        set => $this->set('website', $value);
+        set { $this->set('website', $value); }
         get => $this->get('website');
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        set {
+            $this->setAsDateTime('lastModifiedDateTime', $value); }
         get => $this->getAsDateTime('lastModifiedDateTime');
-    }
-
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-        ];
     }
 }

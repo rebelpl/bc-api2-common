@@ -15,98 +15,93 @@ class Record extends Entity
     }
 
     public ?string $journalId {
-        set => $this->set('journalId', $value);
+        set { $this->set('journalId', $value); }
         get => $this->get('journalId');
     }
 
     public ?string $journalDisplayName {
-        set => $this->set('journalDisplayName', $value);
+        set { $this->set('journalDisplayName', $value); }
         get => $this->get('journalDisplayName');
     }
 
     public ?int $lineNumber {
-        set => $this->set('lineNumber', $value);
+        set { $this->set('lineNumber', $value); }
         get => $this->get('lineNumber');
     }
 
     public ?string $customerId {
-        set => $this->set('customerId', $value);
+        set { $this->set('customerId', $value); }
         get => $this->get('customerId');
     }
 
     public ?string $customerNumber {
-        set => $this->set('customerNumber', $value);
+        set { $this->set('customerNumber', $value); }
         get => $this->get('customerNumber');
     }
 
     public ?Carbon $postingDate {
-        set => $this->setAsDateTime('postingDate', $value);
+        set {
+            $this->setAsDateTime('postingDate', $value); }
         get => $this->getAsDateTime('postingDate');
     }
 
     public ?string $documentNumber {
-        set => $this->set('documentNumber', $value);
+        set { $this->set('documentNumber', $value); }
         get => $this->get('documentNumber');
     }
 
     public ?string $externalDocumentNumber {
-        set => $this->set('externalDocumentNumber', $value);
+        set { $this->set('externalDocumentNumber', $value); }
         get => $this->get('externalDocumentNumber');
     }
 
     public ?float $amount {
-        set => $this->set('amount', $value);
+        set { $this->set('amount', $value); }
         get => $this->get('amount');
     }
 
     public ?string $appliesToInvoiceId {
-        set => $this->set('appliesToInvoiceId', $value);
+        set { $this->set('appliesToInvoiceId', $value); }
         get => $this->get('appliesToInvoiceId');
     }
 
     public ?string $appliesToInvoiceNumber {
-        set => $this->set('appliesToInvoiceNumber', $value);
+        set { $this->set('appliesToInvoiceNumber', $value); }
         get => $this->get('appliesToInvoiceNumber');
     }
 
     public ?string $description {
-        set => $this->set('description', $value);
+        set { $this->set('description', $value); }
         get => $this->get('description');
     }
 
     public ?string $comment {
-        set => $this->set('comment', $value);
+        set { $this->set('comment', $value); }
         get => $this->get('comment');
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        set {
+            $this->setAsDateTime('lastModifiedDateTime', $value); }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    /** @var ?CustomerPaymentJournal\Record */
     public ?CustomerPaymentJournal\Record $customerPaymentJournal {
         get => $this->get('customerPaymentJournal');
     }
 
-    /** @var ?Customer\Record */
     public ?Customer\Record $customer {
         get => $this->get('customer');
     }
 
     /** @var ?Entity\Collection<DimensionSetLine\Record> */
     public ?Entity\Collection $dimensionSetLines {
-        get => $this->get('dimensionSetLines');
+        get => $this->get('dimensionSetLines', 'collection');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'customerPaymentJournal' => CustomerPaymentJournal\Record::class,
-            'customer' => Customer\Record::class,
-            'dimensionSetLines' => DimensionSetLine\Record::class,
-        ];
-    }
+    protected array $classMap = [
+        'customerPaymentJournal' => CustomerPaymentJournal\Record::class,
+        'customer' => Customer\Record::class,
+        'dimensionSetLines' => DimensionSetLine\Record::class,
+    ];
 }

@@ -13,46 +13,40 @@ class Record extends Entity
     }
 
     public ?string $code {
-        set => $this->set('code', $value);
+        set { $this->set('code', $value); }
         get => $this->get('code');
     }
 
     public ?string $displayName {
-        set => $this->set('displayName', $value);
+        set { $this->set('displayName', $value); }
         get => $this->get('displayName');
     }
 
     public ?string $templateDisplayName {
-        set => $this->set('templateDisplayName', $value);
+        set { $this->set('templateDisplayName', $value); }
         get => $this->get('templateDisplayName');
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        set {
+            $this->setAsDateTime('lastModifiedDateTime', $value); }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
     public ?string $balancingAccountId {
-        set => $this->set('balancingAccountId', $value);
+        set { $this->set('balancingAccountId', $value); }
         get => $this->get('balancingAccountId');
     }
 
     public ?string $balancingAccountNumber {
-        set => $this->set('balancingAccountNumber', $value);
+        set { $this->set('balancingAccountNumber', $value); }
         get => $this->get('balancingAccountNumber');
     }
 
     /** @var ?Entity\Collection<JournalLine\Record> */
     public ?Entity\Collection $journalLines {
-        get => $this->get('journalLines');
+        get => $this->get('journalLines', 'collection');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'journalLines' => JournalLine\Record::class,
-        ];
-    }
+    protected array $classMap = ['journalLines' => JournalLine\Record::class];
 }

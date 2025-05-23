@@ -194,15 +194,8 @@ class Record extends Entity
 
     /** @var ?Entity\Collection<JobQueueLogEntry\Record> */
     public ?Entity\Collection $jobQueueLogEntries {
-        get => $this->get('jobQueueLogEntries');
+        get => $this->get('jobQueueLogEntries', 'collection');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'jobQueueLogEntries' => JobQueueLogEntry\Record::class,
-        ];
-    }
+    protected array $classMap = ['jobQueueLogEntries' => JobQueueLogEntry\Record::class];
 }

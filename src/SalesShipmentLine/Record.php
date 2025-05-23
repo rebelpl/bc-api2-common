@@ -65,23 +65,17 @@ class Record extends Entity
         get => $this->getAsDateTime('shipmentDate');
     }
 
-    /** @var ?SalesShipment\Record */
     public ?SalesShipment\Record $salesShipment {
         get => $this->get('salesShipment');
     }
 
     /** @var ?Entity\Collection<DimensionSetLine\Record> */
     public ?Entity\Collection $dimensionSetLines {
-        get => $this->get('dimensionSetLines');
+        get => $this->get('dimensionSetLines', 'collection');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'salesShipment' => SalesShipment\Record::class,
-            'dimensionSetLines' => DimensionSetLine\Record::class,
-        ];
-    }
+    protected array $classMap = [
+        'salesShipment' => SalesShipment\Record::class,
+        'dimensionSetLines' => DimensionSetLine\Record::class,
+    ];
 }

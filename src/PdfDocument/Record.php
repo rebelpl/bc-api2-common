@@ -29,47 +29,36 @@ class Record extends Entity
         get => $this->get('pdfDocumentContent');
     }
 
-    /** @var ?SalesInvoice\Record */
     public ?SalesInvoice\Record $salesInvoice {
         get => $this->get('salesInvoice');
     }
 
-    /** @var ?SalesQuote\Record */
     public ?SalesQuote\Record $salesQuote {
         get => $this->get('salesQuote');
     }
 
-    /** @var ?SalesCreditMemo\Record */
     public ?SalesCreditMemo\Record $salesCreditMemo {
         get => $this->get('salesCreditMemo');
     }
 
-    /** @var ?PurchaseInvoice\Record */
     public ?PurchaseInvoice\Record $purchaseInvoice {
         get => $this->get('purchaseInvoice');
     }
 
-    /** @var ?PurchaseCreditMemo\Record */
     public ?PurchaseCreditMemo\Record $purchaseCreditMemo {
         get => $this->get('purchaseCreditMemo');
     }
 
-    /** @var ?CustomerContact\Record */
     public ?CustomerContact\Record $customerContact {
         get => $this->get('customerContact');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'salesInvoice' => SalesInvoice\Record::class,
-            'salesQuote' => SalesQuote\Record::class,
-            'salesCreditMemo' => SalesCreditMemo\Record::class,
-            'purchaseInvoice' => PurchaseInvoice\Record::class,
-            'purchaseCreditMemo' => PurchaseCreditMemo\Record::class,
-            'customerContact' => CustomerContact\Record::class,
-        ];
-    }
+    protected array $classMap = [
+        'salesInvoice' => SalesInvoice\Record::class,
+        'salesQuote' => SalesQuote\Record::class,
+        'salesCreditMemo' => SalesCreditMemo\Record::class,
+        'purchaseInvoice' => PurchaseInvoice\Record::class,
+        'purchaseCreditMemo' => PurchaseCreditMemo\Record::class,
+        'customerContact' => CustomerContact\Record::class,
+    ];
 }

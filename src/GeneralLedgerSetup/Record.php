@@ -70,12 +70,4 @@ class Record extends Entity
     public ?string $shortcutDimension8Code {
         get => $this->get('shortcutDimension8Code');
     }
-
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-        ];
-    }
 }

@@ -61,23 +61,17 @@ class Record extends Entity
         get => $this->getAsDateTime('expectedReceiptDate');
     }
 
-    /** @var ?PurchaseReceipt\Record */
     public ?PurchaseReceipt\Record $purchaseReceipt {
         get => $this->get('purchaseReceipt');
     }
 
     /** @var ?Entity\Collection<DimensionSetLine\Record> */
     public ?Entity\Collection $dimensionSetLines {
-        get => $this->get('dimensionSetLines');
+        get => $this->get('dimensionSetLines', 'collection');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'purchaseReceipt' => PurchaseReceipt\Record::class,
-            'dimensionSetLines' => DimensionSetLine\Record::class,
-        ];
-    }
+    protected array $classMap = [
+        'purchaseReceipt' => PurchaseReceipt\Record::class,
+        'dimensionSetLines' => DimensionSetLine\Record::class,
+    ];
 }

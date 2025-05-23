@@ -13,41 +13,35 @@ class Record extends Entity
     }
 
     public ?string $code {
-        set => $this->set('code', $value);
+        set { $this->set('code', $value); }
         get => $this->get('code');
     }
 
     public ?string $displayName {
-        set => $this->set('displayName', $value);
+        set { $this->set('displayName', $value); }
         get => $this->get('displayName');
     }
 
     public ?string $balancingAccountId {
-        set => $this->set('balancingAccountId', $value);
+        set { $this->set('balancingAccountId', $value); }
         get => $this->get('balancingAccountId');
     }
 
     public ?string $balancingAccountNumber {
-        set => $this->set('balancingAccountNumber', $value);
+        set { $this->set('balancingAccountNumber', $value); }
         get => $this->get('balancingAccountNumber');
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set => $this->setAsDateTime('lastModifiedDateTime', $value);
+        set {
+            $this->setAsDateTime('lastModifiedDateTime', $value); }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
     /** @var ?Entity\Collection<VendorPayment\Record> */
     public ?Entity\Collection $vendorPayments {
-        get => $this->get('vendorPayments');
+        get => $this->get('vendorPayments', 'collection');
     }
 
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-            'vendorPayments' => VendorPayment\Record::class,
-        ];
-    }
+    protected array $classMap = ['vendorPayments' => VendorPayment\Record::class];
 }

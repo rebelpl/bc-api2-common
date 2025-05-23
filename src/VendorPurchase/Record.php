@@ -26,12 +26,4 @@ class Record extends Entity
     public ?Carbon $dateFilter_FilterOnly {
         get => $this->getAsDateTime('dateFilter_FilterOnly');
     }
-
-    public function __construct(array $data = [], ?string $context = null)
-    {
-        parent::__construct($data, $context);
-
-        $this->classMap = [
-        ];
-    }
 }
