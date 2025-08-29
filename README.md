@@ -29,7 +29,7 @@ foreach ($salesOrders as $salesOrder) {
 
 ## Download metadata for your API
 ```shell
-curl -X GET "https://api.businesscentral.dynamics.com/v2.0/<environment>/api/<api_ublisher>/<api_group>/<api_version>/$metadata" \
+curl -X GET "https://api.businesscentral.dynamics.com/v2.0/<environment>/api/<api_publisher>/<api_group>/<api_version>/$metadata" \
   -H "Authorization: Bearer <access_token>" \
   -H "Accept: application/xml" \
   -o files/metadata.xml
