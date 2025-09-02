@@ -1,6 +1,6 @@
 # Business Central API2 for PHP - Common Entities
-This library includes models for all Microsoft.NAV entities from [Business Central API (v2.0)](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/)
-and the code generator tool to create similar models for your own API. 
+This library includes PHP models for all ```Microsoft.NAV``` entities from [Business Central API (v2.0)](https://learn.microsoft.com/en-us/dynamics365/business-central/dev-itpro/api-reference/v2.0/),
+generated using the ```Rebel\BCApi2\Entity\Generator``` from [Business Central API2 for PHP](https://github.com/rebelpl/bc-api2-client).
 
 ## Install
 ```shell
