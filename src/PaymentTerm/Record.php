@@ -42,8 +42,7 @@ class Record extends Entity
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value); }
+        set { $this->setAsDateTime('lastModifiedDateTime', $value); }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 }

@@ -26,14 +26,12 @@ class Record extends Entity
     }
 
     public ?Carbon $orderDate {
-        set {
-            $this->setAsDateTime('orderDate', $value); }
+        set { $this->setAsDate('orderDate', $value); }
         get => $this->getAsDateTime('orderDate');
     }
 
     public ?Carbon $postingDate {
-        set {
-            $this->setAsDateTime('postingDate', $value); }
+        set { $this->setAsDate('postingDate', $value); }
         get => $this->getAsDateTime('postingDate');
     }
 
@@ -208,8 +206,7 @@ class Record extends Entity
     }
 
     public ?Carbon $requestedReceiptDate {
-        set {
-            $this->setAsDateTime('requestedReceiptDate', $value); }
+        set { $this->setAsDate('requestedReceiptDate', $value); }
         get => $this->getAsDateTime('requestedReceiptDate');
     }
 
@@ -249,8 +246,7 @@ class Record extends Entity
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value); }
+        set { $this->setAsDateTime('lastModifiedDateTime', $value); }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 

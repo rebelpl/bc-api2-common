@@ -96,14 +96,12 @@ class Record extends Entity
     }
 
     public ?Carbon $employmentDate {
-        set {
-            $this->setAsDateTime('employmentDate', $value); }
+        set { $this->setAsDate('employmentDate', $value); }
         get => $this->getAsDateTime('employmentDate');
     }
 
     public ?Carbon $terminationDate {
-        set {
-            $this->setAsDateTime('terminationDate', $value); }
+        set { $this->setAsDate('terminationDate', $value); }
         get => $this->getAsDateTime('terminationDate');
     }
 
@@ -113,8 +111,7 @@ class Record extends Entity
     }
 
     public ?Carbon $birthDate {
-        set {
-            $this->setAsDateTime('birthDate', $value); }
+        set { $this->setAsDate('birthDate', $value); }
         get => $this->getAsDateTime('birthDate');
     }
 
@@ -124,8 +121,7 @@ class Record extends Entity
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value); }
+        set { $this->setAsDateTime('lastModifiedDateTime', $value); }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 

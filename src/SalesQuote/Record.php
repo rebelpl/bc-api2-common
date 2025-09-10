@@ -32,20 +32,17 @@ class Record extends Entity
     }
 
     public ?Carbon $documentDate {
-        set {
-            $this->setAsDateTime('documentDate', $value); }
+        set { $this->setAsDate('documentDate', $value); }
         get => $this->getAsDateTime('documentDate');
     }
 
     public ?Carbon $postingDate {
-        set {
-            $this->setAsDateTime('postingDate', $value); }
+        set { $this->setAsDate('postingDate', $value); }
         get => $this->getAsDateTime('postingDate');
     }
 
     public ?Carbon $dueDate {
-        set {
-            $this->setAsDateTime('dueDate', $value); }
+        set { $this->setAsDate('dueDate', $value); }
         get => $this->getAsDateTime('dueDate');
     }
 
@@ -240,26 +237,22 @@ class Record extends Entity
     }
 
     public ?Carbon $sentDate {
-        set {
-            $this->setAsDateTime('sentDate', $value); }
+        set { $this->setAsDate('sentDate', $value); }
         get => $this->getAsDateTime('sentDate');
     }
 
     public ?Carbon $validUntilDate {
-        set {
-            $this->setAsDateTime('validUntilDate', $value); }
+        set { $this->setAsDate('validUntilDate', $value); }
         get => $this->getAsDateTime('validUntilDate');
     }
 
     public ?Carbon $acceptedDate {
-        set {
-            $this->setAsDateTime('acceptedDate', $value); }
+        set { $this->setAsDate('acceptedDate', $value); }
         get => $this->getAsDateTime('acceptedDate');
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value); }
+        set { $this->setAsDateTime('lastModifiedDateTime', $value); }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 

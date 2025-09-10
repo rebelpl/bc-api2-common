@@ -52,14 +52,12 @@ class Record extends Entity
     }
 
     public ?Carbon $creationDate {
-        set {
-            $this->setAsDateTime('creationDate', $value); }
+        set { $this->setAsDate('creationDate', $value); }
         get => $this->getAsDateTime('creationDate');
     }
 
     public ?Carbon $dateClosed {
-        set {
-            $this->setAsDateTime('dateClosed', $value); }
+        set { $this->setAsDateTime('dateClosed', $value); }
         get => $this->getAsDateTime('dateClosed');
     }
 
@@ -79,8 +77,7 @@ class Record extends Entity
     }
 
     public ?Carbon $estimatedClosingDate {
-        set {
-            $this->setAsDateTime('estimatedClosingDate', $value); }
+        set { $this->setAsDate('estimatedClosingDate', $value); }
         get => $this->getAsDateTime('estimatedClosingDate');
     }
 
@@ -90,14 +87,12 @@ class Record extends Entity
     }
 
     public ?Carbon $systemCreatedAt {
-        set {
-            $this->setAsDateTime('systemCreatedAt', $value); }
+        set { $this->setAsDateTime('systemCreatedAt', $value); }
         get => $this->getAsDateTime('systemCreatedAt');
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value); }
+        set { $this->setAsDateTime('lastModifiedDateTime', $value); }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 }

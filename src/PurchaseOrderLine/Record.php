@@ -139,8 +139,7 @@ class Record extends Entity
     }
 
     public ?Carbon $expectedReceiptDate {
-        set {
-            $this->setAsDateTime('expectedReceiptDate', $value); }
+        set { $this->setAsDate('expectedReceiptDate', $value); }
         get => $this->getAsDateTime('expectedReceiptDate');
     }
 
