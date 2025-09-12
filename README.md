@@ -18,9 +18,9 @@ $client = new Rebel\BCApi2\Client(
 );
 
 $repository = new SalesOrder\Repository($client);
-$criteria = [ 'customerNumber' => '30000' ];
-$orderBy = [ 'orderDate' => 'DESC' ];
-$expand = [ SalesOrder\Properties::salesOrderLines, SalesOrder\Properties::customer ];
+$criteria = [ SalesOrder\Properties::customerNumber->name => '30000' ];
+$orderBy = [ SalesOrder\Properties::orderDate->name => 'DESC' ];
+$expand = [ SalesOrder\Properties::salesOrderLines->name, SalesOrder\Properties::customer->name ];
 $salesOrders = $repository->findBy($criteria, $orderBy, 10, null, $expand);
 foreach ($salesOrders as $salesOrder) {
     echo " - {$salesOrder->number}:\t{$salesOrder->totalAmountIncludingTax} {$salesOrder->currencyCode}\n"; 

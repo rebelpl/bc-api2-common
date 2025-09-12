@@ -31,7 +31,7 @@ class SalesOrderTest extends TestCase
             $this->assertNotEmpty($salesOrder->number);
             $this->assertGreaterThan(new \DateTime('2020-01-01'), $salesOrder->orderDate);
             $this->assertInstanceOf(Enums\SalesOrderEntityBufferStatus::class, $salesOrder->status);
-            $this->assertNull($salesOrder->fooBar);
+            $this->assertObjectNotHasProperty('fooBar', $salesOrder);
         }
     }
 
@@ -53,15 +53,15 @@ class SalesOrderTest extends TestCase
     public function testNewInstance(): void
     {
         $salesOrder = new SalesOrder\Record([
-            "externalDocumentNumber" => "TEST-001",
-            "customerNumber" => "NA0007",
-        ], expanded: [ 'salesOrderLines', 'customer' ]);
+            SalesOrder\Properties::externalDocumentNumber->name => "TEST-001",
+            SalesOrder\Properties::customerNumber->name => "NA0007",
+        ], expanded: [ SalesOrder\Properties::salesOrderLines->name, SalesOrder\Properties::customer->name ]);
         $this->assertInstanceOf(Entity\Collection::class, $salesOrder->salesOrderLines);
 
         $salesOrder->salesOrderLines[] = new SalesOrderLine\Record([
-            "sequence" => 10000,
-            "itemId" => "b3c285a5-f12b-f011-9a4a-7c1e5275406f",
-            "quantity" => 10,
+            SalesOrderLine\Properties::sequence->name => 10000,
+            SalesOrderLine\Properties::itemId->name => "b3c285a5-f12b-f011-9a4a-7c1e5275406f",
+            SalesOrderLine\Properties::quantity->name => 10,
         ]);
 
         $salesOrder->salesOrderLines[] = new SalesOrderLine\Record([
