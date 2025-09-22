@@ -10,6 +10,11 @@
     }
   ],
   "minimum-stability": "dev",
+  "config": {
+    "platform": {
+      "php": "7.2.13"
+    }
+  },
   "require": {
     "php": "^7.2",
     "rebelpl/bc-api2-client": "dev-php7.2"

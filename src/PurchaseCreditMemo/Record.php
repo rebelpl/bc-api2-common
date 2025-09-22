@@ -2,6 +2,7 @@
 namespace Rebel\BCApi2\Entity\PurchaseCreditMemo;
 
 use Carbon\Carbon;
+use Rebel\BCApi2\Client;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\Attachment;
 use Rebel\BCApi2\Entity\Currency;
@@ -552,5 +553,15 @@ class Record extends Entity
     function getDocumentAttachments(): Entity\Collection
     {
         return $this->getAsCollection('documentAttachments');
+    }
+
+    function doCancel(Client $client): void
+    {
+        $this->doAction('Microsoft.NAV.cancel', $client);
+    }
+
+    function doPost(Client $client): void
+    {
+        $this->doAction('Microsoft.NAV.post', $client);
     }
 }

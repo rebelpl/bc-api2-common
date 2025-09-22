@@ -2,6 +2,7 @@
 namespace Rebel\BCApi2\Entity\PurchaseCreditMemoLine;
 
 use Carbon\Carbon;
+use Rebel\BCApi2\Client;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\Account;
 use Rebel\BCApi2\Entity\DimensionSetLine;

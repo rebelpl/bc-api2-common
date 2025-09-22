@@ -2,6 +2,7 @@
 namespace Rebel\BCApi2\Entity\TaxGroup;
 
 use Carbon\Carbon;
+use Rebel\BCApi2\Client;
 use Rebel\BCApi2\Entity;
 
 class Record extends Entity

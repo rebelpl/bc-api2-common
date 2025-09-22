@@ -2,6 +2,7 @@
 namespace Rebel\BCApi2\Entity\JobQueueEntry;
 
 use Carbon\Carbon;
+use Rebel\BCApi2\Client;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\JobQueueLogEntry;
 
@@ -245,5 +246,10 @@ class Record extends Entity
     function getJobQueueLogEntries(): Entity\Collection
     {
         return $this->getAsCollection('jobQueueLogEntries');
+    }
+
+    function doRestart(Client $client): void
+    {
+        $this->doAction('Microsoft.NAV.restart', $client);
     }
 }

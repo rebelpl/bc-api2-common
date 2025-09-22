@@ -2,6 +2,7 @@
 namespace Rebel\BCApi2\Entity\FixedAsset;
 
 use Carbon\Carbon;
+use Rebel\BCApi2\Client;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\Employee;
 use Rebel\BCApi2\Entity\FixedAssetLocation;

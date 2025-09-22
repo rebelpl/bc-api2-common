@@ -2,6 +2,7 @@
 namespace Rebel\BCApi2\Entity\SalesOrder;
 
 use Carbon\Carbon;
+use Rebel\BCApi2\Client;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\Attachment;
 use Rebel\BCApi2\Entity\Currency;
@@ -637,5 +638,10 @@ class Record extends Entity
     function getDocumentAttachments(): Entity\Collection
     {
         return $this->getAsCollection('documentAttachments');
+    }
+
+    function doShipAndInvoice(Client $client): void
+    {
+        $this->doAction('Microsoft.NAV.shipAndInvoice', $client);
     }
 }
