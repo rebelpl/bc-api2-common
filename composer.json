@@ -2,7 +2,7 @@
   "name": "rebelpl/bc-api2-common",
   "description": "Business Central API common entities (Microsoft.NAV)",
   "type": "library",
-  "license": "GPLv3",
+  "license": "MIT",
   "authors": [
     {
       "name": "Artur Jedlinski",
