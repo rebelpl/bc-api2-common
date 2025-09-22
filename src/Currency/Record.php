@@ -3,53 +3,77 @@ namespace Rebel\BCApi2\Entity\Currency;
 
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?string $code {
-        set {
-            $this->set('code', $value);
-        }
-        get => $this->get('code');
+    function getCode(): ?string
+    {
+        return $this->get('code');
     }
 
-    public ?string $displayName {
-        set {
-            $this->set('displayName', $value);
-        }
-        get => $this->get('displayName');
+    function setCode(?string $value): self
+    {
+        $this->set('code', $value);
+        return $this;
     }
 
-    public ?string $symbol {
-        set {
-            $this->set('symbol', $value);
-        }
-        get => $this->get('symbol');
+    function getDisplayName(): ?string
+    {
+        return $this->get('displayName');
     }
 
-    public ?string $amountDecimalPlaces {
-        set {
-            $this->set('amountDecimalPlaces', $value);
-        }
-        get => $this->get('amountDecimalPlaces');
+    function setDisplayName(?string $value): self
+    {
+        $this->set('displayName', $value);
+        return $this;
     }
 
-    public ?float $amountRoundingPrecision {
-        set {
-            $this->set('amountRoundingPrecision', $value);
-        }
-        get => $this->get('amountRoundingPrecision');
+    function getSymbol(): ?string
+    {
+        return $this->get('symbol');
     }
 
-    public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value);
-        }
-        get => $this->getAsDateTime('lastModifiedDateTime');
+    function setSymbol(?string $value): self
+    {
+        $this->set('symbol', $value);
+        return $this;
+    }
+
+    function getAmountDecimalPlaces(): ?string
+    {
+        return $this->get('amountDecimalPlaces');
+    }
+
+    function setAmountDecimalPlaces(?string $value): self
+    {
+        $this->set('amountDecimalPlaces', $value);
+        return $this;
+    }
+
+    function getAmountRoundingPrecision(): ?float
+    {
+        return $this->get('amountRoundingPrecision');
+    }
+
+    function setAmountRoundingPrecision(?float $value): self
+    {
+        $this->set('amountRoundingPrecision', $value);
+        return $this;
+    }
+
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
+    }
+
+    function setLastModifiedDateTime(?\DateTime $value): self
+    {
+        $this->setAsDateTime('lastModifiedDateTime', $value);
+        return $this;
     }
 }

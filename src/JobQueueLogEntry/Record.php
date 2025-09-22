@@ -3,75 +3,91 @@ namespace Rebel\BCApi2\Entity\JobQueueLogEntry;
 
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?string $jobQueueEntryId {
-        get => $this->get('jobQueueEntryId');
+    function getJobQueueEntryId(): ?string
+    {
+        return $this->get('jobQueueEntryId');
     }
 
-    public ?string $userId {
-        get => $this->get('userId');
+    function getUserId(): ?string
+    {
+        return $this->get('userId');
     }
 
-    public ?Carbon $startDateTime {
-        get => $this->getAsDateTime('startDateTime');
+    function getStartDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('startDateTime');
     }
 
-    public ?Carbon $endDateTime {
-        get => $this->getAsDateTime('endDateTime');
+    function getEndDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('endDateTime');
     }
 
-    public ?int $objectIdToRun {
-        get => $this->get('objectIdToRun');
+    function getObjectIdToRun(): ?int
+    {
+        return $this->get('objectIdToRun');
     }
 
-    public ?string $objectTypeToRun {
-        get => $this->get('objectTypeToRun');
+    function getObjectTypeToRun(): ?string
+    {
+        return $this->get('objectTypeToRun');
     }
 
-    public ?string $status {
-        get => $this->get('status');
+    function getStatus(): ?string
+    {
+        return $this->get('status');
     }
 
-    public ?string $description {
-        get => $this->get('description');
+    function getDescription(): ?string
+    {
+        return $this->get('description');
     }
 
-    public ?string $errorMessage {
-        get => $this->get('errorMessage');
+    function getErrorMessage(): ?string
+    {
+        return $this->get('errorMessage');
     }
 
-    public ?string $jobQueueCategoryCode {
-        get => $this->get('jobQueueCategoryCode');
+    function getJobQueueCategoryCode(): ?string
+    {
+        return $this->get('jobQueueCategoryCode');
     }
 
-    public Entity\DataStream $errorCallStack {
-        get => $this->get('errorCallStack');
+    function getErrorCallStack(): Entity\DataStream
+    {
+        return $this->get('errorCallStack');
     }
 
-    public ?string $parameterString {
-        get => $this->get('parameterString');
+    function getParameterString(): ?string
+    {
+        return $this->get('parameterString');
     }
 
-    public ?string $systemTaskId {
-        get => $this->get('systemTaskId');
+    function getSystemTaskId(): ?string
+    {
+        return $this->get('systemTaskId');
     }
 
-    public ?int $userSessionId {
-        get => $this->get('userSessionId');
+    function getUserSessionId(): ?int
+    {
+        return $this->get('userSessionId');
     }
 
-    public ?int $userServiceInstanceId {
-        get => $this->get('userServiceInstanceId');
+    function getUserServiceInstanceId(): ?int
+    {
+        return $this->get('userServiceInstanceId');
     }
 
-    public ?Carbon $lastModifiedDateTime {
-        get => $this->getAsDateTime('lastModifiedDateTime');
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
     }
 }

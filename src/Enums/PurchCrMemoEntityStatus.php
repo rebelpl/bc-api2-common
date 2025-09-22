@@ -1,12 +1,12 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum PurchCrMemoEntityStatus: string
+class PurchCrMemoEntityStatus
 {
-    case Draft = 'Draft';
-    case InReview = 'In_x0020_Review';
-    case Open = 'Open';
-    case Canceled = 'Canceled';
-    case Corrective = 'Corrective';
-    case Paid = 'Paid';
+    public const Draft = 'Draft';
+    public const InReview = 'In_x0020_Review';
+    public const Open = 'Open';
+    public const Canceled = 'Canceled';
+    public const Corrective = 'Corrective';
+    public const Paid = 'Paid';
 }

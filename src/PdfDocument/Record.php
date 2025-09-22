@@ -4,7 +4,6 @@ namespace Rebel\BCApi2\Entity\PdfDocument;
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\CustomerContact;
-use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\PurchaseCreditMemo;
 use Rebel\BCApi2\Entity\PurchaseInvoice;
 use Rebel\BCApi2\Entity\SalesCreditMemo;
@@ -13,47 +12,7 @@ use Rebel\BCApi2\Entity\SalesQuote;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
-    }
-
-    public ?string $parentId {
-        get => $this->get('parentId');
-    }
-
-    public ?Enums\AttachmentEntityBufferDocumentType $parentType {
-        get => $this->getAsEnum('parentType', Enums\AttachmentEntityBufferDocumentType::class);
-    }
-
-    public Entity\DataStream $pdfDocumentContent {
-        get => $this->get('pdfDocumentContent');
-    }
-
-    public ?SalesInvoice\Record $salesInvoice {
-        get => $this->get('salesInvoice');
-    }
-
-    public ?SalesQuote\Record $salesQuote {
-        get => $this->get('salesQuote');
-    }
-
-    public ?SalesCreditMemo\Record $salesCreditMemo {
-        get => $this->get('salesCreditMemo');
-    }
-
-    public ?PurchaseInvoice\Record $purchaseInvoice {
-        get => $this->get('purchaseInvoice');
-    }
-
-    public ?PurchaseCreditMemo\Record $purchaseCreditMemo {
-        get => $this->get('purchaseCreditMemo');
-    }
-
-    public ?CustomerContact\Record $customerContact {
-        get => $this->get('customerContact');
-    }
-
-    protected array $classMap = [
+    protected $classMap = [
         'salesInvoice' => SalesInvoice\Record::class,
         'salesQuote' => SalesQuote\Record::class,
         'salesCreditMemo' => SalesCreditMemo\Record::class,
@@ -61,4 +20,54 @@ class Record extends Entity
         'purchaseCreditMemo' => PurchaseCreditMemo\Record::class,
         'customerContact' => CustomerContact\Record::class,
     ];
+
+    function getId(): ?string
+    {
+        return $this->get('id');
+    }
+
+    function getParentId(): ?string
+    {
+        return $this->get('parentId');
+    }
+
+    function getParentType(): ?string
+    {
+        return $this->get('parentType');
+    }
+
+    function getPdfDocumentContent(): Entity\DataStream
+    {
+        return $this->get('pdfDocumentContent');
+    }
+
+    function getSalesInvoice(): ?SalesInvoice\Record
+    {
+        return $this->get('salesInvoice');
+    }
+
+    function getSalesQuote(): ?SalesQuote\Record
+    {
+        return $this->get('salesQuote');
+    }
+
+    function getSalesCreditMemo(): ?SalesCreditMemo\Record
+    {
+        return $this->get('salesCreditMemo');
+    }
+
+    function getPurchaseInvoice(): ?PurchaseInvoice\Record
+    {
+        return $this->get('purchaseInvoice');
+    }
+
+    function getPurchaseCreditMemo(): ?PurchaseCreditMemo\Record
+    {
+        return $this->get('purchaseCreditMemo');
+    }
+
+    function getCustomerContact(): ?CustomerContact\Record
+    {
+        return $this->get('customerContact');
+    }
 }

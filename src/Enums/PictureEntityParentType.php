@@ -1,11 +1,11 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum PictureEntityParentType: string
+class PictureEntityParentType
 {
-    case Customer = 'Customer';
-    case Item = 'Item';
-    case Vendor = 'Vendor';
-    case Employee = 'Employee';
-    case Contact = 'Contact';
+    public const Customer = 'Customer';
+    public const Item = 'Item';
+    public const Vendor = 'Vendor';
+    public const Employee = 'Employee';
+    public const Contact = 'Contact';
 }

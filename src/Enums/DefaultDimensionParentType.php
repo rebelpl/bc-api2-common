@@ -1,11 +1,11 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum DefaultDimensionParentType: string
+class DefaultDimensionParentType
 {
-    case Null = '_x0020_';
-    case Customer = 'Customer';
-    case Item = 'Item';
-    case Vendor = 'Vendor';
-    case Employee = 'Employee';
+    public const Null = '_x0020_';
+    public const Customer = 'Customer';
+    public const Item = 'Item';
+    public const Vendor = 'Vendor';
+    public const Employee = 'Employee';
 }

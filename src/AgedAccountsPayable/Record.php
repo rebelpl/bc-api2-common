@@ -3,54 +3,64 @@ namespace Rebel\BCApi2\Entity\AgedAccountsPayable;
 
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\Vendor;
 
 class Record extends Entity
 {
-    public ?string $vendorId {
-        get => $this->get('vendorId');
+    protected $classMap = ['vendor' => Vendor\Record::class];
+
+    function getVendorId(): ?string
+    {
+        return $this->get('vendorId');
     }
 
-    public ?string $vendorNumber {
-        get => $this->get('vendorNumber');
+    function getVendorNumber(): ?string
+    {
+        return $this->get('vendorNumber');
     }
 
-    public ?string $name {
-        get => $this->get('name');
+    function getName(): ?string
+    {
+        return $this->get('name');
     }
 
-    public ?string $currencyCode {
-        get => $this->get('currencyCode');
+    function getCurrencyCode(): ?string
+    {
+        return $this->get('currencyCode');
     }
 
-    public ?float $balanceDue {
-        get => $this->get('balanceDue');
+    function getBalanceDue(): ?float
+    {
+        return $this->get('balanceDue');
     }
 
-    public ?float $currentAmount {
-        get => $this->get('currentAmount');
+    function getCurrentAmount(): ?float
+    {
+        return $this->get('currentAmount');
     }
 
-    public ?float $period1Amount {
-        get => $this->get('period1Amount');
+    function getPeriod1Amount(): ?float
+    {
+        return $this->get('period1Amount');
     }
 
-    public ?float $period2Amount {
-        get => $this->get('period2Amount');
+    function getPeriod2Amount(): ?float
+    {
+        return $this->get('period2Amount');
     }
 
-    public ?float $period3Amount {
-        get => $this->get('period3Amount');
+    function getPeriod3Amount(): ?float
+    {
+        return $this->get('period3Amount');
     }
 
-    public ?Carbon $agedAsOfDate {
-        get => $this->getAsDate('agedAsOfDate');
+    function getAgedAsOfDate(): ?Carbon
+    {
+        return $this->getAsDate('agedAsOfDate');
     }
 
-    public ?Vendor\Record $vendor {
-        get => $this->get('vendor');
+    function getVendor(): ?Vendor\Record
+    {
+        return $this->get('vendor');
     }
-
-    protected array $classMap = ['vendor' => Vendor\Record::class];
 }

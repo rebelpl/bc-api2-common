@@ -1,13 +1,13 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum PurchaseLineType: string
+class PurchaseLineType
 {
-    case Null = '_x0020_';
-    case GLAccount = 'G_x002F_L_x0020_Account';
-    case Item = 'Item';
-    case Resource = 'Resource';
-    case FixedAsset = 'Fixed_x0020_Asset';
-    case ChargeItem = 'Charge_x0020__x0028_Item_x0029_';
-    case AllocationAccount = 'Allocation_x0020_Account';
+    public const Null = '_x0020_';
+    public const GLAccount = 'G_x002F_L_x0020_Account';
+    public const Item = 'Item';
+    public const Resource = 'Resource';
+    public const FixedAsset = 'Fixed_x0020_Asset';
+    public const ChargeItem = 'Charge_x0020__x0028_Item_x0029_';
+    public const AllocationAccount = 'Allocation_x0020_Account';
 }

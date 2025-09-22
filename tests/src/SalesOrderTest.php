@@ -11,7 +11,7 @@ use Rebel\BCApi2\Entity\Enums;
 class SalesOrderTest extends TestCase
 {
     /** @var SalesOrder\Record[]  */
-    private array $salesOrders = [];
+    private $salesOrders = [];
 
     protected function setUp(): void
     {
@@ -24,28 +24,27 @@ class SalesOrderTest extends TestCase
     public function testBasicProperties(): void
     {
         $salesOrder = new SalesOrder\Record();
-        $salesOrder->externalDocumentNumber = 'TEST-001';
-        $this->assertEquals('TEST-001', $salesOrder->externalDocumentNumber);
+        $salesOrder->setExternalDocumentNumber('TEST-001');
+        $this->assertEquals('TEST-001', $salesOrder->getExternalDocumentNumber());
 
         foreach ($this->salesOrders as $salesOrder) {
-            $this->assertNotEmpty($salesOrder->number);
-            $this->assertGreaterThan(new \DateTime('2020-01-01'), $salesOrder->orderDate);
-            $this->assertInstanceOf(Enums\SalesOrderEntityBufferStatus::class, $salesOrder->status);
-            $this->assertObjectNotHasProperty('fooBar', $salesOrder);
+            $this->assertNotEmpty($salesOrder->getNumber());
+            $this->assertGreaterThan(new \DateTime('2020-01-01'), $salesOrder->getOrderDate());
+            $this->assertEquals(Enums\SalesOrderEntityBufferStatus::Open, $salesOrder->getStatus());
         }
     }
 
     public function testEmptyInstance(): void
     {
         $salesOrder = new SalesOrder\Record();
-        $this->assertNull($salesOrder->etag);
-        $this->assertNull($salesOrder->orderDate);
+        $this->assertNull($salesOrder->getETag());
+        $this->assertNull($salesOrder->getOrderDate());
         $this->assertEmpty($salesOrder->toUpdate());
     }
 
     public function testRepositoryHasCorrectEntityClass(): void
     {
-        $client = new Client('test', 'test', companyId: 'test');
+        $client = new Client('test', 'test', '/v2.0', 'test');
         $repository = new SalesOrder\Repository($client);
         $this->assertEquals(SalesOrder\Record::class, $repository->getEntityClass());
     }
@@ -53,23 +52,24 @@ class SalesOrderTest extends TestCase
     public function testNewInstance(): void
     {
         $salesOrder = new SalesOrder\Record([
-            SalesOrder\Properties::externalDocumentNumber->name => "TEST-001",
-            SalesOrder\Properties::customerNumber->name => "NA0007",
-        ], expanded: [ SalesOrder\Properties::salesOrderLines->name, SalesOrder\Properties::customer->name ]);
+            SalesOrder\Properties::externalDocumentNumber => "TEST-001",
+            SalesOrder\Properties::customerNumber => "NA0007",
+        ], [ SalesOrder\Properties::salesOrderLines, SalesOrder\Properties::customer ]);
 
-        $salesOrder->salesOrderLines[] = new SalesOrderLine\Record([
-            SalesOrderLine\Properties::sequence->name => 10000,
-            SalesOrderLine\Properties::itemId->name => "b3c285a5-f12b-f011-9a4a-7c1e5275406f",
-            SalesOrderLine\Properties::quantity->name => 10,
+        $salesLines = $salesOrder->getSalesOrderLines();
+        $salesLines[] = new SalesOrderLine\Record([
+            SalesOrderLine\Properties::sequence => 10000,
+            SalesOrderLine\Properties::itemId => "b3c285a5-f12b-f011-9a4a-7c1e5275406f",
+            SalesOrderLine\Properties::quantity => 10,
         ]);
 
-        $salesOrder->salesOrderLines[] = new SalesOrderLine\Record([
+        $salesLines[] = new SalesOrderLine\Record([
             "lineType" => "Item",
             "lineObjectNumber" => "1120",
             "quantity" => 20
         ]);
 
-        $this->assertCount(2, $salesOrder->salesOrderLines);
+        $this->assertCount(2, $salesOrder->getSalesOrderLines());
 
         $updateData = $salesOrder->toUpdate(true);
         $this->assertEquals('TEST-001', $updateData['externalDocumentNumber']);

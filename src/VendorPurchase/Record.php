@@ -3,23 +3,26 @@ namespace Rebel\BCApi2\Entity\VendorPurchase;
 
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public ?string $vendorId {
-        get => $this->get('vendorId');
+    function getVendorId(): ?string
+    {
+        return $this->get('vendorId');
     }
 
-    public ?string $vendorNumber {
-        get => $this->get('vendorNumber');
+    function getVendorNumber(): ?string
+    {
+        return $this->get('vendorNumber');
     }
 
-    public ?string $name {
-        get => $this->get('name');
+    function getName(): ?string
+    {
+        return $this->get('name');
     }
 
-    public ?float $totalPurchaseAmount {
-        get => $this->get('totalPurchaseAmount');
+    function getTotalPurchaseAmount(): ?float
+    {
+        return $this->get('totalPurchaseAmount');
     }
 }

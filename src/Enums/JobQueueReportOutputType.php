@@ -1,11 +1,11 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum JobQueueReportOutputType: string
+class JobQueueReportOutputType
 {
-    case PDF = 'PDF';
-    case Word = 'Word';
-    case Excel = 'Excel';
-    case Print = 'Print';
-    case NoneProcessingonly = 'None_x0020__x0028_Processing_x0020_only_x0029_';
+    public const PDF = 'PDF';
+    public const Word = 'Word';
+    public const Excel = 'Excel';
+    public const Print = 'Print';
+    public const NoneProcessingonly = 'None_x0020__x0028_Processing_x0020_only_x0029_';
 }

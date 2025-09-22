@@ -1,24 +1,24 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum ItemLedgerDocumentType: string
+class ItemLedgerDocumentType
 {
-    case Null = '_x0020_';
-    case SalesShipment = 'Sales_x0020_Shipment';
-    case SalesInvoice = 'Sales_x0020_Invoice';
-    case SalesReturnReceipt = 'Sales_x0020_Return_x0020_Receipt';
-    case SalesCreditMemo = 'Sales_x0020_Credit_x0020_Memo';
-    case PurchaseReceipt = 'Purchase_x0020_Receipt';
-    case PurchaseInvoice = 'Purchase_x0020_Invoice';
-    case PurchaseReturnShipment = 'Purchase_x0020_Return_x0020_Shipment';
-    case PurchaseCreditMemo = 'Purchase_x0020_Credit_x0020_Memo';
-    case TransferShipment = 'Transfer_x0020_Shipment';
-    case TransferReceipt = 'Transfer_x0020_Receipt';
-    case ServiceShipment = 'Service_x0020_Shipment';
-    case ServiceInvoice = 'Service_x0020_Invoice';
-    case ServiceCreditMemo = 'Service_x0020_Credit_x0020_Memo';
-    case PostedAssembly = 'Posted_x0020_Assembly';
-    case InventoryReceipt = 'Inventory_x0020_Receipt';
-    case InventoryShipment = 'Inventory_x0020_Shipment';
-    case DirectTransfer = 'Direct_x0020_Transfer';
+    public const Null = '_x0020_';
+    public const SalesShipment = 'Sales_x0020_Shipment';
+    public const SalesInvoice = 'Sales_x0020_Invoice';
+    public const SalesReturnReceipt = 'Sales_x0020_Return_x0020_Receipt';
+    public const SalesCreditMemo = 'Sales_x0020_Credit_x0020_Memo';
+    public const PurchaseReceipt = 'Purchase_x0020_Receipt';
+    public const PurchaseInvoice = 'Purchase_x0020_Invoice';
+    public const PurchaseReturnShipment = 'Purchase_x0020_Return_x0020_Shipment';
+    public const PurchaseCreditMemo = 'Purchase_x0020_Credit_x0020_Memo';
+    public const TransferShipment = 'Transfer_x0020_Shipment';
+    public const TransferReceipt = 'Transfer_x0020_Receipt';
+    public const ServiceShipment = 'Service_x0020_Shipment';
+    public const ServiceInvoice = 'Service_x0020_Invoice';
+    public const ServiceCreditMemo = 'Service_x0020_Credit_x0020_Memo';
+    public const PostedAssembly = 'Posted_x0020_Assembly';
+    public const InventoryReceipt = 'Inventory_x0020_Receipt';
+    public const InventoryShipment = 'Inventory_x0020_Shipment';
+    public const DirectTransfer = 'Direct_x0020_Transfer';
 }

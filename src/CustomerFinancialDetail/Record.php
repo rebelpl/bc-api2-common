@@ -4,37 +4,43 @@ namespace Rebel\BCApi2\Entity\CustomerFinancialDetail;
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\Customer;
-use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    protected $classMap = ['customer' => Customer\Record::class];
+
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?string $number {
-        get => $this->get('number');
+    function getNumber(): ?string
+    {
+        return $this->get('number');
     }
 
-    public ?float $balance {
-        get => $this->get('balance');
+    function getBalance(): ?float
+    {
+        return $this->get('balance');
     }
 
-    public ?float $totalSalesExcludingTax {
-        get => $this->get('totalSalesExcludingTax');
+    function getTotalSalesExcludingTax(): ?float
+    {
+        return $this->get('totalSalesExcludingTax');
     }
 
-    public ?float $overdueAmount {
-        get => $this->get('overdueAmount');
+    function getOverdueAmount(): ?float
+    {
+        return $this->get('overdueAmount');
     }
 
-    public ?Carbon $lastModifiedDateTime {
-        get => $this->getAsDateTime('lastModifiedDateTime');
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    public ?Customer\Record $customer {
-        get => $this->get('customer');
+    function getCustomer(): ?Customer\Record
+    {
+        return $this->get('customer');
     }
-
-    protected array $classMap = ['customer' => Customer\Record::class];
 }

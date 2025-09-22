@@ -1,11 +1,11 @@
 <?php
 namespace Rebel\BCApi2\Entity\CustomerSale;
 
-enum Properties
+class Properties
 {
-    case customerId;
-    case customerNumber;
-    case name;
-    case totalSalesAmount;
-    case dateFilter_FilterOnly;
+    public const customerId = 'customerId';
+    public const customerNumber = 'customerNumber';
+    public const name = 'name';
+    public const totalSalesAmount = 'totalSalesAmount';
+    public const dateFilter_FilterOnly = 'dateFilter_FilterOnly';
 }

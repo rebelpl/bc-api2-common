@@ -1,10 +1,10 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum OpportunityStatus: string
+class OpportunityStatus
 {
-    case NotStarted = 'Not_x0020_Started';
-    case InProgress = 'In_x0020_Progress';
-    case Won = 'Won';
-    case Lost = 'Lost';
+    public const NotStarted = 'Not_x0020_Started';
+    public const InProgress = 'In_x0020_Progress';
+    public const Won = 'Won';
+    public const Lost = 'Lost';
 }

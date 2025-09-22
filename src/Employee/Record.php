@@ -5,193 +5,291 @@ use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\DefaultDimension;
 use Rebel\BCApi2\Entity\DocumentAttachment;
-use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\Picture;
 use Rebel\BCApi2\Entity\TimeRegistrationEntry;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
-    }
-
-    public ?string $number {
-        set {
-            $this->set('number', $value);
-        }
-        get => $this->get('number');
-    }
-
-    public ?string $displayName {
-        set {
-            $this->set('displayName', $value);
-        }
-        get => $this->get('displayName');
-    }
-
-    public ?string $givenName {
-        set {
-            $this->set('givenName', $value);
-        }
-        get => $this->get('givenName');
-    }
-
-    public ?string $middleName {
-        set {
-            $this->set('middleName', $value);
-        }
-        get => $this->get('middleName');
-    }
-
-    public ?string $surname {
-        set {
-            $this->set('surname', $value);
-        }
-        get => $this->get('surname');
-    }
-
-    public ?string $jobTitle {
-        set {
-            $this->set('jobTitle', $value);
-        }
-        get => $this->get('jobTitle');
-    }
-
-    public ?string $addressLine1 {
-        set {
-            $this->set('addressLine1', $value);
-        }
-        get => $this->get('addressLine1');
-    }
-
-    public ?string $addressLine2 {
-        set {
-            $this->set('addressLine2', $value);
-        }
-        get => $this->get('addressLine2');
-    }
-
-    public ?string $city {
-        set {
-            $this->set('city', $value);
-        }
-        get => $this->get('city');
-    }
-
-    public ?string $state {
-        set {
-            $this->set('state', $value);
-        }
-        get => $this->get('state');
-    }
-
-    public ?string $country {
-        set {
-            $this->set('country', $value);
-        }
-        get => $this->get('country');
-    }
-
-    public ?string $postalCode {
-        set {
-            $this->set('postalCode', $value);
-        }
-        get => $this->get('postalCode');
-    }
-
-    public ?string $phoneNumber {
-        set {
-            $this->set('phoneNumber', $value);
-        }
-        get => $this->get('phoneNumber');
-    }
-
-    public ?string $mobilePhone {
-        set {
-            $this->set('mobilePhone', $value);
-        }
-        get => $this->get('mobilePhone');
-    }
-
-    public ?string $email {
-        set {
-            $this->set('email', $value);
-        }
-        get => $this->get('email');
-    }
-
-    public ?string $personalEmail {
-        set {
-            $this->set('personalEmail', $value);
-        }
-        get => $this->get('personalEmail');
-    }
-
-    public ?Carbon $employmentDate {
-        set {
-            $this->setAsDate('employmentDate', $value);
-        }
-        get => $this->getAsDate('employmentDate');
-    }
-
-    public ?Carbon $terminationDate {
-        set {
-            $this->setAsDate('terminationDate', $value);
-        }
-        get => $this->getAsDate('terminationDate');
-    }
-
-    public ?Enums\EmployeeStatus $status {
-        set {
-            $this->set('status', $value);
-        }
-        get => $this->getAsEnum('status', Enums\EmployeeStatus::class);
-    }
-
-    public ?Carbon $birthDate {
-        set {
-            $this->setAsDate('birthDate', $value);
-        }
-        get => $this->getAsDate('birthDate');
-    }
-
-    public ?string $statisticsGroupCode {
-        set {
-            $this->set('statisticsGroupCode', $value);
-        }
-        get => $this->get('statisticsGroupCode');
-    }
-
-    public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value);
-        }
-        get => $this->getAsDateTime('lastModifiedDateTime');
-    }
-
-    public ?Picture\Record $picture {
-        get => $this->get('picture');
-    }
-
-    /** @var Entity\Collection<DefaultDimension\Record> */
-    public Entity\Collection $defaultDimensions {
-        get => $this->getAsCollection('defaultDimensions');
-    }
-
-    /** @var Entity\Collection<TimeRegistrationEntry\Record> */
-    public Entity\Collection $timeRegistrationEntries {
-        get => $this->getAsCollection('timeRegistrationEntries');
-    }
-
-    /** @var Entity\Collection<DocumentAttachment\Record> */
-    public Entity\Collection $documentAttachments {
-        get => $this->getAsCollection('documentAttachments');
-    }
-
-    protected array $classMap = [
+    protected $classMap = [
         'picture' => Picture\Record::class,
         'defaultDimensions' => DefaultDimension\Record::class,
         'timeRegistrationEntries' => TimeRegistrationEntry\Record::class,
         'documentAttachments' => DocumentAttachment\Record::class,
     ];
+
+    function getId(): ?string
+    {
+        return $this->get('id');
+    }
+
+    function getNumber(): ?string
+    {
+        return $this->get('number');
+    }
+
+    function setNumber(?string $value): self
+    {
+        $this->set('number', $value);
+        return $this;
+    }
+
+    function getDisplayName(): ?string
+    {
+        return $this->get('displayName');
+    }
+
+    function setDisplayName(?string $value): self
+    {
+        $this->set('displayName', $value);
+        return $this;
+    }
+
+    function getGivenName(): ?string
+    {
+        return $this->get('givenName');
+    }
+
+    function setGivenName(?string $value): self
+    {
+        $this->set('givenName', $value);
+        return $this;
+    }
+
+    function getMiddleName(): ?string
+    {
+        return $this->get('middleName');
+    }
+
+    function setMiddleName(?string $value): self
+    {
+        $this->set('middleName', $value);
+        return $this;
+    }
+
+    function getSurname(): ?string
+    {
+        return $this->get('surname');
+    }
+
+    function setSurname(?string $value): self
+    {
+        $this->set('surname', $value);
+        return $this;
+    }
+
+    function getJobTitle(): ?string
+    {
+        return $this->get('jobTitle');
+    }
+
+    function setJobTitle(?string $value): self
+    {
+        $this->set('jobTitle', $value);
+        return $this;
+    }
+
+    function getAddressLine1(): ?string
+    {
+        return $this->get('addressLine1');
+    }
+
+    function setAddressLine1(?string $value): self
+    {
+        $this->set('addressLine1', $value);
+        return $this;
+    }
+
+    function getAddressLine2(): ?string
+    {
+        return $this->get('addressLine2');
+    }
+
+    function setAddressLine2(?string $value): self
+    {
+        $this->set('addressLine2', $value);
+        return $this;
+    }
+
+    function getCity(): ?string
+    {
+        return $this->get('city');
+    }
+
+    function setCity(?string $value): self
+    {
+        $this->set('city', $value);
+        return $this;
+    }
+
+    function getState(): ?string
+    {
+        return $this->get('state');
+    }
+
+    function setState(?string $value): self
+    {
+        $this->set('state', $value);
+        return $this;
+    }
+
+    function getCountry(): ?string
+    {
+        return $this->get('country');
+    }
+
+    function setCountry(?string $value): self
+    {
+        $this->set('country', $value);
+        return $this;
+    }
+
+    function getPostalCode(): ?string
+    {
+        return $this->get('postalCode');
+    }
+
+    function setPostalCode(?string $value): self
+    {
+        $this->set('postalCode', $value);
+        return $this;
+    }
+
+    function getPhoneNumber(): ?string
+    {
+        return $this->get('phoneNumber');
+    }
+
+    function setPhoneNumber(?string $value): self
+    {
+        $this->set('phoneNumber', $value);
+        return $this;
+    }
+
+    function getMobilePhone(): ?string
+    {
+        return $this->get('mobilePhone');
+    }
+
+    function setMobilePhone(?string $value): self
+    {
+        $this->set('mobilePhone', $value);
+        return $this;
+    }
+
+    function getEmail(): ?string
+    {
+        return $this->get('email');
+    }
+
+    function setEmail(?string $value): self
+    {
+        $this->set('email', $value);
+        return $this;
+    }
+
+    function getPersonalEmail(): ?string
+    {
+        return $this->get('personalEmail');
+    }
+
+    function setPersonalEmail(?string $value): self
+    {
+        $this->set('personalEmail', $value);
+        return $this;
+    }
+
+    function getEmploymentDate(): ?Carbon
+    {
+        return $this->getAsDate('employmentDate');
+    }
+
+    function setEmploymentDate(?\DateTime $value): self
+    {
+        $this->setAsDate('employmentDate', $value);
+        return $this;
+    }
+
+    function getTerminationDate(): ?Carbon
+    {
+        return $this->getAsDate('terminationDate');
+    }
+
+    function setTerminationDate(?\DateTime $value): self
+    {
+        $this->setAsDate('terminationDate', $value);
+        return $this;
+    }
+
+    function getStatus(): ?string
+    {
+        return $this->get('status');
+    }
+
+    function setStatus(?string $value): self
+    {
+        $this->set('status', $value);
+        return $this;
+    }
+
+    function getBirthDate(): ?Carbon
+    {
+        return $this->getAsDate('birthDate');
+    }
+
+    function setBirthDate(?\DateTime $value): self
+    {
+        $this->setAsDate('birthDate', $value);
+        return $this;
+    }
+
+    function getStatisticsGroupCode(): ?string
+    {
+        return $this->get('statisticsGroupCode');
+    }
+
+    function setStatisticsGroupCode(?string $value): self
+    {
+        $this->set('statisticsGroupCode', $value);
+        return $this;
+    }
+
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
+    }
+
+    function setLastModifiedDateTime(?\DateTime $value): self
+    {
+        $this->setAsDateTime('lastModifiedDateTime', $value);
+        return $this;
+    }
+
+    function getPicture(): ?Picture\Record
+    {
+        return $this->get('picture');
+    }
+
+    /**
+     * @return Entity\Collection|DefaultDimension\Record[]
+     */
+    function getDefaultDimensions(): Entity\Collection
+    {
+        return $this->getAsCollection('defaultDimensions');
+    }
+
+    /**
+     * @return Entity\Collection|TimeRegistrationEntry\Record[]
+     */
+    function getTimeRegistrationEntries(): Entity\Collection
+    {
+        return $this->getAsCollection('timeRegistrationEntries');
+    }
+
+    /**
+     * @return Entity\Collection|DocumentAttachment\Record[]
+     */
+    function getDocumentAttachments(): Entity\Collection
+    {
+        return $this->getAsCollection('documentAttachments');
+    }
 }

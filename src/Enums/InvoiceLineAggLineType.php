@@ -1,13 +1,13 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum InvoiceLineAggLineType: string
+class InvoiceLineAggLineType
 {
-    case Comment = 'Comment';
-    case Account = 'Account';
-    case Item = 'Item';
-    case Resource = 'Resource';
-    case FixedAsset = 'Fixed_x0020_Asset';
-    case Charge = 'Charge';
-    case AllocationAccount = 'Allocation_x0020_Account';
+    public const Comment = 'Comment';
+    public const Account = 'Account';
+    public const Item = 'Item';
+    public const Resource = 'Resource';
+    public const FixedAsset = 'Fixed_x0020_Asset';
+    public const Charge = 'Charge';
+    public const AllocationAccount = 'Allocation_x0020_Account';
 }

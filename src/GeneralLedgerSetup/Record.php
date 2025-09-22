@@ -3,71 +3,86 @@ namespace Rebel\BCApi2\Entity\GeneralLedgerSetup;
 
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?Carbon $allowPostingFrom {
-        get => $this->getAsDate('allowPostingFrom');
+    function getAllowPostingFrom(): ?Carbon
+    {
+        return $this->getAsDate('allowPostingFrom');
     }
 
-    public ?Carbon $allowPostingTo {
-        get => $this->getAsDate('allowPostingTo');
+    function getAllowPostingTo(): ?Carbon
+    {
+        return $this->getAsDate('allowPostingTo');
     }
 
-    public ?string $additionalReportingCurrency {
-        get => $this->get('additionalReportingCurrency');
+    function getAdditionalReportingCurrency(): ?string
+    {
+        return $this->get('additionalReportingCurrency');
     }
 
-    public ?string $localCurrencyCode {
-        get => $this->get('localCurrencyCode');
+    function getLocalCurrencyCode(): ?string
+    {
+        return $this->get('localCurrencyCode');
     }
 
-    public ?string $localCurrencySymbol {
-        get => $this->get('localCurrencySymbol');
+    function getLocalCurrencySymbol(): ?string
+    {
+        return $this->get('localCurrencySymbol');
     }
 
-    public ?Carbon $lastModifiedDateTime {
-        get => $this->getAsDateTime('lastModifiedDateTime');
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    public ?bool $allowQueryFromConsolidation {
-        get => $this->get('allowQueryFromConsolidation');
+    function getAllowQueryFromConsolidation(): ?bool
+    {
+        return $this->get('allowQueryFromConsolidation');
     }
 
-    public ?string $shortcutDimension1Code {
-        get => $this->get('shortcutDimension1Code');
+    function getShortcutDimension1Code(): ?string
+    {
+        return $this->get('shortcutDimension1Code');
     }
 
-    public ?string $shortcutDimension2Code {
-        get => $this->get('shortcutDimension2Code');
+    function getShortcutDimension2Code(): ?string
+    {
+        return $this->get('shortcutDimension2Code');
     }
 
-    public ?string $shortcutDimension3Code {
-        get => $this->get('shortcutDimension3Code');
+    function getShortcutDimension3Code(): ?string
+    {
+        return $this->get('shortcutDimension3Code');
     }
 
-    public ?string $shortcutDimension4Code {
-        get => $this->get('shortcutDimension4Code');
+    function getShortcutDimension4Code(): ?string
+    {
+        return $this->get('shortcutDimension4Code');
     }
 
-    public ?string $shortcutDimension5Code {
-        get => $this->get('shortcutDimension5Code');
+    function getShortcutDimension5Code(): ?string
+    {
+        return $this->get('shortcutDimension5Code');
     }
 
-    public ?string $shortcutDimension6Code {
-        get => $this->get('shortcutDimension6Code');
+    function getShortcutDimension6Code(): ?string
+    {
+        return $this->get('shortcutDimension6Code');
     }
 
-    public ?string $shortcutDimension7Code {
-        get => $this->get('shortcutDimension7Code');
+    function getShortcutDimension7Code(): ?string
+    {
+        return $this->get('shortcutDimension7Code');
     }
 
-    public ?string $shortcutDimension8Code {
-        get => $this->get('shortcutDimension8Code');
+    function getShortcutDimension8Code(): ?string
+    {
+        return $this->get('shortcutDimension8Code');
     }
 }

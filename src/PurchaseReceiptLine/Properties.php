@@ -1,21 +1,21 @@
 <?php
 namespace Rebel\BCApi2\Entity\PurchaseReceiptLine;
 
-enum Properties
+class Properties
 {
-    case id;
-    case documentId;
-    case sequence;
-    case lineType;
-    case lineObjectNumber;
-    case description;
-    case description2;
-    case unitOfMeasureCode;
-    case unitCost;
-    case quantity;
-    case discountPercent;
-    case taxPercent;
-    case expectedReceiptDate;
-    case purchaseReceipt;
-    case dimensionSetLines;
+    public const id = 'id';
+    public const documentId = 'documentId';
+    public const sequence = 'sequence';
+    public const lineType = 'lineType';
+    public const lineObjectNumber = 'lineObjectNumber';
+    public const description = 'description';
+    public const description2 = 'description2';
+    public const unitOfMeasureCode = 'unitOfMeasureCode';
+    public const unitCost = 'unitCost';
+    public const quantity = 'quantity';
+    public const discountPercent = 'discountPercent';
+    public const taxPercent = 'taxPercent';
+    public const expectedReceiptDate = 'expectedReceiptDate';
+    public const purchaseReceipt = 'purchaseReceipt';
+    public const dimensionSetLines = 'dimensionSetLines';
 }

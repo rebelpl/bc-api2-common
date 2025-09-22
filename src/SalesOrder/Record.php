@@ -9,408 +9,13 @@ use Rebel\BCApi2\Entity\Customer;
 use Rebel\BCApi2\Entity\DimensionSetLine;
 use Rebel\BCApi2\Entity\DimensionValue;
 use Rebel\BCApi2\Entity\DocumentAttachment;
-use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\PaymentTerm;
 use Rebel\BCApi2\Entity\SalesOrderLine;
 use Rebel\BCApi2\Entity\ShipmentMethod;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
-    }
-
-    public ?string $number {
-        set {
-            $this->set('number', $value);
-        }
-        get => $this->get('number');
-    }
-
-    public ?string $externalDocumentNumber {
-        set {
-            $this->set('externalDocumentNumber', $value);
-        }
-        get => $this->get('externalDocumentNumber');
-    }
-
-    public ?Carbon $orderDate {
-        set {
-            $this->setAsDate('orderDate', $value);
-        }
-        get => $this->getAsDate('orderDate');
-    }
-
-    public ?Carbon $postingDate {
-        set {
-            $this->setAsDate('postingDate', $value);
-        }
-        get => $this->getAsDate('postingDate');
-    }
-
-    public ?string $customerId {
-        set {
-            $this->set('customerId', $value);
-        }
-        get => $this->get('customerId');
-    }
-
-    public ?string $customerNumber {
-        set {
-            $this->set('customerNumber', $value);
-        }
-        get => $this->get('customerNumber');
-    }
-
-    public ?string $customerName {
-        set {
-            $this->set('customerName', $value);
-        }
-        get => $this->get('customerName');
-    }
-
-    public ?string $billToName {
-        set {
-            $this->set('billToName', $value);
-        }
-        get => $this->get('billToName');
-    }
-
-    public ?string $billToCustomerId {
-        set {
-            $this->set('billToCustomerId', $value);
-        }
-        get => $this->get('billToCustomerId');
-    }
-
-    public ?string $billToCustomerNumber {
-        set {
-            $this->set('billToCustomerNumber', $value);
-        }
-        get => $this->get('billToCustomerNumber');
-    }
-
-    public ?string $shipToName {
-        set {
-            $this->set('shipToName', $value);
-        }
-        get => $this->get('shipToName');
-    }
-
-    public ?string $shipToContact {
-        set {
-            $this->set('shipToContact', $value);
-        }
-        get => $this->get('shipToContact');
-    }
-
-    public ?string $sellToAddressLine1 {
-        set {
-            $this->set('sellToAddressLine1', $value);
-        }
-        get => $this->get('sellToAddressLine1');
-    }
-
-    public ?string $sellToAddressLine2 {
-        set {
-            $this->set('sellToAddressLine2', $value);
-        }
-        get => $this->get('sellToAddressLine2');
-    }
-
-    public ?string $sellToCity {
-        set {
-            $this->set('sellToCity', $value);
-        }
-        get => $this->get('sellToCity');
-    }
-
-    public ?string $sellToCountry {
-        set {
-            $this->set('sellToCountry', $value);
-        }
-        get => $this->get('sellToCountry');
-    }
-
-    public ?string $sellToState {
-        set {
-            $this->set('sellToState', $value);
-        }
-        get => $this->get('sellToState');
-    }
-
-    public ?string $sellToPostCode {
-        set {
-            $this->set('sellToPostCode', $value);
-        }
-        get => $this->get('sellToPostCode');
-    }
-
-    public ?string $billToAddressLine1 {
-        set {
-            $this->set('billToAddressLine1', $value);
-        }
-        get => $this->get('billToAddressLine1');
-    }
-
-    public ?string $billToAddressLine2 {
-        set {
-            $this->set('billToAddressLine2', $value);
-        }
-        get => $this->get('billToAddressLine2');
-    }
-
-    public ?string $billToCity {
-        set {
-            $this->set('billToCity', $value);
-        }
-        get => $this->get('billToCity');
-    }
-
-    public ?string $billToCountry {
-        set {
-            $this->set('billToCountry', $value);
-        }
-        get => $this->get('billToCountry');
-    }
-
-    public ?string $billToState {
-        set {
-            $this->set('billToState', $value);
-        }
-        get => $this->get('billToState');
-    }
-
-    public ?string $billToPostCode {
-        set {
-            $this->set('billToPostCode', $value);
-        }
-        get => $this->get('billToPostCode');
-    }
-
-    public ?string $shipToAddressLine1 {
-        set {
-            $this->set('shipToAddressLine1', $value);
-        }
-        get => $this->get('shipToAddressLine1');
-    }
-
-    public ?string $shipToAddressLine2 {
-        set {
-            $this->set('shipToAddressLine2', $value);
-        }
-        get => $this->get('shipToAddressLine2');
-    }
-
-    public ?string $shipToCity {
-        set {
-            $this->set('shipToCity', $value);
-        }
-        get => $this->get('shipToCity');
-    }
-
-    public ?string $shipToCountry {
-        set {
-            $this->set('shipToCountry', $value);
-        }
-        get => $this->get('shipToCountry');
-    }
-
-    public ?string $shipToState {
-        set {
-            $this->set('shipToState', $value);
-        }
-        get => $this->get('shipToState');
-    }
-
-    public ?string $shipToPostCode {
-        set {
-            $this->set('shipToPostCode', $value);
-        }
-        get => $this->get('shipToPostCode');
-    }
-
-    public ?string $shortcutDimension1Code {
-        set {
-            $this->set('shortcutDimension1Code', $value);
-        }
-        get => $this->get('shortcutDimension1Code');
-    }
-
-    public ?string $shortcutDimension2Code {
-        set {
-            $this->set('shortcutDimension2Code', $value);
-        }
-        get => $this->get('shortcutDimension2Code');
-    }
-
-    public ?string $currencyId {
-        set {
-            $this->set('currencyId', $value);
-        }
-        get => $this->get('currencyId');
-    }
-
-    public ?string $currencyCode {
-        set {
-            $this->set('currencyCode', $value);
-        }
-        get => $this->get('currencyCode');
-    }
-
-    public ?bool $pricesIncludeTax {
-        set {
-            $this->set('pricesIncludeTax', $value);
-        }
-        get => $this->get('pricesIncludeTax');
-    }
-
-    public ?string $paymentTermsId {
-        set {
-            $this->set('paymentTermsId', $value);
-        }
-        get => $this->get('paymentTermsId');
-    }
-
-    public ?string $shipmentMethodId {
-        set {
-            $this->set('shipmentMethodId', $value);
-        }
-        get => $this->get('shipmentMethodId');
-    }
-
-    public ?string $salesperson {
-        set {
-            $this->set('salesperson', $value);
-        }
-        get => $this->get('salesperson');
-    }
-
-    public ?bool $partialShipping {
-        set {
-            $this->set('partialShipping', $value);
-        }
-        get => $this->get('partialShipping');
-    }
-
-    public ?Carbon $requestedDeliveryDate {
-        set {
-            $this->setAsDate('requestedDeliveryDate', $value);
-        }
-        get => $this->getAsDate('requestedDeliveryDate');
-    }
-
-    public ?float $discountAmount {
-        set {
-            $this->set('discountAmount', $value);
-        }
-        get => $this->get('discountAmount');
-    }
-
-    public ?bool $discountAppliedBeforeTax {
-        set {
-            $this->set('discountAppliedBeforeTax', $value);
-        }
-        get => $this->get('discountAppliedBeforeTax');
-    }
-
-    public ?float $totalAmountExcludingTax {
-        set {
-            $this->set('totalAmountExcludingTax', $value);
-        }
-        get => $this->get('totalAmountExcludingTax');
-    }
-
-    public ?float $totalTaxAmount {
-        set {
-            $this->set('totalTaxAmount', $value);
-        }
-        get => $this->get('totalTaxAmount');
-    }
-
-    public ?float $totalAmountIncludingTax {
-        set {
-            $this->set('totalAmountIncludingTax', $value);
-        }
-        get => $this->get('totalAmountIncludingTax');
-    }
-
-    public ?bool $fullyShipped {
-        set {
-            $this->set('fullyShipped', $value);
-        }
-        get => $this->get('fullyShipped');
-    }
-
-    public ?Enums\SalesOrderEntityBufferStatus $status {
-        set {
-            $this->set('status', $value);
-        }
-        get => $this->getAsEnum('status', Enums\SalesOrderEntityBufferStatus::class);
-    }
-
-    public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value);
-        }
-        get => $this->getAsDateTime('lastModifiedDateTime');
-    }
-
-    public ?string $phoneNumber {
-        set {
-            $this->set('phoneNumber', $value);
-        }
-        get => $this->get('phoneNumber');
-    }
-
-    public ?string $email {
-        set {
-            $this->set('email', $value);
-        }
-        get => $this->get('email');
-    }
-
-    public ?Customer\Record $customer {
-        get => $this->get('customer');
-    }
-
-    public ?DimensionValue\Record $dimensionValue {
-        get => $this->get('dimensionValue');
-    }
-
-    public ?Currency\Record $currency {
-        get => $this->get('currency');
-    }
-
-    public ?PaymentTerm\Record $paymentTerm {
-        get => $this->get('paymentTerm');
-    }
-
-    public ?ShipmentMethod\Record $shipmentMethod {
-        get => $this->get('shipmentMethod');
-    }
-
-    /** @var Entity\Collection<DimensionSetLine\Record> */
-    public Entity\Collection $dimensionSetLines {
-        get => $this->getAsCollection('dimensionSetLines');
-    }
-
-    /** @var Entity\Collection<SalesOrderLine\Record> */
-    public Entity\Collection $salesOrderLines {
-        get => $this->getAsCollection('salesOrderLines');
-    }
-
-    /** @var Entity\Collection<Attachment\Record> */
-    public Entity\Collection $attachments {
-        get => $this->getAsCollection('attachments');
-    }
-
-    /** @var Entity\Collection<DocumentAttachment\Record> */
-    public Entity\Collection $documentAttachments {
-        get => $this->getAsCollection('documentAttachments');
-    }
-
-    protected array $classMap = [
+    protected $classMap = [
         'customer' => Customer\Record::class,
         'dimensionValue' => DimensionValue\Record::class,
         'currency' => Currency\Record::class,
@@ -421,4 +26,616 @@ class Record extends Entity
         'attachments' => Attachment\Record::class,
         'documentAttachments' => DocumentAttachment\Record::class,
     ];
+
+    function getId(): ?string
+    {
+        return $this->get('id');
+    }
+
+    function getNumber(): ?string
+    {
+        return $this->get('number');
+    }
+
+    function setNumber(?string $value): self
+    {
+        $this->set('number', $value);
+        return $this;
+    }
+
+    function getExternalDocumentNumber(): ?string
+    {
+        return $this->get('externalDocumentNumber');
+    }
+
+    function setExternalDocumentNumber(?string $value): self
+    {
+        $this->set('externalDocumentNumber', $value);
+        return $this;
+    }
+
+    function getOrderDate(): ?Carbon
+    {
+        return $this->getAsDate('orderDate');
+    }
+
+    function setOrderDate(?\DateTime $value): self
+    {
+        $this->setAsDate('orderDate', $value);
+        return $this;
+    }
+
+    function getPostingDate(): ?Carbon
+    {
+        return $this->getAsDate('postingDate');
+    }
+
+    function setPostingDate(?\DateTime $value): self
+    {
+        $this->setAsDate('postingDate', $value);
+        return $this;
+    }
+
+    function getCustomerId(): ?string
+    {
+        return $this->get('customerId');
+    }
+
+    function setCustomerId(?string $value): self
+    {
+        $this->set('customerId', $value);
+        return $this;
+    }
+
+    function getCustomerNumber(): ?string
+    {
+        return $this->get('customerNumber');
+    }
+
+    function setCustomerNumber(?string $value): self
+    {
+        $this->set('customerNumber', $value);
+        return $this;
+    }
+
+    function getCustomerName(): ?string
+    {
+        return $this->get('customerName');
+    }
+
+    function setCustomerName(?string $value): self
+    {
+        $this->set('customerName', $value);
+        return $this;
+    }
+
+    function getBillToName(): ?string
+    {
+        return $this->get('billToName');
+    }
+
+    function setBillToName(?string $value): self
+    {
+        $this->set('billToName', $value);
+        return $this;
+    }
+
+    function getBillToCustomerId(): ?string
+    {
+        return $this->get('billToCustomerId');
+    }
+
+    function setBillToCustomerId(?string $value): self
+    {
+        $this->set('billToCustomerId', $value);
+        return $this;
+    }
+
+    function getBillToCustomerNumber(): ?string
+    {
+        return $this->get('billToCustomerNumber');
+    }
+
+    function setBillToCustomerNumber(?string $value): self
+    {
+        $this->set('billToCustomerNumber', $value);
+        return $this;
+    }
+
+    function getShipToName(): ?string
+    {
+        return $this->get('shipToName');
+    }
+
+    function setShipToName(?string $value): self
+    {
+        $this->set('shipToName', $value);
+        return $this;
+    }
+
+    function getShipToContact(): ?string
+    {
+        return $this->get('shipToContact');
+    }
+
+    function setShipToContact(?string $value): self
+    {
+        $this->set('shipToContact', $value);
+        return $this;
+    }
+
+    function getSellToAddressLine1(): ?string
+    {
+        return $this->get('sellToAddressLine1');
+    }
+
+    function setSellToAddressLine1(?string $value): self
+    {
+        $this->set('sellToAddressLine1', $value);
+        return $this;
+    }
+
+    function getSellToAddressLine2(): ?string
+    {
+        return $this->get('sellToAddressLine2');
+    }
+
+    function setSellToAddressLine2(?string $value): self
+    {
+        $this->set('sellToAddressLine2', $value);
+        return $this;
+    }
+
+    function getSellToCity(): ?string
+    {
+        return $this->get('sellToCity');
+    }
+
+    function setSellToCity(?string $value): self
+    {
+        $this->set('sellToCity', $value);
+        return $this;
+    }
+
+    function getSellToCountry(): ?string
+    {
+        return $this->get('sellToCountry');
+    }
+
+    function setSellToCountry(?string $value): self
+    {
+        $this->set('sellToCountry', $value);
+        return $this;
+    }
+
+    function getSellToState(): ?string
+    {
+        return $this->get('sellToState');
+    }
+
+    function setSellToState(?string $value): self
+    {
+        $this->set('sellToState', $value);
+        return $this;
+    }
+
+    function getSellToPostCode(): ?string
+    {
+        return $this->get('sellToPostCode');
+    }
+
+    function setSellToPostCode(?string $value): self
+    {
+        $this->set('sellToPostCode', $value);
+        return $this;
+    }
+
+    function getBillToAddressLine1(): ?string
+    {
+        return $this->get('billToAddressLine1');
+    }
+
+    function setBillToAddressLine1(?string $value): self
+    {
+        $this->set('billToAddressLine1', $value);
+        return $this;
+    }
+
+    function getBillToAddressLine2(): ?string
+    {
+        return $this->get('billToAddressLine2');
+    }
+
+    function setBillToAddressLine2(?string $value): self
+    {
+        $this->set('billToAddressLine2', $value);
+        return $this;
+    }
+
+    function getBillToCity(): ?string
+    {
+        return $this->get('billToCity');
+    }
+
+    function setBillToCity(?string $value): self
+    {
+        $this->set('billToCity', $value);
+        return $this;
+    }
+
+    function getBillToCountry(): ?string
+    {
+        return $this->get('billToCountry');
+    }
+
+    function setBillToCountry(?string $value): self
+    {
+        $this->set('billToCountry', $value);
+        return $this;
+    }
+
+    function getBillToState(): ?string
+    {
+        return $this->get('billToState');
+    }
+
+    function setBillToState(?string $value): self
+    {
+        $this->set('billToState', $value);
+        return $this;
+    }
+
+    function getBillToPostCode(): ?string
+    {
+        return $this->get('billToPostCode');
+    }
+
+    function setBillToPostCode(?string $value): self
+    {
+        $this->set('billToPostCode', $value);
+        return $this;
+    }
+
+    function getShipToAddressLine1(): ?string
+    {
+        return $this->get('shipToAddressLine1');
+    }
+
+    function setShipToAddressLine1(?string $value): self
+    {
+        $this->set('shipToAddressLine1', $value);
+        return $this;
+    }
+
+    function getShipToAddressLine2(): ?string
+    {
+        return $this->get('shipToAddressLine2');
+    }
+
+    function setShipToAddressLine2(?string $value): self
+    {
+        $this->set('shipToAddressLine2', $value);
+        return $this;
+    }
+
+    function getShipToCity(): ?string
+    {
+        return $this->get('shipToCity');
+    }
+
+    function setShipToCity(?string $value): self
+    {
+        $this->set('shipToCity', $value);
+        return $this;
+    }
+
+    function getShipToCountry(): ?string
+    {
+        return $this->get('shipToCountry');
+    }
+
+    function setShipToCountry(?string $value): self
+    {
+        $this->set('shipToCountry', $value);
+        return $this;
+    }
+
+    function getShipToState(): ?string
+    {
+        return $this->get('shipToState');
+    }
+
+    function setShipToState(?string $value): self
+    {
+        $this->set('shipToState', $value);
+        return $this;
+    }
+
+    function getShipToPostCode(): ?string
+    {
+        return $this->get('shipToPostCode');
+    }
+
+    function setShipToPostCode(?string $value): self
+    {
+        $this->set('shipToPostCode', $value);
+        return $this;
+    }
+
+    function getShortcutDimension1Code(): ?string
+    {
+        return $this->get('shortcutDimension1Code');
+    }
+
+    function setShortcutDimension1Code(?string $value): self
+    {
+        $this->set('shortcutDimension1Code', $value);
+        return $this;
+    }
+
+    function getShortcutDimension2Code(): ?string
+    {
+        return $this->get('shortcutDimension2Code');
+    }
+
+    function setShortcutDimension2Code(?string $value): self
+    {
+        $this->set('shortcutDimension2Code', $value);
+        return $this;
+    }
+
+    function getCurrencyId(): ?string
+    {
+        return $this->get('currencyId');
+    }
+
+    function setCurrencyId(?string $value): self
+    {
+        $this->set('currencyId', $value);
+        return $this;
+    }
+
+    function getCurrencyCode(): ?string
+    {
+        return $this->get('currencyCode');
+    }
+
+    function setCurrencyCode(?string $value): self
+    {
+        $this->set('currencyCode', $value);
+        return $this;
+    }
+
+    function getPricesIncludeTax(): ?bool
+    {
+        return $this->get('pricesIncludeTax');
+    }
+
+    function setPricesIncludeTax(?bool $value): self
+    {
+        $this->set('pricesIncludeTax', $value);
+        return $this;
+    }
+
+    function getPaymentTermsId(): ?string
+    {
+        return $this->get('paymentTermsId');
+    }
+
+    function setPaymentTermsId(?string $value): self
+    {
+        $this->set('paymentTermsId', $value);
+        return $this;
+    }
+
+    function getShipmentMethodId(): ?string
+    {
+        return $this->get('shipmentMethodId');
+    }
+
+    function setShipmentMethodId(?string $value): self
+    {
+        $this->set('shipmentMethodId', $value);
+        return $this;
+    }
+
+    function getSalesperson(): ?string
+    {
+        return $this->get('salesperson');
+    }
+
+    function setSalesperson(?string $value): self
+    {
+        $this->set('salesperson', $value);
+        return $this;
+    }
+
+    function getPartialShipping(): ?bool
+    {
+        return $this->get('partialShipping');
+    }
+
+    function setPartialShipping(?bool $value): self
+    {
+        $this->set('partialShipping', $value);
+        return $this;
+    }
+
+    function getRequestedDeliveryDate(): ?Carbon
+    {
+        return $this->getAsDate('requestedDeliveryDate');
+    }
+
+    function setRequestedDeliveryDate(?\DateTime $value): self
+    {
+        $this->setAsDate('requestedDeliveryDate', $value);
+        return $this;
+    }
+
+    function getDiscountAmount(): ?float
+    {
+        return $this->get('discountAmount');
+    }
+
+    function setDiscountAmount(?float $value): self
+    {
+        $this->set('discountAmount', $value);
+        return $this;
+    }
+
+    function getDiscountAppliedBeforeTax(): ?bool
+    {
+        return $this->get('discountAppliedBeforeTax');
+    }
+
+    function setDiscountAppliedBeforeTax(?bool $value): self
+    {
+        $this->set('discountAppliedBeforeTax', $value);
+        return $this;
+    }
+
+    function getTotalAmountExcludingTax(): ?float
+    {
+        return $this->get('totalAmountExcludingTax');
+    }
+
+    function setTotalAmountExcludingTax(?float $value): self
+    {
+        $this->set('totalAmountExcludingTax', $value);
+        return $this;
+    }
+
+    function getTotalTaxAmount(): ?float
+    {
+        return $this->get('totalTaxAmount');
+    }
+
+    function setTotalTaxAmount(?float $value): self
+    {
+        $this->set('totalTaxAmount', $value);
+        return $this;
+    }
+
+    function getTotalAmountIncludingTax(): ?float
+    {
+        return $this->get('totalAmountIncludingTax');
+    }
+
+    function setTotalAmountIncludingTax(?float $value): self
+    {
+        $this->set('totalAmountIncludingTax', $value);
+        return $this;
+    }
+
+    function getFullyShipped(): ?bool
+    {
+        return $this->get('fullyShipped');
+    }
+
+    function setFullyShipped(?bool $value): self
+    {
+        $this->set('fullyShipped', $value);
+        return $this;
+    }
+
+    function getStatus(): ?string
+    {
+        return $this->get('status');
+    }
+
+    function setStatus(?string $value): self
+    {
+        $this->set('status', $value);
+        return $this;
+    }
+
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
+    }
+
+    function setLastModifiedDateTime(?\DateTime $value): self
+    {
+        $this->setAsDateTime('lastModifiedDateTime', $value);
+        return $this;
+    }
+
+    function getPhoneNumber(): ?string
+    {
+        return $this->get('phoneNumber');
+    }
+
+    function setPhoneNumber(?string $value): self
+    {
+        $this->set('phoneNumber', $value);
+        return $this;
+    }
+
+    function getEmail(): ?string
+    {
+        return $this->get('email');
+    }
+
+    function setEmail(?string $value): self
+    {
+        $this->set('email', $value);
+        return $this;
+    }
+
+    function getCustomer(): ?Customer\Record
+    {
+        return $this->get('customer');
+    }
+
+    function getDimensionValue(): ?DimensionValue\Record
+    {
+        return $this->get('dimensionValue');
+    }
+
+    function getCurrency(): ?Currency\Record
+    {
+        return $this->get('currency');
+    }
+
+    function getPaymentTerm(): ?PaymentTerm\Record
+    {
+        return $this->get('paymentTerm');
+    }
+
+    function getShipmentMethod(): ?ShipmentMethod\Record
+    {
+        return $this->get('shipmentMethod');
+    }
+
+    /**
+     * @return Entity\Collection|DimensionSetLine\Record[]
+     */
+    function getDimensionSetLines(): Entity\Collection
+    {
+        return $this->getAsCollection('dimensionSetLines');
+    }
+
+    /**
+     * @return Entity\Collection|SalesOrderLine\Record[]
+     */
+    function getSalesOrderLines(): Entity\Collection
+    {
+        return $this->getAsCollection('salesOrderLines');
+    }
+
+    /**
+     * @return Entity\Collection|Attachment\Record[]
+     */
+    function getAttachments(): Entity\Collection
+    {
+        return $this->getAsCollection('attachments');
+    }
+
+    /**
+     * @return Entity\Collection|DocumentAttachment\Record[]
+     */
+    function getDocumentAttachments(): Entity\Collection
+    {
+        return $this->getAsCollection('documentAttachments');
+    }
 }

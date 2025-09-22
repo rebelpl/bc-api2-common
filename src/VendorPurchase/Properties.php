@@ -1,11 +1,11 @@
 <?php
 namespace Rebel\BCApi2\Entity\VendorPurchase;
 
-enum Properties
+class Properties
 {
-    case vendorId;
-    case vendorNumber;
-    case name;
-    case totalPurchaseAmount;
-    case dateFilter_FilterOnly;
+    public const vendorId = 'vendorId';
+    public const vendorNumber = 'vendorNumber';
+    public const name = 'name';
+    public const totalPurchaseAmount = 'totalPurchaseAmount';
+    public const dateFilter_FilterOnly = 'dateFilter_FilterOnly';
 }

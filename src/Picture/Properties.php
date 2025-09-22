@@ -1,17 +1,17 @@
 <?php
 namespace Rebel\BCApi2\Entity\Picture;
 
-enum Properties
+class Properties
 {
-    case id;
-    case parentType;
-    case width;
-    case height;
-    case contentType;
-    case pictureContent;
-    case item;
-    case customer;
-    case contact;
-    case vendor;
-    case employee;
+    public const id = 'id';
+    public const parentType = 'parentType';
+    public const width = 'width';
+    public const height = 'height';
+    public const contentType = 'contentType';
+    public const pictureContent = 'pictureContent';
+    public const item = 'item';
+    public const customer = 'customer';
+    public const contact = 'contact';
+    public const vendor = 'vendor';
+    public const employee = 'employee';
 }

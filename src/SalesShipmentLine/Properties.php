@@ -1,22 +1,22 @@
 <?php
 namespace Rebel\BCApi2\Entity\SalesShipmentLine;
 
-enum Properties
+class Properties
 {
-    case id;
-    case documentId;
-    case documentNo;
-    case sequence;
-    case lineType;
-    case lineObjectNumber;
-    case description;
-    case description2;
-    case unitOfMeasureCode;
-    case unitPrice;
-    case quantity;
-    case discountPercent;
-    case taxPercent;
-    case shipmentDate;
-    case salesShipment;
-    case dimensionSetLines;
+    public const id = 'id';
+    public const documentId = 'documentId';
+    public const documentNo = 'documentNo';
+    public const sequence = 'sequence';
+    public const lineType = 'lineType';
+    public const lineObjectNumber = 'lineObjectNumber';
+    public const description = 'description';
+    public const description2 = 'description2';
+    public const unitOfMeasureCode = 'unitOfMeasureCode';
+    public const unitPrice = 'unitPrice';
+    public const quantity = 'quantity';
+    public const discountPercent = 'discountPercent';
+    public const taxPercent = 'taxPercent';
+    public const shipmentDate = 'shipmentDate';
+    public const salesShipment = 'salesShipment';
+    public const dimensionSetLines = 'dimensionSetLines';
 }

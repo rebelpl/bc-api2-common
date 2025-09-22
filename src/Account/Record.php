@@ -3,70 +3,84 @@ namespace Rebel\BCApi2\Entity\Account;
 
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\TrialBalance;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    protected $classMap = ['trialBalance' => TrialBalance\Record::class];
+
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?string $number {
-        get => $this->get('number');
+    function getNumber(): ?string
+    {
+        return $this->get('number');
     }
 
-    public ?string $displayName {
-        get => $this->get('displayName');
+    function getDisplayName(): ?string
+    {
+        return $this->get('displayName');
     }
 
-    public ?Enums\GlAccountCategory $category {
-        get => $this->getAsEnum('category', Enums\GlAccountCategory::class);
+    function getCategory(): ?string
+    {
+        return $this->get('category');
     }
 
-    public ?string $subCategory {
-        get => $this->get('subCategory');
+    function getSubCategory(): ?string
+    {
+        return $this->get('subCategory');
     }
 
-    public ?bool $blocked {
-        get => $this->get('blocked');
+    function getBlocked(): ?bool
+    {
+        return $this->get('blocked');
     }
 
-    public ?Enums\GlAccountType $accountType {
-        get => $this->getAsEnum('accountType', Enums\GlAccountType::class);
+    function getAccountType(): ?string
+    {
+        return $this->get('accountType');
     }
 
-    public ?bool $directPosting {
-        get => $this->get('directPosting');
+    function getDirectPosting(): ?bool
+    {
+        return $this->get('directPosting');
     }
 
-    public ?float $netChange {
-        get => $this->get('netChange');
+    function getNetChange(): ?float
+    {
+        return $this->get('netChange');
     }
 
-    public ?string $consolidationTranslationMethod {
-        get => $this->get('consolidationTranslationMethod');
+    function getConsolidationTranslationMethod(): ?string
+    {
+        return $this->get('consolidationTranslationMethod');
     }
 
-    public ?string $consolidationDebitAccount {
-        get => $this->get('consolidationDebitAccount');
+    function getConsolidationDebitAccount(): ?string
+    {
+        return $this->get('consolidationDebitAccount');
     }
 
-    public ?string $consolidationCreditAccount {
-        get => $this->get('consolidationCreditAccount');
+    function getConsolidationCreditAccount(): ?string
+    {
+        return $this->get('consolidationCreditAccount');
     }
 
-    public ?bool $excludeFromConsolidation {
-        get => $this->get('excludeFromConsolidation');
+    function getExcludeFromConsolidation(): ?bool
+    {
+        return $this->get('excludeFromConsolidation');
     }
 
-    public ?Carbon $lastModifiedDateTime {
-        get => $this->getAsDateTime('lastModifiedDateTime');
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    public ?TrialBalance\Record $trialBalance {
-        get => $this->get('trialBalance');
+    function getTrialBalance(): ?TrialBalance\Record
+    {
+        return $this->get('trialBalance');
     }
-
-    protected array $classMap = ['trialBalance' => TrialBalance\Record::class];
 }

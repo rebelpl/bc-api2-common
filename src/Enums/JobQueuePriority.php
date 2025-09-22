@@ -1,9 +1,9 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum JobQueuePriority: string
+class JobQueuePriority
 {
-    case High = 'High';
-    case Normal = 'Normal';
-    case Low = 'Low';
+    public const High = 'High';
+    public const Normal = 'Normal';
+    public const Low = 'Low';
 }

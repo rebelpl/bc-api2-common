@@ -9,12 +9,14 @@
       "email": "artur.jedlinski@rebel.pl"
     }
   ],
+  "minimum-stability": "dev",
   "require": {
-    "php": "^8.4",
-    "rebelpl/bc-api2-client": "dev-main"
+    "php": "^7.2",
+    "rebelpl/bc-api2-client": "dev-php7.2"
   },
   "require-dev": {
-    "phpunit/phpunit": "^11.5"
+    "phpunit/phpunit": "^8.5",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-4": {

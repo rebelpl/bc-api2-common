@@ -1,20 +1,20 @@
 <?php
 namespace Rebel\BCApi2\Entity\Location;
 
-enum Properties
+class Properties
 {
-    case id;
-    case code;
-    case displayName;
-    case contact;
-    case addressLine1;
-    case addressLine2;
-    case city;
-    case state;
-    case country;
-    case postalCode;
-    case phoneNumber;
-    case email;
-    case website;
-    case lastModifiedDateTime;
+    public const id = 'id';
+    public const code = 'code';
+    public const displayName = 'displayName';
+    public const contact = 'contact';
+    public const addressLine1 = 'addressLine1';
+    public const addressLine2 = 'addressLine2';
+    public const city = 'city';
+    public const state = 'state';
+    public const country = 'country';
+    public const postalCode = 'postalCode';
+    public const phoneNumber = 'phoneNumber';
+    public const email = 'email';
+    public const website = 'website';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
 }

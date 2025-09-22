@@ -1,15 +1,15 @@
 <?php
 namespace Rebel\BCApi2\Entity\ContactInformation;
 
-enum Properties
+class Properties
 {
-    case contactId;
-    case contactNumber;
-    case contactName;
-    case contactType;
-    case relatedId;
-    case relatedType;
-    case customer;
-    case contact;
-    case vendor;
+    public const contactId = 'contactId';
+    public const contactNumber = 'contactNumber';
+    public const contactName = 'contactName';
+    public const contactType = 'contactType';
+    public const relatedId = 'relatedId';
+    public const relatedType = 'relatedType';
+    public const customer = 'customer';
+    public const contact = 'contact';
+    public const vendor = 'vendor';
 }

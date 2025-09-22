@@ -3,54 +3,77 @@ namespace Rebel\BCApi2\Entity\VendorPaymentJournal;
 
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\VendorPayment;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    protected $classMap = ['vendorPayments' => VendorPayment\Record::class];
+
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?string $code {
-        set {
-            $this->set('code', $value);
-        }
-        get => $this->get('code');
+    function getCode(): ?string
+    {
+        return $this->get('code');
     }
 
-    public ?string $displayName {
-        set {
-            $this->set('displayName', $value);
-        }
-        get => $this->get('displayName');
+    function setCode(?string $value): self
+    {
+        $this->set('code', $value);
+        return $this;
     }
 
-    public ?string $balancingAccountId {
-        set {
-            $this->set('balancingAccountId', $value);
-        }
-        get => $this->get('balancingAccountId');
+    function getDisplayName(): ?string
+    {
+        return $this->get('displayName');
     }
 
-    public ?string $balancingAccountNumber {
-        set {
-            $this->set('balancingAccountNumber', $value);
-        }
-        get => $this->get('balancingAccountNumber');
+    function setDisplayName(?string $value): self
+    {
+        $this->set('displayName', $value);
+        return $this;
     }
 
-    public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value);
-        }
-        get => $this->getAsDateTime('lastModifiedDateTime');
+    function getBalancingAccountId(): ?string
+    {
+        return $this->get('balancingAccountId');
     }
 
-    /** @var Entity\Collection<VendorPayment\Record> */
-    public Entity\Collection $vendorPayments {
-        get => $this->getAsCollection('vendorPayments');
+    function setBalancingAccountId(?string $value): self
+    {
+        $this->set('balancingAccountId', $value);
+        return $this;
     }
 
-    protected array $classMap = ['vendorPayments' => VendorPayment\Record::class];
+    function getBalancingAccountNumber(): ?string
+    {
+        return $this->get('balancingAccountNumber');
+    }
+
+    function setBalancingAccountNumber(?string $value): self
+    {
+        $this->set('balancingAccountNumber', $value);
+        return $this;
+    }
+
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
+    }
+
+    function setLastModifiedDateTime(?\DateTime $value): self
+    {
+        $this->setAsDateTime('lastModifiedDateTime', $value);
+        return $this;
+    }
+
+    /**
+     * @return Entity\Collection|VendorPayment\Record[]
+     */
+    function getVendorPayments(): Entity\Collection
+    {
+        return $this->getAsCollection('vendorPayments');
+    }
 }

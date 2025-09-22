@@ -1,24 +1,24 @@
 <?php
 namespace Rebel\BCApi2\Entity\Opportunity;
 
-enum Properties
+class Properties
 {
-    case id;
-    case number;
-    case contactNumber;
-    case contactName;
-    case contactCompanyName;
-    case salespersonCode;
-    case description;
-    case status;
-    case closed;
-    case creationDate;
-    case dateClosed;
-    case calculatedCurrentValue;
-    case chancesOfSuccessPrc;
-    case completedPrc;
-    case estimatedClosingDate;
-    case estimatedValue;
-    case systemCreatedAt;
-    case lastModifiedDateTime;
+    public const id = 'id';
+    public const number = 'number';
+    public const contactNumber = 'contactNumber';
+    public const contactName = 'contactName';
+    public const contactCompanyName = 'contactCompanyName';
+    public const salespersonCode = 'salespersonCode';
+    public const description = 'description';
+    public const status = 'status';
+    public const closed = 'closed';
+    public const creationDate = 'creationDate';
+    public const dateClosed = 'dateClosed';
+    public const calculatedCurrentValue = 'calculatedCurrentValue';
+    public const chancesOfSuccessPrc = 'chancesOfSuccessPrc';
+    public const completedPrc = 'completedPrc';
+    public const estimatedClosingDate = 'estimatedClosingDate';
+    public const estimatedValue = 'estimatedValue';
+    public const systemCreatedAt = 'systemCreatedAt';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
 }

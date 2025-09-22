@@ -3,67 +3,96 @@ namespace Rebel\BCApi2\Entity\CustomerContact;
 
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\PdfDocument;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    protected $classMap = ['pdfDocument' => PdfDocument\Record::class];
+
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?string $email {
-        set {
-            $this->set('email', $value);
-        }
-        get => $this->get('email');
+    function getEmail(): ?string
+    {
+        return $this->get('email');
     }
 
-    public ?string $firstName {
-        set {
-            $this->set('firstName', $value);
-        }
-        get => $this->get('firstName');
+    function setEmail(?string $value): self
+    {
+        $this->set('email', $value);
+        return $this;
     }
 
-    public ?string $lastName {
-        set {
-            $this->set('lastName', $value);
-        }
-        get => $this->get('lastName');
+    function getFirstName(): ?string
+    {
+        return $this->get('firstName');
     }
 
-    public ?string $professionalTitle {
-        set {
-            $this->set('professionalTitle', $value);
-        }
-        get => $this->get('professionalTitle');
+    function setFirstName(?string $value): self
+    {
+        $this->set('firstName', $value);
+        return $this;
     }
 
-    public ?string $customerId {
-        set {
-            $this->set('customerId', $value);
-        }
-        get => $this->get('customerId');
+    function getLastName(): ?string
+    {
+        return $this->get('lastName');
     }
 
-    public ?string $customerName {
-        set {
-            $this->set('customerName', $value);
-        }
-        get => $this->get('customerName');
+    function setLastName(?string $value): self
+    {
+        $this->set('lastName', $value);
+        return $this;
     }
 
-    public ?string $primaryPhoneNumber {
-        set {
-            $this->set('primaryPhoneNumber', $value);
-        }
-        get => $this->get('primaryPhoneNumber');
+    function getProfessionalTitle(): ?string
+    {
+        return $this->get('professionalTitle');
     }
 
-    public ?PdfDocument\Record $pdfDocument {
-        get => $this->get('pdfDocument');
+    function setProfessionalTitle(?string $value): self
+    {
+        $this->set('professionalTitle', $value);
+        return $this;
     }
 
-    protected array $classMap = ['pdfDocument' => PdfDocument\Record::class];
+    function getCustomerId(): ?string
+    {
+        return $this->get('customerId');
+    }
+
+    function setCustomerId(?string $value): self
+    {
+        $this->set('customerId', $value);
+        return $this;
+    }
+
+    function getCustomerName(): ?string
+    {
+        return $this->get('customerName');
+    }
+
+    function setCustomerName(?string $value): self
+    {
+        $this->set('customerName', $value);
+        return $this;
+    }
+
+    function getPrimaryPhoneNumber(): ?string
+    {
+        return $this->get('primaryPhoneNumber');
+    }
+
+    function setPrimaryPhoneNumber(?string $value): self
+    {
+        $this->set('primaryPhoneNumber', $value);
+        return $this;
+    }
+
+    function getPdfDocument(): ?PdfDocument\Record
+    {
+        return $this->get('pdfDocument');
+    }
 }

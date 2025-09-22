@@ -1,13 +1,13 @@
 <?php
 namespace Rebel\BCApi2\Entity\DimensionValue;
 
-enum Properties
+class Properties
 {
-    case id;
-    case code;
-    case dimensionId;
-    case displayName;
-    case consolidationCode;
-    case lastModifiedDateTime;
-    case dimension;
+    public const id = 'id';
+    public const code = 'code';
+    public const dimensionId = 'dimensionId';
+    public const displayName = 'displayName';
+    public const consolidationCode = 'consolidationCode';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
+    public const dimension = 'dimension';
 }

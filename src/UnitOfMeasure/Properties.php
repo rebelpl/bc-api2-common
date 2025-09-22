@@ -1,12 +1,12 @@
 <?php
 namespace Rebel\BCApi2\Entity\UnitOfMeasure;
 
-enum Properties
+class Properties
 {
-    case id;
-    case code;
-    case displayName;
-    case internationalStandardCode;
-    case symbol;
-    case lastModifiedDateTime;
+    public const id = 'id';
+    public const code = 'code';
+    public const displayName = 'displayName';
+    public const internationalStandardCode = 'internationalStandardCode';
+    public const symbol = 'symbol';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
 }

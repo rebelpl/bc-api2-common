@@ -1,8 +1,8 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum ContactType: string
+class ContactType
 {
-    case Company = 'Company';
-    case Person = 'Person';
+    public const Company = 'Company';
+    public const Person = 'Person';
 }

@@ -1,13 +1,13 @@
 <?php
 namespace Rebel\BCApi2\Entity\CurrencyExchangeRate;
 
-enum Properties
+class Properties
 {
-    case id;
-    case currencyCode;
-    case startingDate;
-    case exchangeRateAmount;
-    case relationalCurrencyCode;
-    case relationalExchangeRateAmount;
-    case lastModifiedDateTime;
+    public const id = 'id';
+    public const currencyCode = 'currencyCode';
+    public const startingDate = 'startingDate';
+    public const exchangeRateAmount = 'exchangeRateAmount';
+    public const relationalCurrencyCode = 'relationalCurrencyCode';
+    public const relationalExchangeRateAmount = 'relationalExchangeRateAmount';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
 }

@@ -1,9 +1,9 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum EmployeeStatus: string
+class EmployeeStatus
 {
-    case Active = 'Active';
-    case Inactive = 'Inactive';
-    case Terminated = 'Terminated';
+    public const Active = 'Active';
+    public const Inactive = 'Inactive';
+    public const Terminated = 'Terminated';
 }

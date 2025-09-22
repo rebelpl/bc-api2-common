@@ -1,16 +1,16 @@
 <?php
 namespace Rebel\BCApi2\Entity\BankAccount;
 
-enum Properties
+class Properties
 {
-    case id;
-    case number;
-    case displayName;
-    case lastModifiedDateTime;
-    case bankAccountNumber;
-    case blocked;
-    case currencyCode;
-    case currencyId;
-    case iban;
-    case intercompanyEnabled;
+    public const id = 'id';
+    public const number = 'number';
+    public const displayName = 'displayName';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
+    public const bankAccountNumber = 'bankAccountNumber';
+    public const blocked = 'blocked';
+    public const currencyCode = 'currencyCode';
+    public const currencyId = 'currencyId';
+    public const iban = 'iban';
+    public const intercompanyEnabled = 'intercompanyEnabled';
 }

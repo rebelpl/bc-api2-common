@@ -3,63 +3,76 @@ namespace Rebel\BCApi2\Entity\ItemLedgerEntry;
 
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?int $entryNumber {
-        get => $this->get('entryNumber');
+    function getEntryNumber(): ?int
+    {
+        return $this->get('entryNumber');
     }
 
-    public ?string $itemNumber {
-        get => $this->get('itemNumber');
+    function getItemNumber(): ?string
+    {
+        return $this->get('itemNumber');
     }
 
-    public ?Carbon $postingDate {
-        get => $this->getAsDate('postingDate');
+    function getPostingDate(): ?Carbon
+    {
+        return $this->getAsDate('postingDate');
     }
 
-    public ?Enums\ItemLedgerEntryType $entryType {
-        get => $this->getAsEnum('entryType', Enums\ItemLedgerEntryType::class);
+    function getEntryType(): ?string
+    {
+        return $this->get('entryType');
     }
 
-    public ?string $sourceNumber {
-        get => $this->get('sourceNumber');
+    function getSourceNumber(): ?string
+    {
+        return $this->get('sourceNumber');
     }
 
-    public ?Enums\AnalysisSourceType $sourceType {
-        get => $this->getAsEnum('sourceType', Enums\AnalysisSourceType::class);
+    function getSourceType(): ?string
+    {
+        return $this->get('sourceType');
     }
 
-    public ?string $documentNumber {
-        get => $this->get('documentNumber');
+    function getDocumentNumber(): ?string
+    {
+        return $this->get('documentNumber');
     }
 
-    public ?Enums\ItemLedgerDocumentType $documentType {
-        get => $this->getAsEnum('documentType', Enums\ItemLedgerDocumentType::class);
+    function getDocumentType(): ?string
+    {
+        return $this->get('documentType');
     }
 
-    public ?string $description {
-        get => $this->get('description');
+    function getDescription(): ?string
+    {
+        return $this->get('description');
     }
 
-    public ?float $quantity {
-        get => $this->get('quantity');
+    function getQuantity(): ?float
+    {
+        return $this->get('quantity');
     }
 
-    public ?float $salesAmountActual {
-        get => $this->get('salesAmountActual');
+    function getSalesAmountActual(): ?float
+    {
+        return $this->get('salesAmountActual');
     }
 
-    public ?float $costAmountActual {
-        get => $this->get('costAmountActual');
+    function getCostAmountActual(): ?float
+    {
+        return $this->get('costAmountActual');
     }
 
-    public ?Carbon $lastModifiedDateTime {
-        get => $this->getAsDateTime('lastModifiedDateTime');
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
     }
 }

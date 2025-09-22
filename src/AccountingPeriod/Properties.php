@@ -1,13 +1,13 @@
 <?php
 namespace Rebel\BCApi2\Entity\AccountingPeriod;
 
-enum Properties
+class Properties
 {
-    case id;
-    case startingDate;
-    case name;
-    case newFiscalYear;
-    case closed;
-    case dateLocked;
-    case lastModifiedDateTime;
+    public const id = 'id';
+    public const startingDate = 'startingDate';
+    public const name = 'name';
+    public const newFiscalYear = 'newFiscalYear';
+    public const closed = 'closed';
+    public const dateLocked = 'dateLocked';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
 }

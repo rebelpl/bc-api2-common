@@ -1,18 +1,18 @@
 <?php
 namespace Rebel\BCApi2\Entity\AgedAccountsPayable;
 
-enum Properties
+class Properties
 {
-    case vendorId;
-    case vendorNumber;
-    case name;
-    case currencyCode;
-    case balanceDue;
-    case currentAmount;
-    case period1Amount;
-    case period2Amount;
-    case period3Amount;
-    case agedAsOfDate;
-    case periodLengthFilter;
-    case vendor;
+    public const vendorId = 'vendorId';
+    public const vendorNumber = 'vendorNumber';
+    public const name = 'name';
+    public const currencyCode = 'currencyCode';
+    public const balanceDue = 'balanceDue';
+    public const currentAmount = 'currentAmount';
+    public const period1Amount = 'period1Amount';
+    public const period2Amount = 'period2Amount';
+    public const period3Amount = 'period3Amount';
+    public const agedAsOfDate = 'agedAsOfDate';
+    public const periodLengthFilter = 'periodLengthFilter';
+    public const vendor = 'vendor';
 }

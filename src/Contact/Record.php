@@ -4,179 +4,266 @@ namespace Rebel\BCApi2\Entity\Contact;
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\ContactInformation;
-use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\Picture;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    protected $classMap = ['contactInformation' => ContactInformation\Record::class, 'picture' => Picture\Record::class];
+
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?string $number {
-        set {
-            $this->set('number', $value);
-        }
-        get => $this->get('number');
+    function getNumber(): ?string
+    {
+        return $this->get('number');
     }
 
-    public ?Enums\ContactType $type {
-        set {
-            $this->set('type', $value);
-        }
-        get => $this->getAsEnum('type', Enums\ContactType::class);
+    function setNumber(?string $value): self
+    {
+        $this->set('number', $value);
+        return $this;
     }
 
-    public ?string $displayName {
-        set {
-            $this->set('displayName', $value);
-        }
-        get => $this->get('displayName');
+    function getType(): ?string
+    {
+        return $this->get('type');
     }
 
-    public ?string $jobTitle {
-        set {
-            $this->set('jobTitle', $value);
-        }
-        get => $this->get('jobTitle');
+    function setType(?string $value): self
+    {
+        $this->set('type', $value);
+        return $this;
     }
 
-    public ?string $companyNumber {
-        set {
-            $this->set('companyNumber', $value);
-        }
-        get => $this->get('companyNumber');
+    function getDisplayName(): ?string
+    {
+        return $this->get('displayName');
     }
 
-    public ?string $companyName {
-        set {
-            $this->set('companyName', $value);
-        }
-        get => $this->get('companyName');
+    function setDisplayName(?string $value): self
+    {
+        $this->set('displayName', $value);
+        return $this;
     }
 
-    public ?Enums\ContactBusinessRelation $contactBusinessRelation {
-        set {
-            $this->set('contactBusinessRelation', $value);
-        }
-        get => $this->getAsEnum('contactBusinessRelation', Enums\ContactBusinessRelation::class);
+    function getJobTitle(): ?string
+    {
+        return $this->get('jobTitle');
     }
 
-    public ?string $addressLine1 {
-        set {
-            $this->set('addressLine1', $value);
-        }
-        get => $this->get('addressLine1');
+    function setJobTitle(?string $value): self
+    {
+        $this->set('jobTitle', $value);
+        return $this;
     }
 
-    public ?string $addressLine2 {
-        set {
-            $this->set('addressLine2', $value);
-        }
-        get => $this->get('addressLine2');
+    function getCompanyNumber(): ?string
+    {
+        return $this->get('companyNumber');
     }
 
-    public ?string $city {
-        set {
-            $this->set('city', $value);
-        }
-        get => $this->get('city');
+    function setCompanyNumber(?string $value): self
+    {
+        $this->set('companyNumber', $value);
+        return $this;
     }
 
-    public ?string $state {
-        set {
-            $this->set('state', $value);
-        }
-        get => $this->get('state');
+    function getCompanyName(): ?string
+    {
+        return $this->get('companyName');
     }
 
-    public ?string $country {
-        set {
-            $this->set('country', $value);
-        }
-        get => $this->get('country');
+    function setCompanyName(?string $value): self
+    {
+        $this->set('companyName', $value);
+        return $this;
     }
 
-    public ?string $postalCode {
-        set {
-            $this->set('postalCode', $value);
-        }
-        get => $this->get('postalCode');
+    function getContactBusinessRelation(): ?string
+    {
+        return $this->get('contactBusinessRelation');
     }
 
-    public ?string $phoneNumber {
-        set {
-            $this->set('phoneNumber', $value);
-        }
-        get => $this->get('phoneNumber');
+    function setContactBusinessRelation(?string $value): self
+    {
+        $this->set('contactBusinessRelation', $value);
+        return $this;
     }
 
-    public ?string $mobilePhoneNumber {
-        set {
-            $this->set('mobilePhoneNumber', $value);
-        }
-        get => $this->get('mobilePhoneNumber');
+    function getAddressLine1(): ?string
+    {
+        return $this->get('addressLine1');
     }
 
-    public ?string $email {
-        set {
-            $this->set('email', $value);
-        }
-        get => $this->get('email');
+    function setAddressLine1(?string $value): self
+    {
+        $this->set('addressLine1', $value);
+        return $this;
     }
 
-    public ?string $website {
-        set {
-            $this->set('website', $value);
-        }
-        get => $this->get('website');
+    function getAddressLine2(): ?string
+    {
+        return $this->get('addressLine2');
     }
 
-    public ?string $searchName {
-        set {
-            $this->set('searchName', $value);
-        }
-        get => $this->get('searchName');
+    function setAddressLine2(?string $value): self
+    {
+        $this->set('addressLine2', $value);
+        return $this;
     }
 
-    public ?bool $privacyBlocked {
-        set {
-            $this->set('privacyBlocked', $value);
-        }
-        get => $this->get('privacyBlocked');
+    function getCity(): ?string
+    {
+        return $this->get('city');
     }
 
-    public ?string $taxRegistrationNumber {
-        set {
-            $this->set('taxRegistrationNumber', $value);
-        }
-        get => $this->get('taxRegistrationNumber');
+    function setCity(?string $value): self
+    {
+        $this->set('city', $value);
+        return $this;
     }
 
-    public ?Carbon $lastInteractionDate {
-        set {
-            $this->setAsDate('lastInteractionDate', $value);
-        }
-        get => $this->getAsDate('lastInteractionDate');
+    function getState(): ?string
+    {
+        return $this->get('state');
     }
 
-    public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value);
-        }
-        get => $this->getAsDateTime('lastModifiedDateTime');
+    function setState(?string $value): self
+    {
+        $this->set('state', $value);
+        return $this;
     }
 
-    public ?ContactInformation\Record $contactInformation {
-        get => $this->get('contactInformation');
+    function getCountry(): ?string
+    {
+        return $this->get('country');
     }
 
-    public ?Picture\Record $picture {
-        get => $this->get('picture');
+    function setCountry(?string $value): self
+    {
+        $this->set('country', $value);
+        return $this;
     }
 
-    protected array $classMap = [
-        'contactInformation' => ContactInformation\Record::class,
-        'picture' => Picture\Record::class,
-    ];
+    function getPostalCode(): ?string
+    {
+        return $this->get('postalCode');
+    }
+
+    function setPostalCode(?string $value): self
+    {
+        $this->set('postalCode', $value);
+        return $this;
+    }
+
+    function getPhoneNumber(): ?string
+    {
+        return $this->get('phoneNumber');
+    }
+
+    function setPhoneNumber(?string $value): self
+    {
+        $this->set('phoneNumber', $value);
+        return $this;
+    }
+
+    function getMobilePhoneNumber(): ?string
+    {
+        return $this->get('mobilePhoneNumber');
+    }
+
+    function setMobilePhoneNumber(?string $value): self
+    {
+        $this->set('mobilePhoneNumber', $value);
+        return $this;
+    }
+
+    function getEmail(): ?string
+    {
+        return $this->get('email');
+    }
+
+    function setEmail(?string $value): self
+    {
+        $this->set('email', $value);
+        return $this;
+    }
+
+    function getWebsite(): ?string
+    {
+        return $this->get('website');
+    }
+
+    function setWebsite(?string $value): self
+    {
+        $this->set('website', $value);
+        return $this;
+    }
+
+    function getSearchName(): ?string
+    {
+        return $this->get('searchName');
+    }
+
+    function setSearchName(?string $value): self
+    {
+        $this->set('searchName', $value);
+        return $this;
+    }
+
+    function getPrivacyBlocked(): ?bool
+    {
+        return $this->get('privacyBlocked');
+    }
+
+    function setPrivacyBlocked(?bool $value): self
+    {
+        $this->set('privacyBlocked', $value);
+        return $this;
+    }
+
+    function getTaxRegistrationNumber(): ?string
+    {
+        return $this->get('taxRegistrationNumber');
+    }
+
+    function setTaxRegistrationNumber(?string $value): self
+    {
+        $this->set('taxRegistrationNumber', $value);
+        return $this;
+    }
+
+    function getLastInteractionDate(): ?Carbon
+    {
+        return $this->getAsDate('lastInteractionDate');
+    }
+
+    function setLastInteractionDate(?\DateTime $value): self
+    {
+        $this->setAsDate('lastInteractionDate', $value);
+        return $this;
+    }
+
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
+    }
+
+    function setLastModifiedDateTime(?\DateTime $value): self
+    {
+        $this->setAsDateTime('lastModifiedDateTime', $value);
+        return $this;
+    }
+
+    function getContactInformation(): ?ContactInformation\Record
+    {
+        return $this->get('contactInformation');
+    }
+
+    function getPicture(): ?Picture\Record
+    {
+        return $this->get('picture');
+    }
 }

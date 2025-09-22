@@ -1,14 +1,14 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum ContactBusinessRelation: string
+class ContactBusinessRelation
 {
-    case Null = '_x0020_';
-    case Customer = 'Customer';
-    case Vendor = 'Vendor';
-    case BankAccount = 'Bank_x0020_Account';
-    case Employee = 'Employee';
-    case None = 'None';
-    case Other = 'Other';
-    case Multiple = 'Multiple';
+    public const Null = '_x0020_';
+    public const Customer = 'Customer';
+    public const Vendor = 'Vendor';
+    public const BankAccount = 'Bank_x0020_Account';
+    public const Employee = 'Employee';
+    public const None = 'None';
+    public const Other = 'Other';
+    public const Multiple = 'Multiple';
 }

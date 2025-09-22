@@ -4,37 +4,43 @@ namespace Rebel\BCApi2\Entity\DimensionValue;
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\Dimension;
-use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    protected $classMap = ['dimension' => Dimension\Record::class];
+
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?string $code {
-        get => $this->get('code');
+    function getCode(): ?string
+    {
+        return $this->get('code');
     }
 
-    public ?string $dimensionId {
-        get => $this->get('dimensionId');
+    function getDimensionId(): ?string
+    {
+        return $this->get('dimensionId');
     }
 
-    public ?string $displayName {
-        get => $this->get('displayName');
+    function getDisplayName(): ?string
+    {
+        return $this->get('displayName');
     }
 
-    public ?string $consolidationCode {
-        get => $this->get('consolidationCode');
+    function getConsolidationCode(): ?string
+    {
+        return $this->get('consolidationCode');
     }
 
-    public ?Carbon $lastModifiedDateTime {
-        get => $this->getAsDateTime('lastModifiedDateTime');
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    public ?Dimension\Record $dimension {
-        get => $this->get('dimension');
+    function getDimension(): ?Dimension\Record
+    {
+        return $this->get('dimension');
     }
-
-    protected array $classMap = ['dimension' => Dimension\Record::class];
 }

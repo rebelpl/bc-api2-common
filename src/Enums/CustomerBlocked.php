@@ -1,10 +1,10 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum CustomerBlocked: string
+class CustomerBlocked
 {
-    case Null = '_x0020_';
-    case Ship = 'Ship';
-    case Invoice = 'Invoice';
-    case All = 'All';
+    public const Null = '_x0020_';
+    public const Ship = 'Ship';
+    public const Invoice = 'Invoice';
+    public const All = 'All';
 }

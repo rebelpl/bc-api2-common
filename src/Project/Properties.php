@@ -1,11 +1,11 @@
 <?php
 namespace Rebel\BCApi2\Entity\Project;
 
-enum Properties
+class Properties
 {
-    case id;
-    case number;
-    case displayName;
-    case lastModifiedDateTime;
-    case documentAttachments;
+    public const id = 'id';
+    public const number = 'number';
+    public const displayName = 'displayName';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
+    public const documentAttachments = 'documentAttachments';
 }

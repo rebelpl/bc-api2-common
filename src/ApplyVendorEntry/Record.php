@@ -3,88 +3,132 @@ namespace Rebel\BCApi2\Entity\ApplyVendorEntry;
 
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?bool $applied {
-        set {
-            $this->set('applied', $value);
-        }
-        get => $this->get('applied');
+    function getApplied(): ?bool
+    {
+        return $this->get('applied');
     }
 
-    public ?string $appliesToId {
-        set {
-            $this->set('appliesToId', $value);
-        }
-        get => $this->get('appliesToId');
+    function setApplied(?bool $value): self
+    {
+        $this->set('applied', $value);
+        return $this;
     }
 
-    public ?Carbon $postingDate {
-        set {
-            $this->setAsDate('postingDate', $value);
-        }
-        get => $this->getAsDate('postingDate');
+    function getAppliesToId(): ?string
+    {
+        return $this->get('appliesToId');
     }
 
-    public ?Enums\GenJournalDocumentType $documentType {
-        set {
-            $this->set('documentType', $value);
-        }
-        get => $this->getAsEnum('documentType', Enums\GenJournalDocumentType::class);
+    function setAppliesToId(?string $value): self
+    {
+        $this->set('appliesToId', $value);
+        return $this;
     }
 
-    public ?string $documentNumber {
-        set {
-            $this->set('documentNumber', $value);
-        }
-        get => $this->get('documentNumber');
+    function getPostingDate(): ?Carbon
+    {
+        return $this->getAsDate('postingDate');
     }
 
-    public ?string $externalDocumentNumber {
-        set {
-            $this->set('externalDocumentNumber', $value);
-        }
-        get => $this->get('externalDocumentNumber');
+    function setPostingDate(?\DateTime $value): self
+    {
+        $this->setAsDate('postingDate', $value);
+        return $this;
     }
 
-    public ?string $vendorNumber {
-        set {
-            $this->set('vendorNumber', $value);
-        }
-        get => $this->get('vendorNumber');
+    function getDocumentType(): ?string
+    {
+        return $this->get('documentType');
     }
 
-    public ?string $vendorName {
-        set {
-            $this->set('vendorName', $value);
-        }
-        get => $this->get('vendorName');
+    function setDocumentType(?string $value): self
+    {
+        $this->set('documentType', $value);
+        return $this;
     }
 
-    public ?string $description {
-        set {
-            $this->set('description', $value);
-        }
-        get => $this->get('description');
+    function getDocumentNumber(): ?string
+    {
+        return $this->get('documentNumber');
     }
 
-    public ?float $remainingAmount {
-        set {
-            $this->set('remainingAmount', $value);
-        }
-        get => $this->get('remainingAmount');
+    function setDocumentNumber(?string $value): self
+    {
+        $this->set('documentNumber', $value);
+        return $this;
     }
 
-    public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value);
-        }
-        get => $this->getAsDateTime('lastModifiedDateTime');
+    function getExternalDocumentNumber(): ?string
+    {
+        return $this->get('externalDocumentNumber');
+    }
+
+    function setExternalDocumentNumber(?string $value): self
+    {
+        $this->set('externalDocumentNumber', $value);
+        return $this;
+    }
+
+    function getVendorNumber(): ?string
+    {
+        return $this->get('vendorNumber');
+    }
+
+    function setVendorNumber(?string $value): self
+    {
+        $this->set('vendorNumber', $value);
+        return $this;
+    }
+
+    function getVendorName(): ?string
+    {
+        return $this->get('vendorName');
+    }
+
+    function setVendorName(?string $value): self
+    {
+        $this->set('vendorName', $value);
+        return $this;
+    }
+
+    function getDescription(): ?string
+    {
+        return $this->get('description');
+    }
+
+    function setDescription(?string $value): self
+    {
+        $this->set('description', $value);
+        return $this;
+    }
+
+    function getRemainingAmount(): ?float
+    {
+        return $this->get('remainingAmount');
+    }
+
+    function setRemainingAmount(?float $value): self
+    {
+        $this->set('remainingAmount', $value);
+        return $this;
+    }
+
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
+    }
+
+    function setLastModifiedDateTime(?\DateTime $value): self
+    {
+        $this->setAsDateTime('lastModifiedDateTime', $value);
+        return $this;
     }
 }

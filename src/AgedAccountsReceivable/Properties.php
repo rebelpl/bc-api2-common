@@ -1,21 +1,21 @@
 <?php
 namespace Rebel\BCApi2\Entity\AgedAccountsReceivable;
 
-enum Properties
+class Properties
 {
-    case customerId;
-    case customerNumber;
-    case name;
-    case currencyCode;
-    case balanceDue;
-    case currentAmount;
-    case period1Label;
-    case period1Amount;
-    case period2Label;
-    case period2Amount;
-    case period3Label;
-    case period3Amount;
-    case agedAsOfDate;
-    case periodLengthFilter;
-    case customer;
+    public const customerId = 'customerId';
+    public const customerNumber = 'customerNumber';
+    public const name = 'name';
+    public const currencyCode = 'currencyCode';
+    public const balanceDue = 'balanceDue';
+    public const currentAmount = 'currentAmount';
+    public const period1Label = 'period1Label';
+    public const period1Amount = 'period1Amount';
+    public const period2Label = 'period2Label';
+    public const period2Amount = 'period2Amount';
+    public const period3Label = 'period3Label';
+    public const period3Amount = 'period3Amount';
+    public const agedAsOfDate = 'agedAsOfDate';
+    public const periodLengthFilter = 'periodLengthFilter';
+    public const customer = 'customer';
 }

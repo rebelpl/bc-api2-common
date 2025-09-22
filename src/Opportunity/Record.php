@@ -3,130 +3,198 @@ namespace Rebel\BCApi2\Entity\Opportunity;
 
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?string $number {
-        set {
-            $this->set('number', $value);
-        }
-        get => $this->get('number');
+    function getNumber(): ?string
+    {
+        return $this->get('number');
     }
 
-    public ?string $contactNumber {
-        set {
-            $this->set('contactNumber', $value);
-        }
-        get => $this->get('contactNumber');
+    function setNumber(?string $value): self
+    {
+        $this->set('number', $value);
+        return $this;
     }
 
-    public ?string $contactName {
-        set {
-            $this->set('contactName', $value);
-        }
-        get => $this->get('contactName');
+    function getContactNumber(): ?string
+    {
+        return $this->get('contactNumber');
     }
 
-    public ?string $contactCompanyName {
-        set {
-            $this->set('contactCompanyName', $value);
-        }
-        get => $this->get('contactCompanyName');
+    function setContactNumber(?string $value): self
+    {
+        $this->set('contactNumber', $value);
+        return $this;
     }
 
-    public ?string $salespersonCode {
-        set {
-            $this->set('salespersonCode', $value);
-        }
-        get => $this->get('salespersonCode');
+    function getContactName(): ?string
+    {
+        return $this->get('contactName');
     }
 
-    public ?string $description {
-        set {
-            $this->set('description', $value);
-        }
-        get => $this->get('description');
+    function setContactName(?string $value): self
+    {
+        $this->set('contactName', $value);
+        return $this;
     }
 
-    public ?Enums\OpportunityStatus $status {
-        set {
-            $this->set('status', $value);
-        }
-        get => $this->getAsEnum('status', Enums\OpportunityStatus::class);
+    function getContactCompanyName(): ?string
+    {
+        return $this->get('contactCompanyName');
     }
 
-    public ?bool $closed {
-        set {
-            $this->set('closed', $value);
-        }
-        get => $this->get('closed');
+    function setContactCompanyName(?string $value): self
+    {
+        $this->set('contactCompanyName', $value);
+        return $this;
     }
 
-    public ?Carbon $creationDate {
-        set {
-            $this->setAsDate('creationDate', $value);
-        }
-        get => $this->getAsDate('creationDate');
+    function getSalespersonCode(): ?string
+    {
+        return $this->get('salespersonCode');
     }
 
-    public ?Carbon $dateClosed {
-        set {
-            $this->setAsDate('dateClosed', $value);
-        }
-        get => $this->getAsDate('dateClosed');
+    function setSalespersonCode(?string $value): self
+    {
+        $this->set('salespersonCode', $value);
+        return $this;
     }
 
-    public ?float $calculatedCurrentValue {
-        set {
-            $this->set('calculatedCurrentValue', $value);
-        }
-        get => $this->get('calculatedCurrentValue');
+    function getDescription(): ?string
+    {
+        return $this->get('description');
     }
 
-    public ?float $chancesOfSuccessPrc {
-        set {
-            $this->set('chancesOfSuccessPrc', $value);
-        }
-        get => $this->get('chancesOfSuccessPrc');
+    function setDescription(?string $value): self
+    {
+        $this->set('description', $value);
+        return $this;
     }
 
-    public ?float $completedPrc {
-        set {
-            $this->set('completedPrc', $value);
-        }
-        get => $this->get('completedPrc');
+    function getStatus(): ?string
+    {
+        return $this->get('status');
     }
 
-    public ?Carbon $estimatedClosingDate {
-        set {
-            $this->setAsDate('estimatedClosingDate', $value);
-        }
-        get => $this->getAsDate('estimatedClosingDate');
+    function setStatus(?string $value): self
+    {
+        $this->set('status', $value);
+        return $this;
     }
 
-    public ?float $estimatedValue {
-        set {
-            $this->set('estimatedValue', $value);
-        }
-        get => $this->get('estimatedValue');
+    function getClosed(): ?bool
+    {
+        return $this->get('closed');
     }
 
-    public ?Carbon $systemCreatedAt {
-        set {
-            $this->setAsDateTime('systemCreatedAt', $value);
-        }
-        get => $this->getAsDateTime('systemCreatedAt');
+    function setClosed(?bool $value): self
+    {
+        $this->set('closed', $value);
+        return $this;
     }
 
-    public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value);
-        }
-        get => $this->getAsDateTime('lastModifiedDateTime');
+    function getCreationDate(): ?Carbon
+    {
+        return $this->getAsDate('creationDate');
+    }
+
+    function setCreationDate(?\DateTime $value): self
+    {
+        $this->setAsDate('creationDate', $value);
+        return $this;
+    }
+
+    function getDateClosed(): ?Carbon
+    {
+        return $this->getAsDate('dateClosed');
+    }
+
+    function setDateClosed(?\DateTime $value): self
+    {
+        $this->setAsDate('dateClosed', $value);
+        return $this;
+    }
+
+    function getCalculatedCurrentValue(): ?float
+    {
+        return $this->get('calculatedCurrentValue');
+    }
+
+    function setCalculatedCurrentValue(?float $value): self
+    {
+        $this->set('calculatedCurrentValue', $value);
+        return $this;
+    }
+
+    function getChancesOfSuccessPrc(): ?float
+    {
+        return $this->get('chancesOfSuccessPrc');
+    }
+
+    function setChancesOfSuccessPrc(?float $value): self
+    {
+        $this->set('chancesOfSuccessPrc', $value);
+        return $this;
+    }
+
+    function getCompletedPrc(): ?float
+    {
+        return $this->get('completedPrc');
+    }
+
+    function setCompletedPrc(?float $value): self
+    {
+        $this->set('completedPrc', $value);
+        return $this;
+    }
+
+    function getEstimatedClosingDate(): ?Carbon
+    {
+        return $this->getAsDate('estimatedClosingDate');
+    }
+
+    function setEstimatedClosingDate(?\DateTime $value): self
+    {
+        $this->setAsDate('estimatedClosingDate', $value);
+        return $this;
+    }
+
+    function getEstimatedValue(): ?float
+    {
+        return $this->get('estimatedValue');
+    }
+
+    function setEstimatedValue(?float $value): self
+    {
+        $this->set('estimatedValue', $value);
+        return $this;
+    }
+
+    function getSystemCreatedAt(): ?Carbon
+    {
+        return $this->getAsDateTime('systemCreatedAt');
+    }
+
+    function setSystemCreatedAt(?\DateTime $value): self
+    {
+        $this->setAsDateTime('systemCreatedAt', $value);
+        return $this;
+    }
+
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
+    }
+
+    function setLastModifiedDateTime(?\DateTime $value): self
+    {
+        $this->setAsDateTime('lastModifiedDateTime', $value);
+        return $this;
     }
 }

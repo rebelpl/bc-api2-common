@@ -1,10 +1,10 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum DefaultDimensionValuePostingType: string
+class DefaultDimensionValuePostingType
 {
-    case Null = '_x0020_';
-    case CodeMandatory = 'Code_x0020_Mandatory';
-    case SameCode = 'Same_x0020_Code';
-    case NoCode = 'No_x0020_Code';
+    public const Null = '_x0020_';
+    public const CodeMandatory = 'Code_x0020_Mandatory';
+    public const SameCode = 'Same_x0020_Code';
+    public const NoCode = 'No_x0020_Code';
 }

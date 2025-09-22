@@ -1,33 +1,33 @@
 <?php
 namespace Rebel\BCApi2\Entity\Employee;
 
-enum Properties
+class Properties
 {
-    case id;
-    case number;
-    case displayName;
-    case givenName;
-    case middleName;
-    case surname;
-    case jobTitle;
-    case addressLine1;
-    case addressLine2;
-    case city;
-    case state;
-    case country;
-    case postalCode;
-    case phoneNumber;
-    case mobilePhone;
-    case email;
-    case personalEmail;
-    case employmentDate;
-    case terminationDate;
-    case status;
-    case birthDate;
-    case statisticsGroupCode;
-    case lastModifiedDateTime;
-    case picture;
-    case defaultDimensions;
-    case timeRegistrationEntries;
-    case documentAttachments;
+    public const id = 'id';
+    public const number = 'number';
+    public const displayName = 'displayName';
+    public const givenName = 'givenName';
+    public const middleName = 'middleName';
+    public const surname = 'surname';
+    public const jobTitle = 'jobTitle';
+    public const addressLine1 = 'addressLine1';
+    public const addressLine2 = 'addressLine2';
+    public const city = 'city';
+    public const state = 'state';
+    public const country = 'country';
+    public const postalCode = 'postalCode';
+    public const phoneNumber = 'phoneNumber';
+    public const mobilePhone = 'mobilePhone';
+    public const email = 'email';
+    public const personalEmail = 'personalEmail';
+    public const employmentDate = 'employmentDate';
+    public const terminationDate = 'terminationDate';
+    public const status = 'status';
+    public const birthDate = 'birthDate';
+    public const statisticsGroupCode = 'statisticsGroupCode';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
+    public const picture = 'picture';
+    public const defaultDimensions = 'defaultDimensions';
+    public const timeRegistrationEntries = 'timeRegistrationEntries';
+    public const documentAttachments = 'documentAttachments';
 }

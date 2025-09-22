@@ -8,6 +8,6 @@ class Repository extends EntityRepository
 {
     public function __construct(Client $client)
     {
-        parent::__construct($client, entitySetName: 'companyInformation', entityClass: Record::class);
+        parent::__construct($client, 'companyInformation', Record::class);
     }
 }

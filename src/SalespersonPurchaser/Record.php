@@ -3,81 +3,121 @@ namespace Rebel\BCApi2\Entity\SalespersonPurchaser;
 
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?string $code {
-        set {
-            $this->set('code', $value);
-        }
-        get => $this->get('code');
+    function getCode(): ?string
+    {
+        return $this->get('code');
     }
 
-    public ?string $displayName {
-        set {
-            $this->set('displayName', $value);
-        }
-        get => $this->get('displayName');
+    function setCode(?string $value): self
+    {
+        $this->set('code', $value);
+        return $this;
     }
 
-    public ?string $email {
-        set {
-            $this->set('email', $value);
-        }
-        get => $this->get('email');
+    function getDisplayName(): ?string
+    {
+        return $this->get('displayName');
     }
 
-    public ?string $email2 {
-        set {
-            $this->set('email2', $value);
-        }
-        get => $this->get('email2');
+    function setDisplayName(?string $value): self
+    {
+        $this->set('displayName', $value);
+        return $this;
     }
 
-    public ?string $phoneNo {
-        set {
-            $this->set('phoneNo', $value);
-        }
-        get => $this->get('phoneNo');
+    function getEmail(): ?string
+    {
+        return $this->get('email');
     }
 
-    public ?string $jobTitle {
-        set {
-            $this->set('jobTitle', $value);
-        }
-        get => $this->get('jobTitle');
+    function setEmail(?string $value): self
+    {
+        $this->set('email', $value);
+        return $this;
     }
 
-    public ?float $commisionPercent {
-        set {
-            $this->set('commisionPercent', $value);
-        }
-        get => $this->get('commisionPercent');
+    function getEmail2(): ?string
+    {
+        return $this->get('email2');
     }
 
-    public ?bool $privacyBlocked {
-        set {
-            $this->set('privacyBlocked', $value);
-        }
-        get => $this->get('privacyBlocked');
+    function setEmail2(?string $value): self
+    {
+        $this->set('email2', $value);
+        return $this;
     }
 
-    public ?bool $blocked {
-        set {
-            $this->set('blocked', $value);
-        }
-        get => $this->get('blocked');
+    function getPhoneNo(): ?string
+    {
+        return $this->get('phoneNo');
     }
 
-    public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value);
-        }
-        get => $this->getAsDateTime('lastModifiedDateTime');
+    function setPhoneNo(?string $value): self
+    {
+        $this->set('phoneNo', $value);
+        return $this;
+    }
+
+    function getJobTitle(): ?string
+    {
+        return $this->get('jobTitle');
+    }
+
+    function setJobTitle(?string $value): self
+    {
+        $this->set('jobTitle', $value);
+        return $this;
+    }
+
+    function getCommisionPercent(): ?float
+    {
+        return $this->get('commisionPercent');
+    }
+
+    function setCommisionPercent(?float $value): self
+    {
+        $this->set('commisionPercent', $value);
+        return $this;
+    }
+
+    function getPrivacyBlocked(): ?bool
+    {
+        return $this->get('privacyBlocked');
+    }
+
+    function setPrivacyBlocked(?bool $value): self
+    {
+        $this->set('privacyBlocked', $value);
+        return $this;
+    }
+
+    function getBlocked(): ?bool
+    {
+        return $this->get('blocked');
+    }
+
+    function setBlocked(?bool $value): self
+    {
+        $this->set('blocked', $value);
+        return $this;
+    }
+
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
+    }
+
+    function setLastModifiedDateTime(?\DateTime $value): self
+    {
+        $this->setAsDateTime('lastModifiedDateTime', $value);
+        return $this;
     }
 }

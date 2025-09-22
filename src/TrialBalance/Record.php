@@ -4,45 +4,53 @@ namespace Rebel\BCApi2\Entity\TrialBalance;
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\Account;
-use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public ?string $accountId {
-        get => $this->get('accountId');
+    protected $classMap = ['account' => Account\Record::class];
+
+    function getAccountId(): ?string
+    {
+        return $this->get('accountId');
     }
 
-    public ?string $number {
-        get => $this->get('number');
+    function getNumber(): ?string
+    {
+        return $this->get('number');
     }
 
-    public ?Enums\GlAccountType $accountType {
-        get => $this->getAsEnum('accountType', Enums\GlAccountType::class);
+    function getAccountType(): ?string
+    {
+        return $this->get('accountType');
     }
 
-    public ?string $display {
-        get => $this->get('display');
+    function getDisplay(): ?string
+    {
+        return $this->get('display');
     }
 
-    public ?string $totalDebit {
-        get => $this->get('totalDebit');
+    function getTotalDebit(): ?string
+    {
+        return $this->get('totalDebit');
     }
 
-    public ?string $totalCredit {
-        get => $this->get('totalCredit');
+    function getTotalCredit(): ?string
+    {
+        return $this->get('totalCredit');
     }
 
-    public ?string $balanceAtDateDebit {
-        get => $this->get('balanceAtDateDebit');
+    function getBalanceAtDateDebit(): ?string
+    {
+        return $this->get('balanceAtDateDebit');
     }
 
-    public ?string $balanceAtDateCredit {
-        get => $this->get('balanceAtDateCredit');
+    function getBalanceAtDateCredit(): ?string
+    {
+        return $this->get('balanceAtDateCredit');
     }
 
-    public ?Account\Record $account {
-        get => $this->get('account');
+    function getAccount(): ?Account\Record
+    {
+        return $this->get('account');
     }
-
-    protected array $classMap = ['account' => Account\Record::class];
 }

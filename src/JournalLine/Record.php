@@ -7,161 +7,238 @@ use Rebel\BCApi2\Entity\Account;
 use Rebel\BCApi2\Entity\Attachment;
 use Rebel\BCApi2\Entity\CustomerPaymentJournal;
 use Rebel\BCApi2\Entity\DimensionSetLine;
-use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\Journal;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
-    }
-
-    public ?string $journalId {
-        set {
-            $this->set('journalId', $value);
-        }
-        get => $this->get('journalId');
-    }
-
-    public ?string $journalDisplayName {
-        set {
-            $this->set('journalDisplayName', $value);
-        }
-        get => $this->get('journalDisplayName');
-    }
-
-    public ?int $lineNumber {
-        set {
-            $this->set('lineNumber', $value);
-        }
-        get => $this->get('lineNumber');
-    }
-
-    public ?Enums\GenJournalAccountType $accountType {
-        set {
-            $this->set('accountType', $value);
-        }
-        get => $this->getAsEnum('accountType', Enums\GenJournalAccountType::class);
-    }
-
-    public ?string $accountId {
-        set {
-            $this->set('accountId', $value);
-        }
-        get => $this->get('accountId');
-    }
-
-    public ?string $accountNumber {
-        set {
-            $this->set('accountNumber', $value);
-        }
-        get => $this->get('accountNumber');
-    }
-
-    public ?Carbon $postingDate {
-        set {
-            $this->setAsDate('postingDate', $value);
-        }
-        get => $this->getAsDate('postingDate');
-    }
-
-    public ?string $documentNumber {
-        set {
-            $this->set('documentNumber', $value);
-        }
-        get => $this->get('documentNumber');
-    }
-
-    public ?string $externalDocumentNumber {
-        set {
-            $this->set('externalDocumentNumber', $value);
-        }
-        get => $this->get('externalDocumentNumber');
-    }
-
-    public ?float $amount {
-        set {
-            $this->set('amount', $value);
-        }
-        get => $this->get('amount');
-    }
-
-    public ?string $description {
-        set {
-            $this->set('description', $value);
-        }
-        get => $this->get('description');
-    }
-
-    public ?string $comment {
-        set {
-            $this->set('comment', $value);
-        }
-        get => $this->get('comment');
-    }
-
-    public ?string $taxCode {
-        set {
-            $this->set('taxCode', $value);
-        }
-        get => $this->get('taxCode');
-    }
-
-    public ?Enums\GenJournalAccountType $balanceAccountType {
-        set {
-            $this->set('balanceAccountType', $value);
-        }
-        get => $this->getAsEnum('balanceAccountType', Enums\GenJournalAccountType::class);
-    }
-
-    public ?string $balancingAccountId {
-        set {
-            $this->set('balancingAccountId', $value);
-        }
-        get => $this->get('balancingAccountId');
-    }
-
-    public ?string $balancingAccountNumber {
-        set {
-            $this->set('balancingAccountNumber', $value);
-        }
-        get => $this->get('balancingAccountNumber');
-    }
-
-    public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value);
-        }
-        get => $this->getAsDateTime('lastModifiedDateTime');
-    }
-
-    public ?Journal\Record $journal {
-        get => $this->get('journal');
-    }
-
-    public ?CustomerPaymentJournal\Record $customerPaymentJournal {
-        get => $this->get('customerPaymentJournal');
-    }
-
-    public ?Account\Record $account {
-        get => $this->get('account');
-    }
-
-    /** @var Entity\Collection<Attachment\Record> */
-    public Entity\Collection $attachments {
-        get => $this->getAsCollection('attachments');
-    }
-
-    /** @var Entity\Collection<DimensionSetLine\Record> */
-    public Entity\Collection $dimensionSetLines {
-        get => $this->getAsCollection('dimensionSetLines');
-    }
-
-    protected array $classMap = [
+    protected $classMap = [
         'journal' => Journal\Record::class,
         'customerPaymentJournal' => CustomerPaymentJournal\Record::class,
         'account' => Account\Record::class,
         'attachments' => Attachment\Record::class,
         'dimensionSetLines' => DimensionSetLine\Record::class,
     ];
+
+    function getId(): ?string
+    {
+        return $this->get('id');
+    }
+
+    function getJournalId(): ?string
+    {
+        return $this->get('journalId');
+    }
+
+    function setJournalId(?string $value): self
+    {
+        $this->set('journalId', $value);
+        return $this;
+    }
+
+    function getJournalDisplayName(): ?string
+    {
+        return $this->get('journalDisplayName');
+    }
+
+    function setJournalDisplayName(?string $value): self
+    {
+        $this->set('journalDisplayName', $value);
+        return $this;
+    }
+
+    function getLineNumber(): ?int
+    {
+        return $this->get('lineNumber');
+    }
+
+    function setLineNumber(?int $value): self
+    {
+        $this->set('lineNumber', $value);
+        return $this;
+    }
+
+    function getAccountType(): ?string
+    {
+        return $this->get('accountType');
+    }
+
+    function setAccountType(?string $value): self
+    {
+        $this->set('accountType', $value);
+        return $this;
+    }
+
+    function getAccountId(): ?string
+    {
+        return $this->get('accountId');
+    }
+
+    function setAccountId(?string $value): self
+    {
+        $this->set('accountId', $value);
+        return $this;
+    }
+
+    function getAccountNumber(): ?string
+    {
+        return $this->get('accountNumber');
+    }
+
+    function setAccountNumber(?string $value): self
+    {
+        $this->set('accountNumber', $value);
+        return $this;
+    }
+
+    function getPostingDate(): ?Carbon
+    {
+        return $this->getAsDate('postingDate');
+    }
+
+    function setPostingDate(?\DateTime $value): self
+    {
+        $this->setAsDate('postingDate', $value);
+        return $this;
+    }
+
+    function getDocumentNumber(): ?string
+    {
+        return $this->get('documentNumber');
+    }
+
+    function setDocumentNumber(?string $value): self
+    {
+        $this->set('documentNumber', $value);
+        return $this;
+    }
+
+    function getExternalDocumentNumber(): ?string
+    {
+        return $this->get('externalDocumentNumber');
+    }
+
+    function setExternalDocumentNumber(?string $value): self
+    {
+        $this->set('externalDocumentNumber', $value);
+        return $this;
+    }
+
+    function getAmount(): ?float
+    {
+        return $this->get('amount');
+    }
+
+    function setAmount(?float $value): self
+    {
+        $this->set('amount', $value);
+        return $this;
+    }
+
+    function getDescription(): ?string
+    {
+        return $this->get('description');
+    }
+
+    function setDescription(?string $value): self
+    {
+        $this->set('description', $value);
+        return $this;
+    }
+
+    function getComment(): ?string
+    {
+        return $this->get('comment');
+    }
+
+    function setComment(?string $value): self
+    {
+        $this->set('comment', $value);
+        return $this;
+    }
+
+    function getTaxCode(): ?string
+    {
+        return $this->get('taxCode');
+    }
+
+    function setTaxCode(?string $value): self
+    {
+        $this->set('taxCode', $value);
+        return $this;
+    }
+
+    function getBalanceAccountType(): ?string
+    {
+        return $this->get('balanceAccountType');
+    }
+
+    function setBalanceAccountType(?string $value): self
+    {
+        $this->set('balanceAccountType', $value);
+        return $this;
+    }
+
+    function getBalancingAccountId(): ?string
+    {
+        return $this->get('balancingAccountId');
+    }
+
+    function setBalancingAccountId(?string $value): self
+    {
+        $this->set('balancingAccountId', $value);
+        return $this;
+    }
+
+    function getBalancingAccountNumber(): ?string
+    {
+        return $this->get('balancingAccountNumber');
+    }
+
+    function setBalancingAccountNumber(?string $value): self
+    {
+        $this->set('balancingAccountNumber', $value);
+        return $this;
+    }
+
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
+    }
+
+    function setLastModifiedDateTime(?\DateTime $value): self
+    {
+        $this->setAsDateTime('lastModifiedDateTime', $value);
+        return $this;
+    }
+
+    function getJournal(): ?Journal\Record
+    {
+        return $this->get('journal');
+    }
+
+    function getCustomerPaymentJournal(): ?CustomerPaymentJournal\Record
+    {
+        return $this->get('customerPaymentJournal');
+    }
+
+    function getAccount(): ?Account\Record
+    {
+        return $this->get('account');
+    }
+
+    /**
+     * @return Entity\Collection|Attachment\Record[]
+     */
+    function getAttachments(): Entity\Collection
+    {
+        return $this->getAsCollection('attachments');
+    }
+
+    /**
+     * @return Entity\Collection|DimensionSetLine\Record[]
+     */
+    function getDimensionSetLines(): Entity\Collection
+    {
+        return $this->getAsCollection('dimensionSetLines');
+    }
 }

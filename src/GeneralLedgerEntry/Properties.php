@@ -1,22 +1,22 @@
 <?php
 namespace Rebel\BCApi2\Entity\GeneralLedgerEntry;
 
-enum Properties
+class Properties
 {
-    case id;
-    case entryNumber;
-    case postingDate;
-    case documentNumber;
-    case documentType;
-    case accountId;
-    case accountNumber;
-    case description;
-    case debitAmount;
-    case creditAmount;
-    case additionalCurrencyDebitAmount;
-    case additionalCurrencyCreditAmount;
-    case lastModifiedDateTime;
-    case account;
-    case attachments;
-    case dimensionSetLines;
+    public const id = 'id';
+    public const entryNumber = 'entryNumber';
+    public const postingDate = 'postingDate';
+    public const documentNumber = 'documentNumber';
+    public const documentType = 'documentType';
+    public const accountId = 'accountId';
+    public const accountNumber = 'accountNumber';
+    public const description = 'description';
+    public const debitAmount = 'debitAmount';
+    public const creditAmount = 'creditAmount';
+    public const additionalCurrencyDebitAmount = 'additionalCurrencyDebitAmount';
+    public const additionalCurrencyCreditAmount = 'additionalCurrencyCreditAmount';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
+    public const account = 'account';
+    public const attachments = 'attachments';
+    public const dimensionSetLines = 'dimensionSetLines';
 }

@@ -1,17 +1,17 @@
 <?php
 namespace Rebel\BCApi2\Entity\SalespersonPurchaser;
 
-enum Properties
+class Properties
 {
-    case id;
-    case code;
-    case displayName;
-    case email;
-    case email2;
-    case phoneNo;
-    case jobTitle;
-    case commisionPercent;
-    case privacyBlocked;
-    case blocked;
-    case lastModifiedDateTime;
+    public const id = 'id';
+    public const code = 'code';
+    public const displayName = 'displayName';
+    public const email = 'email';
+    public const email2 = 'email2';
+    public const phoneNo = 'phoneNo';
+    public const jobTitle = 'jobTitle';
+    public const commisionPercent = 'commisionPercent';
+    public const privacyBlocked = 'privacyBlocked';
+    public const blocked = 'blocked';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
 }

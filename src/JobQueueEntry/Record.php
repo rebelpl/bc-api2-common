@@ -3,199 +3,247 @@ namespace Rebel\BCApi2\Entity\JobQueueEntry;
 
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\JobQueueLogEntry;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    protected $classMap = ['jobQueueLogEntries' => JobQueueLogEntry\Record::class];
+
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?string $jobQueueEntryId {
-        get => $this->get('jobQueueEntryId');
+    function getJobQueueEntryId(): ?string
+    {
+        return $this->get('jobQueueEntryId');
     }
 
-    public ?string $userId {
-        get => $this->get('userId');
+    function getUserId(): ?string
+    {
+        return $this->get('userId');
     }
 
-    public ?Carbon $lastReadyState {
-        get => $this->getAsDateTime('lastReadyState');
+    function getLastReadyState(): ?Carbon
+    {
+        return $this->getAsDateTime('lastReadyState');
     }
 
-    public ?Carbon $expirationDateTime {
-        get => $this->getAsDateTime('expirationDateTime');
+    function getExpirationDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('expirationDateTime');
     }
 
-    public ?Carbon $earliestStartDateTime {
-        get => $this->getAsDateTime('earliestStartDateTime');
+    function getEarliestStartDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('earliestStartDateTime');
     }
 
-    public ?string $objectTypeToRun {
-        get => $this->get('objectTypeToRun');
+    function getObjectTypeToRun(): ?string
+    {
+        return $this->get('objectTypeToRun');
     }
 
-    public ?int $objectIdToRun {
-        get => $this->get('objectIdToRun');
+    function getObjectIdToRun(): ?int
+    {
+        return $this->get('objectIdToRun');
     }
 
-    public ?string $objectCaptionToRun {
-        get => $this->get('objectCaptionToRun');
+    function getObjectCaptionToRun(): ?string
+    {
+        return $this->get('objectCaptionToRun');
     }
 
-    public ?Enums\JobQueueReportOutputType $reportOutputType {
-        get => $this->getAsEnum('reportOutputType', Enums\JobQueueReportOutputType::class);
+    function getReportOutputType(): ?string
+    {
+        return $this->get('reportOutputType');
     }
 
-    public ?int $maxNumberAttemptsToRun {
-        get => $this->get('maxNumberAttemptsToRun');
+    function getMaxNumberAttemptsToRun(): ?int
+    {
+        return $this->get('maxNumberAttemptsToRun');
     }
 
-    public ?int $numberOfAttemptsToRun {
-        get => $this->get('numberOfAttemptsToRun');
+    function getNumberOfAttemptsToRun(): ?int
+    {
+        return $this->get('numberOfAttemptsToRun');
     }
 
-    public ?string $status {
-        get => $this->get('status');
+    function getStatus(): ?string
+    {
+        return $this->get('status');
     }
 
-    public ?string $recordIdToProcess {
-        get => $this->get('recordIdToProcess');
+    function getRecordIdToProcess(): ?string
+    {
+        return $this->get('recordIdToProcess');
     }
 
-    public ?string $parameterString {
-        get => $this->get('parameterString');
+    function getParameterString(): ?string
+    {
+        return $this->get('parameterString');
     }
 
-    public ?bool $recurringJob {
-        get => $this->get('recurringJob');
+    function getRecurringJob(): ?bool
+    {
+        return $this->get('recurringJob');
     }
 
-    public ?int $numberOfMinutesBetweenRuns {
-        get => $this->get('numberOfMinutesBetweenRuns');
+    function getNumberOfMinutesBetweenRuns(): ?int
+    {
+        return $this->get('numberOfMinutesBetweenRuns');
     }
 
-    public ?bool $runOnMonday {
-        get => $this->get('runOnMonday');
+    function getRunOnMonday(): ?bool
+    {
+        return $this->get('runOnMonday');
     }
 
-    public ?bool $runOnTuesday {
-        get => $this->get('runOnTuesday');
+    function getRunOnTuesday(): ?bool
+    {
+        return $this->get('runOnTuesday');
     }
 
-    public ?bool $runOnWednesday {
-        get => $this->get('runOnWednesday');
+    function getRunOnWednesday(): ?bool
+    {
+        return $this->get('runOnWednesday');
     }
 
-    public ?bool $runOnThursday {
-        get => $this->get('runOnThursday');
+    function getRunOnThursday(): ?bool
+    {
+        return $this->get('runOnThursday');
     }
 
-    public ?bool $runOnFridays {
-        get => $this->get('runOnFridays');
+    function getRunOnFridays(): ?bool
+    {
+        return $this->get('runOnFridays');
     }
 
-    public ?bool $runOnSaturdays {
-        get => $this->get('runOnSaturdays');
+    function getRunOnSaturdays(): ?bool
+    {
+        return $this->get('runOnSaturdays');
     }
 
-    public ?bool $runOnSundays {
-        get => $this->get('runOnSundays');
+    function getRunOnSundays(): ?bool
+    {
+        return $this->get('runOnSundays');
     }
 
-    public ?string $startingTime {
-        get => $this->get('startingTime');
+    function getStartingTime(): ?string
+    {
+        return $this->get('startingTime');
     }
 
-    public ?string $endingTime {
-        get => $this->get('endingTime');
+    function getEndingTime(): ?string
+    {
+        return $this->get('endingTime');
     }
 
-    public ?Carbon $referenceStartingTime {
-        get => $this->getAsDateTime('referenceStartingTime');
+    function getReferenceStartingTime(): ?Carbon
+    {
+        return $this->getAsDateTime('referenceStartingTime');
     }
 
-    public ?string $nextRunDateFormula {
-        get => $this->get('nextRunDateFormula');
+    function getNextRunDateFormula(): ?string
+    {
+        return $this->get('nextRunDateFormula');
     }
 
-    public ?string $description {
-        get => $this->get('description');
+    function getDescription(): ?string
+    {
+        return $this->get('description');
     }
 
-    public ?bool $runInUserSession {
-        get => $this->get('runInUserSession');
+    function getRunInUserSession(): ?bool
+    {
+        return $this->get('runInUserSession');
     }
 
-    public ?int $userSessionId {
-        get => $this->get('userSessionId');
+    function getUserSessionId(): ?int
+    {
+        return $this->get('userSessionId');
     }
 
-    public ?string $jobQueueCategoryCode {
-        get => $this->get('jobQueueCategoryCode');
+    function getJobQueueCategoryCode(): ?string
+    {
+        return $this->get('jobQueueCategoryCode');
     }
 
-    public ?string $errorMessage {
-        get => $this->get('errorMessage');
+    function getErrorMessage(): ?string
+    {
+        return $this->get('errorMessage');
     }
 
-    public ?int $userServiceInstanceId {
-        get => $this->get('userServiceInstanceId');
+    function getUserServiceInstanceId(): ?int
+    {
+        return $this->get('userServiceInstanceId');
     }
 
-    public ?Carbon $userSessionStarted {
-        get => $this->getAsDateTime('userSessionStarted');
+    function getUserSessionStarted(): ?Carbon
+    {
+        return $this->getAsDateTime('userSessionStarted');
     }
 
-    public ?bool $notifyOnSuccess {
-        get => $this->get('notifyOnSuccess');
+    function getNotifyOnSuccess(): ?bool
+    {
+        return $this->get('notifyOnSuccess');
     }
 
-    public ?int $userLanguageId {
-        get => $this->get('userLanguageId');
+    function getUserLanguageId(): ?int
+    {
+        return $this->get('userLanguageId');
     }
 
-    public ?string $printerName {
-        get => $this->get('printerName');
+    function getPrinterName(): ?string
+    {
+        return $this->get('printerName');
     }
 
-    public ?bool $reportRequestPageOptions {
-        get => $this->get('reportRequestPageOptions');
+    function getReportRequestPageOptions(): ?bool
+    {
+        return $this->get('reportRequestPageOptions');
     }
 
-    public ?int $rerunDelay {
-        get => $this->get('rerunDelay');
+    function getRerunDelay(): ?int
+    {
+        return $this->get('rerunDelay');
     }
 
-    public ?string $systemTaskId {
-        get => $this->get('systemTaskId');
+    function getSystemTaskId(): ?string
+    {
+        return $this->get('systemTaskId');
     }
 
-    public ?bool $scheduled {
-        get => $this->get('scheduled');
+    function getScheduled(): ?bool
+    {
+        return $this->get('scheduled');
     }
 
-    public ?bool $manualRecurrence {
-        get => $this->get('manualRecurrence');
+    function getManualRecurrence(): ?bool
+    {
+        return $this->get('manualRecurrence');
     }
 
-    public ?string $jobTimeOut {
-        get => $this->get('jobTimeOut');
+    function getJobTimeOut(): ?string
+    {
+        return $this->get('jobTimeOut');
     }
 
-    public ?Enums\JobQueuePriority $priorityWithinCategory {
-        get => $this->getAsEnum('priorityWithinCategory', Enums\JobQueuePriority::class);
+    function getPriorityWithinCategory(): ?string
+    {
+        return $this->get('priorityWithinCategory');
     }
 
-    public ?Carbon $lastModifiedDateTime {
-        get => $this->getAsDateTime('lastModifiedDateTime');
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    /** @var Entity\Collection<JobQueueLogEntry\Record> */
-    public Entity\Collection $jobQueueLogEntries {
-        get => $this->getAsCollection('jobQueueLogEntries');
+    /**
+     * @return Entity\Collection|JobQueueLogEntry\Record[]
+     */
+    function getJobQueueLogEntries(): Entity\Collection
+    {
+        return $this->getAsCollection('jobQueueLogEntries');
     }
-
-    protected array $classMap = ['jobQueueLogEntries' => JobQueueLogEntry\Record::class];
 }

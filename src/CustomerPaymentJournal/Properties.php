@@ -1,13 +1,13 @@
 <?php
 namespace Rebel\BCApi2\Entity\CustomerPaymentJournal;
 
-enum Properties
+class Properties
 {
-    case id;
-    case code;
-    case displayName;
-    case lastModifiedDateTime;
-    case balancingAccountId;
-    case balancingAccountNumber;
-    case customerPayments;
+    public const id = 'id';
+    public const code = 'code';
+    public const displayName = 'displayName';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
+    public const balancingAccountId = 'balancingAccountId';
+    public const balancingAccountNumber = 'balancingAccountNumber';
+    public const customerPayments = 'customerPayments';
 }

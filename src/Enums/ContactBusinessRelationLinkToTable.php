@@ -1,11 +1,11 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum ContactBusinessRelationLinkToTable: string
+class ContactBusinessRelationLinkToTable
 {
-    case Null = '_x0020_';
-    case Customer = 'Customer';
-    case Vendor = 'Vendor';
-    case BankAccount = 'Bank_x0020_Account';
-    case Employee = 'Employee';
+    public const Null = '_x0020_';
+    public const Customer = 'Customer';
+    public const Vendor = 'Vendor';
+    public const BankAccount = 'Bank_x0020_Account';
+    public const Employee = 'Employee';
 }

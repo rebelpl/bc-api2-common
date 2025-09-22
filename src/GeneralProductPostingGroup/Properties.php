@@ -1,12 +1,12 @@
 <?php
 namespace Rebel\BCApi2\Entity\GeneralProductPostingGroup;
 
-enum Properties
+class Properties
 {
-    case id;
-    case code;
-    case description;
-    case defaultVATProductPostingGroup;
-    case autoInsertDefault;
-    case lastModifiedDateTime;
+    public const id = 'id';
+    public const code = 'code';
+    public const description = 'description';
+    public const defaultVATProductPostingGroup = 'defaultVATProductPostingGroup';
+    public const autoInsertDefault = 'autoInsertDefault';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
 }

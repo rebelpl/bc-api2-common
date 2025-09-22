@@ -3,102 +3,154 @@ namespace Rebel\BCApi2\Entity\Location;
 
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?string $code {
-        set {
-            $this->set('code', $value);
-        }
-        get => $this->get('code');
+    function getCode(): ?string
+    {
+        return $this->get('code');
     }
 
-    public ?string $displayName {
-        set {
-            $this->set('displayName', $value);
-        }
-        get => $this->get('displayName');
+    function setCode(?string $value): self
+    {
+        $this->set('code', $value);
+        return $this;
     }
 
-    public ?string $contact {
-        set {
-            $this->set('contact', $value);
-        }
-        get => $this->get('contact');
+    function getDisplayName(): ?string
+    {
+        return $this->get('displayName');
     }
 
-    public ?string $addressLine1 {
-        set {
-            $this->set('addressLine1', $value);
-        }
-        get => $this->get('addressLine1');
+    function setDisplayName(?string $value): self
+    {
+        $this->set('displayName', $value);
+        return $this;
     }
 
-    public ?string $addressLine2 {
-        set {
-            $this->set('addressLine2', $value);
-        }
-        get => $this->get('addressLine2');
+    function getContact(): ?string
+    {
+        return $this->get('contact');
     }
 
-    public ?string $city {
-        set {
-            $this->set('city', $value);
-        }
-        get => $this->get('city');
+    function setContact(?string $value): self
+    {
+        $this->set('contact', $value);
+        return $this;
     }
 
-    public ?string $state {
-        set {
-            $this->set('state', $value);
-        }
-        get => $this->get('state');
+    function getAddressLine1(): ?string
+    {
+        return $this->get('addressLine1');
     }
 
-    public ?string $country {
-        set {
-            $this->set('country', $value);
-        }
-        get => $this->get('country');
+    function setAddressLine1(?string $value): self
+    {
+        $this->set('addressLine1', $value);
+        return $this;
     }
 
-    public ?string $postalCode {
-        set {
-            $this->set('postalCode', $value);
-        }
-        get => $this->get('postalCode');
+    function getAddressLine2(): ?string
+    {
+        return $this->get('addressLine2');
     }
 
-    public ?string $phoneNumber {
-        set {
-            $this->set('phoneNumber', $value);
-        }
-        get => $this->get('phoneNumber');
+    function setAddressLine2(?string $value): self
+    {
+        $this->set('addressLine2', $value);
+        return $this;
     }
 
-    public ?string $email {
-        set {
-            $this->set('email', $value);
-        }
-        get => $this->get('email');
+    function getCity(): ?string
+    {
+        return $this->get('city');
     }
 
-    public ?string $website {
-        set {
-            $this->set('website', $value);
-        }
-        get => $this->get('website');
+    function setCity(?string $value): self
+    {
+        $this->set('city', $value);
+        return $this;
     }
 
-    public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value);
-        }
-        get => $this->getAsDateTime('lastModifiedDateTime');
+    function getState(): ?string
+    {
+        return $this->get('state');
+    }
+
+    function setState(?string $value): self
+    {
+        $this->set('state', $value);
+        return $this;
+    }
+
+    function getCountry(): ?string
+    {
+        return $this->get('country');
+    }
+
+    function setCountry(?string $value): self
+    {
+        $this->set('country', $value);
+        return $this;
+    }
+
+    function getPostalCode(): ?string
+    {
+        return $this->get('postalCode');
+    }
+
+    function setPostalCode(?string $value): self
+    {
+        $this->set('postalCode', $value);
+        return $this;
+    }
+
+    function getPhoneNumber(): ?string
+    {
+        return $this->get('phoneNumber');
+    }
+
+    function setPhoneNumber(?string $value): self
+    {
+        $this->set('phoneNumber', $value);
+        return $this;
+    }
+
+    function getEmail(): ?string
+    {
+        return $this->get('email');
+    }
+
+    function setEmail(?string $value): self
+    {
+        $this->set('email', $value);
+        return $this;
+    }
+
+    function getWebsite(): ?string
+    {
+        return $this->get('website');
+    }
+
+    function setWebsite(?string $value): self
+    {
+        $this->set('website', $value);
+        return $this;
+    }
+
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
+    }
+
+    function setLastModifiedDateTime(?\DateTime $value): self
+    {
+        $this->setAsDateTime('lastModifiedDateTime', $value);
+        return $this;
     }
 }

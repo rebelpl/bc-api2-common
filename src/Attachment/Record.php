@@ -3,7 +3,6 @@ namespace Rebel\BCApi2\Entity\Attachment;
 
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\GeneralLedgerEntry;
 use Rebel\BCApi2\Entity\JournalLine;
 use Rebel\BCApi2\Entity\PurchaseCreditMemo;
@@ -16,86 +15,7 @@ use Rebel\BCApi2\Entity\SalesQuote;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
-    }
-
-    public ?string $parentId {
-        set {
-            $this->set('parentId', $value);
-        }
-        get => $this->get('parentId');
-    }
-
-    public ?string $fileName {
-        set {
-            $this->set('fileName', $value);
-        }
-        get => $this->get('fileName');
-    }
-
-    public ?int $byteSize {
-        set {
-            $this->set('byteSize', $value);
-        }
-        get => $this->get('byteSize');
-    }
-
-    public Entity\DataStream $attachmentContent {
-        get => $this->get('attachmentContent');
-    }
-
-    public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value);
-        }
-        get => $this->getAsDateTime('lastModifiedDateTime');
-    }
-
-    public ?Enums\AttachmentEntityBufferDocumentType $parentType {
-        set {
-            $this->set('parentType', $value);
-        }
-        get => $this->getAsEnum('parentType', Enums\AttachmentEntityBufferDocumentType::class);
-    }
-
-    public ?SalesInvoice\Record $salesInvoice {
-        get => $this->get('salesInvoice');
-    }
-
-    public ?JournalLine\Record $journalLine {
-        get => $this->get('journalLine');
-    }
-
-    public ?GeneralLedgerEntry\Record $generalLedgerEntry {
-        get => $this->get('generalLedgerEntry');
-    }
-
-    public ?SalesOrder\Record $salesOrder {
-        get => $this->get('salesOrder');
-    }
-
-    public ?SalesQuote\Record $salesQuote {
-        get => $this->get('salesQuote');
-    }
-
-    public ?SalesCreditMemo\Record $salesCreditMemo {
-        get => $this->get('salesCreditMemo');
-    }
-
-    public ?PurchaseInvoice\Record $purchaseInvoice {
-        get => $this->get('purchaseInvoice');
-    }
-
-    public ?PurchaseOrder\Record $purchaseOrder {
-        get => $this->get('purchaseOrder');
-    }
-
-    public ?PurchaseCreditMemo\Record $purchaseCreditMemo {
-        get => $this->get('purchaseCreditMemo');
-    }
-
-    protected array $classMap = [
+    protected $classMap = [
         'salesInvoice' => SalesInvoice\Record::class,
         'journalLine' => JournalLine\Record::class,
         'generalLedgerEntry' => GeneralLedgerEntry\Record::class,
@@ -106,4 +26,114 @@ class Record extends Entity
         'purchaseOrder' => PurchaseOrder\Record::class,
         'purchaseCreditMemo' => PurchaseCreditMemo\Record::class,
     ];
+
+    function getId(): ?string
+    {
+        return $this->get('id');
+    }
+
+    function getParentId(): ?string
+    {
+        return $this->get('parentId');
+    }
+
+    function setParentId(?string $value): self
+    {
+        $this->set('parentId', $value);
+        return $this;
+    }
+
+    function getFileName(): ?string
+    {
+        return $this->get('fileName');
+    }
+
+    function setFileName(?string $value): self
+    {
+        $this->set('fileName', $value);
+        return $this;
+    }
+
+    function getByteSize(): ?int
+    {
+        return $this->get('byteSize');
+    }
+
+    function setByteSize(?int $value): self
+    {
+        $this->set('byteSize', $value);
+        return $this;
+    }
+
+    function getAttachmentContent(): Entity\DataStream
+    {
+        return $this->get('attachmentContent');
+    }
+
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
+    }
+
+    function setLastModifiedDateTime(?\DateTime $value): self
+    {
+        $this->setAsDateTime('lastModifiedDateTime', $value);
+        return $this;
+    }
+
+    function getParentType(): ?string
+    {
+        return $this->get('parentType');
+    }
+
+    function setParentType(?string $value): self
+    {
+        $this->set('parentType', $value);
+        return $this;
+    }
+
+    function getSalesInvoice(): ?SalesInvoice\Record
+    {
+        return $this->get('salesInvoice');
+    }
+
+    function getJournalLine(): ?JournalLine\Record
+    {
+        return $this->get('journalLine');
+    }
+
+    function getGeneralLedgerEntry(): ?GeneralLedgerEntry\Record
+    {
+        return $this->get('generalLedgerEntry');
+    }
+
+    function getSalesOrder(): ?SalesOrder\Record
+    {
+        return $this->get('salesOrder');
+    }
+
+    function getSalesQuote(): ?SalesQuote\Record
+    {
+        return $this->get('salesQuote');
+    }
+
+    function getSalesCreditMemo(): ?SalesCreditMemo\Record
+    {
+        return $this->get('salesCreditMemo');
+    }
+
+    function getPurchaseInvoice(): ?PurchaseInvoice\Record
+    {
+        return $this->get('purchaseInvoice');
+    }
+
+    function getPurchaseOrder(): ?PurchaseOrder\Record
+    {
+        return $this->get('purchaseOrder');
+    }
+
+    function getPurchaseCreditMemo(): ?PurchaseCreditMemo\Record
+    {
+        return $this->get('purchaseCreditMemo');
+    }
 }

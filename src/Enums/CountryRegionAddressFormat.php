@@ -1,11 +1,11 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum CountryRegionAddressFormat: string
+class CountryRegionAddressFormat
 {
-    case PostCodeCity = 'Post_x0020_Code_x002B_City';
-    case CityPostCode = 'City_x002B_Post_x0020_Code';
-    case CityCountyPostCode = 'City_x002B_County_x002B_Post_x0020_Code';
-    case BlankLinePostCodeCity = 'Blank_x0020_Line_x002B_Post_x0020_Code_x002B_City';
-    case Custom = 'Custom';
+    public const PostCodeCity = 'Post_x0020_Code_x002B_City';
+    public const CityPostCode = 'City_x002B_Post_x0020_Code';
+    public const CityCountyPostCode = 'City_x002B_County_x002B_Post_x0020_Code';
+    public const BlankLinePostCodeCity = 'Blank_x0020_Line_x002B_Post_x0020_Code_x002B_City';
+    public const Custom = 'Custom';
 }

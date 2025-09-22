@@ -4,10 +4,10 @@ generated using the ```Rebel\BCApi2\Entity\Generator``` from [Business Central A
 
 ## Install
 ```shell
-composer require rebelpl/bc-api2-common
+composer require rebelpl/bc-api2-common:dev-php7.2
 ```
 
-For PHP7.2 compatible version use:
+For PHP 8.4 compatible version use:
 ```shell
 composer require rebelpl/bc-api2-common:dev-php7.2
 ```
@@ -19,24 +19,25 @@ use Rebel\BCApi2\Entity\SalesOrder;
 use Rebel\BCApi2\Request\Expression;
 
 $client = new Rebel\BCApi2\Client(
-    accessToken: '<access_token>',
-    environment: '<environment>',
-    companyId: '<company_id>',
+    '<access_token>',
+    '<environment>', '/v2.0'
+    '<company_id>',
 );
 
 $repository = new SalesOrder\Repository($client);
 $repository->setExpandedByDefault([
-    SalesOrder\Properties::salesOrderLines->name,
-    SalesOrder\Properties::customer->name,
+    SalesOrder\Properties::salesOrderLines,
+    SalesOrder\Properties::customer,
  ])
 
 // Get a sales order by ID
 $salesOrder = $repository->get('abc-123');
 
 // Update properties of the sales order
-$salesOrder->externalDocumentNumber = 'TEST';
-$salesOrder->salesOrderLines[0]->quantity = 10;
-$salesOrder->salesOrderLines[] = new Rebel\BCApi2\Entity\SalesOrderLine\Record([
+$salesOrder->setExternalDocumentNumber('TEST');
+$salesLines = $salesOrder->getSalesOrderLines(); 
+$salesLines[0]->setQuantity(10);
+$salesLines[] = new Rebel\BCApi2\Entity\SalesOrderLine\Record([
     'itemId' => '12345',
     'quantity' => 5
 ]);
@@ -45,15 +46,16 @@ $salesOrder->salesOrderLines[] = new Rebel\BCApi2\Entity\SalesOrderLine\Record([
 $repository->save($salesOrder);
 
 // find top 10 sales orders with filters
-$orderBy = [ SalesOrder\Properties::orderDate->name => 'DESC' ];
+$orderBy = [ SalesOrder\Properties::orderDate => 'DESC' ];
 $salesOrders = $repository->findBy([
-    SalesOrder\Properties::customerNumber->name => '30000',
-    Expression::greaterOrEqualThan(SalesOrder\Properties::orderDate->name, new \DateTime('today')),
-    SalesOrder\Properties::shipToCountry->name => [ 'PL', 'DE' ],
+    SalesOrder\Properties::customerNumber => '30000',
+    Expression::greaterOrEqualThan(SalesOrder\Properties::orderDate, new \DateTime('today')),
+    SalesOrder\Properties::shipToCountry => [ 'PL', 'DE' ],
 ], $orderBy, 10);
 
 foreach ($salesOrders as $salesOrder) {
-    echo " - {$salesOrder->number}:\t{$salesOrder->totalAmountIncludingTax} {$salesOrder->currencyCode}\n"; 
+    /** @var SalesOrder\Record $salesOrder */
+    echo " - {$salesOrder->getNumber()}:\t{$salesOrder->getTotalAmountIncludingTax()} {$salesOrder->getCurrencyCode()}\n"; 
 }
 
 // upload picture for an item
@@ -63,7 +65,7 @@ $repository = new Item\Repository($client);
 $item = $repository->findOneBy([ 'number' => '100000' ]);
 
 $file = file_get_contents('tests/files/picture.png');
-$item->picture->pictureContent->uploadWith($client, $file, $item->picture->getETag());
+$item->getPicture()->getPictureContent()->uploadWith($client, $file, $item->picture->getETag());
 ```
 
 ## Tests

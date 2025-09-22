@@ -9,7 +9,6 @@ use Rebel\BCApi2\Entity\CustomerReturnReason;
 use Rebel\BCApi2\Entity\DimensionSetLine;
 use Rebel\BCApi2\Entity\DimensionValue;
 use Rebel\BCApi2\Entity\DocumentAttachment;
-use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\PaymentTerm;
 use Rebel\BCApi2\Entity\PdfDocument;
 use Rebel\BCApi2\Entity\PurchaseCreditMemoLine;
@@ -18,346 +17,7 @@ use Rebel\BCApi2\Entity\Vendor;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
-    }
-
-    public ?string $number {
-        set {
-            $this->set('number', $value);
-        }
-        get => $this->get('number');
-    }
-
-    public ?Carbon $creditMemoDate {
-        set {
-            $this->setAsDate('creditMemoDate', $value);
-        }
-        get => $this->getAsDate('creditMemoDate');
-    }
-
-    public ?Carbon $postingDate {
-        set {
-            $this->setAsDate('postingDate', $value);
-        }
-        get => $this->getAsDate('postingDate');
-    }
-
-    public ?Carbon $dueDate {
-        set {
-            $this->setAsDate('dueDate', $value);
-        }
-        get => $this->getAsDate('dueDate');
-    }
-
-    public ?string $vendorId {
-        set {
-            $this->set('vendorId', $value);
-        }
-        get => $this->get('vendorId');
-    }
-
-    public ?string $vendorNumber {
-        set {
-            $this->set('vendorNumber', $value);
-        }
-        get => $this->get('vendorNumber');
-    }
-
-    public ?string $vendorName {
-        set {
-            $this->set('vendorName', $value);
-        }
-        get => $this->get('vendorName');
-    }
-
-    public ?string $vendorCreditMemoNumber {
-        set {
-            $this->set('vendorCreditMemoNumber', $value);
-        }
-        get => $this->get('vendorCreditMemoNumber');
-    }
-
-    public ?string $payToVendorId {
-        set {
-            $this->set('payToVendorId', $value);
-        }
-        get => $this->get('payToVendorId');
-    }
-
-    public ?string $payToVendorNumber {
-        set {
-            $this->set('payToVendorNumber', $value);
-        }
-        get => $this->get('payToVendorNumber');
-    }
-
-    public ?string $payToName {
-        set {
-            $this->set('payToName', $value);
-        }
-        get => $this->get('payToName');
-    }
-
-    public ?string $buyFromAddressLine1 {
-        set {
-            $this->set('buyFromAddressLine1', $value);
-        }
-        get => $this->get('buyFromAddressLine1');
-    }
-
-    public ?string $buyFromAddressLine2 {
-        set {
-            $this->set('buyFromAddressLine2', $value);
-        }
-        get => $this->get('buyFromAddressLine2');
-    }
-
-    public ?string $buyFromCity {
-        set {
-            $this->set('buyFromCity', $value);
-        }
-        get => $this->get('buyFromCity');
-    }
-
-    public ?string $buyFromCountry {
-        set {
-            $this->set('buyFromCountry', $value);
-        }
-        get => $this->get('buyFromCountry');
-    }
-
-    public ?string $buyFromState {
-        set {
-            $this->set('buyFromState', $value);
-        }
-        get => $this->get('buyFromState');
-    }
-
-    public ?string $buyFromPostCode {
-        set {
-            $this->set('buyFromPostCode', $value);
-        }
-        get => $this->get('buyFromPostCode');
-    }
-
-    public ?string $payToAddressLine1 {
-        set {
-            $this->set('payToAddressLine1', $value);
-        }
-        get => $this->get('payToAddressLine1');
-    }
-
-    public ?string $payToAddressLine2 {
-        set {
-            $this->set('payToAddressLine2', $value);
-        }
-        get => $this->get('payToAddressLine2');
-    }
-
-    public ?string $payToCity {
-        set {
-            $this->set('payToCity', $value);
-        }
-        get => $this->get('payToCity');
-    }
-
-    public ?string $payToCountry {
-        set {
-            $this->set('payToCountry', $value);
-        }
-        get => $this->get('payToCountry');
-    }
-
-    public ?string $payToState {
-        set {
-            $this->set('payToState', $value);
-        }
-        get => $this->get('payToState');
-    }
-
-    public ?string $payToPostCode {
-        set {
-            $this->set('payToPostCode', $value);
-        }
-        get => $this->get('payToPostCode');
-    }
-
-    public ?string $shortcutDimension1Code {
-        set {
-            $this->set('shortcutDimension1Code', $value);
-        }
-        get => $this->get('shortcutDimension1Code');
-    }
-
-    public ?string $shortcutDimension2Code {
-        set {
-            $this->set('shortcutDimension2Code', $value);
-        }
-        get => $this->get('shortcutDimension2Code');
-    }
-
-    public ?string $currencyId {
-        set {
-            $this->set('currencyId', $value);
-        }
-        get => $this->get('currencyId');
-    }
-
-    public ?string $currencyCode {
-        set {
-            $this->set('currencyCode', $value);
-        }
-        get => $this->get('currencyCode');
-    }
-
-    public ?string $paymentTermsId {
-        set {
-            $this->set('paymentTermsId', $value);
-        }
-        get => $this->get('paymentTermsId');
-    }
-
-    public ?string $shipmentMethodId {
-        set {
-            $this->set('shipmentMethodId', $value);
-        }
-        get => $this->get('shipmentMethodId');
-    }
-
-    public ?string $purchaser {
-        set {
-            $this->set('purchaser', $value);
-        }
-        get => $this->get('purchaser');
-    }
-
-    public ?bool $pricesIncludeTax {
-        set {
-            $this->set('pricesIncludeTax', $value);
-        }
-        get => $this->get('pricesIncludeTax');
-    }
-
-    public ?float $discountAmount {
-        set {
-            $this->set('discountAmount', $value);
-        }
-        get => $this->get('discountAmount');
-    }
-
-    public ?bool $discountAppliedBeforeTax {
-        set {
-            $this->set('discountAppliedBeforeTax', $value);
-        }
-        get => $this->get('discountAppliedBeforeTax');
-    }
-
-    public ?float $totalAmountExcludingTax {
-        set {
-            $this->set('totalAmountExcludingTax', $value);
-        }
-        get => $this->get('totalAmountExcludingTax');
-    }
-
-    public ?float $totalTaxAmount {
-        set {
-            $this->set('totalTaxAmount', $value);
-        }
-        get => $this->get('totalTaxAmount');
-    }
-
-    public ?float $totalAmountIncludingTax {
-        set {
-            $this->set('totalAmountIncludingTax', $value);
-        }
-        get => $this->get('totalAmountIncludingTax');
-    }
-
-    public ?Enums\PurchCrMemoEntityStatus $status {
-        set {
-            $this->set('status', $value);
-        }
-        get => $this->getAsEnum('status', Enums\PurchCrMemoEntityStatus::class);
-    }
-
-    public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value);
-        }
-        get => $this->getAsDateTime('lastModifiedDateTime');
-    }
-
-    public ?string $invoiceId {
-        set {
-            $this->set('invoiceId', $value);
-        }
-        get => $this->get('invoiceId');
-    }
-
-    public ?string $invoiceNumber {
-        set {
-            $this->set('invoiceNumber', $value);
-        }
-        get => $this->get('invoiceNumber');
-    }
-
-    public ?string $vendorReturnReasonId {
-        set {
-            $this->set('vendorReturnReasonId', $value);
-        }
-        get => $this->get('vendorReturnReasonId');
-    }
-
-    public ?Vendor\Record $vendor {
-        get => $this->get('vendor');
-    }
-
-    public ?DimensionValue\Record $dimensionValue {
-        get => $this->get('dimensionValue');
-    }
-
-    public ?Currency\Record $currency {
-        get => $this->get('currency');
-    }
-
-    public ?PaymentTerm\Record $paymentTerm {
-        get => $this->get('paymentTerm');
-    }
-
-    public ?ShipmentMethod\Record $shipmentMethod {
-        get => $this->get('shipmentMethod');
-    }
-
-    public ?CustomerReturnReason\Record $customerReturnReason {
-        get => $this->get('customerReturnReason');
-    }
-
-    /** @var Entity\Collection<DimensionSetLine\Record> */
-    public Entity\Collection $dimensionSetLines {
-        get => $this->getAsCollection('dimensionSetLines');
-    }
-
-    /** @var Entity\Collection<PurchaseCreditMemoLine\Record> */
-    public Entity\Collection $purchaseCreditMemoLines {
-        get => $this->getAsCollection('purchaseCreditMemoLines');
-    }
-
-    public ?PdfDocument\Record $pdfDocument {
-        get => $this->get('pdfDocument');
-    }
-
-    /** @var Entity\Collection<Attachment\Record> */
-    public Entity\Collection $attachments {
-        get => $this->getAsCollection('attachments');
-    }
-
-    /** @var Entity\Collection<DocumentAttachment\Record> */
-    public Entity\Collection $documentAttachments {
-        get => $this->getAsCollection('documentAttachments');
-    }
-
-    protected array $classMap = [
+    protected $classMap = [
         'vendor' => Vendor\Record::class,
         'dimensionValue' => DimensionValue\Record::class,
         'currency' => Currency\Record::class,
@@ -370,4 +30,527 @@ class Record extends Entity
         'attachments' => Attachment\Record::class,
         'documentAttachments' => DocumentAttachment\Record::class,
     ];
+
+    function getId(): ?string
+    {
+        return $this->get('id');
+    }
+
+    function getNumber(): ?string
+    {
+        return $this->get('number');
+    }
+
+    function setNumber(?string $value): self
+    {
+        $this->set('number', $value);
+        return $this;
+    }
+
+    function getCreditMemoDate(): ?Carbon
+    {
+        return $this->getAsDate('creditMemoDate');
+    }
+
+    function setCreditMemoDate(?\DateTime $value): self
+    {
+        $this->setAsDate('creditMemoDate', $value);
+        return $this;
+    }
+
+    function getPostingDate(): ?Carbon
+    {
+        return $this->getAsDate('postingDate');
+    }
+
+    function setPostingDate(?\DateTime $value): self
+    {
+        $this->setAsDate('postingDate', $value);
+        return $this;
+    }
+
+    function getDueDate(): ?Carbon
+    {
+        return $this->getAsDate('dueDate');
+    }
+
+    function setDueDate(?\DateTime $value): self
+    {
+        $this->setAsDate('dueDate', $value);
+        return $this;
+    }
+
+    function getVendorId(): ?string
+    {
+        return $this->get('vendorId');
+    }
+
+    function setVendorId(?string $value): self
+    {
+        $this->set('vendorId', $value);
+        return $this;
+    }
+
+    function getVendorNumber(): ?string
+    {
+        return $this->get('vendorNumber');
+    }
+
+    function setVendorNumber(?string $value): self
+    {
+        $this->set('vendorNumber', $value);
+        return $this;
+    }
+
+    function getVendorName(): ?string
+    {
+        return $this->get('vendorName');
+    }
+
+    function setVendorName(?string $value): self
+    {
+        $this->set('vendorName', $value);
+        return $this;
+    }
+
+    function getVendorCreditMemoNumber(): ?string
+    {
+        return $this->get('vendorCreditMemoNumber');
+    }
+
+    function setVendorCreditMemoNumber(?string $value): self
+    {
+        $this->set('vendorCreditMemoNumber', $value);
+        return $this;
+    }
+
+    function getPayToVendorId(): ?string
+    {
+        return $this->get('payToVendorId');
+    }
+
+    function setPayToVendorId(?string $value): self
+    {
+        $this->set('payToVendorId', $value);
+        return $this;
+    }
+
+    function getPayToVendorNumber(): ?string
+    {
+        return $this->get('payToVendorNumber');
+    }
+
+    function setPayToVendorNumber(?string $value): self
+    {
+        $this->set('payToVendorNumber', $value);
+        return $this;
+    }
+
+    function getPayToName(): ?string
+    {
+        return $this->get('payToName');
+    }
+
+    function setPayToName(?string $value): self
+    {
+        $this->set('payToName', $value);
+        return $this;
+    }
+
+    function getBuyFromAddressLine1(): ?string
+    {
+        return $this->get('buyFromAddressLine1');
+    }
+
+    function setBuyFromAddressLine1(?string $value): self
+    {
+        $this->set('buyFromAddressLine1', $value);
+        return $this;
+    }
+
+    function getBuyFromAddressLine2(): ?string
+    {
+        return $this->get('buyFromAddressLine2');
+    }
+
+    function setBuyFromAddressLine2(?string $value): self
+    {
+        $this->set('buyFromAddressLine2', $value);
+        return $this;
+    }
+
+    function getBuyFromCity(): ?string
+    {
+        return $this->get('buyFromCity');
+    }
+
+    function setBuyFromCity(?string $value): self
+    {
+        $this->set('buyFromCity', $value);
+        return $this;
+    }
+
+    function getBuyFromCountry(): ?string
+    {
+        return $this->get('buyFromCountry');
+    }
+
+    function setBuyFromCountry(?string $value): self
+    {
+        $this->set('buyFromCountry', $value);
+        return $this;
+    }
+
+    function getBuyFromState(): ?string
+    {
+        return $this->get('buyFromState');
+    }
+
+    function setBuyFromState(?string $value): self
+    {
+        $this->set('buyFromState', $value);
+        return $this;
+    }
+
+    function getBuyFromPostCode(): ?string
+    {
+        return $this->get('buyFromPostCode');
+    }
+
+    function setBuyFromPostCode(?string $value): self
+    {
+        $this->set('buyFromPostCode', $value);
+        return $this;
+    }
+
+    function getPayToAddressLine1(): ?string
+    {
+        return $this->get('payToAddressLine1');
+    }
+
+    function setPayToAddressLine1(?string $value): self
+    {
+        $this->set('payToAddressLine1', $value);
+        return $this;
+    }
+
+    function getPayToAddressLine2(): ?string
+    {
+        return $this->get('payToAddressLine2');
+    }
+
+    function setPayToAddressLine2(?string $value): self
+    {
+        $this->set('payToAddressLine2', $value);
+        return $this;
+    }
+
+    function getPayToCity(): ?string
+    {
+        return $this->get('payToCity');
+    }
+
+    function setPayToCity(?string $value): self
+    {
+        $this->set('payToCity', $value);
+        return $this;
+    }
+
+    function getPayToCountry(): ?string
+    {
+        return $this->get('payToCountry');
+    }
+
+    function setPayToCountry(?string $value): self
+    {
+        $this->set('payToCountry', $value);
+        return $this;
+    }
+
+    function getPayToState(): ?string
+    {
+        return $this->get('payToState');
+    }
+
+    function setPayToState(?string $value): self
+    {
+        $this->set('payToState', $value);
+        return $this;
+    }
+
+    function getPayToPostCode(): ?string
+    {
+        return $this->get('payToPostCode');
+    }
+
+    function setPayToPostCode(?string $value): self
+    {
+        $this->set('payToPostCode', $value);
+        return $this;
+    }
+
+    function getShortcutDimension1Code(): ?string
+    {
+        return $this->get('shortcutDimension1Code');
+    }
+
+    function setShortcutDimension1Code(?string $value): self
+    {
+        $this->set('shortcutDimension1Code', $value);
+        return $this;
+    }
+
+    function getShortcutDimension2Code(): ?string
+    {
+        return $this->get('shortcutDimension2Code');
+    }
+
+    function setShortcutDimension2Code(?string $value): self
+    {
+        $this->set('shortcutDimension2Code', $value);
+        return $this;
+    }
+
+    function getCurrencyId(): ?string
+    {
+        return $this->get('currencyId');
+    }
+
+    function setCurrencyId(?string $value): self
+    {
+        $this->set('currencyId', $value);
+        return $this;
+    }
+
+    function getCurrencyCode(): ?string
+    {
+        return $this->get('currencyCode');
+    }
+
+    function setCurrencyCode(?string $value): self
+    {
+        $this->set('currencyCode', $value);
+        return $this;
+    }
+
+    function getPaymentTermsId(): ?string
+    {
+        return $this->get('paymentTermsId');
+    }
+
+    function setPaymentTermsId(?string $value): self
+    {
+        $this->set('paymentTermsId', $value);
+        return $this;
+    }
+
+    function getShipmentMethodId(): ?string
+    {
+        return $this->get('shipmentMethodId');
+    }
+
+    function setShipmentMethodId(?string $value): self
+    {
+        $this->set('shipmentMethodId', $value);
+        return $this;
+    }
+
+    function getPurchaser(): ?string
+    {
+        return $this->get('purchaser');
+    }
+
+    function setPurchaser(?string $value): self
+    {
+        $this->set('purchaser', $value);
+        return $this;
+    }
+
+    function getPricesIncludeTax(): ?bool
+    {
+        return $this->get('pricesIncludeTax');
+    }
+
+    function setPricesIncludeTax(?bool $value): self
+    {
+        $this->set('pricesIncludeTax', $value);
+        return $this;
+    }
+
+    function getDiscountAmount(): ?float
+    {
+        return $this->get('discountAmount');
+    }
+
+    function setDiscountAmount(?float $value): self
+    {
+        $this->set('discountAmount', $value);
+        return $this;
+    }
+
+    function getDiscountAppliedBeforeTax(): ?bool
+    {
+        return $this->get('discountAppliedBeforeTax');
+    }
+
+    function setDiscountAppliedBeforeTax(?bool $value): self
+    {
+        $this->set('discountAppliedBeforeTax', $value);
+        return $this;
+    }
+
+    function getTotalAmountExcludingTax(): ?float
+    {
+        return $this->get('totalAmountExcludingTax');
+    }
+
+    function setTotalAmountExcludingTax(?float $value): self
+    {
+        $this->set('totalAmountExcludingTax', $value);
+        return $this;
+    }
+
+    function getTotalTaxAmount(): ?float
+    {
+        return $this->get('totalTaxAmount');
+    }
+
+    function setTotalTaxAmount(?float $value): self
+    {
+        $this->set('totalTaxAmount', $value);
+        return $this;
+    }
+
+    function getTotalAmountIncludingTax(): ?float
+    {
+        return $this->get('totalAmountIncludingTax');
+    }
+
+    function setTotalAmountIncludingTax(?float $value): self
+    {
+        $this->set('totalAmountIncludingTax', $value);
+        return $this;
+    }
+
+    function getStatus(): ?string
+    {
+        return $this->get('status');
+    }
+
+    function setStatus(?string $value): self
+    {
+        $this->set('status', $value);
+        return $this;
+    }
+
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
+    }
+
+    function setLastModifiedDateTime(?\DateTime $value): self
+    {
+        $this->setAsDateTime('lastModifiedDateTime', $value);
+        return $this;
+    }
+
+    function getInvoiceId(): ?string
+    {
+        return $this->get('invoiceId');
+    }
+
+    function setInvoiceId(?string $value): self
+    {
+        $this->set('invoiceId', $value);
+        return $this;
+    }
+
+    function getInvoiceNumber(): ?string
+    {
+        return $this->get('invoiceNumber');
+    }
+
+    function setInvoiceNumber(?string $value): self
+    {
+        $this->set('invoiceNumber', $value);
+        return $this;
+    }
+
+    function getVendorReturnReasonId(): ?string
+    {
+        return $this->get('vendorReturnReasonId');
+    }
+
+    function setVendorReturnReasonId(?string $value): self
+    {
+        $this->set('vendorReturnReasonId', $value);
+        return $this;
+    }
+
+    function getVendor(): ?Vendor\Record
+    {
+        return $this->get('vendor');
+    }
+
+    function getDimensionValue(): ?DimensionValue\Record
+    {
+        return $this->get('dimensionValue');
+    }
+
+    function getCurrency(): ?Currency\Record
+    {
+        return $this->get('currency');
+    }
+
+    function getPaymentTerm(): ?PaymentTerm\Record
+    {
+        return $this->get('paymentTerm');
+    }
+
+    function getShipmentMethod(): ?ShipmentMethod\Record
+    {
+        return $this->get('shipmentMethod');
+    }
+
+    function getCustomerReturnReason(): ?CustomerReturnReason\Record
+    {
+        return $this->get('customerReturnReason');
+    }
+
+    /**
+     * @return Entity\Collection|DimensionSetLine\Record[]
+     */
+    function getDimensionSetLines(): Entity\Collection
+    {
+        return $this->getAsCollection('dimensionSetLines');
+    }
+
+    /**
+     * @return Entity\Collection|PurchaseCreditMemoLine\Record[]
+     */
+    function getPurchaseCreditMemoLines(): Entity\Collection
+    {
+        return $this->getAsCollection('purchaseCreditMemoLines');
+    }
+
+    function getPdfDocument(): ?PdfDocument\Record
+    {
+        return $this->get('pdfDocument');
+    }
+
+    /**
+     * @return Entity\Collection|Attachment\Record[]
+     */
+    function getAttachments(): Entity\Collection
+    {
+        return $this->getAsCollection('attachments');
+    }
+
+    /**
+     * @return Entity\Collection|DocumentAttachment\Record[]
+     */
+    function getDocumentAttachments(): Entity\Collection
+    {
+        return $this->getAsCollection('documentAttachments');
+    }
 }

@@ -1,13 +1,13 @@
 <?php
 namespace Rebel\BCApi2\Entity\RetainedEarningsStatement;
 
-enum Properties
+class Properties
 {
-    case id;
-    case lineNumber;
-    case display;
-    case netChange;
-    case lineType;
-    case indentation;
-    case dateFilter;
+    public const id = 'id';
+    public const lineNumber = 'lineNumber';
+    public const display = 'display';
+    public const netChange = 'netChange';
+    public const lineType = 'lineType';
+    public const indentation = 'indentation';
+    public const dateFilter = 'dateFilter';
 }

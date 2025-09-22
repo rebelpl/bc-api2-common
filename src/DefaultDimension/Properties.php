@@ -1,22 +1,22 @@
 <?php
 namespace Rebel\BCApi2\Entity\DefaultDimension;
 
-enum Properties
+class Properties
 {
-    case id;
-    case parentType;
-    case parentId;
-    case dimensionId;
-    case dimensionCode;
-    case dimensionValueId;
-    case dimensionValueCode;
-    case postingValidation;
-    case lastModifiedDateTime;
-    case item;
-    case account;
-    case dimension;
-    case dimensionValue;
-    case customer;
-    case vendor;
-    case employee;
+    public const id = 'id';
+    public const parentType = 'parentType';
+    public const parentId = 'parentId';
+    public const dimensionId = 'dimensionId';
+    public const dimensionCode = 'dimensionCode';
+    public const dimensionValueId = 'dimensionValueId';
+    public const dimensionValueCode = 'dimensionValueCode';
+    public const postingValidation = 'postingValidation';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
+    public const item = 'item';
+    public const account = 'account';
+    public const dimension = 'dimension';
+    public const dimensionValue = 'dimensionValue';
+    public const customer = 'customer';
+    public const vendor = 'vendor';
+    public const employee = 'employee';
 }

@@ -1,22 +1,22 @@
 <?php
 namespace Rebel\BCApi2\Entity\GeneralLedgerSetup;
 
-enum Properties
+class Properties
 {
-    case id;
-    case allowPostingFrom;
-    case allowPostingTo;
-    case additionalReportingCurrency;
-    case localCurrencyCode;
-    case localCurrencySymbol;
-    case lastModifiedDateTime;
-    case allowQueryFromConsolidation;
-    case shortcutDimension1Code;
-    case shortcutDimension2Code;
-    case shortcutDimension3Code;
-    case shortcutDimension4Code;
-    case shortcutDimension5Code;
-    case shortcutDimension6Code;
-    case shortcutDimension7Code;
-    case shortcutDimension8Code;
+    public const id = 'id';
+    public const allowPostingFrom = 'allowPostingFrom';
+    public const allowPostingTo = 'allowPostingTo';
+    public const additionalReportingCurrency = 'additionalReportingCurrency';
+    public const localCurrencyCode = 'localCurrencyCode';
+    public const localCurrencySymbol = 'localCurrencySymbol';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
+    public const allowQueryFromConsolidation = 'allowQueryFromConsolidation';
+    public const shortcutDimension1Code = 'shortcutDimension1Code';
+    public const shortcutDimension2Code = 'shortcutDimension2Code';
+    public const shortcutDimension3Code = 'shortcutDimension3Code';
+    public const shortcutDimension4Code = 'shortcutDimension4Code';
+    public const shortcutDimension5Code = 'shortcutDimension5Code';
+    public const shortcutDimension6Code = 'shortcutDimension6Code';
+    public const shortcutDimension7Code = 'shortcutDimension7Code';
+    public const shortcutDimension8Code = 'shortcutDimension8Code';
 }

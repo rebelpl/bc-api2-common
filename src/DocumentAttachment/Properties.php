@@ -1,28 +1,28 @@
 <?php
 namespace Rebel\BCApi2\Entity\DocumentAttachment;
 
-enum Properties
+class Properties
 {
-    case id;
-    case fileName;
-    case byteSize;
-    case attachmentContent;
-    case parentType;
-    case parentId;
-    case lineNumber;
-    case documentFlowSales;
-    case documentFlowPurchase;
-    case lastModifiedDateTime;
-    case item;
-    case customer;
-    case vendor;
-    case salesInvoice;
-    case employee;
-    case salesOrder;
-    case salesQuote;
-    case salesCreditMemo;
-    case purchaseInvoice;
-    case project;
-    case purchaseOrder;
-    case purchaseCreditMemo;
+    public const id = 'id';
+    public const fileName = 'fileName';
+    public const byteSize = 'byteSize';
+    public const attachmentContent = 'attachmentContent';
+    public const parentType = 'parentType';
+    public const parentId = 'parentId';
+    public const lineNumber = 'lineNumber';
+    public const documentFlowSales = 'documentFlowSales';
+    public const documentFlowPurchase = 'documentFlowPurchase';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
+    public const item = 'item';
+    public const customer = 'customer';
+    public const vendor = 'vendor';
+    public const salesInvoice = 'salesInvoice';
+    public const employee = 'employee';
+    public const salesOrder = 'salesOrder';
+    public const salesQuote = 'salesQuote';
+    public const salesCreditMemo = 'salesCreditMemo';
+    public const purchaseInvoice = 'purchaseInvoice';
+    public const project = 'project';
+    public const purchaseOrder = 'purchaseOrder';
+    public const purchaseCreditMemo = 'purchaseCreditMemo';
 }

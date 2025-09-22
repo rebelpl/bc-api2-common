@@ -1,10 +1,10 @@
 <?php
 namespace Rebel\BCApi2\Entity\CustomerReturnReason;
 
-enum Properties
+class Properties
 {
-    case id;
-    case code;
-    case description;
-    case lastModifiedDateTime;
+    public const id = 'id';
+    public const code = 'code';
+    public const description = 'description';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
 }

@@ -3,74 +3,110 @@ namespace Rebel\BCApi2\Entity\BankAccount;
 
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?string $number {
-        set {
-            $this->set('number', $value);
-        }
-        get => $this->get('number');
+    function getNumber(): ?string
+    {
+        return $this->get('number');
     }
 
-    public ?string $displayName {
-        set {
-            $this->set('displayName', $value);
-        }
-        get => $this->get('displayName');
+    function setNumber(?string $value): self
+    {
+        $this->set('number', $value);
+        return $this;
     }
 
-    public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value);
-        }
-        get => $this->getAsDateTime('lastModifiedDateTime');
+    function getDisplayName(): ?string
+    {
+        return $this->get('displayName');
     }
 
-    public ?string $bankAccountNumber {
-        set {
-            $this->set('bankAccountNumber', $value);
-        }
-        get => $this->get('bankAccountNumber');
+    function setDisplayName(?string $value): self
+    {
+        $this->set('displayName', $value);
+        return $this;
     }
 
-    public ?bool $blocked {
-        set {
-            $this->set('blocked', $value);
-        }
-        get => $this->get('blocked');
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    public ?string $currencyCode {
-        set {
-            $this->set('currencyCode', $value);
-        }
-        get => $this->get('currencyCode');
+    function setLastModifiedDateTime(?\DateTime $value): self
+    {
+        $this->setAsDateTime('lastModifiedDateTime', $value);
+        return $this;
     }
 
-    public ?string $currencyId {
-        set {
-            $this->set('currencyId', $value);
-        }
-        get => $this->get('currencyId');
+    function getBankAccountNumber(): ?string
+    {
+        return $this->get('bankAccountNumber');
     }
 
-    public ?string $iban {
-        set {
-            $this->set('iban', $value);
-        }
-        get => $this->get('iban');
+    function setBankAccountNumber(?string $value): self
+    {
+        $this->set('bankAccountNumber', $value);
+        return $this;
     }
 
-    public ?bool $intercompanyEnabled {
-        set {
-            $this->set('intercompanyEnabled', $value);
-        }
-        get => $this->get('intercompanyEnabled');
+    function getBlocked(): ?bool
+    {
+        return $this->get('blocked');
+    }
+
+    function setBlocked(?bool $value): self
+    {
+        $this->set('blocked', $value);
+        return $this;
+    }
+
+    function getCurrencyCode(): ?string
+    {
+        return $this->get('currencyCode');
+    }
+
+    function setCurrencyCode(?string $value): self
+    {
+        $this->set('currencyCode', $value);
+        return $this;
+    }
+
+    function getCurrencyId(): ?string
+    {
+        return $this->get('currencyId');
+    }
+
+    function setCurrencyId(?string $value): self
+    {
+        $this->set('currencyId', $value);
+        return $this;
+    }
+
+    function getIban(): ?string
+    {
+        return $this->get('iban');
+    }
+
+    function setIban(?string $value): self
+    {
+        $this->set('iban', $value);
+        return $this;
+    }
+
+    function getIntercompanyEnabled(): ?bool
+    {
+        return $this->get('intercompanyEnabled');
+    }
+
+    function setIntercompanyEnabled(?bool $value): self
+    {
+        $this->set('intercompanyEnabled', $value);
+        return $this;
     }
 }

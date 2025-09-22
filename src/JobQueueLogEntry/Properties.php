@@ -1,23 +1,23 @@
 <?php
 namespace Rebel\BCApi2\Entity\JobQueueLogEntry;
 
-enum Properties
+class Properties
 {
-    case id;
-    case jobQueueEntryId;
-    case userId;
-    case startDateTime;
-    case endDateTime;
-    case objectIdToRun;
-    case objectTypeToRun;
-    case status;
-    case description;
-    case errorMessage;
-    case jobQueueCategoryCode;
-    case errorCallStack;
-    case parameterString;
-    case systemTaskId;
-    case userSessionId;
-    case userServiceInstanceId;
-    case lastModifiedDateTime;
+    public const id = 'id';
+    public const jobQueueEntryId = 'jobQueueEntryId';
+    public const userId = 'userId';
+    public const startDateTime = 'startDateTime';
+    public const endDateTime = 'endDateTime';
+    public const objectIdToRun = 'objectIdToRun';
+    public const objectTypeToRun = 'objectTypeToRun';
+    public const status = 'status';
+    public const description = 'description';
+    public const errorMessage = 'errorMessage';
+    public const jobQueueCategoryCode = 'jobQueueCategoryCode';
+    public const errorCallStack = 'errorCallStack';
+    public const parameterString = 'parameterString';
+    public const systemTaskId = 'systemTaskId';
+    public const userSessionId = 'userSessionId';
+    public const userServiceInstanceId = 'userServiceInstanceId';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
 }

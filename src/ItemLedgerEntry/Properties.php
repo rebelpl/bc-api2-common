@@ -1,20 +1,20 @@
 <?php
 namespace Rebel\BCApi2\Entity\ItemLedgerEntry;
 
-enum Properties
+class Properties
 {
-    case id;
-    case entryNumber;
-    case itemNumber;
-    case postingDate;
-    case entryType;
-    case sourceNumber;
-    case sourceType;
-    case documentNumber;
-    case documentType;
-    case description;
-    case quantity;
-    case salesAmountActual;
-    case costAmountActual;
-    case lastModifiedDateTime;
+    public const id = 'id';
+    public const entryNumber = 'entryNumber';
+    public const itemNumber = 'itemNumber';
+    public const postingDate = 'postingDate';
+    public const entryType = 'entryType';
+    public const sourceNumber = 'sourceNumber';
+    public const sourceType = 'sourceType';
+    public const documentNumber = 'documentNumber';
+    public const documentType = 'documentType';
+    public const description = 'description';
+    public const quantity = 'quantity';
+    public const salesAmountActual = 'salesAmountActual';
+    public const costAmountActual = 'costAmountActual';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
 }

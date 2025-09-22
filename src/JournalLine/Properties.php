@@ -1,29 +1,29 @@
 <?php
 namespace Rebel\BCApi2\Entity\JournalLine;
 
-enum Properties
+class Properties
 {
-    case id;
-    case journalId;
-    case journalDisplayName;
-    case lineNumber;
-    case accountType;
-    case accountId;
-    case accountNumber;
-    case postingDate;
-    case documentNumber;
-    case externalDocumentNumber;
-    case amount;
-    case description;
-    case comment;
-    case taxCode;
-    case balanceAccountType;
-    case balancingAccountId;
-    case balancingAccountNumber;
-    case lastModifiedDateTime;
-    case journal;
-    case customerPaymentJournal;
-    case account;
-    case attachments;
-    case dimensionSetLines;
+    public const id = 'id';
+    public const journalId = 'journalId';
+    public const journalDisplayName = 'journalDisplayName';
+    public const lineNumber = 'lineNumber';
+    public const accountType = 'accountType';
+    public const accountId = 'accountId';
+    public const accountNumber = 'accountNumber';
+    public const postingDate = 'postingDate';
+    public const documentNumber = 'documentNumber';
+    public const externalDocumentNumber = 'externalDocumentNumber';
+    public const amount = 'amount';
+    public const description = 'description';
+    public const comment = 'comment';
+    public const taxCode = 'taxCode';
+    public const balanceAccountType = 'balanceAccountType';
+    public const balancingAccountId = 'balancingAccountId';
+    public const balancingAccountNumber = 'balancingAccountNumber';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
+    public const journal = 'journal';
+    public const customerPaymentJournal = 'customerPaymentJournal';
+    public const account = 'account';
+    public const attachments = 'attachments';
+    public const dimensionSetLines = 'dimensionSetLines';
 }

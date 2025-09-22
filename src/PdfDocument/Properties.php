@@ -1,16 +1,16 @@
 <?php
 namespace Rebel\BCApi2\Entity\PdfDocument;
 
-enum Properties
+class Properties
 {
-    case id;
-    case parentId;
-    case parentType;
-    case pdfDocumentContent;
-    case salesInvoice;
-    case salesQuote;
-    case salesCreditMemo;
-    case purchaseInvoice;
-    case purchaseCreditMemo;
-    case customerContact;
+    public const id = 'id';
+    public const parentId = 'parentId';
+    public const parentType = 'parentType';
+    public const pdfDocumentContent = 'pdfDocumentContent';
+    public const salesInvoice = 'salesInvoice';
+    public const salesQuote = 'salesQuote';
+    public const salesCreditMemo = 'salesCreditMemo';
+    public const purchaseInvoice = 'purchaseInvoice';
+    public const purchaseCreditMemo = 'purchaseCreditMemo';
+    public const customerContact = 'customerContact';
 }

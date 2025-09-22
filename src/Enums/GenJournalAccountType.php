@@ -1,14 +1,14 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum GenJournalAccountType: string
+class GenJournalAccountType
 {
-    case GLAccount = 'G_x002F_L_x0020_Account';
-    case Customer = 'Customer';
-    case Vendor = 'Vendor';
-    case BankAccount = 'Bank_x0020_Account';
-    case FixedAsset = 'Fixed_x0020_Asset';
-    case ICPartner = 'IC_x0020_Partner';
-    case Employee = 'Employee';
-    case AllocationAccount = 'Allocation_x0020_Account';
+    public const GLAccount = 'G_x002F_L_x0020_Account';
+    public const Customer = 'Customer';
+    public const Vendor = 'Vendor';
+    public const BankAccount = 'Bank_x0020_Account';
+    public const FixedAsset = 'Fixed_x0020_Asset';
+    public const ICPartner = 'IC_x0020_Partner';
+    public const Employee = 'Employee';
+    public const AllocationAccount = 'Allocation_x0020_Account';
 }

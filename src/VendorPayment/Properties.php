@@ -1,26 +1,26 @@
 <?php
 namespace Rebel\BCApi2\Entity\VendorPayment;
 
-enum Properties
+class Properties
 {
-    case id;
-    case journalId;
-    case journalDisplayName;
-    case lineNumber;
-    case vendorId;
-    case vendorNumber;
-    case postingDate;
-    case documentNumber;
-    case externalDocumentNumber;
-    case amount;
-    case appliesToInvoiceId;
-    case appliesToInvoiceNumber;
-    case description;
-    case comment;
-    case lastModifiedDateTime;
-    case customerPaymentJournal;
-    case vendor;
-    case dimensionSetLines;
-    case applyVendorEntries;
-    case vendorPaymentJournal;
+    public const id = 'id';
+    public const journalId = 'journalId';
+    public const journalDisplayName = 'journalDisplayName';
+    public const lineNumber = 'lineNumber';
+    public const vendorId = 'vendorId';
+    public const vendorNumber = 'vendorNumber';
+    public const postingDate = 'postingDate';
+    public const documentNumber = 'documentNumber';
+    public const externalDocumentNumber = 'externalDocumentNumber';
+    public const amount = 'amount';
+    public const appliesToInvoiceId = 'appliesToInvoiceId';
+    public const appliesToInvoiceNumber = 'appliesToInvoiceNumber';
+    public const description = 'description';
+    public const comment = 'comment';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
+    public const customerPaymentJournal = 'customerPaymentJournal';
+    public const vendor = 'vendor';
+    public const dimensionSetLines = 'dimensionSetLines';
+    public const applyVendorEntries = 'applyVendorEntries';
+    public const vendorPaymentJournal = 'vendorPaymentJournal';
 }

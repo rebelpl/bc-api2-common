@@ -3,60 +3,88 @@ namespace Rebel\BCApi2\Entity\PaymentTerm;
 
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?string $code {
-        set {
-            $this->set('code', $value);
-        }
-        get => $this->get('code');
+    function getCode(): ?string
+    {
+        return $this->get('code');
     }
 
-    public ?string $displayName {
-        set {
-            $this->set('displayName', $value);
-        }
-        get => $this->get('displayName');
+    function setCode(?string $value): self
+    {
+        $this->set('code', $value);
+        return $this;
     }
 
-    public ?string $dueDateCalculation {
-        set {
-            $this->set('dueDateCalculation', $value);
-        }
-        get => $this->get('dueDateCalculation');
+    function getDisplayName(): ?string
+    {
+        return $this->get('displayName');
     }
 
-    public ?string $discountDateCalculation {
-        set {
-            $this->set('discountDateCalculation', $value);
-        }
-        get => $this->get('discountDateCalculation');
+    function setDisplayName(?string $value): self
+    {
+        $this->set('displayName', $value);
+        return $this;
     }
 
-    public ?float $discountPercent {
-        set {
-            $this->set('discountPercent', $value);
-        }
-        get => $this->get('discountPercent');
+    function getDueDateCalculation(): ?string
+    {
+        return $this->get('dueDateCalculation');
     }
 
-    public ?bool $calculateDiscountOnCreditMemos {
-        set {
-            $this->set('calculateDiscountOnCreditMemos', $value);
-        }
-        get => $this->get('calculateDiscountOnCreditMemos');
+    function setDueDateCalculation(?string $value): self
+    {
+        $this->set('dueDateCalculation', $value);
+        return $this;
     }
 
-    public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value);
-        }
-        get => $this->getAsDateTime('lastModifiedDateTime');
+    function getDiscountDateCalculation(): ?string
+    {
+        return $this->get('discountDateCalculation');
+    }
+
+    function setDiscountDateCalculation(?string $value): self
+    {
+        $this->set('discountDateCalculation', $value);
+        return $this;
+    }
+
+    function getDiscountPercent(): ?float
+    {
+        return $this->get('discountPercent');
+    }
+
+    function setDiscountPercent(?float $value): self
+    {
+        $this->set('discountPercent', $value);
+        return $this;
+    }
+
+    function getCalculateDiscountOnCreditMemos(): ?bool
+    {
+        return $this->get('calculateDiscountOnCreditMemos');
+    }
+
+    function setCalculateDiscountOnCreditMemos(?bool $value): self
+    {
+        $this->set('calculateDiscountOnCreditMemos', $value);
+        return $this;
+    }
+
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
+    }
+
+    function setLastModifiedDateTime(?\DateTime $value): self
+    {
+        $this->setAsDateTime('lastModifiedDateTime', $value);
+        return $this;
     }
 }

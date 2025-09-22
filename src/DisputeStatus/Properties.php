@@ -1,9 +1,9 @@
 <?php
 namespace Rebel\BCApi2\Entity\DisputeStatus;
 
-enum Properties
+class Properties
 {
-    case id;
-    case code;
-    case displayName;
+    public const id = 'id';
+    public const code = 'code';
+    public const displayName = 'displayName';
 }

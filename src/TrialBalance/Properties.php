@@ -1,16 +1,16 @@
 <?php
 namespace Rebel\BCApi2\Entity\TrialBalance;
 
-enum Properties
+class Properties
 {
-    case accountId;
-    case number;
-    case accountType;
-    case display;
-    case totalDebit;
-    case totalCredit;
-    case balanceAtDateDebit;
-    case balanceAtDateCredit;
-    case dateFilter;
-    case account;
+    public const accountId = 'accountId';
+    public const number = 'number';
+    public const accountType = 'accountType';
+    public const display = 'display';
+    public const totalDebit = 'totalDebit';
+    public const totalCredit = 'totalCredit';
+    public const balanceAtDateDebit = 'balanceAtDateDebit';
+    public const balanceAtDateCredit = 'balanceAtDateCredit';
+    public const dateFilter = 'dateFilter';
+    public const account = 'account';
 }

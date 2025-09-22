@@ -1,21 +1,21 @@
 <?php
 namespace Rebel\BCApi2\Entity\FixedAsset;
 
-enum Properties
+class Properties
 {
-    case id;
-    case number;
-    case displayName;
-    case fixedAssetLocationCode;
-    case fixedAssetLocationId;
-    case classCode;
-    case subclassCode;
-    case blocked;
-    case serialNumber;
-    case employeeNumber;
-    case employeeId;
-    case underMaintenance;
-    case lastModifiedDateTime;
-    case fixedAssetLocation;
-    case employee;
+    public const id = 'id';
+    public const number = 'number';
+    public const displayName = 'displayName';
+    public const fixedAssetLocationCode = 'fixedAssetLocationCode';
+    public const fixedAssetLocationId = 'fixedAssetLocationId';
+    public const classCode = 'classCode';
+    public const subclassCode = 'subclassCode';
+    public const blocked = 'blocked';
+    public const serialNumber = 'serialNumber';
+    public const employeeNumber = 'employeeNumber';
+    public const employeeId = 'employeeId';
+    public const underMaintenance = 'underMaintenance';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
+    public const fixedAssetLocation = 'fixedAssetLocation';
+    public const employee = 'employee';
 }

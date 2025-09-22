@@ -1,13 +1,13 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum GlAccountCategory: string
+class GlAccountCategory
 {
-    case Null = '_x0020_';
-    case Assets = 'Assets';
-    case Liabilities = 'Liabilities';
-    case Equity = 'Equity';
-    case Income = 'Income';
-    case CostofGoodsSold = 'Cost_x0020_of_x0020_Goods_x0020_Sold';
-    case Expense = 'Expense';
+    public const Null = '_x0020_';
+    public const Assets = 'Assets';
+    public const Liabilities = 'Liabilities';
+    public const Equity = 'Equity';
+    public const Income = 'Income';
+    public const CostofGoodsSold = 'Cost_x0020_of_x0020_Goods_x0020_Sold';
+    public const Expense = 'Expense';
 }

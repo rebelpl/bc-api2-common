@@ -6,79 +6,98 @@ use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\Account;
 use Rebel\BCApi2\Entity\Attachment;
 use Rebel\BCApi2\Entity\DimensionSetLine;
-use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
-    }
-
-    public ?int $entryNumber {
-        get => $this->get('entryNumber');
-    }
-
-    public ?Carbon $postingDate {
-        get => $this->getAsDate('postingDate');
-    }
-
-    public ?string $documentNumber {
-        get => $this->get('documentNumber');
-    }
-
-    public ?Enums\GenJournalDocumentType $documentType {
-        get => $this->getAsEnum('documentType', Enums\GenJournalDocumentType::class);
-    }
-
-    public ?string $accountId {
-        get => $this->get('accountId');
-    }
-
-    public ?string $accountNumber {
-        get => $this->get('accountNumber');
-    }
-
-    public ?string $description {
-        get => $this->get('description');
-    }
-
-    public ?float $debitAmount {
-        get => $this->get('debitAmount');
-    }
-
-    public ?float $creditAmount {
-        get => $this->get('creditAmount');
-    }
-
-    public ?float $additionalCurrencyDebitAmount {
-        get => $this->get('additionalCurrencyDebitAmount');
-    }
-
-    public ?float $additionalCurrencyCreditAmount {
-        get => $this->get('additionalCurrencyCreditAmount');
-    }
-
-    public ?Carbon $lastModifiedDateTime {
-        get => $this->getAsDateTime('lastModifiedDateTime');
-    }
-
-    public ?Account\Record $account {
-        get => $this->get('account');
-    }
-
-    /** @var Entity\Collection<Attachment\Record> */
-    public Entity\Collection $attachments {
-        get => $this->getAsCollection('attachments');
-    }
-
-    /** @var Entity\Collection<DimensionSetLine\Record> */
-    public Entity\Collection $dimensionSetLines {
-        get => $this->getAsCollection('dimensionSetLines');
-    }
-
-    protected array $classMap = [
+    protected $classMap = [
         'account' => Account\Record::class,
         'attachments' => Attachment\Record::class,
         'dimensionSetLines' => DimensionSetLine\Record::class,
     ];
+
+    function getId(): ?string
+    {
+        return $this->get('id');
+    }
+
+    function getEntryNumber(): ?int
+    {
+        return $this->get('entryNumber');
+    }
+
+    function getPostingDate(): ?Carbon
+    {
+        return $this->getAsDate('postingDate');
+    }
+
+    function getDocumentNumber(): ?string
+    {
+        return $this->get('documentNumber');
+    }
+
+    function getDocumentType(): ?string
+    {
+        return $this->get('documentType');
+    }
+
+    function getAccountId(): ?string
+    {
+        return $this->get('accountId');
+    }
+
+    function getAccountNumber(): ?string
+    {
+        return $this->get('accountNumber');
+    }
+
+    function getDescription(): ?string
+    {
+        return $this->get('description');
+    }
+
+    function getDebitAmount(): ?float
+    {
+        return $this->get('debitAmount');
+    }
+
+    function getCreditAmount(): ?float
+    {
+        return $this->get('creditAmount');
+    }
+
+    function getAdditionalCurrencyDebitAmount(): ?float
+    {
+        return $this->get('additionalCurrencyDebitAmount');
+    }
+
+    function getAdditionalCurrencyCreditAmount(): ?float
+    {
+        return $this->get('additionalCurrencyCreditAmount');
+    }
+
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
+    }
+
+    function getAccount(): ?Account\Record
+    {
+        return $this->get('account');
+    }
+
+    /**
+     * @return Entity\Collection|Attachment\Record[]
+     */
+    function getAttachments(): Entity\Collection
+    {
+        return $this->getAsCollection('attachments');
+    }
+
+    /**
+     * @return Entity\Collection|DimensionSetLine\Record[]
+     */
+    function getDimensionSetLines(): Entity\Collection
+    {
+        return $this->getAsCollection('dimensionSetLines');
+    }
 }

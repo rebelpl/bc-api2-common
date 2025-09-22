@@ -4,7 +4,6 @@ namespace Rebel\BCApi2\Entity\DimensionSetLine;
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\CustomerPayment;
-use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\GeneralLedgerEntry;
 use Rebel\BCApi2\Entity\JournalLine;
 use Rebel\BCApi2\Entity\PurchaseCreditMemo;
@@ -30,166 +29,7 @@ use Rebel\BCApi2\Entity\VendorPayment;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
-    }
-
-    public ?string $code {
-        set {
-            $this->set('code', $value);
-        }
-        get => $this->get('code');
-    }
-
-    public ?string $consolidationCode {
-        set {
-            $this->set('consolidationCode', $value);
-        }
-        get => $this->get('consolidationCode');
-    }
-
-    public ?string $parentId {
-        set {
-            $this->set('parentId', $value);
-        }
-        get => $this->get('parentId');
-    }
-
-    public ?Enums\DimensionSetEntryBufferParentType $parentType {
-        set {
-            $this->set('parentType', $value);
-        }
-        get => $this->getAsEnum('parentType', Enums\DimensionSetEntryBufferParentType::class);
-    }
-
-    public ?string $displayName {
-        set {
-            $this->set('displayName', $value);
-        }
-        get => $this->get('displayName');
-    }
-
-    public ?string $valueId {
-        set {
-            $this->set('valueId', $value);
-        }
-        get => $this->get('valueId');
-    }
-
-    public ?string $valueCode {
-        set {
-            $this->set('valueCode', $value);
-        }
-        get => $this->get('valueCode');
-    }
-
-    public ?string $valueConsolidationCode {
-        set {
-            $this->set('valueConsolidationCode', $value);
-        }
-        get => $this->get('valueConsolidationCode');
-    }
-
-    public ?string $valueDisplayName {
-        set {
-            $this->set('valueDisplayName', $value);
-        }
-        get => $this->get('valueDisplayName');
-    }
-
-    public ?SalesInvoice\Record $salesInvoice {
-        get => $this->get('salesInvoice');
-    }
-
-    public ?SalesInvoiceLine\Record $salesInvoiceLine {
-        get => $this->get('salesInvoiceLine');
-    }
-
-    public ?CustomerPayment\Record $customerPayment {
-        get => $this->get('customerPayment');
-    }
-
-    public ?JournalLine\Record $journalLine {
-        get => $this->get('journalLine');
-    }
-
-    public ?TimeRegistrationEntry\Record $timeRegistrationEntry {
-        get => $this->get('timeRegistrationEntry');
-    }
-
-    public ?GeneralLedgerEntry\Record $generalLedgerEntry {
-        get => $this->get('generalLedgerEntry');
-    }
-
-    public ?SalesOrder\Record $salesOrder {
-        get => $this->get('salesOrder');
-    }
-
-    public ?SalesOrderLine\Record $salesOrderLine {
-        get => $this->get('salesOrderLine');
-    }
-
-    public ?SalesQuote\Record $salesQuote {
-        get => $this->get('salesQuote');
-    }
-
-    public ?SalesQuoteLine\Record $salesQuoteLine {
-        get => $this->get('salesQuoteLine');
-    }
-
-    public ?SalesCreditMemo\Record $salesCreditMemo {
-        get => $this->get('salesCreditMemo');
-    }
-
-    public ?SalesCreditMemoLine\Record $salesCreditMemoLine {
-        get => $this->get('salesCreditMemoLine');
-    }
-
-    public ?PurchaseInvoice\Record $purchaseInvoice {
-        get => $this->get('purchaseInvoice');
-    }
-
-    public ?PurchaseInvoiceLine\Record $purchaseInvoiceLine {
-        get => $this->get('purchaseInvoiceLine');
-    }
-
-    public ?VendorPayment\Record $vendorPayment {
-        get => $this->get('vendorPayment');
-    }
-
-    public ?SalesShipment\Record $salesShipment {
-        get => $this->get('salesShipment');
-    }
-
-    public ?SalesShipmentLine\Record $salesShipmentLine {
-        get => $this->get('salesShipmentLine');
-    }
-
-    public ?PurchaseReceipt\Record $purchaseReceipt {
-        get => $this->get('purchaseReceipt');
-    }
-
-    public ?PurchaseReceiptLine\Record $purchaseReceiptLine {
-        get => $this->get('purchaseReceiptLine');
-    }
-
-    public ?PurchaseOrder\Record $purchaseOrder {
-        get => $this->get('purchaseOrder');
-    }
-
-    public ?PurchaseOrderLine\Record $purchaseOrderLine {
-        get => $this->get('purchaseOrderLine');
-    }
-
-    public ?PurchaseCreditMemo\Record $purchaseCreditMemo {
-        get => $this->get('purchaseCreditMemo');
-    }
-
-    public ?PurchaseCreditMemoLine\Record $purchaseCreditMemoLine {
-        get => $this->get('purchaseCreditMemoLine');
-    }
-
-    protected array $classMap = [
+    protected $classMap = [
         'salesInvoice' => SalesInvoice\Record::class,
         'salesInvoiceLine' => SalesInvoiceLine\Record::class,
         'customerPayment' => CustomerPayment\Record::class,
@@ -214,4 +54,223 @@ class Record extends Entity
         'purchaseCreditMemo' => PurchaseCreditMemo\Record::class,
         'purchaseCreditMemoLine' => PurchaseCreditMemoLine\Record::class,
     ];
+
+    function getId(): ?string
+    {
+        return $this->get('id');
+    }
+
+    function getCode(): ?string
+    {
+        return $this->get('code');
+    }
+
+    function setCode(?string $value): self
+    {
+        $this->set('code', $value);
+        return $this;
+    }
+
+    function getConsolidationCode(): ?string
+    {
+        return $this->get('consolidationCode');
+    }
+
+    function setConsolidationCode(?string $value): self
+    {
+        $this->set('consolidationCode', $value);
+        return $this;
+    }
+
+    function getParentId(): ?string
+    {
+        return $this->get('parentId');
+    }
+
+    function setParentId(?string $value): self
+    {
+        $this->set('parentId', $value);
+        return $this;
+    }
+
+    function getParentType(): ?string
+    {
+        return $this->get('parentType');
+    }
+
+    function setParentType(?string $value): self
+    {
+        $this->set('parentType', $value);
+        return $this;
+    }
+
+    function getDisplayName(): ?string
+    {
+        return $this->get('displayName');
+    }
+
+    function setDisplayName(?string $value): self
+    {
+        $this->set('displayName', $value);
+        return $this;
+    }
+
+    function getValueId(): ?string
+    {
+        return $this->get('valueId');
+    }
+
+    function setValueId(?string $value): self
+    {
+        $this->set('valueId', $value);
+        return $this;
+    }
+
+    function getValueCode(): ?string
+    {
+        return $this->get('valueCode');
+    }
+
+    function setValueCode(?string $value): self
+    {
+        $this->set('valueCode', $value);
+        return $this;
+    }
+
+    function getValueConsolidationCode(): ?string
+    {
+        return $this->get('valueConsolidationCode');
+    }
+
+    function setValueConsolidationCode(?string $value): self
+    {
+        $this->set('valueConsolidationCode', $value);
+        return $this;
+    }
+
+    function getValueDisplayName(): ?string
+    {
+        return $this->get('valueDisplayName');
+    }
+
+    function setValueDisplayName(?string $value): self
+    {
+        $this->set('valueDisplayName', $value);
+        return $this;
+    }
+
+    function getSalesInvoice(): ?SalesInvoice\Record
+    {
+        return $this->get('salesInvoice');
+    }
+
+    function getSalesInvoiceLine(): ?SalesInvoiceLine\Record
+    {
+        return $this->get('salesInvoiceLine');
+    }
+
+    function getCustomerPayment(): ?CustomerPayment\Record
+    {
+        return $this->get('customerPayment');
+    }
+
+    function getJournalLine(): ?JournalLine\Record
+    {
+        return $this->get('journalLine');
+    }
+
+    function getTimeRegistrationEntry(): ?TimeRegistrationEntry\Record
+    {
+        return $this->get('timeRegistrationEntry');
+    }
+
+    function getGeneralLedgerEntry(): ?GeneralLedgerEntry\Record
+    {
+        return $this->get('generalLedgerEntry');
+    }
+
+    function getSalesOrder(): ?SalesOrder\Record
+    {
+        return $this->get('salesOrder');
+    }
+
+    function getSalesOrderLine(): ?SalesOrderLine\Record
+    {
+        return $this->get('salesOrderLine');
+    }
+
+    function getSalesQuote(): ?SalesQuote\Record
+    {
+        return $this->get('salesQuote');
+    }
+
+    function getSalesQuoteLine(): ?SalesQuoteLine\Record
+    {
+        return $this->get('salesQuoteLine');
+    }
+
+    function getSalesCreditMemo(): ?SalesCreditMemo\Record
+    {
+        return $this->get('salesCreditMemo');
+    }
+
+    function getSalesCreditMemoLine(): ?SalesCreditMemoLine\Record
+    {
+        return $this->get('salesCreditMemoLine');
+    }
+
+    function getPurchaseInvoice(): ?PurchaseInvoice\Record
+    {
+        return $this->get('purchaseInvoice');
+    }
+
+    function getPurchaseInvoiceLine(): ?PurchaseInvoiceLine\Record
+    {
+        return $this->get('purchaseInvoiceLine');
+    }
+
+    function getVendorPayment(): ?VendorPayment\Record
+    {
+        return $this->get('vendorPayment');
+    }
+
+    function getSalesShipment(): ?SalesShipment\Record
+    {
+        return $this->get('salesShipment');
+    }
+
+    function getSalesShipmentLine(): ?SalesShipmentLine\Record
+    {
+        return $this->get('salesShipmentLine');
+    }
+
+    function getPurchaseReceipt(): ?PurchaseReceipt\Record
+    {
+        return $this->get('purchaseReceipt');
+    }
+
+    function getPurchaseReceiptLine(): ?PurchaseReceiptLine\Record
+    {
+        return $this->get('purchaseReceiptLine');
+    }
+
+    function getPurchaseOrder(): ?PurchaseOrder\Record
+    {
+        return $this->get('purchaseOrder');
+    }
+
+    function getPurchaseOrderLine(): ?PurchaseOrderLine\Record
+    {
+        return $this->get('purchaseOrderLine');
+    }
+
+    function getPurchaseCreditMemo(): ?PurchaseCreditMemo\Record
+    {
+        return $this->get('purchaseCreditMemo');
+    }
+
+    function getPurchaseCreditMemoLine(): ?PurchaseCreditMemoLine\Record
+    {
+        return $this->get('purchaseCreditMemoLine');
+    }
 }

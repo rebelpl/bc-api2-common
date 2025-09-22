@@ -1,13 +1,13 @@
 <?php
 namespace Rebel\BCApi2\Entity\CustomerFinancialDetail;
 
-enum Properties
+class Properties
 {
-    case id;
-    case number;
-    case balance;
-    case totalSalesExcludingTax;
-    case overdueAmount;
-    case lastModifiedDateTime;
-    case customer;
+    public const id = 'id';
+    public const number = 'number';
+    public const balance = 'balance';
+    public const totalSalesExcludingTax = 'totalSalesExcludingTax';
+    public const overdueAmount = 'overdueAmount';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
+    public const customer = 'customer';
 }

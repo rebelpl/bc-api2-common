@@ -5,116 +5,169 @@ use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\DimensionSetLine;
 use Rebel\BCApi2\Entity\Employee;
-use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    protected $classMap = ['employee' => Employee\Record::class, 'dimensionSetLines' => DimensionSetLine\Record::class];
+
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?string $employeeId {
-        set {
-            $this->set('employeeId', $value);
-        }
-        get => $this->get('employeeId');
+    function getEmployeeId(): ?string
+    {
+        return $this->get('employeeId');
     }
 
-    public ?string $employeeNumber {
-        set {
-            $this->set('employeeNumber', $value);
-        }
-        get => $this->get('employeeNumber');
+    function setEmployeeId(?string $value): self
+    {
+        $this->set('employeeId', $value);
+        return $this;
     }
 
-    public ?string $jobId {
-        set {
-            $this->set('jobId', $value);
-        }
-        get => $this->get('jobId');
+    function getEmployeeNumber(): ?string
+    {
+        return $this->get('employeeNumber');
     }
 
-    public ?string $jobNumber {
-        set {
-            $this->set('jobNumber', $value);
-        }
-        get => $this->get('jobNumber');
+    function setEmployeeNumber(?string $value): self
+    {
+        $this->set('employeeNumber', $value);
+        return $this;
     }
 
-    public ?string $jobTaskNumber {
-        set {
-            $this->set('jobTaskNumber', $value);
-        }
-        get => $this->get('jobTaskNumber');
+    function getJobId(): ?string
+    {
+        return $this->get('jobId');
     }
 
-    public ?string $absence {
-        set {
-            $this->set('absence', $value);
-        }
-        get => $this->get('absence');
+    function setJobId(?string $value): self
+    {
+        $this->set('jobId', $value);
+        return $this;
     }
 
-    public ?int $lineNumber {
-        set {
-            $this->set('lineNumber', $value);
-        }
-        get => $this->get('lineNumber');
+    function getJobNumber(): ?string
+    {
+        return $this->get('jobNumber');
     }
 
-    public ?Carbon $date {
-        set {
-            $this->setAsDate('date', $value);
-        }
-        get => $this->getAsDate('date');
+    function setJobNumber(?string $value): self
+    {
+        $this->set('jobNumber', $value);
+        return $this;
     }
 
-    public ?float $quantity {
-        set {
-            $this->set('quantity', $value);
-        }
-        get => $this->get('quantity');
+    function getJobTaskNumber(): ?string
+    {
+        return $this->get('jobTaskNumber');
     }
 
-    public ?Enums\EmployeeTimeRegStatus $status {
-        set {
-            $this->set('status', $value);
-        }
-        get => $this->getAsEnum('status', Enums\EmployeeTimeRegStatus::class);
+    function setJobTaskNumber(?string $value): self
+    {
+        $this->set('jobTaskNumber', $value);
+        return $this;
     }
 
-    public ?string $unitOfMeasureId {
-        set {
-            $this->set('unitOfMeasureId', $value);
-        }
-        get => $this->get('unitOfMeasureId');
+    function getAbsence(): ?string
+    {
+        return $this->get('absence');
     }
 
-    public ?string $unitOfMeasureCode {
-        set {
-            $this->set('unitOfMeasureCode', $value);
-        }
-        get => $this->get('unitOfMeasureCode');
+    function setAbsence(?string $value): self
+    {
+        $this->set('absence', $value);
+        return $this;
     }
 
-    public ?Carbon $lastModfiedDateTime {
-        set {
-            $this->setAsDateTime('lastModfiedDateTime', $value);
-        }
-        get => $this->getAsDateTime('lastModfiedDateTime');
+    function getLineNumber(): ?int
+    {
+        return $this->get('lineNumber');
     }
 
-    public ?Employee\Record $employee {
-        get => $this->get('employee');
+    function setLineNumber(?int $value): self
+    {
+        $this->set('lineNumber', $value);
+        return $this;
     }
 
-    /** @var Entity\Collection<DimensionSetLine\Record> */
-    public Entity\Collection $dimensionSetLines {
-        get => $this->getAsCollection('dimensionSetLines');
+    function getDate(): ?Carbon
+    {
+        return $this->getAsDate('date');
     }
 
-    protected array $classMap = [
-        'employee' => Employee\Record::class,
-        'dimensionSetLines' => DimensionSetLine\Record::class,
-    ];
+    function setDate(?\DateTime $value): self
+    {
+        $this->setAsDate('date', $value);
+        return $this;
+    }
+
+    function getQuantity(): ?float
+    {
+        return $this->get('quantity');
+    }
+
+    function setQuantity(?float $value): self
+    {
+        $this->set('quantity', $value);
+        return $this;
+    }
+
+    function getStatus(): ?string
+    {
+        return $this->get('status');
+    }
+
+    function setStatus(?string $value): self
+    {
+        $this->set('status', $value);
+        return $this;
+    }
+
+    function getUnitOfMeasureId(): ?string
+    {
+        return $this->get('unitOfMeasureId');
+    }
+
+    function setUnitOfMeasureId(?string $value): self
+    {
+        $this->set('unitOfMeasureId', $value);
+        return $this;
+    }
+
+    function getUnitOfMeasureCode(): ?string
+    {
+        return $this->get('unitOfMeasureCode');
+    }
+
+    function setUnitOfMeasureCode(?string $value): self
+    {
+        $this->set('unitOfMeasureCode', $value);
+        return $this;
+    }
+
+    function getLastModfiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModfiedDateTime');
+    }
+
+    function setLastModfiedDateTime(?\DateTime $value): self
+    {
+        $this->setAsDateTime('lastModfiedDateTime', $value);
+        return $this;
+    }
+
+    function getEmployee(): ?Employee\Record
+    {
+        return $this->get('employee');
+    }
+
+    /**
+     * @return Entity\Collection|DimensionSetLine\Record[]
+     */
+    function getDimensionSetLines(): Entity\Collection
+    {
+        return $this->getAsCollection('dimensionSetLines');
+    }
 }

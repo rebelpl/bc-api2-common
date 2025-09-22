@@ -1,14 +1,14 @@
 <?php
 namespace Rebel\BCApi2\Entity\PaymentTerm;
 
-enum Properties
+class Properties
 {
-    case id;
-    case code;
-    case displayName;
-    case dueDateCalculation;
-    case discountDateCalculation;
-    case discountPercent;
-    case calculateDiscountOnCreditMemos;
-    case lastModifiedDateTime;
+    public const id = 'id';
+    public const code = 'code';
+    public const displayName = 'displayName';
+    public const dueDateCalculation = 'dueDateCalculation';
+    public const discountDateCalculation = 'discountDateCalculation';
+    public const discountPercent = 'discountPercent';
+    public const calculateDiscountOnCreditMemos = 'calculateDiscountOnCreditMemos';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
 }

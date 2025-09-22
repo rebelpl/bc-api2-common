@@ -1,9 +1,9 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum PurchaseOrderEntityBufferStatus: string
+class PurchaseOrderEntityBufferStatus
 {
-    case Draft = 'Draft';
-    case InReview = 'In_x0020_Review';
-    case Open = 'Open';
+    public const Draft = 'Draft';
+    public const InReview = 'In_x0020_Review';
+    public const Open = 'Open';
 }

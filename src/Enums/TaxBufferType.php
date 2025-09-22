@@ -1,8 +1,8 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum TaxBufferType: string
+class TaxBufferType
 {
-    case SalesTax = 'Sales_x0020_Tax';
-    case VAT = 'VAT';
+    public const SalesTax = 'Sales_x0020_Tax';
+    public const VAT = 'VAT';
 }

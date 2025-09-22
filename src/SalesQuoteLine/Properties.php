@@ -1,39 +1,39 @@
 <?php
 namespace Rebel\BCApi2\Entity\SalesQuoteLine;
 
-enum Properties
+class Properties
 {
-    case id;
-    case documentId;
-    case sequence;
-    case itemId;
-    case accountId;
-    case lineType;
-    case lineObjectNumber;
-    case description;
-    case description2;
-    case unitOfMeasureId;
-    case unitOfMeasureCode;
-    case unitPrice;
-    case quantity;
-    case discountAmount;
-    case discountPercent;
-    case discountAppliedBeforeTax;
-    case amountExcludingTax;
-    case taxCode;
-    case taxPercent;
-    case totalTaxAmount;
-    case amountIncludingTax;
-    case netAmount;
-    case netTaxAmount;
-    case netAmountIncludingTax;
-    case itemVariantId;
-    case locationId;
-    case salesQuote;
-    case item;
-    case account;
-    case unitOfMeasure;
-    case itemVariant;
-    case dimensionSetLines;
-    case location;
+    public const id = 'id';
+    public const documentId = 'documentId';
+    public const sequence = 'sequence';
+    public const itemId = 'itemId';
+    public const accountId = 'accountId';
+    public const lineType = 'lineType';
+    public const lineObjectNumber = 'lineObjectNumber';
+    public const description = 'description';
+    public const description2 = 'description2';
+    public const unitOfMeasureId = 'unitOfMeasureId';
+    public const unitOfMeasureCode = 'unitOfMeasureCode';
+    public const unitPrice = 'unitPrice';
+    public const quantity = 'quantity';
+    public const discountAmount = 'discountAmount';
+    public const discountPercent = 'discountPercent';
+    public const discountAppliedBeforeTax = 'discountAppliedBeforeTax';
+    public const amountExcludingTax = 'amountExcludingTax';
+    public const taxCode = 'taxCode';
+    public const taxPercent = 'taxPercent';
+    public const totalTaxAmount = 'totalTaxAmount';
+    public const amountIncludingTax = 'amountIncludingTax';
+    public const netAmount = 'netAmount';
+    public const netTaxAmount = 'netTaxAmount';
+    public const netAmountIncludingTax = 'netAmountIncludingTax';
+    public const itemVariantId = 'itemVariantId';
+    public const locationId = 'locationId';
+    public const salesQuote = 'salesQuote';
+    public const item = 'item';
+    public const account = 'account';
+    public const unitOfMeasure = 'unitOfMeasure';
+    public const itemVariant = 'itemVariant';
+    public const dimensionSetLines = 'dimensionSetLines';
+    public const location = 'location';
 }

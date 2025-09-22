@@ -1,10 +1,10 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum SalesQuoteEntityBufferStatus: string
+class SalesQuoteEntityBufferStatus
 {
-    case Draft = 'Draft';
-    case Sent = 'Sent';
-    case Accepted = 'Accepted';
-    case Expired = 'Expired_x0020_';
+    public const Draft = 'Draft';
+    public const Sent = 'Sent';
+    public const Accepted = 'Accepted';
+    public const Expired = 'Expired_x0020_';
 }

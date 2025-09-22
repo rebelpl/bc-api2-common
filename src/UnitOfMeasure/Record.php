@@ -3,46 +3,66 @@ namespace Rebel\BCApi2\Entity\UnitOfMeasure;
 
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?string $code {
-        set {
-            $this->set('code', $value);
-        }
-        get => $this->get('code');
+    function getCode(): ?string
+    {
+        return $this->get('code');
     }
 
-    public ?string $displayName {
-        set {
-            $this->set('displayName', $value);
-        }
-        get => $this->get('displayName');
+    function setCode(?string $value): self
+    {
+        $this->set('code', $value);
+        return $this;
     }
 
-    public ?string $internationalStandardCode {
-        set {
-            $this->set('internationalStandardCode', $value);
-        }
-        get => $this->get('internationalStandardCode');
+    function getDisplayName(): ?string
+    {
+        return $this->get('displayName');
     }
 
-    public ?string $symbol {
-        set {
-            $this->set('symbol', $value);
-        }
-        get => $this->get('symbol');
+    function setDisplayName(?string $value): self
+    {
+        $this->set('displayName', $value);
+        return $this;
     }
 
-    public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value);
-        }
-        get => $this->getAsDateTime('lastModifiedDateTime');
+    function getInternationalStandardCode(): ?string
+    {
+        return $this->get('internationalStandardCode');
+    }
+
+    function setInternationalStandardCode(?string $value): self
+    {
+        $this->set('internationalStandardCode', $value);
+        return $this;
+    }
+
+    function getSymbol(): ?string
+    {
+        return $this->get('symbol');
+    }
+
+    function setSymbol(?string $value): self
+    {
+        $this->set('symbol', $value);
+        return $this;
+    }
+
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
+    }
+
+    function setLastModifiedDateTime(?\DateTime $value): self
+    {
+        $this->setAsDateTime('lastModifiedDateTime', $value);
+        return $this;
     }
 }

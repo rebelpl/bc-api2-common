@@ -4,39 +4,54 @@ namespace Rebel\BCApi2\Entity\Project;
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\DocumentAttachment;
-use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    protected $classMap = ['documentAttachments' => DocumentAttachment\Record::class];
+
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?string $number {
-        set {
-            $this->set('number', $value);
-        }
-        get => $this->get('number');
+    function getNumber(): ?string
+    {
+        return $this->get('number');
     }
 
-    public ?string $displayName {
-        set {
-            $this->set('displayName', $value);
-        }
-        get => $this->get('displayName');
+    function setNumber(?string $value): self
+    {
+        $this->set('number', $value);
+        return $this;
     }
 
-    public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value);
-        }
-        get => $this->getAsDateTime('lastModifiedDateTime');
+    function getDisplayName(): ?string
+    {
+        return $this->get('displayName');
     }
 
-    /** @var Entity\Collection<DocumentAttachment\Record> */
-    public Entity\Collection $documentAttachments {
-        get => $this->getAsCollection('documentAttachments');
+    function setDisplayName(?string $value): self
+    {
+        $this->set('displayName', $value);
+        return $this;
     }
 
-    protected array $classMap = ['documentAttachments' => DocumentAttachment\Record::class];
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
+    }
+
+    function setLastModifiedDateTime(?\DateTime $value): self
+    {
+        $this->setAsDateTime('lastModifiedDateTime', $value);
+        return $this;
+    }
+
+    /**
+     * @return Entity\Collection|DocumentAttachment\Record[]
+     */
+    function getDocumentAttachments(): Entity\Collection
+    {
+        return $this->getAsCollection('documentAttachments');
+    }
 }

@@ -1,21 +1,21 @@
 <?php
 namespace Rebel\BCApi2\Entity\Account;
 
-enum Properties
+class Properties
 {
-    case id;
-    case number;
-    case displayName;
-    case category;
-    case subCategory;
-    case blocked;
-    case accountType;
-    case directPosting;
-    case netChange;
-    case consolidationTranslationMethod;
-    case consolidationDebitAccount;
-    case consolidationCreditAccount;
-    case excludeFromConsolidation;
-    case lastModifiedDateTime;
-    case trialBalance;
+    public const id = 'id';
+    public const number = 'number';
+    public const displayName = 'displayName';
+    public const category = 'category';
+    public const subCategory = 'subCategory';
+    public const blocked = 'blocked';
+    public const accountType = 'accountType';
+    public const directPosting = 'directPosting';
+    public const netChange = 'netChange';
+    public const consolidationTranslationMethod = 'consolidationTranslationMethod';
+    public const consolidationDebitAccount = 'consolidationDebitAccount';
+    public const consolidationCreditAccount = 'consolidationCreditAccount';
+    public const excludeFromConsolidation = 'excludeFromConsolidation';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
+    public const trialBalance = 'trialBalance';
 }

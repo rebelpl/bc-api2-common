@@ -1,10 +1,10 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum AnalysisSourceType: string
+class AnalysisSourceType
 {
-    case Null = '_x0020_';
-    case Customer = 'Customer';
-    case Vendor = 'Vendor';
-    case Item = 'Item';
+    public const Null = '_x0020_';
+    public const Customer = 'Customer';
+    public const Vendor = 'Vendor';
+    public const Item = 'Item';
 }

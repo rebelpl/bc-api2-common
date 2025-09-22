@@ -1,11 +1,11 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum GlAccountType: string
+class GlAccountType
 {
-    case Posting = 'Posting';
-    case Heading = 'Heading';
-    case Total = 'Total';
-    case BeginTotal = 'Begin_x002D_Total';
-    case EndTotal = 'End_x002D_Total';
+    public const Posting = 'Posting';
+    public const Heading = 'Heading';
+    public const Total = 'Total';
+    public const BeginTotal = 'Begin_x002D_Total';
+    public const EndTotal = 'End_x002D_Total';
 }

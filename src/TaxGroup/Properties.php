@@ -1,11 +1,11 @@
 <?php
 namespace Rebel\BCApi2\Entity\TaxGroup;
 
-enum Properties
+class Properties
 {
-    case id;
-    case code;
-    case displayName;
-    case taxType;
-    case lastModifiedDateTime;
+    public const id = 'id';
+    public const code = 'code';
+    public const displayName = 'displayName';
+    public const taxType = 'taxType';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
 }

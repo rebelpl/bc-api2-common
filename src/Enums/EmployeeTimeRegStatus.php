@@ -1,10 +1,10 @@
 <?php
 namespace Rebel\BCApi2\Entity\Enums;
 
-enum EmployeeTimeRegStatus: string
+class EmployeeTimeRegStatus
 {
-    case Open = 'Open';
-    case Submitted = 'Submitted';
-    case Rejected = 'Rejected';
-    case Approved = 'Approved';
+    public const Open = 'Open';
+    public const Submitted = 'Submitted';
+    public const Rejected = 'Rejected';
+    public const Approved = 'Approved';
 }

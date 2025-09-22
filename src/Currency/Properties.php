@@ -1,13 +1,13 @@
 <?php
 namespace Rebel\BCApi2\Entity\Currency;
 
-enum Properties
+class Properties
 {
-    case id;
-    case code;
-    case displayName;
-    case symbol;
-    case amountDecimalPlaces;
-    case amountRoundingPrecision;
-    case lastModifiedDateTime;
+    public const id = 'id';
+    public const code = 'code';
+    public const displayName = 'displayName';
+    public const symbol = 'symbol';
+    public const amountDecimalPlaces = 'amountDecimalPlaces';
+    public const amountRoundingPrecision = 'amountRoundingPrecision';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
 }

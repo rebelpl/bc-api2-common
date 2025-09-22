@@ -3,53 +3,74 @@ namespace Rebel\BCApi2\Entity\ItemVariant;
 
 use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
-use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\Item;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
+    protected $classMap = ['item' => Item\Record::class];
+
+    function getId(): ?string
+    {
+        return $this->get('id');
     }
 
-    public ?string $itemId {
-        set {
-            $this->set('itemId', $value);
-        }
-        get => $this->get('itemId');
+    function getItemId(): ?string
+    {
+        return $this->get('itemId');
     }
 
-    public ?string $itemNumber {
-        set {
-            $this->set('itemNumber', $value);
-        }
-        get => $this->get('itemNumber');
+    function setItemId(?string $value): self
+    {
+        $this->set('itemId', $value);
+        return $this;
     }
 
-    public ?string $code {
-        set {
-            $this->set('code', $value);
-        }
-        get => $this->get('code');
+    function getItemNumber(): ?string
+    {
+        return $this->get('itemNumber');
     }
 
-    public ?string $description {
-        set {
-            $this->set('description', $value);
-        }
-        get => $this->get('description');
+    function setItemNumber(?string $value): self
+    {
+        $this->set('itemNumber', $value);
+        return $this;
     }
 
-    public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value);
-        }
-        get => $this->getAsDateTime('lastModifiedDateTime');
+    function getCode(): ?string
+    {
+        return $this->get('code');
     }
 
-    public ?Item\Record $item {
-        get => $this->get('item');
+    function setCode(?string $value): self
+    {
+        $this->set('code', $value);
+        return $this;
     }
 
-    protected array $classMap = ['item' => Item\Record::class];
+    function getDescription(): ?string
+    {
+        return $this->get('description');
+    }
+
+    function setDescription(?string $value): self
+    {
+        $this->set('description', $value);
+        return $this;
+    }
+
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
+    }
+
+    function setLastModifiedDateTime(?\DateTime $value): self
+    {
+        $this->setAsDateTime('lastModifiedDateTime', $value);
+        return $this;
+    }
+
+    function getItem(): ?Item\Record
+    {
+        return $this->get('item');
+    }
 }

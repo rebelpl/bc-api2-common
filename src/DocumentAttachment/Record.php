@@ -5,7 +5,6 @@ use Carbon\Carbon;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\Customer;
 use Rebel\BCApi2\Entity\Employee;
-use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\Item;
 use Rebel\BCApi2\Entity\Project;
 use Rebel\BCApi2\Entity\PurchaseCreditMemo;
@@ -19,119 +18,7 @@ use Rebel\BCApi2\Entity\Vendor;
 
 class Record extends Entity
 {
-    public ?string $id {
-        get => $this->get('id');
-    }
-
-    public ?string $fileName {
-        set {
-            $this->set('fileName', $value);
-        }
-        get => $this->get('fileName');
-    }
-
-    public ?int $byteSize {
-        set {
-            $this->set('byteSize', $value);
-        }
-        get => $this->get('byteSize');
-    }
-
-    public Entity\DataStream $attachmentContent {
-        get => $this->get('attachmentContent');
-    }
-
-    public ?Enums\AttachmentEntityBufferDocumentType $parentType {
-        set {
-            $this->set('parentType', $value);
-        }
-        get => $this->getAsEnum('parentType', Enums\AttachmentEntityBufferDocumentType::class);
-    }
-
-    public ?string $parentId {
-        set {
-            $this->set('parentId', $value);
-        }
-        get => $this->get('parentId');
-    }
-
-    public ?int $lineNumber {
-        set {
-            $this->set('lineNumber', $value);
-        }
-        get => $this->get('lineNumber');
-    }
-
-    public ?bool $documentFlowSales {
-        set {
-            $this->set('documentFlowSales', $value);
-        }
-        get => $this->get('documentFlowSales');
-    }
-
-    public ?bool $documentFlowPurchase {
-        set {
-            $this->set('documentFlowPurchase', $value);
-        }
-        get => $this->get('documentFlowPurchase');
-    }
-
-    public ?Carbon $lastModifiedDateTime {
-        set {
-            $this->setAsDateTime('lastModifiedDateTime', $value);
-        }
-        get => $this->getAsDateTime('lastModifiedDateTime');
-    }
-
-    public ?Item\Record $item {
-        get => $this->get('item');
-    }
-
-    public ?Customer\Record $customer {
-        get => $this->get('customer');
-    }
-
-    public ?Vendor\Record $vendor {
-        get => $this->get('vendor');
-    }
-
-    public ?SalesInvoice\Record $salesInvoice {
-        get => $this->get('salesInvoice');
-    }
-
-    public ?Employee\Record $employee {
-        get => $this->get('employee');
-    }
-
-    public ?SalesOrder\Record $salesOrder {
-        get => $this->get('salesOrder');
-    }
-
-    public ?SalesQuote\Record $salesQuote {
-        get => $this->get('salesQuote');
-    }
-
-    public ?SalesCreditMemo\Record $salesCreditMemo {
-        get => $this->get('salesCreditMemo');
-    }
-
-    public ?PurchaseInvoice\Record $purchaseInvoice {
-        get => $this->get('purchaseInvoice');
-    }
-
-    public ?Project\Record $project {
-        get => $this->get('project');
-    }
-
-    public ?PurchaseOrder\Record $purchaseOrder {
-        get => $this->get('purchaseOrder');
-    }
-
-    public ?PurchaseCreditMemo\Record $purchaseCreditMemo {
-        get => $this->get('purchaseCreditMemo');
-    }
-
-    protected array $classMap = [
+    protected $classMap = [
         'item' => Item\Record::class,
         'customer' => Customer\Record::class,
         'vendor' => Vendor\Record::class,
@@ -145,4 +32,162 @@ class Record extends Entity
         'purchaseOrder' => PurchaseOrder\Record::class,
         'purchaseCreditMemo' => PurchaseCreditMemo\Record::class,
     ];
+
+    function getId(): ?string
+    {
+        return $this->get('id');
+    }
+
+    function getFileName(): ?string
+    {
+        return $this->get('fileName');
+    }
+
+    function setFileName(?string $value): self
+    {
+        $this->set('fileName', $value);
+        return $this;
+    }
+
+    function getByteSize(): ?int
+    {
+        return $this->get('byteSize');
+    }
+
+    function setByteSize(?int $value): self
+    {
+        $this->set('byteSize', $value);
+        return $this;
+    }
+
+    function getAttachmentContent(): Entity\DataStream
+    {
+        return $this->get('attachmentContent');
+    }
+
+    function getParentType(): ?string
+    {
+        return $this->get('parentType');
+    }
+
+    function setParentType(?string $value): self
+    {
+        $this->set('parentType', $value);
+        return $this;
+    }
+
+    function getParentId(): ?string
+    {
+        return $this->get('parentId');
+    }
+
+    function setParentId(?string $value): self
+    {
+        $this->set('parentId', $value);
+        return $this;
+    }
+
+    function getLineNumber(): ?int
+    {
+        return $this->get('lineNumber');
+    }
+
+    function setLineNumber(?int $value): self
+    {
+        $this->set('lineNumber', $value);
+        return $this;
+    }
+
+    function getDocumentFlowSales(): ?bool
+    {
+        return $this->get('documentFlowSales');
+    }
+
+    function setDocumentFlowSales(?bool $value): self
+    {
+        $this->set('documentFlowSales', $value);
+        return $this;
+    }
+
+    function getDocumentFlowPurchase(): ?bool
+    {
+        return $this->get('documentFlowPurchase');
+    }
+
+    function setDocumentFlowPurchase(?bool $value): self
+    {
+        $this->set('documentFlowPurchase', $value);
+        return $this;
+    }
+
+    function getLastModifiedDateTime(): ?Carbon
+    {
+        return $this->getAsDateTime('lastModifiedDateTime');
+    }
+
+    function setLastModifiedDateTime(?\DateTime $value): self
+    {
+        $this->setAsDateTime('lastModifiedDateTime', $value);
+        return $this;
+    }
+
+    function getItem(): ?Item\Record
+    {
+        return $this->get('item');
+    }
+
+    function getCustomer(): ?Customer\Record
+    {
+        return $this->get('customer');
+    }
+
+    function getVendor(): ?Vendor\Record
+    {
+        return $this->get('vendor');
+    }
+
+    function getSalesInvoice(): ?SalesInvoice\Record
+    {
+        return $this->get('salesInvoice');
+    }
+
+    function getEmployee(): ?Employee\Record
+    {
+        return $this->get('employee');
+    }
+
+    function getSalesOrder(): ?SalesOrder\Record
+    {
+        return $this->get('salesOrder');
+    }
+
+    function getSalesQuote(): ?SalesQuote\Record
+    {
+        return $this->get('salesQuote');
+    }
+
+    function getSalesCreditMemo(): ?SalesCreditMemo\Record
+    {
+        return $this->get('salesCreditMemo');
+    }
+
+    function getPurchaseInvoice(): ?PurchaseInvoice\Record
+    {
+        return $this->get('purchaseInvoice');
+    }
+
+    function getProject(): ?Project\Record
+    {
+        return $this->get('project');
+    }
+
+    function getPurchaseOrder(): ?PurchaseOrder\Record
+    {
+        return $this->get('purchaseOrder');
+    }
+
+    function getPurchaseCreditMemo(): ?PurchaseCreditMemo\Record
+    {
+        return $this->get('purchaseCreditMemo');
+    }
 }

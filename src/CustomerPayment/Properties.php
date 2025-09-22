@@ -1,24 +1,24 @@
 <?php
 namespace Rebel\BCApi2\Entity\CustomerPayment;
 
-enum Properties
+class Properties
 {
-    case id;
-    case journalId;
-    case journalDisplayName;
-    case lineNumber;
-    case customerId;
-    case customerNumber;
-    case postingDate;
-    case documentNumber;
-    case externalDocumentNumber;
-    case amount;
-    case appliesToInvoiceId;
-    case appliesToInvoiceNumber;
-    case description;
-    case comment;
-    case lastModifiedDateTime;
-    case customerPaymentJournal;
-    case customer;
-    case dimensionSetLines;
+    public const id = 'id';
+    public const journalId = 'journalId';
+    public const journalDisplayName = 'journalDisplayName';
+    public const lineNumber = 'lineNumber';
+    public const customerId = 'customerId';
+    public const customerNumber = 'customerNumber';
+    public const postingDate = 'postingDate';
+    public const documentNumber = 'documentNumber';
+    public const externalDocumentNumber = 'externalDocumentNumber';
+    public const amount = 'amount';
+    public const appliesToInvoiceId = 'appliesToInvoiceId';
+    public const appliesToInvoiceNumber = 'appliesToInvoiceNumber';
+    public const description = 'description';
+    public const comment = 'comment';
+    public const lastModifiedDateTime = 'lastModifiedDateTime';
+    public const customerPaymentJournal = 'customerPaymentJournal';
+    public const customer = 'customer';
+    public const dimensionSetLines = 'dimensionSetLines';
 }
