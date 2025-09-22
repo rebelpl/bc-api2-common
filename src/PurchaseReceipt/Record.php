@@ -18,15 +18,15 @@ class Record extends Entity
     }
 
     public ?Carbon $invoiceDate {
-        get => $this->getAsDateTime('invoiceDate');
+        get => $this->getAsDate('invoiceDate');
     }
 
     public ?Carbon $postingDate {
-        get => $this->getAsDateTime('postingDate');
+        get => $this->getAsDate('postingDate');
     }
 
     public ?Carbon $dueDate {
-        get => $this->getAsDateTime('dueDate');
+        get => $this->getAsDate('dueDate');
     }
 
     public ?string $vendorNumber {
@@ -141,14 +141,14 @@ class Record extends Entity
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    /** @var ?Entity\Collection<PurchaseReceiptLine\Record> */
-    public ?Entity\Collection $purchaseReceiptLines {
-        get => $this->get('purchaseReceiptLines', 'collection');
+    /** @var Entity\Collection<PurchaseReceiptLine\Record> */
+    public Entity\Collection $purchaseReceiptLines {
+        get => $this->getAsCollection('purchaseReceiptLines');
     }
 
-    /** @var ?Entity\Collection<DimensionSetLine\Record> */
-    public ?Entity\Collection $dimensionSetLines {
-        get => $this->get('dimensionSetLines', 'collection');
+    /** @var Entity\Collection<DimensionSetLine\Record> */
+    public Entity\Collection $dimensionSetLines {
+        get => $this->getAsCollection('dimensionSetLines');
     }
 
     protected array $classMap = [

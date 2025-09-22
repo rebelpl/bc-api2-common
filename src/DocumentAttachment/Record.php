@@ -24,47 +24,62 @@ class Record extends Entity
     }
 
     public ?string $fileName {
-        set { $this->set('fileName', $value); }
+        set {
+            $this->set('fileName', $value);
+        }
         get => $this->get('fileName');
     }
 
     public ?int $byteSize {
-        set { $this->set('byteSize', $value); }
+        set {
+            $this->set('byteSize', $value);
+        }
         get => $this->get('byteSize');
     }
 
-    public ?string $attachmentContent {
-        set { $this->set('attachmentContent', $value); }
+    public Entity\DataStream $attachmentContent {
         get => $this->get('attachmentContent');
     }
 
     public ?Enums\AttachmentEntityBufferDocumentType $parentType {
-        set { $this->set('parentType', $value); }
+        set {
+            $this->set('parentType', $value);
+        }
         get => $this->getAsEnum('parentType', Enums\AttachmentEntityBufferDocumentType::class);
     }
 
     public ?string $parentId {
-        set { $this->set('parentId', $value); }
+        set {
+            $this->set('parentId', $value);
+        }
         get => $this->get('parentId');
     }
 
     public ?int $lineNumber {
-        set { $this->set('lineNumber', $value); }
+        set {
+            $this->set('lineNumber', $value);
+        }
         get => $this->get('lineNumber');
     }
 
     public ?bool $documentFlowSales {
-        set { $this->set('documentFlowSales', $value); }
+        set {
+            $this->set('documentFlowSales', $value);
+        }
         get => $this->get('documentFlowSales');
     }
 
     public ?bool $documentFlowPurchase {
-        set { $this->set('documentFlowPurchase', $value); }
+        set {
+            $this->set('documentFlowPurchase', $value);
+        }
         get => $this->get('documentFlowPurchase');
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set { $this->setAsDateTime('lastModifiedDateTime', $value); }
+        set {
+            $this->setAsDateTime('lastModifiedDateTime', $value);
+        }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 

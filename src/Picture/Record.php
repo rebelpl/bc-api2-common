@@ -17,27 +17,34 @@ class Record extends Entity
     }
 
     public ?Enums\PictureEntityParentType $parentType {
-        set { $this->set('parentType', $value); }
+        set {
+            $this->set('parentType', $value);
+        }
         get => $this->getAsEnum('parentType', Enums\PictureEntityParentType::class);
     }
 
     public ?int $width {
-        set { $this->set('width', $value); }
+        set {
+            $this->set('width', $value);
+        }
         get => $this->get('width');
     }
 
     public ?int $height {
-        set { $this->set('height', $value); }
+        set {
+            $this->set('height', $value);
+        }
         get => $this->get('height');
     }
 
     public ?string $contentType {
-        set { $this->set('contentType', $value); }
+        set {
+            $this->set('contentType', $value);
+        }
         get => $this->get('contentType');
     }
 
-    public ?string $pictureContent {
-        set { $this->set('pictureContent', $value); }
+    public Entity\DataStream $pictureContent {
         get => $this->get('pictureContent');
     }
 

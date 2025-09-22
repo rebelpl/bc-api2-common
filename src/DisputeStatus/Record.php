@@ -12,12 +12,16 @@ class Record extends Entity
     }
 
     public ?string $code {
-        set { $this->set('code', $value); }
+        set {
+            $this->set('code', $value);
+        }
         get => $this->get('code');
     }
 
     public ?string $displayName {
-        set { $this->set('displayName', $value); }
+        set {
+            $this->set('displayName', $value);
+        }
         get => $this->get('displayName');
     }
 }

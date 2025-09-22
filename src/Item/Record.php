@@ -20,107 +20,149 @@ class Record extends Entity
     }
 
     public ?string $number {
-        set { $this->set('number', $value); }
+        set {
+            $this->set('number', $value);
+        }
         get => $this->get('number');
     }
 
     public ?string $displayName {
-        set { $this->set('displayName', $value); }
+        set {
+            $this->set('displayName', $value);
+        }
         get => $this->get('displayName');
     }
 
     public ?string $displayName2 {
-        set { $this->set('displayName2', $value); }
+        set {
+            $this->set('displayName2', $value);
+        }
         get => $this->get('displayName2');
     }
 
     public ?Enums\ItemType $type {
-        set { $this->set('type', $value); }
+        set {
+            $this->set('type', $value);
+        }
         get => $this->getAsEnum('type', Enums\ItemType::class);
     }
 
     public ?string $itemCategoryId {
-        set { $this->set('itemCategoryId', $value); }
+        set {
+            $this->set('itemCategoryId', $value);
+        }
         get => $this->get('itemCategoryId');
     }
 
     public ?string $itemCategoryCode {
-        set { $this->set('itemCategoryCode', $value); }
+        set {
+            $this->set('itemCategoryCode', $value);
+        }
         get => $this->get('itemCategoryCode');
     }
 
     public ?bool $blocked {
-        set { $this->set('blocked', $value); }
+        set {
+            $this->set('blocked', $value);
+        }
         get => $this->get('blocked');
     }
 
     public ?string $gtin {
-        set { $this->set('gtin', $value); }
+        set {
+            $this->set('gtin', $value);
+        }
         get => $this->get('gtin');
     }
 
     public ?float $inventory {
-        set { $this->set('inventory', $value); }
+        set {
+            $this->set('inventory', $value);
+        }
         get => $this->get('inventory');
     }
 
     public ?float $unitPrice {
-        set { $this->set('unitPrice', $value); }
+        set {
+            $this->set('unitPrice', $value);
+        }
         get => $this->get('unitPrice');
     }
 
     public ?bool $priceIncludesTax {
-        set { $this->set('priceIncludesTax', $value); }
+        set {
+            $this->set('priceIncludesTax', $value);
+        }
         get => $this->get('priceIncludesTax');
     }
 
     public ?float $unitCost {
-        set { $this->set('unitCost', $value); }
+        set {
+            $this->set('unitCost', $value);
+        }
         get => $this->get('unitCost');
     }
 
     public ?string $taxGroupId {
-        set { $this->set('taxGroupId', $value); }
+        set {
+            $this->set('taxGroupId', $value);
+        }
         get => $this->get('taxGroupId');
     }
 
     public ?string $taxGroupCode {
-        set { $this->set('taxGroupCode', $value); }
+        set {
+            $this->set('taxGroupCode', $value);
+        }
         get => $this->get('taxGroupCode');
     }
 
     public ?string $baseUnitOfMeasureId {
-        set { $this->set('baseUnitOfMeasureId', $value); }
+        set {
+            $this->set('baseUnitOfMeasureId', $value);
+        }
         get => $this->get('baseUnitOfMeasureId');
     }
 
     public ?string $baseUnitOfMeasureCode {
-        set { $this->set('baseUnitOfMeasureCode', $value); }
+        set {
+            $this->set('baseUnitOfMeasureCode', $value);
+        }
         get => $this->get('baseUnitOfMeasureCode');
     }
 
     public ?string $generalProductPostingGroupId {
-        set { $this->set('generalProductPostingGroupId', $value); }
+        set {
+            $this->set('generalProductPostingGroupId', $value);
+        }
         get => $this->get('generalProductPostingGroupId');
     }
 
     public ?string $generalProductPostingGroupCode {
-        set { $this->set('generalProductPostingGroupCode', $value); }
+        set {
+            $this->set('generalProductPostingGroupCode', $value);
+        }
         get => $this->get('generalProductPostingGroupCode');
     }
 
     public ?string $inventoryPostingGroupId {
-        set { $this->set('inventoryPostingGroupId', $value); }
+        set {
+            $this->set('inventoryPostingGroupId', $value);
+        }
         get => $this->get('inventoryPostingGroupId');
     }
 
     public ?string $inventoryPostingGroupCode {
-        set { $this->set('inventoryPostingGroupCode', $value); }
+        set {
+            $this->set('inventoryPostingGroupCode', $value);
+        }
         get => $this->get('inventoryPostingGroupCode');
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set { $this->setAsDateTime('lastModifiedDateTime', $value); }
+        set {
+            $this->setAsDateTime('lastModifiedDateTime', $value);
+        }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
@@ -144,19 +186,19 @@ class Record extends Entity
         get => $this->get('picture');
     }
 
-    /** @var ?Entity\Collection<DefaultDimension\Record> */
-    public ?Entity\Collection $defaultDimensions {
-        get => $this->get('defaultDimensions', 'collection');
+    /** @var Entity\Collection<DefaultDimension\Record> */
+    public Entity\Collection $defaultDimensions {
+        get => $this->getAsCollection('defaultDimensions');
     }
 
-    /** @var ?Entity\Collection<ItemVariant\Record> */
-    public ?Entity\Collection $itemVariants {
-        get => $this->get('itemVariants', 'collection');
+    /** @var Entity\Collection<ItemVariant\Record> */
+    public Entity\Collection $itemVariants {
+        get => $this->getAsCollection('itemVariants');
     }
 
-    /** @var ?Entity\Collection<DocumentAttachment\Record> */
-    public ?Entity\Collection $documentAttachments {
-        get => $this->get('documentAttachments', 'collection');
+    /** @var Entity\Collection<DocumentAttachment\Record> */
+    public Entity\Collection $documentAttachments {
+        get => $this->getAsCollection('documentAttachments');
     }
 
     protected array $classMap = [

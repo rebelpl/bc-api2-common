@@ -13,27 +13,37 @@ class Record extends Entity
     }
 
     public ?string $itemId {
-        set { $this->set('itemId', $value); }
+        set {
+            $this->set('itemId', $value);
+        }
         get => $this->get('itemId');
     }
 
     public ?string $itemNumber {
-        set { $this->set('itemNumber', $value); }
+        set {
+            $this->set('itemNumber', $value);
+        }
         get => $this->get('itemNumber');
     }
 
     public ?string $code {
-        set { $this->set('code', $value); }
+        set {
+            $this->set('code', $value);
+        }
         get => $this->get('code');
     }
 
     public ?string $description {
-        set { $this->set('description', $value); }
+        set {
+            $this->set('description', $value);
+        }
         get => $this->get('description');
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set { $this->setAsDateTime('lastModifiedDateTime', $value); }
+        set {
+            $this->setAsDateTime('lastModifiedDateTime', $value);
+        }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 

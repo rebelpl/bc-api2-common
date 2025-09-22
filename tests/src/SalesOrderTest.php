@@ -56,7 +56,6 @@ class SalesOrderTest extends TestCase
             SalesOrder\Properties::externalDocumentNumber->name => "TEST-001",
             SalesOrder\Properties::customerNumber->name => "NA0007",
         ], expanded: [ SalesOrder\Properties::salesOrderLines->name, SalesOrder\Properties::customer->name ]);
-        $this->assertInstanceOf(Entity\Collection::class, $salesOrder->salesOrderLines);
 
         $salesOrder->salesOrderLines[] = new SalesOrderLine\Record([
             SalesOrderLine\Properties::sequence->name => 10000,

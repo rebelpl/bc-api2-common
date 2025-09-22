@@ -16,112 +16,156 @@ class Record extends Entity
     }
 
     public ?string $number {
-        set { $this->set('number', $value); }
+        set {
+            $this->set('number', $value);
+        }
         get => $this->get('number');
     }
 
     public ?string $displayName {
-        set { $this->set('displayName', $value); }
+        set {
+            $this->set('displayName', $value);
+        }
         get => $this->get('displayName');
     }
 
     public ?string $givenName {
-        set { $this->set('givenName', $value); }
+        set {
+            $this->set('givenName', $value);
+        }
         get => $this->get('givenName');
     }
 
     public ?string $middleName {
-        set { $this->set('middleName', $value); }
+        set {
+            $this->set('middleName', $value);
+        }
         get => $this->get('middleName');
     }
 
     public ?string $surname {
-        set { $this->set('surname', $value); }
+        set {
+            $this->set('surname', $value);
+        }
         get => $this->get('surname');
     }
 
     public ?string $jobTitle {
-        set { $this->set('jobTitle', $value); }
+        set {
+            $this->set('jobTitle', $value);
+        }
         get => $this->get('jobTitle');
     }
 
     public ?string $addressLine1 {
-        set { $this->set('addressLine1', $value); }
+        set {
+            $this->set('addressLine1', $value);
+        }
         get => $this->get('addressLine1');
     }
 
     public ?string $addressLine2 {
-        set { $this->set('addressLine2', $value); }
+        set {
+            $this->set('addressLine2', $value);
+        }
         get => $this->get('addressLine2');
     }
 
     public ?string $city {
-        set { $this->set('city', $value); }
+        set {
+            $this->set('city', $value);
+        }
         get => $this->get('city');
     }
 
     public ?string $state {
-        set { $this->set('state', $value); }
+        set {
+            $this->set('state', $value);
+        }
         get => $this->get('state');
     }
 
     public ?string $country {
-        set { $this->set('country', $value); }
+        set {
+            $this->set('country', $value);
+        }
         get => $this->get('country');
     }
 
     public ?string $postalCode {
-        set { $this->set('postalCode', $value); }
+        set {
+            $this->set('postalCode', $value);
+        }
         get => $this->get('postalCode');
     }
 
     public ?string $phoneNumber {
-        set { $this->set('phoneNumber', $value); }
+        set {
+            $this->set('phoneNumber', $value);
+        }
         get => $this->get('phoneNumber');
     }
 
     public ?string $mobilePhone {
-        set { $this->set('mobilePhone', $value); }
+        set {
+            $this->set('mobilePhone', $value);
+        }
         get => $this->get('mobilePhone');
     }
 
     public ?string $email {
-        set { $this->set('email', $value); }
+        set {
+            $this->set('email', $value);
+        }
         get => $this->get('email');
     }
 
     public ?string $personalEmail {
-        set { $this->set('personalEmail', $value); }
+        set {
+            $this->set('personalEmail', $value);
+        }
         get => $this->get('personalEmail');
     }
 
     public ?Carbon $employmentDate {
-        set { $this->setAsDate('employmentDate', $value); }
-        get => $this->getAsDateTime('employmentDate');
+        set {
+            $this->setAsDate('employmentDate', $value);
+        }
+        get => $this->getAsDate('employmentDate');
     }
 
     public ?Carbon $terminationDate {
-        set { $this->setAsDate('terminationDate', $value); }
-        get => $this->getAsDateTime('terminationDate');
+        set {
+            $this->setAsDate('terminationDate', $value);
+        }
+        get => $this->getAsDate('terminationDate');
     }
 
     public ?Enums\EmployeeStatus $status {
-        set { $this->set('status', $value); }
+        set {
+            $this->set('status', $value);
+        }
         get => $this->getAsEnum('status', Enums\EmployeeStatus::class);
     }
 
     public ?Carbon $birthDate {
-        set { $this->setAsDate('birthDate', $value); }
-        get => $this->getAsDateTime('birthDate');
+        set {
+            $this->setAsDate('birthDate', $value);
+        }
+        get => $this->getAsDate('birthDate');
     }
 
     public ?string $statisticsGroupCode {
-        set { $this->set('statisticsGroupCode', $value); }
+        set {
+            $this->set('statisticsGroupCode', $value);
+        }
         get => $this->get('statisticsGroupCode');
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set { $this->setAsDateTime('lastModifiedDateTime', $value); }
+        set {
+            $this->setAsDateTime('lastModifiedDateTime', $value);
+        }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
@@ -129,19 +173,19 @@ class Record extends Entity
         get => $this->get('picture');
     }
 
-    /** @var ?Entity\Collection<DefaultDimension\Record> */
-    public ?Entity\Collection $defaultDimensions {
-        get => $this->get('defaultDimensions', 'collection');
+    /** @var Entity\Collection<DefaultDimension\Record> */
+    public Entity\Collection $defaultDimensions {
+        get => $this->getAsCollection('defaultDimensions');
     }
 
-    /** @var ?Entity\Collection<TimeRegistrationEntry\Record> */
-    public ?Entity\Collection $timeRegistrationEntries {
-        get => $this->get('timeRegistrationEntries', 'collection');
+    /** @var Entity\Collection<TimeRegistrationEntry\Record> */
+    public Entity\Collection $timeRegistrationEntries {
+        get => $this->getAsCollection('timeRegistrationEntries');
     }
 
-    /** @var ?Entity\Collection<DocumentAttachment\Record> */
-    public ?Entity\Collection $documentAttachments {
-        get => $this->get('documentAttachments', 'collection');
+    /** @var Entity\Collection<DocumentAttachment\Record> */
+    public Entity\Collection $documentAttachments {
+        get => $this->getAsCollection('documentAttachments');
     }
 
     protected array $classMap = [

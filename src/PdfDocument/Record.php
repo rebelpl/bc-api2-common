@@ -25,7 +25,7 @@ class Record extends Entity
         get => $this->getAsEnum('parentType', Enums\AttachmentEntityBufferDocumentType::class);
     }
 
-    public ?string $pdfDocumentContent {
+    public Entity\DataStream $pdfDocumentContent {
         get => $this->get('pdfDocumentContent');
     }
 

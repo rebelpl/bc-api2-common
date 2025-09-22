@@ -62,16 +62,16 @@ class Record extends Entity
     }
 
     public ?Carbon $shipmentDate {
-        get => $this->getAsDateTime('shipmentDate');
+        get => $this->getAsDate('shipmentDate');
     }
 
     public ?SalesShipment\Record $salesShipment {
         get => $this->get('salesShipment');
     }
 
-    /** @var ?Entity\Collection<DimensionSetLine\Record> */
-    public ?Entity\Collection $dimensionSetLines {
-        get => $this->get('dimensionSetLines', 'collection');
+    /** @var Entity\Collection<DimensionSetLine\Record> */
+    public Entity\Collection $dimensionSetLines {
+        get => $this->getAsCollection('dimensionSetLines');
     }
 
     protected array $classMap = [

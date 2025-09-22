@@ -58,16 +58,16 @@ class Record extends Entity
     }
 
     public ?Carbon $expectedReceiptDate {
-        get => $this->getAsDateTime('expectedReceiptDate');
+        get => $this->getAsDate('expectedReceiptDate');
     }
 
     public ?PurchaseReceipt\Record $purchaseReceipt {
         get => $this->get('purchaseReceipt');
     }
 
-    /** @var ?Entity\Collection<DimensionSetLine\Record> */
-    public ?Entity\Collection $dimensionSetLines {
-        get => $this->get('dimensionSetLines', 'collection');
+    /** @var Entity\Collection<DimensionSetLine\Record> */
+    public Entity\Collection $dimensionSetLines {
+        get => $this->getAsCollection('dimensionSetLines');
     }
 
     protected array $classMap = [

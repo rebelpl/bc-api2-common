@@ -12,17 +12,23 @@ class Record extends Entity
     }
 
     public ?string $code {
-        set { $this->set('code', $value); }
+        set {
+            $this->set('code', $value);
+        }
         get => $this->get('code');
     }
 
     public ?string $description {
-        set { $this->set('description', $value); }
+        set {
+            $this->set('description', $value);
+        }
         get => $this->get('description');
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set { $this->setAsDateTime('lastModifiedDateTime', $value); }
+        set {
+            $this->setAsDateTime('lastModifiedDateTime', $value);
+        }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 }

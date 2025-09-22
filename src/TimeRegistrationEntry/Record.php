@@ -14,67 +14,93 @@ class Record extends Entity
     }
 
     public ?string $employeeId {
-        set { $this->set('employeeId', $value); }
+        set {
+            $this->set('employeeId', $value);
+        }
         get => $this->get('employeeId');
     }
 
     public ?string $employeeNumber {
-        set { $this->set('employeeNumber', $value); }
+        set {
+            $this->set('employeeNumber', $value);
+        }
         get => $this->get('employeeNumber');
     }
 
     public ?string $jobId {
-        set { $this->set('jobId', $value); }
+        set {
+            $this->set('jobId', $value);
+        }
         get => $this->get('jobId');
     }
 
     public ?string $jobNumber {
-        set { $this->set('jobNumber', $value); }
+        set {
+            $this->set('jobNumber', $value);
+        }
         get => $this->get('jobNumber');
     }
 
     public ?string $jobTaskNumber {
-        set { $this->set('jobTaskNumber', $value); }
+        set {
+            $this->set('jobTaskNumber', $value);
+        }
         get => $this->get('jobTaskNumber');
     }
 
     public ?string $absence {
-        set { $this->set('absence', $value); }
+        set {
+            $this->set('absence', $value);
+        }
         get => $this->get('absence');
     }
 
     public ?int $lineNumber {
-        set { $this->set('lineNumber', $value); }
+        set {
+            $this->set('lineNumber', $value);
+        }
         get => $this->get('lineNumber');
     }
 
     public ?Carbon $date {
-        set { $this->setAsDateTime('date', $value); }
-        get => $this->getAsDateTime('date');
+        set {
+            $this->setAsDate('date', $value);
+        }
+        get => $this->getAsDate('date');
     }
 
     public ?float $quantity {
-        set { $this->set('quantity', $value); }
+        set {
+            $this->set('quantity', $value);
+        }
         get => $this->get('quantity');
     }
 
     public ?Enums\EmployeeTimeRegStatus $status {
-        set { $this->set('status', $value); }
+        set {
+            $this->set('status', $value);
+        }
         get => $this->getAsEnum('status', Enums\EmployeeTimeRegStatus::class);
     }
 
     public ?string $unitOfMeasureId {
-        set { $this->set('unitOfMeasureId', $value); }
+        set {
+            $this->set('unitOfMeasureId', $value);
+        }
         get => $this->get('unitOfMeasureId');
     }
 
     public ?string $unitOfMeasureCode {
-        set { $this->set('unitOfMeasureCode', $value); }
+        set {
+            $this->set('unitOfMeasureCode', $value);
+        }
         get => $this->get('unitOfMeasureCode');
     }
 
     public ?Carbon $lastModfiedDateTime {
-        set { $this->setAsDateTime('lastModfiedDateTime', $value); }
+        set {
+            $this->setAsDateTime('lastModfiedDateTime', $value);
+        }
         get => $this->getAsDateTime('lastModfiedDateTime');
     }
 
@@ -82,9 +108,9 @@ class Record extends Entity
         get => $this->get('employee');
     }
 
-    /** @var ?Entity\Collection<DimensionSetLine\Record> */
-    public ?Entity\Collection $dimensionSetLines {
-        get => $this->get('dimensionSetLines', 'collection');
+    /** @var Entity\Collection<DimensionSetLine\Record> */
+    public Entity\Collection $dimensionSetLines {
+        get => $this->getAsCollection('dimensionSetLines');
     }
 
     protected array $classMap = [

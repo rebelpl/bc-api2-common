@@ -51,7 +51,7 @@ class Record extends Entity
         get => $this->get('jobQueueCategoryCode');
     }
 
-    public ?string $errorCallStack {
+    public Entity\DataStream $errorCallStack {
         get => $this->get('errorCallStack');
     }
 

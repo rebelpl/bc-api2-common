@@ -20,107 +20,149 @@ class Record extends Entity
     }
 
     public ?string $number {
-        set { $this->set('number', $value); }
+        set {
+            $this->set('number', $value);
+        }
         get => $this->get('number');
     }
 
     public ?string $displayName {
-        set { $this->set('displayName', $value); }
+        set {
+            $this->set('displayName', $value);
+        }
         get => $this->get('displayName');
     }
 
     public ?string $addressLine1 {
-        set { $this->set('addressLine1', $value); }
+        set {
+            $this->set('addressLine1', $value);
+        }
         get => $this->get('addressLine1');
     }
 
     public ?string $addressLine2 {
-        set { $this->set('addressLine2', $value); }
+        set {
+            $this->set('addressLine2', $value);
+        }
         get => $this->get('addressLine2');
     }
 
     public ?string $city {
-        set { $this->set('city', $value); }
+        set {
+            $this->set('city', $value);
+        }
         get => $this->get('city');
     }
 
     public ?string $state {
-        set { $this->set('state', $value); }
+        set {
+            $this->set('state', $value);
+        }
         get => $this->get('state');
     }
 
     public ?string $country {
-        set { $this->set('country', $value); }
+        set {
+            $this->set('country', $value);
+        }
         get => $this->get('country');
     }
 
     public ?string $postalCode {
-        set { $this->set('postalCode', $value); }
+        set {
+            $this->set('postalCode', $value);
+        }
         get => $this->get('postalCode');
     }
 
     public ?string $phoneNumber {
-        set { $this->set('phoneNumber', $value); }
+        set {
+            $this->set('phoneNumber', $value);
+        }
         get => $this->get('phoneNumber');
     }
 
     public ?string $email {
-        set { $this->set('email', $value); }
+        set {
+            $this->set('email', $value);
+        }
         get => $this->get('email');
     }
 
     public ?string $website {
-        set { $this->set('website', $value); }
+        set {
+            $this->set('website', $value);
+        }
         get => $this->get('website');
     }
 
     public ?string $taxRegistrationNumber {
-        set { $this->set('taxRegistrationNumber', $value); }
+        set {
+            $this->set('taxRegistrationNumber', $value);
+        }
         get => $this->get('taxRegistrationNumber');
     }
 
     public ?string $currencyId {
-        set { $this->set('currencyId', $value); }
+        set {
+            $this->set('currencyId', $value);
+        }
         get => $this->get('currencyId');
     }
 
     public ?string $currencyCode {
-        set { $this->set('currencyCode', $value); }
+        set {
+            $this->set('currencyCode', $value);
+        }
         get => $this->get('currencyCode');
     }
 
     public ?string $irs1099Code {
-        set { $this->set('irs1099Code', $value); }
+        set {
+            $this->set('irs1099Code', $value);
+        }
         get => $this->get('irs1099Code');
     }
 
     public ?string $paymentTermsId {
-        set { $this->set('paymentTermsId', $value); }
+        set {
+            $this->set('paymentTermsId', $value);
+        }
         get => $this->get('paymentTermsId');
     }
 
     public ?string $paymentMethodId {
-        set { $this->set('paymentMethodId', $value); }
+        set {
+            $this->set('paymentMethodId', $value);
+        }
         get => $this->get('paymentMethodId');
     }
 
     public ?bool $taxLiable {
-        set { $this->set('taxLiable', $value); }
+        set {
+            $this->set('taxLiable', $value);
+        }
         get => $this->get('taxLiable');
     }
 
     public ?Enums\VendorBlocked $blocked {
-        set { $this->set('blocked', $value); }
+        set {
+            $this->set('blocked', $value);
+        }
         get => $this->getAsEnum('blocked', Enums\VendorBlocked::class);
     }
 
     public ?float $balance {
-        set { $this->set('balance', $value); }
+        set {
+            $this->set('balance', $value);
+        }
         get => $this->get('balance');
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set { $this->setAsDateTime('lastModifiedDateTime', $value); }
+        set {
+            $this->setAsDateTime('lastModifiedDateTime', $value);
+        }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
@@ -140,23 +182,23 @@ class Record extends Entity
         get => $this->get('picture');
     }
 
-    /** @var ?Entity\Collection<DefaultDimension\Record> */
-    public ?Entity\Collection $defaultDimensions {
-        get => $this->get('defaultDimensions', 'collection');
+    /** @var Entity\Collection<DefaultDimension\Record> */
+    public Entity\Collection $defaultDimensions {
+        get => $this->getAsCollection('defaultDimensions');
     }
 
     public ?AgedAccountsPayable\Record $agedAccountsPayable {
         get => $this->get('agedAccountsPayable');
     }
 
-    /** @var ?Entity\Collection<ContactInformation\Record> */
-    public ?Entity\Collection $contactsInformation {
-        get => $this->get('contactsInformation', 'collection');
+    /** @var Entity\Collection<ContactInformation\Record> */
+    public Entity\Collection $contactsInformation {
+        get => $this->getAsCollection('contactsInformation');
     }
 
-    /** @var ?Entity\Collection<DocumentAttachment\Record> */
-    public ?Entity\Collection $documentAttachments {
-        get => $this->get('documentAttachments', 'collection');
+    /** @var Entity\Collection<DocumentAttachment\Record> */
+    public Entity\Collection $documentAttachments {
+        get => $this->getAsCollection('documentAttachments');
     }
 
     protected array $classMap = [

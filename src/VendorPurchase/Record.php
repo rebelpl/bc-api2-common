@@ -22,8 +22,4 @@ class Record extends Entity
     public ?float $totalPurchaseAmount {
         get => $this->get('totalPurchaseAmount');
     }
-
-    public ?Carbon $dateFilter_FilterOnly {
-        get => $this->getAsDateTime('dateFilter_FilterOnly');
-    }
 }

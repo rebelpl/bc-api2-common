@@ -35,47 +35,65 @@ class Record extends Entity
     }
 
     public ?string $code {
-        set { $this->set('code', $value); }
+        set {
+            $this->set('code', $value);
+        }
         get => $this->get('code');
     }
 
     public ?string $consolidationCode {
-        set { $this->set('consolidationCode', $value); }
+        set {
+            $this->set('consolidationCode', $value);
+        }
         get => $this->get('consolidationCode');
     }
 
     public ?string $parentId {
-        set { $this->set('parentId', $value); }
+        set {
+            $this->set('parentId', $value);
+        }
         get => $this->get('parentId');
     }
 
     public ?Enums\DimensionSetEntryBufferParentType $parentType {
-        set { $this->set('parentType', $value); }
+        set {
+            $this->set('parentType', $value);
+        }
         get => $this->getAsEnum('parentType', Enums\DimensionSetEntryBufferParentType::class);
     }
 
     public ?string $displayName {
-        set { $this->set('displayName', $value); }
+        set {
+            $this->set('displayName', $value);
+        }
         get => $this->get('displayName');
     }
 
     public ?string $valueId {
-        set { $this->set('valueId', $value); }
+        set {
+            $this->set('valueId', $value);
+        }
         get => $this->get('valueId');
     }
 
     public ?string $valueCode {
-        set { $this->set('valueCode', $value); }
+        set {
+            $this->set('valueCode', $value);
+        }
         get => $this->get('valueCode');
     }
 
     public ?string $valueConsolidationCode {
-        set { $this->set('valueConsolidationCode', $value); }
+        set {
+            $this->set('valueConsolidationCode', $value);
+        }
         get => $this->get('valueConsolidationCode');
     }
 
     public ?string $valueDisplayName {
-        set { $this->set('valueDisplayName', $value); }
+        set {
+            $this->set('valueDisplayName', $value);
+        }
         get => $this->get('valueDisplayName');
     }
 

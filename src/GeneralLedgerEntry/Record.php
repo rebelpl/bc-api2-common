@@ -19,7 +19,7 @@ class Record extends Entity
     }
 
     public ?Carbon $postingDate {
-        get => $this->getAsDateTime('postingDate');
+        get => $this->getAsDate('postingDate');
     }
 
     public ?string $documentNumber {
@@ -66,14 +66,14 @@ class Record extends Entity
         get => $this->get('account');
     }
 
-    /** @var ?Entity\Collection<Attachment\Record> */
-    public ?Entity\Collection $attachments {
-        get => $this->get('attachments', 'collection');
+    /** @var Entity\Collection<Attachment\Record> */
+    public Entity\Collection $attachments {
+        get => $this->getAsCollection('attachments');
     }
 
-    /** @var ?Entity\Collection<DimensionSetLine\Record> */
-    public ?Entity\Collection $dimensionSetLines {
-        get => $this->get('dimensionSetLines', 'collection');
+    /** @var Entity\Collection<DimensionSetLine\Record> */
+    public Entity\Collection $dimensionSetLines {
+        get => $this->getAsCollection('dimensionSetLines');
     }
 
     protected array $classMap = [

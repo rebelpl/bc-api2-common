@@ -192,9 +192,9 @@ class Record extends Entity
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    /** @var ?Entity\Collection<JobQueueLogEntry\Record> */
-    public ?Entity\Collection $jobQueueLogEntries {
-        get => $this->get('jobQueueLogEntries', 'collection');
+    /** @var Entity\Collection<JobQueueLogEntry\Record> */
+    public Entity\Collection $jobQueueLogEntries {
+        get => $this->getAsCollection('jobQueueLogEntries');
     }
 
     protected array $classMap = ['jobQueueLogEntries' => JobQueueLogEntry\Record::class];

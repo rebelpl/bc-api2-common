@@ -12,22 +12,30 @@ class Record extends Entity
     }
 
     public ?string $code {
-        set { $this->set('code', $value); }
+        set {
+            $this->set('code', $value);
+        }
         get => $this->get('code');
     }
 
     public ?string $displayName {
-        set { $this->set('displayName', $value); }
+        set {
+            $this->set('displayName', $value);
+        }
         get => $this->get('displayName');
     }
 
     public ?Enums\TaxBufferType $taxType {
-        set { $this->set('taxType', $value); }
+        set {
+            $this->set('taxType', $value);
+        }
         get => $this->getAsEnum('taxType', Enums\TaxBufferType::class);
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set { $this->setAsDateTime('lastModifiedDateTime', $value); }
+        set {
+            $this->setAsDateTime('lastModifiedDateTime', $value);
+        }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 }

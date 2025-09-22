@@ -16,7 +16,7 @@ class Record extends Entity
     }
 
     public ?Carbon $startingDate {
-        get => $this->getAsDateTime('startingDate');
+        get => $this->getAsDate('startingDate');
     }
 
     public ?float $exchangeRateAmount {

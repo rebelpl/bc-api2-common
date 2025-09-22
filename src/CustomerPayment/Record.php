@@ -15,72 +15,100 @@ class Record extends Entity
     }
 
     public ?string $journalId {
-        set { $this->set('journalId', $value); }
+        set {
+            $this->set('journalId', $value);
+        }
         get => $this->get('journalId');
     }
 
     public ?string $journalDisplayName {
-        set { $this->set('journalDisplayName', $value); }
+        set {
+            $this->set('journalDisplayName', $value);
+        }
         get => $this->get('journalDisplayName');
     }
 
     public ?int $lineNumber {
-        set { $this->set('lineNumber', $value); }
+        set {
+            $this->set('lineNumber', $value);
+        }
         get => $this->get('lineNumber');
     }
 
     public ?string $customerId {
-        set { $this->set('customerId', $value); }
+        set {
+            $this->set('customerId', $value);
+        }
         get => $this->get('customerId');
     }
 
     public ?string $customerNumber {
-        set { $this->set('customerNumber', $value); }
+        set {
+            $this->set('customerNumber', $value);
+        }
         get => $this->get('customerNumber');
     }
 
     public ?Carbon $postingDate {
-        set { $this->setAsDate('postingDate', $value); }
-        get => $this->getAsDateTime('postingDate');
+        set {
+            $this->setAsDate('postingDate', $value);
+        }
+        get => $this->getAsDate('postingDate');
     }
 
     public ?string $documentNumber {
-        set { $this->set('documentNumber', $value); }
+        set {
+            $this->set('documentNumber', $value);
+        }
         get => $this->get('documentNumber');
     }
 
     public ?string $externalDocumentNumber {
-        set { $this->set('externalDocumentNumber', $value); }
+        set {
+            $this->set('externalDocumentNumber', $value);
+        }
         get => $this->get('externalDocumentNumber');
     }
 
     public ?float $amount {
-        set { $this->set('amount', $value); }
+        set {
+            $this->set('amount', $value);
+        }
         get => $this->get('amount');
     }
 
     public ?string $appliesToInvoiceId {
-        set { $this->set('appliesToInvoiceId', $value); }
+        set {
+            $this->set('appliesToInvoiceId', $value);
+        }
         get => $this->get('appliesToInvoiceId');
     }
 
     public ?string $appliesToInvoiceNumber {
-        set { $this->set('appliesToInvoiceNumber', $value); }
+        set {
+            $this->set('appliesToInvoiceNumber', $value);
+        }
         get => $this->get('appliesToInvoiceNumber');
     }
 
     public ?string $description {
-        set { $this->set('description', $value); }
+        set {
+            $this->set('description', $value);
+        }
         get => $this->get('description');
     }
 
     public ?string $comment {
-        set { $this->set('comment', $value); }
+        set {
+            $this->set('comment', $value);
+        }
         get => $this->get('comment');
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set { $this->setAsDateTime('lastModifiedDateTime', $value); }
+        set {
+            $this->setAsDateTime('lastModifiedDateTime', $value);
+        }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
@@ -92,9 +120,9 @@ class Record extends Entity
         get => $this->get('customer');
     }
 
-    /** @var ?Entity\Collection<DimensionSetLine\Record> */
-    public ?Entity\Collection $dimensionSetLines {
-        get => $this->get('dimensionSetLines', 'collection');
+    /** @var Entity\Collection<DimensionSetLine\Record> */
+    public Entity\Collection $dimensionSetLines {
+        get => $this->getAsCollection('dimensionSetLines');
     }
 
     protected array $classMap = [

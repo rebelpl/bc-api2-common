@@ -20,7 +20,7 @@ class Record extends Entity
     }
 
     public ?Carbon $postingDate {
-        get => $this->getAsDateTime('postingDate');
+        get => $this->getAsDate('postingDate');
     }
 
     public ?Enums\ItemLedgerEntryType $entryType {

@@ -57,7 +57,7 @@ class Record extends Entity
     }
 
     public ?Carbon $agedAsOfDate {
-        get => $this->getAsDateTime('agedAsOfDate');
+        get => $this->getAsDate('agedAsOfDate');
     }
 
     public ?Customer\Record $customer {

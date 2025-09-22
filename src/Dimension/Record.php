@@ -28,9 +28,9 @@ class Record extends Entity
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    /** @var ?Entity\Collection<DimensionValue\Record> */
-    public ?Entity\Collection $dimensionValues {
-        get => $this->get('dimensionValues', 'collection');
+    /** @var Entity\Collection<DimensionValue\Record> */
+    public Entity\Collection $dimensionValues {
+        get => $this->getAsCollection('dimensionValues');
     }
 
     protected array $classMap = ['dimensionValues' => DimensionValue\Record::class];

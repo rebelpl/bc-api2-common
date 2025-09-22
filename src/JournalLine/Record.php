@@ -17,87 +17,121 @@ class Record extends Entity
     }
 
     public ?string $journalId {
-        set { $this->set('journalId', $value); }
+        set {
+            $this->set('journalId', $value);
+        }
         get => $this->get('journalId');
     }
 
     public ?string $journalDisplayName {
-        set { $this->set('journalDisplayName', $value); }
+        set {
+            $this->set('journalDisplayName', $value);
+        }
         get => $this->get('journalDisplayName');
     }
 
     public ?int $lineNumber {
-        set { $this->set('lineNumber', $value); }
+        set {
+            $this->set('lineNumber', $value);
+        }
         get => $this->get('lineNumber');
     }
 
     public ?Enums\GenJournalAccountType $accountType {
-        set { $this->set('accountType', $value); }
+        set {
+            $this->set('accountType', $value);
+        }
         get => $this->getAsEnum('accountType', Enums\GenJournalAccountType::class);
     }
 
     public ?string $accountId {
-        set { $this->set('accountId', $value); }
+        set {
+            $this->set('accountId', $value);
+        }
         get => $this->get('accountId');
     }
 
     public ?string $accountNumber {
-        set { $this->set('accountNumber', $value); }
+        set {
+            $this->set('accountNumber', $value);
+        }
         get => $this->get('accountNumber');
     }
 
     public ?Carbon $postingDate {
-        set { $this->setAsDate('postingDate', $value); }
-        get => $this->getAsDateTime('postingDate');
+        set {
+            $this->setAsDate('postingDate', $value);
+        }
+        get => $this->getAsDate('postingDate');
     }
 
     public ?string $documentNumber {
-        set { $this->set('documentNumber', $value); }
+        set {
+            $this->set('documentNumber', $value);
+        }
         get => $this->get('documentNumber');
     }
 
     public ?string $externalDocumentNumber {
-        set { $this->set('externalDocumentNumber', $value); }
+        set {
+            $this->set('externalDocumentNumber', $value);
+        }
         get => $this->get('externalDocumentNumber');
     }
 
     public ?float $amount {
-        set { $this->set('amount', $value); }
+        set {
+            $this->set('amount', $value);
+        }
         get => $this->get('amount');
     }
 
     public ?string $description {
-        set { $this->set('description', $value); }
+        set {
+            $this->set('description', $value);
+        }
         get => $this->get('description');
     }
 
     public ?string $comment {
-        set { $this->set('comment', $value); }
+        set {
+            $this->set('comment', $value);
+        }
         get => $this->get('comment');
     }
 
     public ?string $taxCode {
-        set { $this->set('taxCode', $value); }
+        set {
+            $this->set('taxCode', $value);
+        }
         get => $this->get('taxCode');
     }
 
     public ?Enums\GenJournalAccountType $balanceAccountType {
-        set { $this->set('balanceAccountType', $value); }
+        set {
+            $this->set('balanceAccountType', $value);
+        }
         get => $this->getAsEnum('balanceAccountType', Enums\GenJournalAccountType::class);
     }
 
     public ?string $balancingAccountId {
-        set { $this->set('balancingAccountId', $value); }
+        set {
+            $this->set('balancingAccountId', $value);
+        }
         get => $this->get('balancingAccountId');
     }
 
     public ?string $balancingAccountNumber {
-        set { $this->set('balancingAccountNumber', $value); }
+        set {
+            $this->set('balancingAccountNumber', $value);
+        }
         get => $this->get('balancingAccountNumber');
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set { $this->setAsDateTime('lastModifiedDateTime', $value); }
+        set {
+            $this->setAsDateTime('lastModifiedDateTime', $value);
+        }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
@@ -113,14 +147,14 @@ class Record extends Entity
         get => $this->get('account');
     }
 
-    /** @var ?Entity\Collection<Attachment\Record> */
-    public ?Entity\Collection $attachments {
-        get => $this->get('attachments', 'collection');
+    /** @var Entity\Collection<Attachment\Record> */
+    public Entity\Collection $attachments {
+        get => $this->getAsCollection('attachments');
     }
 
-    /** @var ?Entity\Collection<DimensionSetLine\Record> */
-    public ?Entity\Collection $dimensionSetLines {
-        get => $this->get('dimensionSetLines', 'collection');
+    /** @var Entity\Collection<DimensionSetLine\Record> */
+    public Entity\Collection $dimensionSetLines {
+        get => $this->getAsCollection('dimensionSetLines');
     }
 
     protected array $classMap = [

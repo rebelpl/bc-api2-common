@@ -21,32 +21,41 @@ class Record extends Entity
     }
 
     public ?string $parentId {
-        set { $this->set('parentId', $value); }
+        set {
+            $this->set('parentId', $value);
+        }
         get => $this->get('parentId');
     }
 
     public ?string $fileName {
-        set { $this->set('fileName', $value); }
+        set {
+            $this->set('fileName', $value);
+        }
         get => $this->get('fileName');
     }
 
     public ?int $byteSize {
-        set { $this->set('byteSize', $value); }
+        set {
+            $this->set('byteSize', $value);
+        }
         get => $this->get('byteSize');
     }
 
-    public ?string $attachmentContent {
-        set { $this->set('attachmentContent', $value); }
+    public Entity\DataStream $attachmentContent {
         get => $this->get('attachmentContent');
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set { $this->setAsDateTime('lastModifiedDateTime', $value); }
+        set {
+            $this->setAsDateTime('lastModifiedDateTime', $value);
+        }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
     public ?Enums\AttachmentEntityBufferDocumentType $parentType {
-        set { $this->set('parentType', $value); }
+        set {
+            $this->set('parentType', $value);
+        }
         get => $this->getAsEnum('parentType', Enums\AttachmentEntityBufferDocumentType::class);
     }
 

@@ -12,11 +12,11 @@ class Record extends Entity
     }
 
     public ?Carbon $allowPostingFrom {
-        get => $this->getAsDateTime('allowPostingFrom');
+        get => $this->getAsDate('allowPostingFrom');
     }
 
     public ?Carbon $allowPostingTo {
-        get => $this->getAsDateTime('allowPostingTo');
+        get => $this->getAsDate('allowPostingTo');
     }
 
     public ?string $additionalReportingCurrency {

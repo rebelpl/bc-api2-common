@@ -19,42 +19,58 @@ class Record extends Entity
     }
 
     public ?Enums\DefaultDimensionParentType $parentType {
-        set { $this->set('parentType', $value); }
+        set {
+            $this->set('parentType', $value);
+        }
         get => $this->getAsEnum('parentType', Enums\DefaultDimensionParentType::class);
     }
 
     public ?string $parentId {
-        set { $this->set('parentId', $value); }
+        set {
+            $this->set('parentId', $value);
+        }
         get => $this->get('parentId');
     }
 
     public ?string $dimensionId {
-        set { $this->set('dimensionId', $value); }
+        set {
+            $this->set('dimensionId', $value);
+        }
         get => $this->get('dimensionId');
     }
 
     public ?string $dimensionCode {
-        set { $this->set('dimensionCode', $value); }
+        set {
+            $this->set('dimensionCode', $value);
+        }
         get => $this->get('dimensionCode');
     }
 
     public ?string $dimensionValueId {
-        set { $this->set('dimensionValueId', $value); }
+        set {
+            $this->set('dimensionValueId', $value);
+        }
         get => $this->get('dimensionValueId');
     }
 
     public ?string $dimensionValueCode {
-        set { $this->set('dimensionValueCode', $value); }
+        set {
+            $this->set('dimensionValueCode', $value);
+        }
         get => $this->get('dimensionValueCode');
     }
 
     public ?Enums\DefaultDimensionValuePostingType $postingValidation {
-        set { $this->set('postingValidation', $value); }
+        set {
+            $this->set('postingValidation', $value);
+        }
         get => $this->getAsEnum('postingValidation', Enums\DefaultDimensionValuePostingType::class);
     }
 
     public ?Carbon $lastModifiedDateTime {
-        set { $this->setAsDateTime('lastModifiedDateTime', $value); }
+        set {
+            $this->setAsDateTime('lastModifiedDateTime', $value);
+        }
         get => $this->getAsDateTime('lastModifiedDateTime');
     }
 
