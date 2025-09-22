@@ -2,6 +2,7 @@
 namespace Rebel\BCApi2\Entity\SalesCreditMemo;
 
 use Carbon\Carbon;
+use Rebel\BCApi2\Client;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\Attachment;
 use Rebel\BCApi2\Entity\Currency;
@@ -384,4 +385,29 @@ class Record extends Entity
         'attachments' => Attachment\Record::class,
         'documentAttachments' => DocumentAttachment\Record::class,
     ];
+
+    function doCancel(Client $client): void
+    {
+        $this->doAction('Microsoft.NAV.cancel', $client);
+    }
+
+    function doCancelAndSend(Client $client): void
+    {
+        $this->doAction('Microsoft.NAV.cancelAndSend', $client);
+    }
+
+    function doPost(Client $client): void
+    {
+        $this->doAction('Microsoft.NAV.post', $client);
+    }
+
+    function doPostAndSend(Client $client): void
+    {
+        $this->doAction('Microsoft.NAV.postAndSend', $client);
+    }
+
+    function doSend(Client $client): void
+    {
+        $this->doAction('Microsoft.NAV.send', $client);
+    }
 }

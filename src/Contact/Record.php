@@ -2,6 +2,7 @@
 namespace Rebel\BCApi2\Entity\Contact;
 
 use Carbon\Carbon;
+use Rebel\BCApi2\Client;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\ContactInformation;
 use Rebel\BCApi2\Entity\Enums;

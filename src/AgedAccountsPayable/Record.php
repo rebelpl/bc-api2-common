@@ -2,6 +2,7 @@
 namespace Rebel\BCApi2\Entity\AgedAccountsPayable;
 
 use Carbon\Carbon;
+use Rebel\BCApi2\Client;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\Vendor;

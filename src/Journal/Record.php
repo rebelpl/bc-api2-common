@@ -2,6 +2,7 @@
 namespace Rebel\BCApi2\Entity\Journal;
 
 use Carbon\Carbon;
+use Rebel\BCApi2\Client;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\JournalLine;
@@ -60,4 +61,9 @@ class Record extends Entity
     }
 
     protected array $classMap = ['journalLines' => JournalLine\Record::class];
+
+    function doPost(Client $client): void
+    {
+        $this->doAction('Microsoft.NAV.post', $client);
+    }
 }

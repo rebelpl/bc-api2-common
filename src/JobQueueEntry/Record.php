@@ -2,6 +2,7 @@
 namespace Rebel\BCApi2\Entity\JobQueueEntry;
 
 use Carbon\Carbon;
+use Rebel\BCApi2\Client;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\Enums;
 use Rebel\BCApi2\Entity\JobQueueLogEntry;
@@ -198,4 +199,9 @@ class Record extends Entity
     }
 
     protected array $classMap = ['jobQueueLogEntries' => JobQueueLogEntry\Record::class];
+
+    function doRestart(Client $client): void
+    {
+        $this->doAction('Microsoft.NAV.restart', $client);
+    }
 }

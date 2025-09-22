@@ -2,6 +2,7 @@
 namespace Rebel\BCApi2\Entity\Customer;
 
 use Carbon\Carbon;
+use Rebel\BCApi2\Client;
 use Rebel\BCApi2\Entity;
 use Rebel\BCApi2\Entity\AgedAccountsReceivable;
 use Rebel\BCApi2\Entity\ContactInformation;
