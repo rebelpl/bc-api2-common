@@ -267,7 +267,7 @@ class Record extends Entity
 
     function getPicture(): ?Picture\Record
     {
-        return $this->get('picture');
+        return $this->getAsRelation('picture');
     }
 
     /**

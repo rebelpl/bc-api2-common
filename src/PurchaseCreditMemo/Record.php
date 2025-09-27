@@ -490,32 +490,32 @@ class Record extends Entity
 
     function getVendor(): ?Vendor\Record
     {
-        return $this->get('vendor');
+        return $this->getAsRelation('vendor');
     }
 
     function getDimensionValue(): ?DimensionValue\Record
     {
-        return $this->get('dimensionValue');
+        return $this->getAsRelation('dimensionValue');
     }
 
     function getCurrency(): ?Currency\Record
     {
-        return $this->get('currency');
+        return $this->getAsRelation('currency');
     }
 
     function getPaymentTerm(): ?PaymentTerm\Record
     {
-        return $this->get('paymentTerm');
+        return $this->getAsRelation('paymentTerm');
     }
 
     function getShipmentMethod(): ?ShipmentMethod\Record
     {
-        return $this->get('shipmentMethod');
+        return $this->getAsRelation('shipmentMethod');
     }
 
     function getCustomerReturnReason(): ?CustomerReturnReason\Record
     {
-        return $this->get('customerReturnReason');
+        return $this->getAsRelation('customerReturnReason');
     }
 
     /**
@@ -536,7 +536,7 @@ class Record extends Entity
 
     function getPdfDocument(): ?PdfDocument\Record
     {
-        return $this->get('pdfDocument');
+        return $this->getAsRelation('pdfDocument');
     }
 
     /**

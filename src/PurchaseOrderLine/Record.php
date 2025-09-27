@@ -372,27 +372,27 @@ class Record extends Entity
 
     function getPurchaseOrder(): ?PurchaseOrder\Record
     {
-        return $this->get('purchaseOrder');
+        return $this->getAsRelation('purchaseOrder');
     }
 
     function getItem(): ?Item\Record
     {
-        return $this->get('item');
+        return $this->getAsRelation('item');
     }
 
     function getAccount(): ?Account\Record
     {
-        return $this->get('account');
+        return $this->getAsRelation('account');
     }
 
     function getUnitOfMeasure(): ?UnitOfMeasure\Record
     {
-        return $this->get('unitOfMeasure');
+        return $this->getAsRelation('unitOfMeasure');
     }
 
     function getItemVariant(): ?ItemVariant\Record
     {
-        return $this->get('itemVariant');
+        return $this->getAsRelation('itemVariant');
     }
 
     /**
@@ -405,6 +405,6 @@ class Record extends Entity
 
     function getLocation(): ?Location\Record
     {
-        return $this->get('location');
+        return $this->getAsRelation('location');
     }
 }

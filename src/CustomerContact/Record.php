@@ -94,6 +94,6 @@ class Record extends Entity
 
     function getPdfDocument(): ?PdfDocument\Record
     {
-        return $this->get('pdfDocument');
+        return $this->getAsRelation('pdfDocument');
     }
 }

@@ -48,16 +48,16 @@ class Record extends Entity
 
     function getCustomer(): ?Customer\Record
     {
-        return $this->get('customer');
+        return $this->getAsRelation('customer');
     }
 
     function getContact(): ?Contact\Record
     {
-        return $this->get('contact');
+        return $this->getAsRelation('contact');
     }
 
     function getVendor(): ?Vendor\Record
     {
-        return $this->get('vendor');
+        return $this->getAsRelation('vendor');
     }
 }

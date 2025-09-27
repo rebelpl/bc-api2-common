@@ -260,11 +260,11 @@ class Record extends Entity
 
     function getContactInformation(): ?ContactInformation\Record
     {
-        return $this->get('contactInformation');
+        return $this->getAsRelation('contactInformation');
     }
 
     function getPicture(): ?Picture\Record
     {
-        return $this->get('picture');
+        return $this->getAsRelation('picture');
     }
 }

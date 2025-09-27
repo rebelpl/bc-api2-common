@@ -177,12 +177,12 @@ class Record extends Entity
 
     function getCustomerPaymentJournal(): ?CustomerPaymentJournal\Record
     {
-        return $this->get('customerPaymentJournal');
+        return $this->getAsRelation('customerPaymentJournal');
     }
 
     function getCustomer(): ?Customer\Record
     {
-        return $this->get('customer');
+        return $this->getAsRelation('customer');
     }
 
     /**

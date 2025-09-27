@@ -181,12 +181,12 @@ class Record extends Entity
 
     function getCustomerPaymentJournal(): ?CustomerPaymentJournal\Record
     {
-        return $this->get('customerPaymentJournal');
+        return $this->getAsRelation('customerPaymentJournal');
     }
 
     function getVendor(): ?Vendor\Record
     {
-        return $this->get('vendor');
+        return $this->getAsRelation('vendor');
     }
 
     /**
@@ -207,6 +207,6 @@ class Record extends Entity
 
     function getVendorPaymentJournal(): ?VendorPaymentJournal\Record
     {
-        return $this->get('vendorPaymentJournal');
+        return $this->getAsRelation('vendorPaymentJournal');
     }
 }

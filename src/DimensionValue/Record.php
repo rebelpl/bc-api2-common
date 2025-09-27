@@ -42,6 +42,6 @@ class Record extends Entity
 
     function getDimension(): ?Dimension\Record
     {
-        return $this->get('dimension');
+        return $this->getAsRelation('dimension');
     }
 }

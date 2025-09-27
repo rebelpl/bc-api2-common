@@ -150,11 +150,11 @@ class Record extends Entity
 
     function getFixedAssetLocation(): ?FixedAssetLocation\Record
     {
-        return $this->get('fixedAssetLocation');
+        return $this->getAsRelation('fixedAssetLocation');
     }
 
     function getEmployee(): ?Employee\Record
     {
-        return $this->get('employee');
+        return $this->getAsRelation('employee');
     }
 }

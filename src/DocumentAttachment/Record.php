@@ -134,61 +134,61 @@ class Record extends Entity
 
     function getItem(): ?Item\Record
     {
-        return $this->get('item');
+        return $this->getAsRelation('item');
     }
 
     function getCustomer(): ?Customer\Record
     {
-        return $this->get('customer');
+        return $this->getAsRelation('customer');
     }
 
     function getVendor(): ?Vendor\Record
     {
-        return $this->get('vendor');
+        return $this->getAsRelation('vendor');
     }
 
     function getSalesInvoice(): ?SalesInvoice\Record
     {
-        return $this->get('salesInvoice');
+        return $this->getAsRelation('salesInvoice');
     }
 
     function getEmployee(): ?Employee\Record
     {
-        return $this->get('employee');
+        return $this->getAsRelation('employee');
     }
 
     function getSalesOrder(): ?SalesOrder\Record
     {
-        return $this->get('salesOrder');
+        return $this->getAsRelation('salesOrder');
     }
 
     function getSalesQuote(): ?SalesQuote\Record
     {
-        return $this->get('salesQuote');
+        return $this->getAsRelation('salesQuote');
     }
 
     function getSalesCreditMemo(): ?SalesCreditMemo\Record
     {
-        return $this->get('salesCreditMemo');
+        return $this->getAsRelation('salesCreditMemo');
     }
 
     function getPurchaseInvoice(): ?PurchaseInvoice\Record
     {
-        return $this->get('purchaseInvoice');
+        return $this->getAsRelation('purchaseInvoice');
     }
 
     function getProject(): ?Project\Record
     {
-        return $this->get('project');
+        return $this->getAsRelation('project');
     }
 
     function getPurchaseOrder(): ?PurchaseOrder\Record
     {
-        return $this->get('purchaseOrder');
+        return $this->getAsRelation('purchaseOrder');
     }
 
     function getPurchaseCreditMemo(): ?PurchaseCreditMemo\Record
     {
-        return $this->get('purchaseCreditMemo');
+        return $this->getAsRelation('purchaseCreditMemo');
     }
 }

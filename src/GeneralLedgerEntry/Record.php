@@ -83,7 +83,7 @@ class Record extends Entity
 
     function getAccount(): ?Account\Record
     {
-        return $this->get('account');
+        return $this->getAsRelation('account');
     }
 
     /**

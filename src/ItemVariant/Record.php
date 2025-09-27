@@ -72,6 +72,6 @@ class Record extends Entity
 
     function getItem(): ?Item\Record
     {
-        return $this->get('item');
+        return $this->getAsRelation('item');
     }
 }

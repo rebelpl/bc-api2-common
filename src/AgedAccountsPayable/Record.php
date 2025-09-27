@@ -62,6 +62,6 @@ class Record extends Entity
 
     function getVendor(): ?Vendor\Record
     {
-        return $this->get('vendor');
+        return $this->getAsRelation('vendor');
     }
 }

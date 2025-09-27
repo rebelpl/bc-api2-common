@@ -323,32 +323,32 @@ class Record extends Entity
 
     function getCurrency(): ?Currency\Record
     {
-        return $this->get('currency');
+        return $this->getAsRelation('currency');
     }
 
     function getPaymentTerm(): ?PaymentTerm\Record
     {
-        return $this->get('paymentTerm');
+        return $this->getAsRelation('paymentTerm');
     }
 
     function getShipmentMethod(): ?ShipmentMethod\Record
     {
-        return $this->get('shipmentMethod');
+        return $this->getAsRelation('shipmentMethod');
     }
 
     function getPaymentMethod(): ?PaymentMethod\Record
     {
-        return $this->get('paymentMethod');
+        return $this->getAsRelation('paymentMethod');
     }
 
     function getCustomerFinancialDetail(): ?CustomerFinancialDetail\Record
     {
-        return $this->get('customerFinancialDetail');
+        return $this->getAsRelation('customerFinancialDetail');
     }
 
     function getPicture(): ?Picture\Record
     {
-        return $this->get('picture');
+        return $this->getAsRelation('picture');
     }
 
     /**
@@ -361,7 +361,7 @@ class Record extends Entity
 
     function getAgedAccountsReceivable(): ?AgedAccountsReceivable\Record
     {
-        return $this->get('agedAccountsReceivable');
+        return $this->getAsRelation('agedAccountsReceivable');
     }
 
     /**

@@ -161,7 +161,7 @@ class Record extends Entity
 
     function getEmployee(): ?Employee\Record
     {
-        return $this->get('employee');
+        return $this->getAsRelation('employee');
     }
 
     /**

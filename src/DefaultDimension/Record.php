@@ -119,36 +119,36 @@ class Record extends Entity
 
     function getItem(): ?Item\Record
     {
-        return $this->get('item');
+        return $this->getAsRelation('item');
     }
 
     function getAccount(): ?Account\Record
     {
-        return $this->get('account');
+        return $this->getAsRelation('account');
     }
 
     function getDimension(): ?Dimension\Record
     {
-        return $this->get('dimension');
+        return $this->getAsRelation('dimension');
     }
 
     function getDimensionValue(): ?DimensionValue\Record
     {
-        return $this->get('dimensionValue');
+        return $this->getAsRelation('dimensionValue');
     }
 
     function getCustomer(): ?Customer\Record
     {
-        return $this->get('customer');
+        return $this->getAsRelation('customer');
     }
 
     function getVendor(): ?Vendor\Record
     {
-        return $this->get('vendor');
+        return $this->getAsRelation('vendor');
     }
 
     function getEmployee(): ?Employee\Record
     {
-        return $this->get('employee');
+        return $this->getAsRelation('employee');
     }
 }

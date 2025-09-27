@@ -82,6 +82,6 @@ class Record extends Entity
 
     function getTrialBalance(): ?TrialBalance\Record
     {
-        return $this->get('trialBalance');
+        return $this->getAsRelation('trialBalance');
     }
 }

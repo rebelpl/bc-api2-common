@@ -86,7 +86,7 @@ class Record extends Entity
 
     function getSalesShipment(): ?SalesShipment\Record
     {
-        return $this->get('salesShipment');
+        return $this->getAsRelation('salesShipment');
     }
 
     /**

@@ -81,7 +81,7 @@ class Record extends Entity
 
     function getPurchaseReceipt(): ?PurchaseReceipt\Record
     {
-        return $this->get('purchaseReceipt');
+        return $this->getAsRelation('purchaseReceipt');
     }
 
     /**

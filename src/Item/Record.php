@@ -264,27 +264,27 @@ class Record extends Entity
 
     function getItemCategory(): ?ItemCategory\Record
     {
-        return $this->get('itemCategory');
+        return $this->getAsRelation('itemCategory');
     }
 
     function getInventoryPostingGroup(): ?InventoryPostingGroup\Record
     {
-        return $this->get('inventoryPostingGroup');
+        return $this->getAsRelation('inventoryPostingGroup');
     }
 
     function getGeneralProductPostingGroup(): ?GeneralProductPostingGroup\Record
     {
-        return $this->get('generalProductPostingGroup');
+        return $this->getAsRelation('generalProductPostingGroup');
     }
 
     function getUnitOfMeasure(): ?UnitOfMeasure\Record
     {
-        return $this->get('unitOfMeasure');
+        return $this->getAsRelation('unitOfMeasure');
     }
 
     function getPicture(): ?Picture\Record
     {
-        return $this->get('picture');
+        return $this->getAsRelation('picture');
     }
 
     /**

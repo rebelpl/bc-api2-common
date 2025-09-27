@@ -44,31 +44,31 @@ class Record extends Entity
 
     function getSalesInvoice(): ?SalesInvoice\Record
     {
-        return $this->get('salesInvoice');
+        return $this->getAsRelation('salesInvoice');
     }
 
     function getSalesQuote(): ?SalesQuote\Record
     {
-        return $this->get('salesQuote');
+        return $this->getAsRelation('salesQuote');
     }
 
     function getSalesCreditMemo(): ?SalesCreditMemo\Record
     {
-        return $this->get('salesCreditMemo');
+        return $this->getAsRelation('salesCreditMemo');
     }
 
     function getPurchaseInvoice(): ?PurchaseInvoice\Record
     {
-        return $this->get('purchaseInvoice');
+        return $this->getAsRelation('purchaseInvoice');
     }
 
     function getPurchaseCreditMemo(): ?PurchaseCreditMemo\Record
     {
-        return $this->get('purchaseCreditMemo');
+        return $this->getAsRelation('purchaseCreditMemo');
     }
 
     function getCustomerContact(): ?CustomerContact\Record
     {
-        return $this->get('customerContact');
+        return $this->getAsRelation('customerContact');
     }
 }

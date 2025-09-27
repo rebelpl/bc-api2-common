@@ -228,7 +228,7 @@ class Record extends Entity
 
     function getCustomer(): ?Customer\Record
     {
-        return $this->get('customer');
+        return $this->getAsRelation('customer');
     }
 
     /**

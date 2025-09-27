@@ -95,46 +95,46 @@ class Record extends Entity
 
     function getSalesInvoice(): ?SalesInvoice\Record
     {
-        return $this->get('salesInvoice');
+        return $this->getAsRelation('salesInvoice');
     }
 
     function getJournalLine(): ?JournalLine\Record
     {
-        return $this->get('journalLine');
+        return $this->getAsRelation('journalLine');
     }
 
     function getGeneralLedgerEntry(): ?GeneralLedgerEntry\Record
     {
-        return $this->get('generalLedgerEntry');
+        return $this->getAsRelation('generalLedgerEntry');
     }
 
     function getSalesOrder(): ?SalesOrder\Record
     {
-        return $this->get('salesOrder');
+        return $this->getAsRelation('salesOrder');
     }
 
     function getSalesQuote(): ?SalesQuote\Record
     {
-        return $this->get('salesQuote');
+        return $this->getAsRelation('salesQuote');
     }
 
     function getSalesCreditMemo(): ?SalesCreditMemo\Record
     {
-        return $this->get('salesCreditMemo');
+        return $this->getAsRelation('salesCreditMemo');
     }
 
     function getPurchaseInvoice(): ?PurchaseInvoice\Record
     {
-        return $this->get('purchaseInvoice');
+        return $this->getAsRelation('purchaseInvoice');
     }
 
     function getPurchaseOrder(): ?PurchaseOrder\Record
     {
-        return $this->get('purchaseOrder');
+        return $this->getAsRelation('purchaseOrder');
     }
 
     function getPurchaseCreditMemo(): ?PurchaseCreditMemo\Record
     {
-        return $this->get('purchaseCreditMemo');
+        return $this->getAsRelation('purchaseCreditMemo');
     }
 }

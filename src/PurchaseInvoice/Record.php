@@ -550,17 +550,17 @@ class Record extends Entity
 
     function getVendor(): ?Vendor\Record
     {
-        return $this->get('vendor');
+        return $this->getAsRelation('vendor');
     }
 
     function getDimensionValue(): ?DimensionValue\Record
     {
-        return $this->get('dimensionValue');
+        return $this->getAsRelation('dimensionValue');
     }
 
     function getCurrency(): ?Currency\Record
     {
-        return $this->get('currency');
+        return $this->getAsRelation('currency');
     }
 
     /**
@@ -581,7 +581,7 @@ class Record extends Entity
 
     function getPdfDocument(): ?PdfDocument\Record
     {
-        return $this->get('pdfDocument');
+        return $this->getAsRelation('pdfDocument');
     }
 
     /**
