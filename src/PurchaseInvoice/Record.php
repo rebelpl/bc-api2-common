@@ -350,15 +350,15 @@ class Record extends Entity
     }
 
     public ?Vendor\Record $vendor {
-        get => $this->get('vendor');
+        get => $this->getAsRelation('vendor');
     }
 
     public ?DimensionValue\Record $dimensionValue {
-        get => $this->get('dimensionValue');
+        get => $this->getAsRelation('dimensionValue');
     }
 
     public ?Currency\Record $currency {
-        get => $this->get('currency');
+        get => $this->getAsRelation('currency');
     }
 
     /** @var Entity\Collection<DimensionSetLine\Record> */
@@ -372,7 +372,7 @@ class Record extends Entity
     }
 
     public ?PdfDocument\Record $pdfDocument {
-        get => $this->get('pdfDocument');
+        get => $this->getAsRelation('pdfDocument');
     }
 
     /** @var Entity\Collection<Attachment\Record> */

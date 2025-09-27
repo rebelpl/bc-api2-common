@@ -114,11 +114,11 @@ class Record extends Entity
     }
 
     public ?CustomerPaymentJournal\Record $customerPaymentJournal {
-        get => $this->get('customerPaymentJournal');
+        get => $this->getAsRelation('customerPaymentJournal');
     }
 
     public ?Customer\Record $customer {
-        get => $this->get('customer');
+        get => $this->getAsRelation('customer');
     }
 
     /** @var Entity\Collection<DimensionSetLine\Record> */

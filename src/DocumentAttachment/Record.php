@@ -85,51 +85,51 @@ class Record extends Entity
     }
 
     public ?Item\Record $item {
-        get => $this->get('item');
+        get => $this->getAsRelation('item');
     }
 
     public ?Customer\Record $customer {
-        get => $this->get('customer');
+        get => $this->getAsRelation('customer');
     }
 
     public ?Vendor\Record $vendor {
-        get => $this->get('vendor');
+        get => $this->getAsRelation('vendor');
     }
 
     public ?SalesInvoice\Record $salesInvoice {
-        get => $this->get('salesInvoice');
+        get => $this->getAsRelation('salesInvoice');
     }
 
     public ?Employee\Record $employee {
-        get => $this->get('employee');
+        get => $this->getAsRelation('employee');
     }
 
     public ?SalesOrder\Record $salesOrder {
-        get => $this->get('salesOrder');
+        get => $this->getAsRelation('salesOrder');
     }
 
     public ?SalesQuote\Record $salesQuote {
-        get => $this->get('salesQuote');
+        get => $this->getAsRelation('salesQuote');
     }
 
     public ?SalesCreditMemo\Record $salesCreditMemo {
-        get => $this->get('salesCreditMemo');
+        get => $this->getAsRelation('salesCreditMemo');
     }
 
     public ?PurchaseInvoice\Record $purchaseInvoice {
-        get => $this->get('purchaseInvoice');
+        get => $this->getAsRelation('purchaseInvoice');
     }
 
     public ?Project\Record $project {
-        get => $this->get('project');
+        get => $this->getAsRelation('project');
     }
 
     public ?PurchaseOrder\Record $purchaseOrder {
-        get => $this->get('purchaseOrder');
+        get => $this->getAsRelation('purchaseOrder');
     }
 
     public ?PurchaseCreditMemo\Record $purchaseCreditMemo {
-        get => $this->get('purchaseCreditMemo');
+        get => $this->getAsRelation('purchaseCreditMemo');
     }
 
     protected array $classMap = [

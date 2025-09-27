@@ -168,19 +168,19 @@ class Record extends Entity
     }
 
     public ?Currency\Record $currency {
-        get => $this->get('currency');
+        get => $this->getAsRelation('currency');
     }
 
     public ?PaymentTerm\Record $paymentTerm {
-        get => $this->get('paymentTerm');
+        get => $this->getAsRelation('paymentTerm');
     }
 
     public ?PaymentMethod\Record $paymentMethod {
-        get => $this->get('paymentMethod');
+        get => $this->getAsRelation('paymentMethod');
     }
 
     public ?Picture\Record $picture {
-        get => $this->get('picture');
+        get => $this->getAsRelation('picture');
     }
 
     /** @var Entity\Collection<DefaultDimension\Record> */
@@ -189,7 +189,7 @@ class Record extends Entity
     }
 
     public ?AgedAccountsPayable\Record $agedAccountsPayable {
-        get => $this->get('agedAccountsPayable');
+        get => $this->getAsRelation('agedAccountsPayable');
     }
 
     /** @var Entity\Collection<ContactInformation\Record> */

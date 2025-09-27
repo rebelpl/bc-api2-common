@@ -116,11 +116,11 @@ class Record extends Entity
     }
 
     public ?CustomerPaymentJournal\Record $customerPaymentJournal {
-        get => $this->get('customerPaymentJournal');
+        get => $this->getAsRelation('customerPaymentJournal');
     }
 
     public ?Vendor\Record $vendor {
-        get => $this->get('vendor');
+        get => $this->getAsRelation('vendor');
     }
 
     /** @var Entity\Collection<DimensionSetLine\Record> */
@@ -134,7 +134,7 @@ class Record extends Entity
     }
 
     public ?VendorPaymentJournal\Record $vendorPaymentJournal {
-        get => $this->get('vendorPaymentJournal');
+        get => $this->getAsRelation('vendorPaymentJournal');
     }
 
     protected array $classMap = [

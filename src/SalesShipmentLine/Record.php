@@ -67,7 +67,7 @@ class Record extends Entity
     }
 
     public ?SalesShipment\Record $salesShipment {
-        get => $this->get('salesShipment');
+        get => $this->getAsRelation('salesShipment');
     }
 
     /** @var Entity\Collection<DimensionSetLine\Record> */

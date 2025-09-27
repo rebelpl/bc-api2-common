@@ -63,7 +63,7 @@ class Record extends Entity
     }
 
     public ?PurchaseReceipt\Record $purchaseReceipt {
-        get => $this->get('purchaseReceipt');
+        get => $this->getAsRelation('purchaseReceipt');
     }
 
     /** @var Entity\Collection<DimensionSetLine\Record> */

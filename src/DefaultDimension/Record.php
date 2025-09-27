@@ -76,31 +76,31 @@ class Record extends Entity
     }
 
     public ?Item\Record $item {
-        get => $this->get('item');
+        get => $this->getAsRelation('item');
     }
 
     public ?Account\Record $account {
-        get => $this->get('account');
+        get => $this->getAsRelation('account');
     }
 
     public ?Dimension\Record $dimension {
-        get => $this->get('dimension');
+        get => $this->getAsRelation('dimension');
     }
 
     public ?DimensionValue\Record $dimensionValue {
-        get => $this->get('dimensionValue');
+        get => $this->getAsRelation('dimensionValue');
     }
 
     public ?Customer\Record $customer {
-        get => $this->get('customer');
+        get => $this->getAsRelation('customer');
     }
 
     public ?Vendor\Record $vendor {
-        get => $this->get('vendor');
+        get => $this->getAsRelation('vendor');
     }
 
     public ?Employee\Record $employee {
-        get => $this->get('employee');
+        get => $this->getAsRelation('employee');
     }
 
     protected array $classMap = [

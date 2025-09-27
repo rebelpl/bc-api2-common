@@ -31,27 +31,27 @@ class Record extends Entity
     }
 
     public ?SalesInvoice\Record $salesInvoice {
-        get => $this->get('salesInvoice');
+        get => $this->getAsRelation('salesInvoice');
     }
 
     public ?SalesQuote\Record $salesQuote {
-        get => $this->get('salesQuote');
+        get => $this->getAsRelation('salesQuote');
     }
 
     public ?SalesCreditMemo\Record $salesCreditMemo {
-        get => $this->get('salesCreditMemo');
+        get => $this->getAsRelation('salesCreditMemo');
     }
 
     public ?PurchaseInvoice\Record $purchaseInvoice {
-        get => $this->get('purchaseInvoice');
+        get => $this->getAsRelation('purchaseInvoice');
     }
 
     public ?PurchaseCreditMemo\Record $purchaseCreditMemo {
-        get => $this->get('purchaseCreditMemo');
+        get => $this->getAsRelation('purchaseCreditMemo');
     }
 
     public ?CustomerContact\Record $customerContact {
-        get => $this->get('customerContact');
+        get => $this->getAsRelation('customerContact');
     }
 
     protected array $classMap = [

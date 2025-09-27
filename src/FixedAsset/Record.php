@@ -99,11 +99,11 @@ class Record extends Entity
     }
 
     public ?FixedAssetLocation\Record $fixedAssetLocation {
-        get => $this->get('fixedAssetLocation');
+        get => $this->getAsRelation('fixedAssetLocation');
     }
 
     public ?Employee\Record $employee {
-        get => $this->get('employee');
+        get => $this->getAsRelation('employee');
     }
 
     protected array $classMap = [

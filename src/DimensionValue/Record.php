@@ -34,7 +34,7 @@ class Record extends Entity
     }
 
     public ?Dimension\Record $dimension {
-        get => $this->get('dimension');
+        get => $this->getAsRelation('dimension');
     }
 
     protected array $classMap = ['dimension' => Dimension\Record::class];

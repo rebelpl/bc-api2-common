@@ -137,15 +137,15 @@ class Record extends Entity
     }
 
     public ?Journal\Record $journal {
-        get => $this->get('journal');
+        get => $this->getAsRelation('journal');
     }
 
     public ?CustomerPaymentJournal\Record $customerPaymentJournal {
-        get => $this->get('customerPaymentJournal');
+        get => $this->getAsRelation('customerPaymentJournal');
     }
 
     public ?Account\Record $account {
-        get => $this->get('account');
+        get => $this->getAsRelation('account');
     }
 
     /** @var Entity\Collection<Attachment\Record> */

@@ -50,7 +50,7 @@ class Record extends Entity
     }
 
     public ?Vendor\Record $vendor {
-        get => $this->get('vendor');
+        get => $this->getAsRelation('vendor');
     }
 
     protected array $classMap = ['vendor' => Vendor\Record::class];

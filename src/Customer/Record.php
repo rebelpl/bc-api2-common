@@ -205,27 +205,27 @@ class Record extends Entity
     }
 
     public ?Currency\Record $currency {
-        get => $this->get('currency');
+        get => $this->getAsRelation('currency');
     }
 
     public ?PaymentTerm\Record $paymentTerm {
-        get => $this->get('paymentTerm');
+        get => $this->getAsRelation('paymentTerm');
     }
 
     public ?ShipmentMethod\Record $shipmentMethod {
-        get => $this->get('shipmentMethod');
+        get => $this->getAsRelation('shipmentMethod');
     }
 
     public ?PaymentMethod\Record $paymentMethod {
-        get => $this->get('paymentMethod');
+        get => $this->getAsRelation('paymentMethod');
     }
 
     public ?CustomerFinancialDetail\Record $customerFinancialDetail {
-        get => $this->get('customerFinancialDetail');
+        get => $this->getAsRelation('customerFinancialDetail');
     }
 
     public ?Picture\Record $picture {
-        get => $this->get('picture');
+        get => $this->getAsRelation('picture');
     }
 
     /** @var Entity\Collection<DefaultDimension\Record> */
@@ -234,7 +234,7 @@ class Record extends Entity
     }
 
     public ?AgedAccountsReceivable\Record $agedAccountsReceivable {
-        get => $this->get('agedAccountsReceivable');
+        get => $this->getAsRelation('agedAccountsReceivable');
     }
 
     /** @var Entity\Collection<ContactInformation\Record> */

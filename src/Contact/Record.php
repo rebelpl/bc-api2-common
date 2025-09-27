@@ -169,11 +169,11 @@ class Record extends Entity
     }
 
     public ?ContactInformation\Record $contactInformation {
-        get => $this->get('contactInformation');
+        get => $this->getAsRelation('contactInformation');
     }
 
     public ?Picture\Record $picture {
-        get => $this->get('picture');
+        get => $this->getAsRelation('picture');
     }
 
     protected array $classMap = [

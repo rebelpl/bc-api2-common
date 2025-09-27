@@ -106,7 +106,7 @@ class Record extends Entity
     }
 
     public ?Employee\Record $employee {
-        get => $this->get('employee');
+        get => $this->getAsRelation('employee');
     }
 
     /** @var Entity\Collection<DimensionSetLine\Record> */

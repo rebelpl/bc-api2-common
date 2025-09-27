@@ -64,7 +64,7 @@ class Record extends Entity
     }
 
     public ?Account\Record $account {
-        get => $this->get('account');
+        get => $this->getAsRelation('account');
     }
 
     /** @var Entity\Collection<Attachment\Record> */

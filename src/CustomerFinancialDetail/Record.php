@@ -34,7 +34,7 @@ class Record extends Entity
     }
 
     public ?Customer\Record $customer {
-        get => $this->get('customer');
+        get => $this->getAsRelation('customer');
     }
 
     protected array $classMap = ['customer' => Customer\Record::class];

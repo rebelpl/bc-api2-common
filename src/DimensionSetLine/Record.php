@@ -99,95 +99,95 @@ class Record extends Entity
     }
 
     public ?SalesInvoice\Record $salesInvoice {
-        get => $this->get('salesInvoice');
+        get => $this->getAsRelation('salesInvoice');
     }
 
     public ?SalesInvoiceLine\Record $salesInvoiceLine {
-        get => $this->get('salesInvoiceLine');
+        get => $this->getAsRelation('salesInvoiceLine');
     }
 
     public ?CustomerPayment\Record $customerPayment {
-        get => $this->get('customerPayment');
+        get => $this->getAsRelation('customerPayment');
     }
 
     public ?JournalLine\Record $journalLine {
-        get => $this->get('journalLine');
+        get => $this->getAsRelation('journalLine');
     }
 
     public ?TimeRegistrationEntry\Record $timeRegistrationEntry {
-        get => $this->get('timeRegistrationEntry');
+        get => $this->getAsRelation('timeRegistrationEntry');
     }
 
     public ?GeneralLedgerEntry\Record $generalLedgerEntry {
-        get => $this->get('generalLedgerEntry');
+        get => $this->getAsRelation('generalLedgerEntry');
     }
 
     public ?SalesOrder\Record $salesOrder {
-        get => $this->get('salesOrder');
+        get => $this->getAsRelation('salesOrder');
     }
 
     public ?SalesOrderLine\Record $salesOrderLine {
-        get => $this->get('salesOrderLine');
+        get => $this->getAsRelation('salesOrderLine');
     }
 
     public ?SalesQuote\Record $salesQuote {
-        get => $this->get('salesQuote');
+        get => $this->getAsRelation('salesQuote');
     }
 
     public ?SalesQuoteLine\Record $salesQuoteLine {
-        get => $this->get('salesQuoteLine');
+        get => $this->getAsRelation('salesQuoteLine');
     }
 
     public ?SalesCreditMemo\Record $salesCreditMemo {
-        get => $this->get('salesCreditMemo');
+        get => $this->getAsRelation('salesCreditMemo');
     }
 
     public ?SalesCreditMemoLine\Record $salesCreditMemoLine {
-        get => $this->get('salesCreditMemoLine');
+        get => $this->getAsRelation('salesCreditMemoLine');
     }
 
     public ?PurchaseInvoice\Record $purchaseInvoice {
-        get => $this->get('purchaseInvoice');
+        get => $this->getAsRelation('purchaseInvoice');
     }
 
     public ?PurchaseInvoiceLine\Record $purchaseInvoiceLine {
-        get => $this->get('purchaseInvoiceLine');
+        get => $this->getAsRelation('purchaseInvoiceLine');
     }
 
     public ?VendorPayment\Record $vendorPayment {
-        get => $this->get('vendorPayment');
+        get => $this->getAsRelation('vendorPayment');
     }
 
     public ?SalesShipment\Record $salesShipment {
-        get => $this->get('salesShipment');
+        get => $this->getAsRelation('salesShipment');
     }
 
     public ?SalesShipmentLine\Record $salesShipmentLine {
-        get => $this->get('salesShipmentLine');
+        get => $this->getAsRelation('salesShipmentLine');
     }
 
     public ?PurchaseReceipt\Record $purchaseReceipt {
-        get => $this->get('purchaseReceipt');
+        get => $this->getAsRelation('purchaseReceipt');
     }
 
     public ?PurchaseReceiptLine\Record $purchaseReceiptLine {
-        get => $this->get('purchaseReceiptLine');
+        get => $this->getAsRelation('purchaseReceiptLine');
     }
 
     public ?PurchaseOrder\Record $purchaseOrder {
-        get => $this->get('purchaseOrder');
+        get => $this->getAsRelation('purchaseOrder');
     }
 
     public ?PurchaseOrderLine\Record $purchaseOrderLine {
-        get => $this->get('purchaseOrderLine');
+        get => $this->getAsRelation('purchaseOrderLine');
     }
 
     public ?PurchaseCreditMemo\Record $purchaseCreditMemo {
-        get => $this->get('purchaseCreditMemo');
+        get => $this->getAsRelation('purchaseCreditMemo');
     }
 
     public ?PurchaseCreditMemoLine\Record $purchaseCreditMemoLine {
-        get => $this->get('purchaseCreditMemoLine');
+        get => $this->getAsRelation('purchaseCreditMemoLine');
     }
 
     protected array $classMap = [

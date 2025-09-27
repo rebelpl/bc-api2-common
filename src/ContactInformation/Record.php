@@ -36,15 +36,15 @@ class Record extends Entity
     }
 
     public ?Customer\Record $customer {
-        get => $this->get('customer');
+        get => $this->getAsRelation('customer');
     }
 
     public ?Contact\Record $contact {
-        get => $this->get('contact');
+        get => $this->getAsRelation('contact');
     }
 
     public ?Vendor\Record $vendor {
-        get => $this->get('vendor');
+        get => $this->getAsRelation('vendor');
     }
 
     protected array $classMap = [

@@ -63,7 +63,7 @@ class Record extends Entity
     }
 
     public ?PdfDocument\Record $pdfDocument {
-        get => $this->get('pdfDocument');
+        get => $this->getAsRelation('pdfDocument');
     }
 
     protected array $classMap = ['pdfDocument' => PdfDocument\Record::class];

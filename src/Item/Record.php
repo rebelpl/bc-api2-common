@@ -168,23 +168,23 @@ class Record extends Entity
     }
 
     public ?ItemCategory\Record $itemCategory {
-        get => $this->get('itemCategory');
+        get => $this->getAsRelation('itemCategory');
     }
 
     public ?InventoryPostingGroup\Record $inventoryPostingGroup {
-        get => $this->get('inventoryPostingGroup');
+        get => $this->getAsRelation('inventoryPostingGroup');
     }
 
     public ?GeneralProductPostingGroup\Record $generalProductPostingGroup {
-        get => $this->get('generalProductPostingGroup');
+        get => $this->getAsRelation('generalProductPostingGroup');
     }
 
     public ?UnitOfMeasure\Record $unitOfMeasure {
-        get => $this->get('unitOfMeasure');
+        get => $this->getAsRelation('unitOfMeasure');
     }
 
     public ?Picture\Record $picture {
-        get => $this->get('picture');
+        get => $this->getAsRelation('picture');
     }
 
     /** @var Entity\Collection<DefaultDimension\Record> */

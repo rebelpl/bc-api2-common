@@ -171,7 +171,7 @@ class Record extends Entity
     }
 
     public ?Picture\Record $picture {
-        get => $this->get('picture');
+        get => $this->getAsRelation('picture');
     }
 
     /** @var Entity\Collection<DefaultDimension\Record> */

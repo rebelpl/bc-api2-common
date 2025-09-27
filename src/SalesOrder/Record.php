@@ -372,23 +372,23 @@ class Record extends Entity
     }
 
     public ?Customer\Record $customer {
-        get => $this->get('customer');
+        get => $this->getAsRelation('customer');
     }
 
     public ?DimensionValue\Record $dimensionValue {
-        get => $this->get('dimensionValue');
+        get => $this->getAsRelation('dimensionValue');
     }
 
     public ?Currency\Record $currency {
-        get => $this->get('currency');
+        get => $this->getAsRelation('currency');
     }
 
     public ?PaymentTerm\Record $paymentTerm {
-        get => $this->get('paymentTerm');
+        get => $this->getAsRelation('paymentTerm');
     }
 
     public ?ShipmentMethod\Record $shipmentMethod {
-        get => $this->get('shipmentMethod');
+        get => $this->getAsRelation('shipmentMethod');
     }
 
     /** @var Entity\Collection<DimensionSetLine\Record> */

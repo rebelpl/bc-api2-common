@@ -195,23 +195,23 @@ class Record extends Entity
     }
 
     public ?SalesQuote\Record $salesQuote {
-        get => $this->get('salesQuote');
+        get => $this->getAsRelation('salesQuote');
     }
 
     public ?Item\Record $item {
-        get => $this->get('item');
+        get => $this->getAsRelation('item');
     }
 
     public ?Account\Record $account {
-        get => $this->get('account');
+        get => $this->getAsRelation('account');
     }
 
     public ?UnitOfMeasure\Record $unitOfMeasure {
-        get => $this->get('unitOfMeasure');
+        get => $this->getAsRelation('unitOfMeasure');
     }
 
     public ?ItemVariant\Record $itemVariant {
-        get => $this->get('itemVariant');
+        get => $this->getAsRelation('itemVariant');
     }
 
     /** @var Entity\Collection<DimensionSetLine\Record> */
@@ -220,7 +220,7 @@ class Record extends Entity
     }
 
     public ?Location\Record $location {
-        get => $this->get('location');
+        get => $this->getAsRelation('location');
     }
 
     protected array $classMap = [

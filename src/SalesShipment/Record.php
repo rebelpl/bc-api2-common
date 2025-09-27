@@ -180,7 +180,7 @@ class Record extends Entity
     }
 
     public ?Customer\Record $customer {
-        get => $this->get('customer');
+        get => $this->getAsRelation('customer');
     }
 
     /** @var Entity\Collection<SalesShipmentLine\Record> */

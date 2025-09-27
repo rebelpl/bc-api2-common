@@ -66,7 +66,7 @@ class Record extends Entity
     }
 
     public ?TrialBalance\Record $trialBalance {
-        get => $this->get('trialBalance');
+        get => $this->getAsRelation('trialBalance');
     }
 
     protected array $classMap = ['trialBalance' => TrialBalance\Record::class];
