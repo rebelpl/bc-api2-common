@@ -15,6 +15,8 @@ use Rebel\BCApi2\Entity\UnitOfMeasure;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'id';
+
     protected $classMap = [
         'itemCategory' => ItemCategory\Record::class,
         'inventoryPostingGroup' => InventoryPostingGroup\Record::class,
@@ -26,263 +28,263 @@ class Record extends Entity
         'documentAttachments' => DocumentAttachment\Record::class,
     ];
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getNumber(): ?string
+    public function getNumber(): ?string
     {
         return $this->get('number');
     }
 
-    function setNumber(?string $value): self
+    public function setNumber(?string $value): self
     {
         $this->set('number', $value);
         return $this;
     }
 
-    function getDisplayName(): ?string
+    public function getDisplayName(): ?string
     {
         return $this->get('displayName');
     }
 
-    function setDisplayName(?string $value): self
+    public function setDisplayName(?string $value): self
     {
         $this->set('displayName', $value);
         return $this;
     }
 
-    function getDisplayName2(): ?string
+    public function getDisplayName2(): ?string
     {
         return $this->get('displayName2');
     }
 
-    function setDisplayName2(?string $value): self
+    public function setDisplayName2(?string $value): self
     {
         $this->set('displayName2', $value);
         return $this;
     }
 
-    function getType(): ?string
+    public function getType(): ?string
     {
         return $this->get('type');
     }
 
-    function setType(?string $value): self
+    public function setType(?string $value): self
     {
         $this->set('type', $value);
         return $this;
     }
 
-    function getItemCategoryId(): ?string
+    public function getItemCategoryId(): ?string
     {
         return $this->get('itemCategoryId');
     }
 
-    function setItemCategoryId(?string $value): self
+    public function setItemCategoryId(?string $value): self
     {
         $this->set('itemCategoryId', $value);
         return $this;
     }
 
-    function getItemCategoryCode(): ?string
+    public function getItemCategoryCode(): ?string
     {
         return $this->get('itemCategoryCode');
     }
 
-    function setItemCategoryCode(?string $value): self
+    public function setItemCategoryCode(?string $value): self
     {
         $this->set('itemCategoryCode', $value);
         return $this;
     }
 
-    function getBlocked(): ?bool
+    public function getBlocked(): ?bool
     {
         return $this->get('blocked');
     }
 
-    function setBlocked(?bool $value): self
+    public function setBlocked(?bool $value): self
     {
         $this->set('blocked', $value);
         return $this;
     }
 
-    function getGtin(): ?string
+    public function getGtin(): ?string
     {
         return $this->get('gtin');
     }
 
-    function setGtin(?string $value): self
+    public function setGtin(?string $value): self
     {
         $this->set('gtin', $value);
         return $this;
     }
 
-    function getInventory(): ?float
+    public function getInventory(): ?float
     {
         return $this->get('inventory');
     }
 
-    function setInventory(?float $value): self
+    public function setInventory(?float $value): self
     {
         $this->set('inventory', $value);
         return $this;
     }
 
-    function getUnitPrice(): ?float
+    public function getUnitPrice(): ?float
     {
         return $this->get('unitPrice');
     }
 
-    function setUnitPrice(?float $value): self
+    public function setUnitPrice(?float $value): self
     {
         $this->set('unitPrice', $value);
         return $this;
     }
 
-    function getPriceIncludesTax(): ?bool
+    public function getPriceIncludesTax(): ?bool
     {
         return $this->get('priceIncludesTax');
     }
 
-    function setPriceIncludesTax(?bool $value): self
+    public function setPriceIncludesTax(?bool $value): self
     {
         $this->set('priceIncludesTax', $value);
         return $this;
     }
 
-    function getUnitCost(): ?float
+    public function getUnitCost(): ?float
     {
         return $this->get('unitCost');
     }
 
-    function setUnitCost(?float $value): self
+    public function setUnitCost(?float $value): self
     {
         $this->set('unitCost', $value);
         return $this;
     }
 
-    function getTaxGroupId(): ?string
+    public function getTaxGroupId(): ?string
     {
         return $this->get('taxGroupId');
     }
 
-    function setTaxGroupId(?string $value): self
+    public function setTaxGroupId(?string $value): self
     {
         $this->set('taxGroupId', $value);
         return $this;
     }
 
-    function getTaxGroupCode(): ?string
+    public function getTaxGroupCode(): ?string
     {
         return $this->get('taxGroupCode');
     }
 
-    function setTaxGroupCode(?string $value): self
+    public function setTaxGroupCode(?string $value): self
     {
         $this->set('taxGroupCode', $value);
         return $this;
     }
 
-    function getBaseUnitOfMeasureId(): ?string
+    public function getBaseUnitOfMeasureId(): ?string
     {
         return $this->get('baseUnitOfMeasureId');
     }
 
-    function setBaseUnitOfMeasureId(?string $value): self
+    public function setBaseUnitOfMeasureId(?string $value): self
     {
         $this->set('baseUnitOfMeasureId', $value);
         return $this;
     }
 
-    function getBaseUnitOfMeasureCode(): ?string
+    public function getBaseUnitOfMeasureCode(): ?string
     {
         return $this->get('baseUnitOfMeasureCode');
     }
 
-    function setBaseUnitOfMeasureCode(?string $value): self
+    public function setBaseUnitOfMeasureCode(?string $value): self
     {
         $this->set('baseUnitOfMeasureCode', $value);
         return $this;
     }
 
-    function getGeneralProductPostingGroupId(): ?string
+    public function getGeneralProductPostingGroupId(): ?string
     {
         return $this->get('generalProductPostingGroupId');
     }
 
-    function setGeneralProductPostingGroupId(?string $value): self
+    public function setGeneralProductPostingGroupId(?string $value): self
     {
         $this->set('generalProductPostingGroupId', $value);
         return $this;
     }
 
-    function getGeneralProductPostingGroupCode(): ?string
+    public function getGeneralProductPostingGroupCode(): ?string
     {
         return $this->get('generalProductPostingGroupCode');
     }
 
-    function setGeneralProductPostingGroupCode(?string $value): self
+    public function setGeneralProductPostingGroupCode(?string $value): self
     {
         $this->set('generalProductPostingGroupCode', $value);
         return $this;
     }
 
-    function getInventoryPostingGroupId(): ?string
+    public function getInventoryPostingGroupId(): ?string
     {
         return $this->get('inventoryPostingGroupId');
     }
 
-    function setInventoryPostingGroupId(?string $value): self
+    public function setInventoryPostingGroupId(?string $value): self
     {
         $this->set('inventoryPostingGroupId', $value);
         return $this;
     }
 
-    function getInventoryPostingGroupCode(): ?string
+    public function getInventoryPostingGroupCode(): ?string
     {
         return $this->get('inventoryPostingGroupCode');
     }
 
-    function setInventoryPostingGroupCode(?string $value): self
+    public function setInventoryPostingGroupCode(?string $value): self
     {
         $this->set('inventoryPostingGroupCode', $value);
         return $this;
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    function setLastModifiedDateTime(?\DateTime $value): self
+    public function setLastModifiedDateTime(?\DateTime $value): self
     {
         $this->setAsDateTime('lastModifiedDateTime', $value);
         return $this;
     }
 
-    function getItemCategory(): ?ItemCategory\Record
+    public function getItemCategory(): ?ItemCategory\Record
     {
         return $this->getAsRelation('itemCategory');
     }
 
-    function getInventoryPostingGroup(): ?InventoryPostingGroup\Record
+    public function getInventoryPostingGroup(): ?InventoryPostingGroup\Record
     {
         return $this->getAsRelation('inventoryPostingGroup');
     }
 
-    function getGeneralProductPostingGroup(): ?GeneralProductPostingGroup\Record
+    public function getGeneralProductPostingGroup(): ?GeneralProductPostingGroup\Record
     {
         return $this->getAsRelation('generalProductPostingGroup');
     }
 
-    function getUnitOfMeasure(): ?UnitOfMeasure\Record
+    public function getUnitOfMeasure(): ?UnitOfMeasure\Record
     {
         return $this->getAsRelation('unitOfMeasure');
     }
 
-    function getPicture(): ?Picture\Record
+    public function getPicture(): ?Picture\Record
     {
         return $this->getAsRelation('picture');
     }
@@ -290,7 +292,7 @@ class Record extends Entity
     /**
      * @return Entity\Collection|DefaultDimension\Record[]
      */
-    function getDefaultDimensions(): Entity\Collection
+    public function getDefaultDimensions(): Entity\Collection
     {
         return $this->getAsCollection('defaultDimensions');
     }
@@ -298,7 +300,7 @@ class Record extends Entity
     /**
      * @return Entity\Collection|ItemVariant\Record[]
      */
-    function getItemVariants(): Entity\Collection
+    public function getItemVariants(): Entity\Collection
     {
         return $this->getAsCollection('itemVariants');
     }
@@ -306,7 +308,7 @@ class Record extends Entity
     /**
      * @return Entity\Collection|DocumentAttachment\Record[]
      */
-    function getDocumentAttachments(): Entity\Collection
+    public function getDocumentAttachments(): Entity\Collection
     {
         return $this->getAsCollection('documentAttachments');
     }

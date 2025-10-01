@@ -10,223 +10,225 @@ use Rebel\BCApi2\Entity\SalesShipmentLine;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'id';
+
     protected $classMap = [
         'customer' => Customer\Record::class,
         'salesShipmentLines' => SalesShipmentLine\Record::class,
         'dimensionSetLines' => DimensionSetLine\Record::class,
     ];
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getNumber(): ?string
+    public function getNumber(): ?string
     {
         return $this->get('number');
     }
 
-    function getExternalDocumentNumber(): ?string
+    public function getExternalDocumentNumber(): ?string
     {
         return $this->get('externalDocumentNumber');
     }
 
-    function getInvoiceDate(): ?Carbon
+    public function getInvoiceDate(): ?Carbon
     {
         return $this->getAsDate('invoiceDate');
     }
 
-    function getPostingDate(): ?Carbon
+    public function getPostingDate(): ?Carbon
     {
         return $this->getAsDate('postingDate');
     }
 
-    function getDueDate(): ?Carbon
+    public function getDueDate(): ?Carbon
     {
         return $this->getAsDate('dueDate');
     }
 
-    function getCustomerPurchaseOrderReference(): ?string
+    public function getCustomerPurchaseOrderReference(): ?string
     {
         return $this->get('customerPurchaseOrderReference');
     }
 
-    function getCustomerId(): ?string
+    public function getCustomerId(): ?string
     {
         return $this->get('customerId');
     }
 
-    function getCustomerNumber(): ?string
+    public function getCustomerNumber(): ?string
     {
         return $this->get('customerNumber');
     }
 
-    function getCustomerName(): ?string
+    public function getCustomerName(): ?string
     {
         return $this->get('customerName');
     }
 
-    function getBillToCustomerId(): ?string
+    public function getBillToCustomerId(): ?string
     {
         return $this->get('billToCustomerId');
     }
 
-    function getBillToName(): ?string
+    public function getBillToName(): ?string
     {
         return $this->get('billToName');
     }
 
-    function getBillToCustomerNumber(): ?string
+    public function getBillToCustomerNumber(): ?string
     {
         return $this->get('billToCustomerNumber');
     }
 
-    function getShipToName(): ?string
+    public function getShipToName(): ?string
     {
         return $this->get('shipToName');
     }
 
-    function getShipToContact(): ?string
+    public function getShipToContact(): ?string
     {
         return $this->get('shipToContact');
     }
 
-    function getSellToAddressLine1(): ?string
+    public function getSellToAddressLine1(): ?string
     {
         return $this->get('sellToAddressLine1');
     }
 
-    function getSellToAddressLine2(): ?string
+    public function getSellToAddressLine2(): ?string
     {
         return $this->get('sellToAddressLine2');
     }
 
-    function getSellToCity(): ?string
+    public function getSellToCity(): ?string
     {
         return $this->get('sellToCity');
     }
 
-    function getSellToCountry(): ?string
+    public function getSellToCountry(): ?string
     {
         return $this->get('sellToCountry');
     }
 
-    function getSellToState(): ?string
+    public function getSellToState(): ?string
     {
         return $this->get('sellToState');
     }
 
-    function getSellToPostCode(): ?string
+    public function getSellToPostCode(): ?string
     {
         return $this->get('sellToPostCode');
     }
 
-    function getBillToAddressLine1(): ?string
+    public function getBillToAddressLine1(): ?string
     {
         return $this->get('billToAddressLine1');
     }
 
-    function getBillToAddressLine2(): ?string
+    public function getBillToAddressLine2(): ?string
     {
         return $this->get('billToAddressLine2');
     }
 
-    function getBillToCity(): ?string
+    public function getBillToCity(): ?string
     {
         return $this->get('billToCity');
     }
 
-    function getBillToCountry(): ?string
+    public function getBillToCountry(): ?string
     {
         return $this->get('billToCountry');
     }
 
-    function getBillToState(): ?string
+    public function getBillToState(): ?string
     {
         return $this->get('billToState');
     }
 
-    function getBillToPostCode(): ?string
+    public function getBillToPostCode(): ?string
     {
         return $this->get('billToPostCode');
     }
 
-    function getShipToAddressLine1(): ?string
+    public function getShipToAddressLine1(): ?string
     {
         return $this->get('shipToAddressLine1');
     }
 
-    function getShipToAddressLine2(): ?string
+    public function getShipToAddressLine2(): ?string
     {
         return $this->get('shipToAddressLine2');
     }
 
-    function getShipToCity(): ?string
+    public function getShipToCity(): ?string
     {
         return $this->get('shipToCity');
     }
 
-    function getShipToCountry(): ?string
+    public function getShipToCountry(): ?string
     {
         return $this->get('shipToCountry');
     }
 
-    function getShipToState(): ?string
+    public function getShipToState(): ?string
     {
         return $this->get('shipToState');
     }
 
-    function getShipToPostCode(): ?string
+    public function getShipToPostCode(): ?string
     {
         return $this->get('shipToPostCode');
     }
 
-    function getCurrencyCode(): ?string
+    public function getCurrencyCode(): ?string
     {
         return $this->get('currencyCode');
     }
 
-    function getOrderNumber(): ?string
+    public function getOrderNumber(): ?string
     {
         return $this->get('orderNumber');
     }
 
-    function getPaymentTermsCode(): ?string
+    public function getPaymentTermsCode(): ?string
     {
         return $this->get('paymentTermsCode');
     }
 
-    function getShipmentMethodCode(): ?string
+    public function getShipmentMethodCode(): ?string
     {
         return $this->get('shipmentMethodCode');
     }
 
-    function getSalesperson(): ?string
+    public function getSalesperson(): ?string
     {
         return $this->get('salesperson');
     }
 
-    function getPricesIncludeTax(): ?bool
+    public function getPricesIncludeTax(): ?bool
     {
         return $this->get('pricesIncludeTax');
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    function getPhoneNumber(): ?string
+    public function getPhoneNumber(): ?string
     {
         return $this->get('phoneNumber');
     }
 
-    function getEmail(): ?string
+    public function getEmail(): ?string
     {
         return $this->get('email');
     }
 
-    function getCustomer(): ?Customer\Record
+    public function getCustomer(): ?Customer\Record
     {
         return $this->getAsRelation('customer');
     }
@@ -234,7 +236,7 @@ class Record extends Entity
     /**
      * @return Entity\Collection|SalesShipmentLine\Record[]
      */
-    function getSalesShipmentLines(): Entity\Collection
+    public function getSalesShipmentLines(): Entity\Collection
     {
         return $this->getAsCollection('salesShipmentLines');
     }
@@ -242,7 +244,7 @@ class Record extends Entity
     /**
      * @return Entity\Collection|DimensionSetLine\Record[]
      */
-    function getDimensionSetLines(): Entity\Collection
+    public function getDimensionSetLines(): Entity\Collection
     {
         return $this->getAsCollection('dimensionSetLines');
     }

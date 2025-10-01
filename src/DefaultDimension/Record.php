@@ -14,6 +14,8 @@ use Rebel\BCApi2\Entity\Vendor;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'id';
+
     protected $classMap = [
         'item' => Item\Record::class,
         'account' => Account\Record::class,
@@ -24,130 +26,130 @@ class Record extends Entity
         'employee' => Employee\Record::class,
     ];
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getParentType(): ?string
+    public function getParentType(): ?string
     {
         return $this->get('parentType');
     }
 
-    function setParentType(?string $value): self
+    public function setParentType(?string $value): self
     {
         $this->set('parentType', $value);
         return $this;
     }
 
-    function getParentId(): ?string
+    public function getParentId(): ?string
     {
         return $this->get('parentId');
     }
 
-    function setParentId(?string $value): self
+    public function setParentId(?string $value): self
     {
         $this->set('parentId', $value);
         return $this;
     }
 
-    function getDimensionId(): ?string
+    public function getDimensionId(): ?string
     {
         return $this->get('dimensionId');
     }
 
-    function setDimensionId(?string $value): self
+    public function setDimensionId(?string $value): self
     {
         $this->set('dimensionId', $value);
         return $this;
     }
 
-    function getDimensionCode(): ?string
+    public function getDimensionCode(): ?string
     {
         return $this->get('dimensionCode');
     }
 
-    function setDimensionCode(?string $value): self
+    public function setDimensionCode(?string $value): self
     {
         $this->set('dimensionCode', $value);
         return $this;
     }
 
-    function getDimensionValueId(): ?string
+    public function getDimensionValueId(): ?string
     {
         return $this->get('dimensionValueId');
     }
 
-    function setDimensionValueId(?string $value): self
+    public function setDimensionValueId(?string $value): self
     {
         $this->set('dimensionValueId', $value);
         return $this;
     }
 
-    function getDimensionValueCode(): ?string
+    public function getDimensionValueCode(): ?string
     {
         return $this->get('dimensionValueCode');
     }
 
-    function setDimensionValueCode(?string $value): self
+    public function setDimensionValueCode(?string $value): self
     {
         $this->set('dimensionValueCode', $value);
         return $this;
     }
 
-    function getPostingValidation(): ?string
+    public function getPostingValidation(): ?string
     {
         return $this->get('postingValidation');
     }
 
-    function setPostingValidation(?string $value): self
+    public function setPostingValidation(?string $value): self
     {
         $this->set('postingValidation', $value);
         return $this;
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    function setLastModifiedDateTime(?\DateTime $value): self
+    public function setLastModifiedDateTime(?\DateTime $value): self
     {
         $this->setAsDateTime('lastModifiedDateTime', $value);
         return $this;
     }
 
-    function getItem(): ?Item\Record
+    public function getItem(): ?Item\Record
     {
         return $this->getAsRelation('item');
     }
 
-    function getAccount(): ?Account\Record
+    public function getAccount(): ?Account\Record
     {
         return $this->getAsRelation('account');
     }
 
-    function getDimension(): ?Dimension\Record
+    public function getDimension(): ?Dimension\Record
     {
         return $this->getAsRelation('dimension');
     }
 
-    function getDimensionValue(): ?DimensionValue\Record
+    public function getDimensionValue(): ?DimensionValue\Record
     {
         return $this->getAsRelation('dimensionValue');
     }
 
-    function getCustomer(): ?Customer\Record
+    public function getCustomer(): ?Customer\Record
     {
         return $this->getAsRelation('customer');
     }
 
-    function getVendor(): ?Vendor\Record
+    public function getVendor(): ?Vendor\Record
     {
         return $this->getAsRelation('vendor');
     }
 
-    function getEmployee(): ?Employee\Record
+    public function getEmployee(): ?Employee\Record
     {
         return $this->getAsRelation('employee');
     }

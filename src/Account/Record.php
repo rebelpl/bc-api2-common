@@ -8,79 +8,80 @@ use Rebel\BCApi2\Entity\TrialBalance;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'id';
     protected $classMap = ['trialBalance' => TrialBalance\Record::class];
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getNumber(): ?string
+    public function getNumber(): ?string
     {
         return $this->get('number');
     }
 
-    function getDisplayName(): ?string
+    public function getDisplayName(): ?string
     {
         return $this->get('displayName');
     }
 
-    function getCategory(): ?string
+    public function getCategory(): ?string
     {
         return $this->get('category');
     }
 
-    function getSubCategory(): ?string
+    public function getSubCategory(): ?string
     {
         return $this->get('subCategory');
     }
 
-    function getBlocked(): ?bool
+    public function getBlocked(): ?bool
     {
         return $this->get('blocked');
     }
 
-    function getAccountType(): ?string
+    public function getAccountType(): ?string
     {
         return $this->get('accountType');
     }
 
-    function getDirectPosting(): ?bool
+    public function getDirectPosting(): ?bool
     {
         return $this->get('directPosting');
     }
 
-    function getNetChange(): ?float
+    public function getNetChange(): ?float
     {
         return $this->get('netChange');
     }
 
-    function getConsolidationTranslationMethod(): ?string
+    public function getConsolidationTranslationMethod(): ?string
     {
         return $this->get('consolidationTranslationMethod');
     }
 
-    function getConsolidationDebitAccount(): ?string
+    public function getConsolidationDebitAccount(): ?string
     {
         return $this->get('consolidationDebitAccount');
     }
 
-    function getConsolidationCreditAccount(): ?string
+    public function getConsolidationCreditAccount(): ?string
     {
         return $this->get('consolidationCreditAccount');
     }
 
-    function getExcludeFromConsolidation(): ?bool
+    public function getExcludeFromConsolidation(): ?bool
     {
         return $this->get('excludeFromConsolidation');
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    function getTrialBalance(): ?TrialBalance\Record
+    public function getTrialBalance(): ?TrialBalance\Record
     {
         return $this->getAsRelation('trialBalance');
     }

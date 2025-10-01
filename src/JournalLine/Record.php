@@ -12,6 +12,8 @@ use Rebel\BCApi2\Entity\Journal;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'id';
+
     protected $classMap = [
         'journal' => Journal\Record::class,
         'customerPaymentJournal' => CustomerPaymentJournal\Record::class,
@@ -20,209 +22,209 @@ class Record extends Entity
         'dimensionSetLines' => DimensionSetLine\Record::class,
     ];
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getJournalId(): ?string
+    public function getJournalId(): ?string
     {
         return $this->get('journalId');
     }
 
-    function setJournalId(?string $value): self
+    public function setJournalId(?string $value): self
     {
         $this->set('journalId', $value);
         return $this;
     }
 
-    function getJournalDisplayName(): ?string
+    public function getJournalDisplayName(): ?string
     {
         return $this->get('journalDisplayName');
     }
 
-    function setJournalDisplayName(?string $value): self
+    public function setJournalDisplayName(?string $value): self
     {
         $this->set('journalDisplayName', $value);
         return $this;
     }
 
-    function getLineNumber(): ?int
+    public function getLineNumber(): ?int
     {
         return $this->get('lineNumber');
     }
 
-    function setLineNumber(?int $value): self
+    public function setLineNumber(?int $value): self
     {
         $this->set('lineNumber', $value);
         return $this;
     }
 
-    function getAccountType(): ?string
+    public function getAccountType(): ?string
     {
         return $this->get('accountType');
     }
 
-    function setAccountType(?string $value): self
+    public function setAccountType(?string $value): self
     {
         $this->set('accountType', $value);
         return $this;
     }
 
-    function getAccountId(): ?string
+    public function getAccountId(): ?string
     {
         return $this->get('accountId');
     }
 
-    function setAccountId(?string $value): self
+    public function setAccountId(?string $value): self
     {
         $this->set('accountId', $value);
         return $this;
     }
 
-    function getAccountNumber(): ?string
+    public function getAccountNumber(): ?string
     {
         return $this->get('accountNumber');
     }
 
-    function setAccountNumber(?string $value): self
+    public function setAccountNumber(?string $value): self
     {
         $this->set('accountNumber', $value);
         return $this;
     }
 
-    function getPostingDate(): ?Carbon
+    public function getPostingDate(): ?Carbon
     {
         return $this->getAsDate('postingDate');
     }
 
-    function setPostingDate(?\DateTime $value): self
+    public function setPostingDate(?\DateTime $value): self
     {
         $this->setAsDate('postingDate', $value);
         return $this;
     }
 
-    function getDocumentNumber(): ?string
+    public function getDocumentNumber(): ?string
     {
         return $this->get('documentNumber');
     }
 
-    function setDocumentNumber(?string $value): self
+    public function setDocumentNumber(?string $value): self
     {
         $this->set('documentNumber', $value);
         return $this;
     }
 
-    function getExternalDocumentNumber(): ?string
+    public function getExternalDocumentNumber(): ?string
     {
         return $this->get('externalDocumentNumber');
     }
 
-    function setExternalDocumentNumber(?string $value): self
+    public function setExternalDocumentNumber(?string $value): self
     {
         $this->set('externalDocumentNumber', $value);
         return $this;
     }
 
-    function getAmount(): ?float
+    public function getAmount(): ?float
     {
         return $this->get('amount');
     }
 
-    function setAmount(?float $value): self
+    public function setAmount(?float $value): self
     {
         $this->set('amount', $value);
         return $this;
     }
 
-    function getDescription(): ?string
+    public function getDescription(): ?string
     {
         return $this->get('description');
     }
 
-    function setDescription(?string $value): self
+    public function setDescription(?string $value): self
     {
         $this->set('description', $value);
         return $this;
     }
 
-    function getComment(): ?string
+    public function getComment(): ?string
     {
         return $this->get('comment');
     }
 
-    function setComment(?string $value): self
+    public function setComment(?string $value): self
     {
         $this->set('comment', $value);
         return $this;
     }
 
-    function getTaxCode(): ?string
+    public function getTaxCode(): ?string
     {
         return $this->get('taxCode');
     }
 
-    function setTaxCode(?string $value): self
+    public function setTaxCode(?string $value): self
     {
         $this->set('taxCode', $value);
         return $this;
     }
 
-    function getBalanceAccountType(): ?string
+    public function getBalanceAccountType(): ?string
     {
         return $this->get('balanceAccountType');
     }
 
-    function setBalanceAccountType(?string $value): self
+    public function setBalanceAccountType(?string $value): self
     {
         $this->set('balanceAccountType', $value);
         return $this;
     }
 
-    function getBalancingAccountId(): ?string
+    public function getBalancingAccountId(): ?string
     {
         return $this->get('balancingAccountId');
     }
 
-    function setBalancingAccountId(?string $value): self
+    public function setBalancingAccountId(?string $value): self
     {
         $this->set('balancingAccountId', $value);
         return $this;
     }
 
-    function getBalancingAccountNumber(): ?string
+    public function getBalancingAccountNumber(): ?string
     {
         return $this->get('balancingAccountNumber');
     }
 
-    function setBalancingAccountNumber(?string $value): self
+    public function setBalancingAccountNumber(?string $value): self
     {
         $this->set('balancingAccountNumber', $value);
         return $this;
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    function setLastModifiedDateTime(?\DateTime $value): self
+    public function setLastModifiedDateTime(?\DateTime $value): self
     {
         $this->setAsDateTime('lastModifiedDateTime', $value);
         return $this;
     }
 
-    function getJournal(): ?Journal\Record
+    public function getJournal(): ?Journal\Record
     {
         return $this->getAsRelation('journal');
     }
 
-    function getCustomerPaymentJournal(): ?CustomerPaymentJournal\Record
+    public function getCustomerPaymentJournal(): ?CustomerPaymentJournal\Record
     {
         return $this->getAsRelation('customerPaymentJournal');
     }
 
-    function getAccount(): ?Account\Record
+    public function getAccount(): ?Account\Record
     {
         return $this->getAsRelation('account');
     }
@@ -230,7 +232,7 @@ class Record extends Entity
     /**
      * @return Entity\Collection|Attachment\Record[]
      */
-    function getAttachments(): Entity\Collection
+    public function getAttachments(): Entity\Collection
     {
         return $this->getAsCollection('attachments');
     }
@@ -238,7 +240,7 @@ class Record extends Entity
     /**
      * @return Entity\Collection|DimensionSetLine\Record[]
      */
-    function getDimensionSetLines(): Entity\Collection
+    public function getDimensionSetLines(): Entity\Collection
     {
         return $this->getAsCollection('dimensionSetLines');
     }

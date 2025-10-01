@@ -8,49 +8,50 @@ use Rebel\BCApi2\Entity\Account;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'accountId';
     protected $classMap = ['account' => Account\Record::class];
 
-    function getAccountId(): ?string
+    public function getAccountId(): ?string
     {
         return $this->get('accountId');
     }
 
-    function getNumber(): ?string
+    public function getNumber(): ?string
     {
         return $this->get('number');
     }
 
-    function getAccountType(): ?string
+    public function getAccountType(): ?string
     {
         return $this->get('accountType');
     }
 
-    function getDisplay(): ?string
+    public function getDisplay(): ?string
     {
         return $this->get('display');
     }
 
-    function getTotalDebit(): ?string
+    public function getTotalDebit(): ?string
     {
         return $this->get('totalDebit');
     }
 
-    function getTotalCredit(): ?string
+    public function getTotalCredit(): ?string
     {
         return $this->get('totalCredit');
     }
 
-    function getBalanceAtDateDebit(): ?string
+    public function getBalanceAtDateDebit(): ?string
     {
         return $this->get('balanceAtDateDebit');
     }
 
-    function getBalanceAtDateCredit(): ?string
+    public function getBalanceAtDateCredit(): ?string
     {
         return $this->get('balanceAtDateCredit');
     }
 
-    function getAccount(): ?Account\Record
+    public function getAccount(): ?Account\Record
     {
         return $this->getAsRelation('account');
     }

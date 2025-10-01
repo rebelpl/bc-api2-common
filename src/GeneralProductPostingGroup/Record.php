@@ -7,32 +7,34 @@ use Rebel\BCApi2\Entity;
 
 class Record extends Entity
 {
-    function getId(): ?string
+    protected $primaryKey = 'id';
+
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getCode(): ?string
+    public function getCode(): ?string
     {
         return $this->get('code');
     }
 
-    function getDescription(): ?string
+    public function getDescription(): ?string
     {
         return $this->get('description');
     }
 
-    function getDefaultVATProductPostingGroup(): ?string
+    public function getDefaultVATProductPostingGroup(): ?string
     {
         return $this->get('defaultVATProductPostingGroup');
     }
 
-    function getAutoInsertDefault(): ?bool
+    public function getAutoInsertDefault(): ?bool
     {
         return $this->get('autoInsertDefault');
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }

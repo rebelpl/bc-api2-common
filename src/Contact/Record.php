@@ -9,261 +9,262 @@ use Rebel\BCApi2\Entity\Picture;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'id';
     protected $classMap = ['contactInformation' => ContactInformation\Record::class, 'picture' => Picture\Record::class];
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getNumber(): ?string
+    public function getNumber(): ?string
     {
         return $this->get('number');
     }
 
-    function setNumber(?string $value): self
+    public function setNumber(?string $value): self
     {
         $this->set('number', $value);
         return $this;
     }
 
-    function getType(): ?string
+    public function getType(): ?string
     {
         return $this->get('type');
     }
 
-    function setType(?string $value): self
+    public function setType(?string $value): self
     {
         $this->set('type', $value);
         return $this;
     }
 
-    function getDisplayName(): ?string
+    public function getDisplayName(): ?string
     {
         return $this->get('displayName');
     }
 
-    function setDisplayName(?string $value): self
+    public function setDisplayName(?string $value): self
     {
         $this->set('displayName', $value);
         return $this;
     }
 
-    function getJobTitle(): ?string
+    public function getJobTitle(): ?string
     {
         return $this->get('jobTitle');
     }
 
-    function setJobTitle(?string $value): self
+    public function setJobTitle(?string $value): self
     {
         $this->set('jobTitle', $value);
         return $this;
     }
 
-    function getCompanyNumber(): ?string
+    public function getCompanyNumber(): ?string
     {
         return $this->get('companyNumber');
     }
 
-    function setCompanyNumber(?string $value): self
+    public function setCompanyNumber(?string $value): self
     {
         $this->set('companyNumber', $value);
         return $this;
     }
 
-    function getCompanyName(): ?string
+    public function getCompanyName(): ?string
     {
         return $this->get('companyName');
     }
 
-    function setCompanyName(?string $value): self
+    public function setCompanyName(?string $value): self
     {
         $this->set('companyName', $value);
         return $this;
     }
 
-    function getContactBusinessRelation(): ?string
+    public function getContactBusinessRelation(): ?string
     {
         return $this->get('contactBusinessRelation');
     }
 
-    function setContactBusinessRelation(?string $value): self
+    public function setContactBusinessRelation(?string $value): self
     {
         $this->set('contactBusinessRelation', $value);
         return $this;
     }
 
-    function getAddressLine1(): ?string
+    public function getAddressLine1(): ?string
     {
         return $this->get('addressLine1');
     }
 
-    function setAddressLine1(?string $value): self
+    public function setAddressLine1(?string $value): self
     {
         $this->set('addressLine1', $value);
         return $this;
     }
 
-    function getAddressLine2(): ?string
+    public function getAddressLine2(): ?string
     {
         return $this->get('addressLine2');
     }
 
-    function setAddressLine2(?string $value): self
+    public function setAddressLine2(?string $value): self
     {
         $this->set('addressLine2', $value);
         return $this;
     }
 
-    function getCity(): ?string
+    public function getCity(): ?string
     {
         return $this->get('city');
     }
 
-    function setCity(?string $value): self
+    public function setCity(?string $value): self
     {
         $this->set('city', $value);
         return $this;
     }
 
-    function getState(): ?string
+    public function getState(): ?string
     {
         return $this->get('state');
     }
 
-    function setState(?string $value): self
+    public function setState(?string $value): self
     {
         $this->set('state', $value);
         return $this;
     }
 
-    function getCountry(): ?string
+    public function getCountry(): ?string
     {
         return $this->get('country');
     }
 
-    function setCountry(?string $value): self
+    public function setCountry(?string $value): self
     {
         $this->set('country', $value);
         return $this;
     }
 
-    function getPostalCode(): ?string
+    public function getPostalCode(): ?string
     {
         return $this->get('postalCode');
     }
 
-    function setPostalCode(?string $value): self
+    public function setPostalCode(?string $value): self
     {
         $this->set('postalCode', $value);
         return $this;
     }
 
-    function getPhoneNumber(): ?string
+    public function getPhoneNumber(): ?string
     {
         return $this->get('phoneNumber');
     }
 
-    function setPhoneNumber(?string $value): self
+    public function setPhoneNumber(?string $value): self
     {
         $this->set('phoneNumber', $value);
         return $this;
     }
 
-    function getMobilePhoneNumber(): ?string
+    public function getMobilePhoneNumber(): ?string
     {
         return $this->get('mobilePhoneNumber');
     }
 
-    function setMobilePhoneNumber(?string $value): self
+    public function setMobilePhoneNumber(?string $value): self
     {
         $this->set('mobilePhoneNumber', $value);
         return $this;
     }
 
-    function getEmail(): ?string
+    public function getEmail(): ?string
     {
         return $this->get('email');
     }
 
-    function setEmail(?string $value): self
+    public function setEmail(?string $value): self
     {
         $this->set('email', $value);
         return $this;
     }
 
-    function getWebsite(): ?string
+    public function getWebsite(): ?string
     {
         return $this->get('website');
     }
 
-    function setWebsite(?string $value): self
+    public function setWebsite(?string $value): self
     {
         $this->set('website', $value);
         return $this;
     }
 
-    function getSearchName(): ?string
+    public function getSearchName(): ?string
     {
         return $this->get('searchName');
     }
 
-    function setSearchName(?string $value): self
+    public function setSearchName(?string $value): self
     {
         $this->set('searchName', $value);
         return $this;
     }
 
-    function getPrivacyBlocked(): ?bool
+    public function getPrivacyBlocked(): ?bool
     {
         return $this->get('privacyBlocked');
     }
 
-    function setPrivacyBlocked(?bool $value): self
+    public function setPrivacyBlocked(?bool $value): self
     {
         $this->set('privacyBlocked', $value);
         return $this;
     }
 
-    function getTaxRegistrationNumber(): ?string
+    public function getTaxRegistrationNumber(): ?string
     {
         return $this->get('taxRegistrationNumber');
     }
 
-    function setTaxRegistrationNumber(?string $value): self
+    public function setTaxRegistrationNumber(?string $value): self
     {
         $this->set('taxRegistrationNumber', $value);
         return $this;
     }
 
-    function getLastInteractionDate(): ?Carbon
+    public function getLastInteractionDate(): ?Carbon
     {
         return $this->getAsDate('lastInteractionDate');
     }
 
-    function setLastInteractionDate(?\DateTime $value): self
+    public function setLastInteractionDate(?\DateTime $value): self
     {
         $this->setAsDate('lastInteractionDate', $value);
         return $this;
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    function setLastModifiedDateTime(?\DateTime $value): self
+    public function setLastModifiedDateTime(?\DateTime $value): self
     {
         $this->setAsDateTime('lastModifiedDateTime', $value);
         return $this;
     }
 
-    function getContactInformation(): ?ContactInformation\Record
+    public function getContactInformation(): ?ContactInformation\Record
     {
         return $this->getAsRelation('contactInformation');
     }
 
-    function getPicture(): ?Picture\Record
+    public function getPicture(): ?Picture\Record
     {
         return $this->getAsRelation('picture');
     }

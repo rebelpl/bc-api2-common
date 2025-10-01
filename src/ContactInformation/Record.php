@@ -10,53 +10,55 @@ use Rebel\BCApi2\Entity\Vendor;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'contactId';
+
     protected $classMap = [
         'customer' => Customer\Record::class,
         'contact' => Contact\Record::class,
         'vendor' => Vendor\Record::class,
     ];
 
-    function getContactId(): ?string
+    public function getContactId(): ?string
     {
         return $this->get('contactId');
     }
 
-    function getContactNumber(): ?string
+    public function getContactNumber(): ?string
     {
         return $this->get('contactNumber');
     }
 
-    function getContactName(): ?string
+    public function getContactName(): ?string
     {
         return $this->get('contactName');
     }
 
-    function getContactType(): ?string
+    public function getContactType(): ?string
     {
         return $this->get('contactType');
     }
 
-    function getRelatedId(): ?string
+    public function getRelatedId(): ?string
     {
         return $this->get('relatedId');
     }
 
-    function getRelatedType(): ?string
+    public function getRelatedType(): ?string
     {
         return $this->get('relatedType');
     }
 
-    function getCustomer(): ?Customer\Record
+    public function getCustomer(): ?Customer\Record
     {
         return $this->getAsRelation('customer');
     }
 
-    function getContact(): ?Contact\Record
+    public function getContact(): ?Contact\Record
     {
         return $this->getAsRelation('contact');
     }
 
-    function getVendor(): ?Vendor\Record
+    public function getVendor(): ?Vendor\Record
     {
         return $this->getAsRelation('vendor');
     }

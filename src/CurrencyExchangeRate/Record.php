@@ -7,37 +7,39 @@ use Rebel\BCApi2\Entity;
 
 class Record extends Entity
 {
-    function getId(): ?string
+    protected $primaryKey = 'id';
+
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getCurrencyCode(): ?string
+    public function getCurrencyCode(): ?string
     {
         return $this->get('currencyCode');
     }
 
-    function getStartingDate(): ?Carbon
+    public function getStartingDate(): ?Carbon
     {
         return $this->getAsDate('startingDate');
     }
 
-    function getExchangeRateAmount(): ?float
+    public function getExchangeRateAmount(): ?float
     {
         return $this->get('exchangeRateAmount');
     }
 
-    function getRelationalCurrencyCode(): ?string
+    public function getRelationalCurrencyCode(): ?string
     {
         return $this->get('relationalCurrencyCode');
     }
 
-    function getRelationalExchangeRateAmount(): ?float
+    public function getRelationalExchangeRateAmount(): ?float
     {
         return $this->get('relationalExchangeRateAmount');
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }

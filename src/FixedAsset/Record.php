@@ -9,151 +9,152 @@ use Rebel\BCApi2\Entity\FixedAssetLocation;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'id';
     protected $classMap = ['fixedAssetLocation' => FixedAssetLocation\Record::class, 'employee' => Employee\Record::class];
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getNumber(): ?string
+    public function getNumber(): ?string
     {
         return $this->get('number');
     }
 
-    function setNumber(?string $value): self
+    public function setNumber(?string $value): self
     {
         $this->set('number', $value);
         return $this;
     }
 
-    function getDisplayName(): ?string
+    public function getDisplayName(): ?string
     {
         return $this->get('displayName');
     }
 
-    function setDisplayName(?string $value): self
+    public function setDisplayName(?string $value): self
     {
         $this->set('displayName', $value);
         return $this;
     }
 
-    function getFixedAssetLocationCode(): ?string
+    public function getFixedAssetLocationCode(): ?string
     {
         return $this->get('fixedAssetLocationCode');
     }
 
-    function setFixedAssetLocationCode(?string $value): self
+    public function setFixedAssetLocationCode(?string $value): self
     {
         $this->set('fixedAssetLocationCode', $value);
         return $this;
     }
 
-    function getFixedAssetLocationId(): ?string
+    public function getFixedAssetLocationId(): ?string
     {
         return $this->get('fixedAssetLocationId');
     }
 
-    function setFixedAssetLocationId(?string $value): self
+    public function setFixedAssetLocationId(?string $value): self
     {
         $this->set('fixedAssetLocationId', $value);
         return $this;
     }
 
-    function getClassCode(): ?string
+    public function getClassCode(): ?string
     {
         return $this->get('classCode');
     }
 
-    function setClassCode(?string $value): self
+    public function setClassCode(?string $value): self
     {
         $this->set('classCode', $value);
         return $this;
     }
 
-    function getSubclassCode(): ?string
+    public function getSubclassCode(): ?string
     {
         return $this->get('subclassCode');
     }
 
-    function setSubclassCode(?string $value): self
+    public function setSubclassCode(?string $value): self
     {
         $this->set('subclassCode', $value);
         return $this;
     }
 
-    function getBlocked(): ?bool
+    public function getBlocked(): ?bool
     {
         return $this->get('blocked');
     }
 
-    function setBlocked(?bool $value): self
+    public function setBlocked(?bool $value): self
     {
         $this->set('blocked', $value);
         return $this;
     }
 
-    function getSerialNumber(): ?string
+    public function getSerialNumber(): ?string
     {
         return $this->get('serialNumber');
     }
 
-    function setSerialNumber(?string $value): self
+    public function setSerialNumber(?string $value): self
     {
         $this->set('serialNumber', $value);
         return $this;
     }
 
-    function getEmployeeNumber(): ?string
+    public function getEmployeeNumber(): ?string
     {
         return $this->get('employeeNumber');
     }
 
-    function setEmployeeNumber(?string $value): self
+    public function setEmployeeNumber(?string $value): self
     {
         $this->set('employeeNumber', $value);
         return $this;
     }
 
-    function getEmployeeId(): ?string
+    public function getEmployeeId(): ?string
     {
         return $this->get('employeeId');
     }
 
-    function setEmployeeId(?string $value): self
+    public function setEmployeeId(?string $value): self
     {
         $this->set('employeeId', $value);
         return $this;
     }
 
-    function getUnderMaintenance(): ?bool
+    public function getUnderMaintenance(): ?bool
     {
         return $this->get('underMaintenance');
     }
 
-    function setUnderMaintenance(?bool $value): self
+    public function setUnderMaintenance(?bool $value): self
     {
         $this->set('underMaintenance', $value);
         return $this;
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    function setLastModifiedDateTime(?\DateTime $value): self
+    public function setLastModifiedDateTime(?\DateTime $value): self
     {
         $this->setAsDateTime('lastModifiedDateTime', $value);
         return $this;
     }
 
-    function getFixedAssetLocation(): ?FixedAssetLocation\Record
+    public function getFixedAssetLocation(): ?FixedAssetLocation\Record
     {
         return $this->getAsRelation('fixedAssetLocation');
     }
 
-    function getEmployee(): ?Employee\Record
+    public function getEmployee(): ?Employee\Record
     {
         return $this->getAsRelation('employee');
     }

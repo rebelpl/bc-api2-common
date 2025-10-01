@@ -14,6 +14,8 @@ use Rebel\BCApi2\Entity\UnitOfMeasure;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'id';
+
     protected $classMap = [
         'salesCreditMemo' => SalesCreditMemo\Record::class,
         'item' => Item\Record::class,
@@ -24,329 +26,329 @@ class Record extends Entity
         'location' => Location\Record::class,
     ];
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getDocumentId(): ?string
+    public function getDocumentId(): ?string
     {
         return $this->get('documentId');
     }
 
-    function setDocumentId(?string $value): self
+    public function setDocumentId(?string $value): self
     {
         $this->set('documentId', $value);
         return $this;
     }
 
-    function getSequence(): ?int
+    public function getSequence(): ?int
     {
         return $this->get('sequence');
     }
 
-    function setSequence(?int $value): self
+    public function setSequence(?int $value): self
     {
         $this->set('sequence', $value);
         return $this;
     }
 
-    function getItemId(): ?string
+    public function getItemId(): ?string
     {
         return $this->get('itemId');
     }
 
-    function setItemId(?string $value): self
+    public function setItemId(?string $value): self
     {
         $this->set('itemId', $value);
         return $this;
     }
 
-    function getAccountId(): ?string
+    public function getAccountId(): ?string
     {
         return $this->get('accountId');
     }
 
-    function setAccountId(?string $value): self
+    public function setAccountId(?string $value): self
     {
         $this->set('accountId', $value);
         return $this;
     }
 
-    function getLineType(): ?string
+    public function getLineType(): ?string
     {
         return $this->get('lineType');
     }
 
-    function setLineType(?string $value): self
+    public function setLineType(?string $value): self
     {
         $this->set('lineType', $value);
         return $this;
     }
 
-    function getLineObjectNumber(): ?string
+    public function getLineObjectNumber(): ?string
     {
         return $this->get('lineObjectNumber');
     }
 
-    function setLineObjectNumber(?string $value): self
+    public function setLineObjectNumber(?string $value): self
     {
         $this->set('lineObjectNumber', $value);
         return $this;
     }
 
-    function getDescription(): ?string
+    public function getDescription(): ?string
     {
         return $this->get('description');
     }
 
-    function setDescription(?string $value): self
+    public function setDescription(?string $value): self
     {
         $this->set('description', $value);
         return $this;
     }
 
-    function getDescription2(): ?string
+    public function getDescription2(): ?string
     {
         return $this->get('description2');
     }
 
-    function setDescription2(?string $value): self
+    public function setDescription2(?string $value): self
     {
         $this->set('description2', $value);
         return $this;
     }
 
-    function getUnitOfMeasureId(): ?string
+    public function getUnitOfMeasureId(): ?string
     {
         return $this->get('unitOfMeasureId');
     }
 
-    function setUnitOfMeasureId(?string $value): self
+    public function setUnitOfMeasureId(?string $value): self
     {
         $this->set('unitOfMeasureId', $value);
         return $this;
     }
 
-    function getUnitOfMeasureCode(): ?string
+    public function getUnitOfMeasureCode(): ?string
     {
         return $this->get('unitOfMeasureCode');
     }
 
-    function setUnitOfMeasureCode(?string $value): self
+    public function setUnitOfMeasureCode(?string $value): self
     {
         $this->set('unitOfMeasureCode', $value);
         return $this;
     }
 
-    function getUnitPrice(): ?float
+    public function getUnitPrice(): ?float
     {
         return $this->get('unitPrice');
     }
 
-    function setUnitPrice(?float $value): self
+    public function setUnitPrice(?float $value): self
     {
         $this->set('unitPrice', $value);
         return $this;
     }
 
-    function getQuantity(): ?float
+    public function getQuantity(): ?float
     {
         return $this->get('quantity');
     }
 
-    function setQuantity(?float $value): self
+    public function setQuantity(?float $value): self
     {
         $this->set('quantity', $value);
         return $this;
     }
 
-    function getDiscountAmount(): ?float
+    public function getDiscountAmount(): ?float
     {
         return $this->get('discountAmount');
     }
 
-    function setDiscountAmount(?float $value): self
+    public function setDiscountAmount(?float $value): self
     {
         $this->set('discountAmount', $value);
         return $this;
     }
 
-    function getDiscountPercent(): ?float
+    public function getDiscountPercent(): ?float
     {
         return $this->get('discountPercent');
     }
 
-    function setDiscountPercent(?float $value): self
+    public function setDiscountPercent(?float $value): self
     {
         $this->set('discountPercent', $value);
         return $this;
     }
 
-    function getDiscountAppliedBeforeTax(): ?bool
+    public function getDiscountAppliedBeforeTax(): ?bool
     {
         return $this->get('discountAppliedBeforeTax');
     }
 
-    function setDiscountAppliedBeforeTax(?bool $value): self
+    public function setDiscountAppliedBeforeTax(?bool $value): self
     {
         $this->set('discountAppliedBeforeTax', $value);
         return $this;
     }
 
-    function getAmountExcludingTax(): ?float
+    public function getAmountExcludingTax(): ?float
     {
         return $this->get('amountExcludingTax');
     }
 
-    function setAmountExcludingTax(?float $value): self
+    public function setAmountExcludingTax(?float $value): self
     {
         $this->set('amountExcludingTax', $value);
         return $this;
     }
 
-    function getTaxCode(): ?string
+    public function getTaxCode(): ?string
     {
         return $this->get('taxCode');
     }
 
-    function setTaxCode(?string $value): self
+    public function setTaxCode(?string $value): self
     {
         $this->set('taxCode', $value);
         return $this;
     }
 
-    function getTaxPercent(): ?float
+    public function getTaxPercent(): ?float
     {
         return $this->get('taxPercent');
     }
 
-    function setTaxPercent(?float $value): self
+    public function setTaxPercent(?float $value): self
     {
         $this->set('taxPercent', $value);
         return $this;
     }
 
-    function getTotalTaxAmount(): ?float
+    public function getTotalTaxAmount(): ?float
     {
         return $this->get('totalTaxAmount');
     }
 
-    function setTotalTaxAmount(?float $value): self
+    public function setTotalTaxAmount(?float $value): self
     {
         $this->set('totalTaxAmount', $value);
         return $this;
     }
 
-    function getAmountIncludingTax(): ?float
+    public function getAmountIncludingTax(): ?float
     {
         return $this->get('amountIncludingTax');
     }
 
-    function setAmountIncludingTax(?float $value): self
+    public function setAmountIncludingTax(?float $value): self
     {
         $this->set('amountIncludingTax', $value);
         return $this;
     }
 
-    function getInvoiceDiscountAllocation(): ?float
+    public function getInvoiceDiscountAllocation(): ?float
     {
         return $this->get('invoiceDiscountAllocation');
     }
 
-    function setInvoiceDiscountAllocation(?float $value): self
+    public function setInvoiceDiscountAllocation(?float $value): self
     {
         $this->set('invoiceDiscountAllocation', $value);
         return $this;
     }
 
-    function getNetAmount(): ?float
+    public function getNetAmount(): ?float
     {
         return $this->get('netAmount');
     }
 
-    function setNetAmount(?float $value): self
+    public function setNetAmount(?float $value): self
     {
         $this->set('netAmount', $value);
         return $this;
     }
 
-    function getNetTaxAmount(): ?float
+    public function getNetTaxAmount(): ?float
     {
         return $this->get('netTaxAmount');
     }
 
-    function setNetTaxAmount(?float $value): self
+    public function setNetTaxAmount(?float $value): self
     {
         $this->set('netTaxAmount', $value);
         return $this;
     }
 
-    function getNetAmountIncludingTax(): ?float
+    public function getNetAmountIncludingTax(): ?float
     {
         return $this->get('netAmountIncludingTax');
     }
 
-    function setNetAmountIncludingTax(?float $value): self
+    public function setNetAmountIncludingTax(?float $value): self
     {
         $this->set('netAmountIncludingTax', $value);
         return $this;
     }
 
-    function getShipmentDate(): ?Carbon
+    public function getShipmentDate(): ?Carbon
     {
         return $this->getAsDate('shipmentDate');
     }
 
-    function setShipmentDate(?\DateTime $value): self
+    public function setShipmentDate(?\DateTime $value): self
     {
         $this->setAsDate('shipmentDate', $value);
         return $this;
     }
 
-    function getItemVariantId(): ?string
+    public function getItemVariantId(): ?string
     {
         return $this->get('itemVariantId');
     }
 
-    function setItemVariantId(?string $value): self
+    public function setItemVariantId(?string $value): self
     {
         $this->set('itemVariantId', $value);
         return $this;
     }
 
-    function getLocationId(): ?string
+    public function getLocationId(): ?string
     {
         return $this->get('locationId');
     }
 
-    function setLocationId(?string $value): self
+    public function setLocationId(?string $value): self
     {
         $this->set('locationId', $value);
         return $this;
     }
 
-    function getSalesCreditMemo(): ?SalesCreditMemo\Record
+    public function getSalesCreditMemo(): ?SalesCreditMemo\Record
     {
         return $this->getAsRelation('salesCreditMemo');
     }
 
-    function getItem(): ?Item\Record
+    public function getItem(): ?Item\Record
     {
         return $this->getAsRelation('item');
     }
 
-    function getAccount(): ?Account\Record
+    public function getAccount(): ?Account\Record
     {
         return $this->getAsRelation('account');
     }
 
-    function getUnitOfMeasure(): ?UnitOfMeasure\Record
+    public function getUnitOfMeasure(): ?UnitOfMeasure\Record
     {
         return $this->getAsRelation('unitOfMeasure');
     }
 
-    function getItemVariant(): ?ItemVariant\Record
+    public function getItemVariant(): ?ItemVariant\Record
     {
         return $this->getAsRelation('itemVariant');
     }
@@ -354,12 +356,12 @@ class Record extends Entity
     /**
      * @return Entity\Collection|DimensionSetLine\Record[]
      */
-    function getDimensionSetLines(): Entity\Collection
+    public function getDimensionSetLines(): Entity\Collection
     {
         return $this->getAsCollection('dimensionSetLines');
     }
 
-    function getLocation(): ?Location\Record
+    public function getLocation(): ?Location\Record
     {
         return $this->getAsRelation('location');
     }

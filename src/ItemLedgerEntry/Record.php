@@ -7,72 +7,74 @@ use Rebel\BCApi2\Entity;
 
 class Record extends Entity
 {
-    function getId(): ?string
+    protected $primaryKey = 'id';
+
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getEntryNumber(): ?int
+    public function getEntryNumber(): ?int
     {
         return $this->get('entryNumber');
     }
 
-    function getItemNumber(): ?string
+    public function getItemNumber(): ?string
     {
         return $this->get('itemNumber');
     }
 
-    function getPostingDate(): ?Carbon
+    public function getPostingDate(): ?Carbon
     {
         return $this->getAsDate('postingDate');
     }
 
-    function getEntryType(): ?string
+    public function getEntryType(): ?string
     {
         return $this->get('entryType');
     }
 
-    function getSourceNumber(): ?string
+    public function getSourceNumber(): ?string
     {
         return $this->get('sourceNumber');
     }
 
-    function getSourceType(): ?string
+    public function getSourceType(): ?string
     {
         return $this->get('sourceType');
     }
 
-    function getDocumentNumber(): ?string
+    public function getDocumentNumber(): ?string
     {
         return $this->get('documentNumber');
     }
 
-    function getDocumentType(): ?string
+    public function getDocumentType(): ?string
     {
         return $this->get('documentType');
     }
 
-    function getDescription(): ?string
+    public function getDescription(): ?string
     {
         return $this->get('description');
     }
 
-    function getQuantity(): ?float
+    public function getQuantity(): ?float
     {
         return $this->get('quantity');
     }
 
-    function getSalesAmountActual(): ?float
+    public function getSalesAmountActual(): ?float
     {
         return $this->get('salesAmountActual');
     }
 
-    function getCostAmountActual(): ?float
+    public function getCostAmountActual(): ?float
     {
         return $this->get('costAmountActual');
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }

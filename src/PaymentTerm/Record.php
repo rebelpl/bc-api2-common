@@ -7,83 +7,85 @@ use Rebel\BCApi2\Entity;
 
 class Record extends Entity
 {
-    function getId(): ?string
+    protected $primaryKey = 'id';
+
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getCode(): ?string
+    public function getCode(): ?string
     {
         return $this->get('code');
     }
 
-    function setCode(?string $value): self
+    public function setCode(?string $value): self
     {
         $this->set('code', $value);
         return $this;
     }
 
-    function getDisplayName(): ?string
+    public function getDisplayName(): ?string
     {
         return $this->get('displayName');
     }
 
-    function setDisplayName(?string $value): self
+    public function setDisplayName(?string $value): self
     {
         $this->set('displayName', $value);
         return $this;
     }
 
-    function getDueDateCalculation(): ?string
+    public function getDueDateCalculation(): ?string
     {
         return $this->get('dueDateCalculation');
     }
 
-    function setDueDateCalculation(?string $value): self
+    public function setDueDateCalculation(?string $value): self
     {
         $this->set('dueDateCalculation', $value);
         return $this;
     }
 
-    function getDiscountDateCalculation(): ?string
+    public function getDiscountDateCalculation(): ?string
     {
         return $this->get('discountDateCalculation');
     }
 
-    function setDiscountDateCalculation(?string $value): self
+    public function setDiscountDateCalculation(?string $value): self
     {
         $this->set('discountDateCalculation', $value);
         return $this;
     }
 
-    function getDiscountPercent(): ?float
+    public function getDiscountPercent(): ?float
     {
         return $this->get('discountPercent');
     }
 
-    function setDiscountPercent(?float $value): self
+    public function setDiscountPercent(?float $value): self
     {
         $this->set('discountPercent', $value);
         return $this;
     }
 
-    function getCalculateDiscountOnCreditMemos(): ?bool
+    public function getCalculateDiscountOnCreditMemos(): ?bool
     {
         return $this->get('calculateDiscountOnCreditMemos');
     }
 
-    function setCalculateDiscountOnCreditMemos(?bool $value): self
+    public function setCalculateDiscountOnCreditMemos(?bool $value): self
     {
         $this->set('calculateDiscountOnCreditMemos', $value);
         return $this;
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    function setLastModifiedDateTime(?\DateTime $value): self
+    public function setLastModifiedDateTime(?\DateTime $value): self
     {
         $this->setAsDateTime('lastModifiedDateTime', $value);
         return $this;

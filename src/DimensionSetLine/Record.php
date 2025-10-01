@@ -30,6 +30,8 @@ use Rebel\BCApi2\Entity\VendorPayment;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'id';
+
     protected $classMap = [
         'salesInvoice' => SalesInvoice\Record::class,
         'salesInvoiceLine' => SalesInvoiceLine\Record::class,
@@ -56,221 +58,221 @@ class Record extends Entity
         'purchaseCreditMemoLine' => PurchaseCreditMemoLine\Record::class,
     ];
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getCode(): ?string
+    public function getCode(): ?string
     {
         return $this->get('code');
     }
 
-    function setCode(?string $value): self
+    public function setCode(?string $value): self
     {
         $this->set('code', $value);
         return $this;
     }
 
-    function getConsolidationCode(): ?string
+    public function getConsolidationCode(): ?string
     {
         return $this->get('consolidationCode');
     }
 
-    function setConsolidationCode(?string $value): self
+    public function setConsolidationCode(?string $value): self
     {
         $this->set('consolidationCode', $value);
         return $this;
     }
 
-    function getParentId(): ?string
+    public function getParentId(): ?string
     {
         return $this->get('parentId');
     }
 
-    function setParentId(?string $value): self
+    public function setParentId(?string $value): self
     {
         $this->set('parentId', $value);
         return $this;
     }
 
-    function getParentType(): ?string
+    public function getParentType(): ?string
     {
         return $this->get('parentType');
     }
 
-    function setParentType(?string $value): self
+    public function setParentType(?string $value): self
     {
         $this->set('parentType', $value);
         return $this;
     }
 
-    function getDisplayName(): ?string
+    public function getDisplayName(): ?string
     {
         return $this->get('displayName');
     }
 
-    function setDisplayName(?string $value): self
+    public function setDisplayName(?string $value): self
     {
         $this->set('displayName', $value);
         return $this;
     }
 
-    function getValueId(): ?string
+    public function getValueId(): ?string
     {
         return $this->get('valueId');
     }
 
-    function setValueId(?string $value): self
+    public function setValueId(?string $value): self
     {
         $this->set('valueId', $value);
         return $this;
     }
 
-    function getValueCode(): ?string
+    public function getValueCode(): ?string
     {
         return $this->get('valueCode');
     }
 
-    function setValueCode(?string $value): self
+    public function setValueCode(?string $value): self
     {
         $this->set('valueCode', $value);
         return $this;
     }
 
-    function getValueConsolidationCode(): ?string
+    public function getValueConsolidationCode(): ?string
     {
         return $this->get('valueConsolidationCode');
     }
 
-    function setValueConsolidationCode(?string $value): self
+    public function setValueConsolidationCode(?string $value): self
     {
         $this->set('valueConsolidationCode', $value);
         return $this;
     }
 
-    function getValueDisplayName(): ?string
+    public function getValueDisplayName(): ?string
     {
         return $this->get('valueDisplayName');
     }
 
-    function setValueDisplayName(?string $value): self
+    public function setValueDisplayName(?string $value): self
     {
         $this->set('valueDisplayName', $value);
         return $this;
     }
 
-    function getSalesInvoice(): ?SalesInvoice\Record
+    public function getSalesInvoice(): ?SalesInvoice\Record
     {
         return $this->getAsRelation('salesInvoice');
     }
 
-    function getSalesInvoiceLine(): ?SalesInvoiceLine\Record
+    public function getSalesInvoiceLine(): ?SalesInvoiceLine\Record
     {
         return $this->getAsRelation('salesInvoiceLine');
     }
 
-    function getCustomerPayment(): ?CustomerPayment\Record
+    public function getCustomerPayment(): ?CustomerPayment\Record
     {
         return $this->getAsRelation('customerPayment');
     }
 
-    function getJournalLine(): ?JournalLine\Record
+    public function getJournalLine(): ?JournalLine\Record
     {
         return $this->getAsRelation('journalLine');
     }
 
-    function getTimeRegistrationEntry(): ?TimeRegistrationEntry\Record
+    public function getTimeRegistrationEntry(): ?TimeRegistrationEntry\Record
     {
         return $this->getAsRelation('timeRegistrationEntry');
     }
 
-    function getGeneralLedgerEntry(): ?GeneralLedgerEntry\Record
+    public function getGeneralLedgerEntry(): ?GeneralLedgerEntry\Record
     {
         return $this->getAsRelation('generalLedgerEntry');
     }
 
-    function getSalesOrder(): ?SalesOrder\Record
+    public function getSalesOrder(): ?SalesOrder\Record
     {
         return $this->getAsRelation('salesOrder');
     }
 
-    function getSalesOrderLine(): ?SalesOrderLine\Record
+    public function getSalesOrderLine(): ?SalesOrderLine\Record
     {
         return $this->getAsRelation('salesOrderLine');
     }
 
-    function getSalesQuote(): ?SalesQuote\Record
+    public function getSalesQuote(): ?SalesQuote\Record
     {
         return $this->getAsRelation('salesQuote');
     }
 
-    function getSalesQuoteLine(): ?SalesQuoteLine\Record
+    public function getSalesQuoteLine(): ?SalesQuoteLine\Record
     {
         return $this->getAsRelation('salesQuoteLine');
     }
 
-    function getSalesCreditMemo(): ?SalesCreditMemo\Record
+    public function getSalesCreditMemo(): ?SalesCreditMemo\Record
     {
         return $this->getAsRelation('salesCreditMemo');
     }
 
-    function getSalesCreditMemoLine(): ?SalesCreditMemoLine\Record
+    public function getSalesCreditMemoLine(): ?SalesCreditMemoLine\Record
     {
         return $this->getAsRelation('salesCreditMemoLine');
     }
 
-    function getPurchaseInvoice(): ?PurchaseInvoice\Record
+    public function getPurchaseInvoice(): ?PurchaseInvoice\Record
     {
         return $this->getAsRelation('purchaseInvoice');
     }
 
-    function getPurchaseInvoiceLine(): ?PurchaseInvoiceLine\Record
+    public function getPurchaseInvoiceLine(): ?PurchaseInvoiceLine\Record
     {
         return $this->getAsRelation('purchaseInvoiceLine');
     }
 
-    function getVendorPayment(): ?VendorPayment\Record
+    public function getVendorPayment(): ?VendorPayment\Record
     {
         return $this->getAsRelation('vendorPayment');
     }
 
-    function getSalesShipment(): ?SalesShipment\Record
+    public function getSalesShipment(): ?SalesShipment\Record
     {
         return $this->getAsRelation('salesShipment');
     }
 
-    function getSalesShipmentLine(): ?SalesShipmentLine\Record
+    public function getSalesShipmentLine(): ?SalesShipmentLine\Record
     {
         return $this->getAsRelation('salesShipmentLine');
     }
 
-    function getPurchaseReceipt(): ?PurchaseReceipt\Record
+    public function getPurchaseReceipt(): ?PurchaseReceipt\Record
     {
         return $this->getAsRelation('purchaseReceipt');
     }
 
-    function getPurchaseReceiptLine(): ?PurchaseReceiptLine\Record
+    public function getPurchaseReceiptLine(): ?PurchaseReceiptLine\Record
     {
         return $this->getAsRelation('purchaseReceiptLine');
     }
 
-    function getPurchaseOrder(): ?PurchaseOrder\Record
+    public function getPurchaseOrder(): ?PurchaseOrder\Record
     {
         return $this->getAsRelation('purchaseOrder');
     }
 
-    function getPurchaseOrderLine(): ?PurchaseOrderLine\Record
+    public function getPurchaseOrderLine(): ?PurchaseOrderLine\Record
     {
         return $this->getAsRelation('purchaseOrderLine');
     }
 
-    function getPurchaseCreditMemo(): ?PurchaseCreditMemo\Record
+    public function getPurchaseCreditMemo(): ?PurchaseCreditMemo\Record
     {
         return $this->getAsRelation('purchaseCreditMemo');
     }
 
-    function getPurchaseCreditMemoLine(): ?PurchaseCreditMemoLine\Record
+    public function getPurchaseCreditMemoLine(): ?PurchaseCreditMemoLine\Record
     {
         return $this->getAsRelation('purchaseCreditMemoLine');
     }

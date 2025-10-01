@@ -8,39 +8,40 @@ use Rebel\BCApi2\Entity\Dimension;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'id';
     protected $classMap = ['dimension' => Dimension\Record::class];
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getCode(): ?string
+    public function getCode(): ?string
     {
         return $this->get('code');
     }
 
-    function getDimensionId(): ?string
+    public function getDimensionId(): ?string
     {
         return $this->get('dimensionId');
     }
 
-    function getDisplayName(): ?string
+    public function getDisplayName(): ?string
     {
         return $this->get('displayName');
     }
 
-    function getConsolidationCode(): ?string
+    public function getConsolidationCode(): ?string
     {
         return $this->get('consolidationCode');
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    function getDimension(): ?Dimension\Record
+    public function getDimension(): ?Dimension\Record
     {
         return $this->getAsRelation('dimension');
     }

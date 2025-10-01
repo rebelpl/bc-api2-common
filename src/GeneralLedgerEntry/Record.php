@@ -10,78 +10,80 @@ use Rebel\BCApi2\Entity\DimensionSetLine;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'id';
+
     protected $classMap = [
         'account' => Account\Record::class,
         'attachments' => Attachment\Record::class,
         'dimensionSetLines' => DimensionSetLine\Record::class,
     ];
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getEntryNumber(): ?int
+    public function getEntryNumber(): ?int
     {
         return $this->get('entryNumber');
     }
 
-    function getPostingDate(): ?Carbon
+    public function getPostingDate(): ?Carbon
     {
         return $this->getAsDate('postingDate');
     }
 
-    function getDocumentNumber(): ?string
+    public function getDocumentNumber(): ?string
     {
         return $this->get('documentNumber');
     }
 
-    function getDocumentType(): ?string
+    public function getDocumentType(): ?string
     {
         return $this->get('documentType');
     }
 
-    function getAccountId(): ?string
+    public function getAccountId(): ?string
     {
         return $this->get('accountId');
     }
 
-    function getAccountNumber(): ?string
+    public function getAccountNumber(): ?string
     {
         return $this->get('accountNumber');
     }
 
-    function getDescription(): ?string
+    public function getDescription(): ?string
     {
         return $this->get('description');
     }
 
-    function getDebitAmount(): ?float
+    public function getDebitAmount(): ?float
     {
         return $this->get('debitAmount');
     }
 
-    function getCreditAmount(): ?float
+    public function getCreditAmount(): ?float
     {
         return $this->get('creditAmount');
     }
 
-    function getAdditionalCurrencyDebitAmount(): ?float
+    public function getAdditionalCurrencyDebitAmount(): ?float
     {
         return $this->get('additionalCurrencyDebitAmount');
     }
 
-    function getAdditionalCurrencyCreditAmount(): ?float
+    public function getAdditionalCurrencyCreditAmount(): ?float
     {
         return $this->get('additionalCurrencyCreditAmount');
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    function getAccount(): ?Account\Record
+    public function getAccount(): ?Account\Record
     {
         return $this->getAsRelation('account');
     }
@@ -89,7 +91,7 @@ class Record extends Entity
     /**
      * @return Entity\Collection|Attachment\Record[]
      */
-    function getAttachments(): Entity\Collection
+    public function getAttachments(): Entity\Collection
     {
         return $this->getAsCollection('attachments');
     }
@@ -97,7 +99,7 @@ class Record extends Entity
     /**
      * @return Entity\Collection|DimensionSetLine\Record[]
      */
-    function getDimensionSetLines(): Entity\Collection
+    public function getDimensionSetLines(): Entity\Collection
     {
         return $this->getAsCollection('dimensionSetLines');
     }

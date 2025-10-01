@@ -12,6 +12,8 @@ use Rebel\BCApi2\Entity\Vendor;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'id';
+
     protected $classMap = [
         'item' => Item\Record::class,
         'customer' => Customer\Record::class,
@@ -20,81 +22,81 @@ class Record extends Entity
         'employee' => Employee\Record::class,
     ];
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getParentType(): ?string
+    public function getParentType(): ?string
     {
         return $this->get('parentType');
     }
 
-    function setParentType(?string $value): self
+    public function setParentType(?string $value): self
     {
         $this->set('parentType', $value);
         return $this;
     }
 
-    function getWidth(): ?int
+    public function getWidth(): ?int
     {
         return $this->get('width');
     }
 
-    function setWidth(?int $value): self
+    public function setWidth(?int $value): self
     {
         $this->set('width', $value);
         return $this;
     }
 
-    function getHeight(): ?int
+    public function getHeight(): ?int
     {
         return $this->get('height');
     }
 
-    function setHeight(?int $value): self
+    public function setHeight(?int $value): self
     {
         $this->set('height', $value);
         return $this;
     }
 
-    function getContentType(): ?string
+    public function getContentType(): ?string
     {
         return $this->get('contentType');
     }
 
-    function setContentType(?string $value): self
+    public function setContentType(?string $value): self
     {
         $this->set('contentType', $value);
         return $this;
     }
 
-    function getPictureContent(): Entity\DataStream
+    public function getPictureContent(): Entity\DataStream
     {
         return $this->get('pictureContent');
     }
 
-    function getItem(): ?Item\Record
+    public function getItem(): ?Item\Record
     {
         return $this->getAsRelation('item');
     }
 
-    function getCustomer(): ?Customer\Record
+    public function getCustomer(): ?Customer\Record
     {
         return $this->getAsRelation('customer');
     }
 
-    function getContact(): ?Contact\Record
+    public function getContact(): ?Contact\Record
     {
         return $this->getAsRelation('contact');
     }
 
-    function getVendor(): ?Vendor\Record
+    public function getVendor(): ?Vendor\Record
     {
         return $this->getAsRelation('vendor');
     }
 
-    function getEmployee(): ?Employee\Record
+    public function getEmployee(): ?Employee\Record
     {
         return $this->getAsRelation('employee');
     }

@@ -8,91 +8,92 @@ use Rebel\BCApi2\Entity\PdfDocument;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'id';
     protected $classMap = ['pdfDocument' => PdfDocument\Record::class];
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getEmail(): ?string
+    public function getEmail(): ?string
     {
         return $this->get('email');
     }
 
-    function setEmail(?string $value): self
+    public function setEmail(?string $value): self
     {
         $this->set('email', $value);
         return $this;
     }
 
-    function getFirstName(): ?string
+    public function getFirstName(): ?string
     {
         return $this->get('firstName');
     }
 
-    function setFirstName(?string $value): self
+    public function setFirstName(?string $value): self
     {
         $this->set('firstName', $value);
         return $this;
     }
 
-    function getLastName(): ?string
+    public function getLastName(): ?string
     {
         return $this->get('lastName');
     }
 
-    function setLastName(?string $value): self
+    public function setLastName(?string $value): self
     {
         $this->set('lastName', $value);
         return $this;
     }
 
-    function getProfessionalTitle(): ?string
+    public function getProfessionalTitle(): ?string
     {
         return $this->get('professionalTitle');
     }
 
-    function setProfessionalTitle(?string $value): self
+    public function setProfessionalTitle(?string $value): self
     {
         $this->set('professionalTitle', $value);
         return $this;
     }
 
-    function getCustomerId(): ?string
+    public function getCustomerId(): ?string
     {
         return $this->get('customerId');
     }
 
-    function setCustomerId(?string $value): self
+    public function setCustomerId(?string $value): self
     {
         $this->set('customerId', $value);
         return $this;
     }
 
-    function getCustomerName(): ?string
+    public function getCustomerName(): ?string
     {
         return $this->get('customerName');
     }
 
-    function setCustomerName(?string $value): self
+    public function setCustomerName(?string $value): self
     {
         $this->set('customerName', $value);
         return $this;
     }
 
-    function getPrimaryPhoneNumber(): ?string
+    public function getPrimaryPhoneNumber(): ?string
     {
         return $this->get('primaryPhoneNumber');
     }
 
-    function setPrimaryPhoneNumber(?string $value): self
+    public function setPrimaryPhoneNumber(?string $value): self
     {
         $this->set('primaryPhoneNumber', $value);
         return $this;
     }
 
-    function getPdfDocument(): ?PdfDocument\Record
+    public function getPdfDocument(): ?PdfDocument\Record
     {
         return $this->getAsRelation('pdfDocument');
     }

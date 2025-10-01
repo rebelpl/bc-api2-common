@@ -8,59 +8,60 @@ use Rebel\BCApi2\Entity\Vendor;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'vendorId';
     protected $classMap = ['vendor' => Vendor\Record::class];
 
-    function getVendorId(): ?string
+    public function getVendorId(): ?string
     {
         return $this->get('vendorId');
     }
 
-    function getVendorNumber(): ?string
+    public function getVendorNumber(): ?string
     {
         return $this->get('vendorNumber');
     }
 
-    function getName(): ?string
+    public function getName(): ?string
     {
         return $this->get('name');
     }
 
-    function getCurrencyCode(): ?string
+    public function getCurrencyCode(): ?string
     {
         return $this->get('currencyCode');
     }
 
-    function getBalanceDue(): ?float
+    public function getBalanceDue(): ?float
     {
         return $this->get('balanceDue');
     }
 
-    function getCurrentAmount(): ?float
+    public function getCurrentAmount(): ?float
     {
         return $this->get('currentAmount');
     }
 
-    function getPeriod1Amount(): ?float
+    public function getPeriod1Amount(): ?float
     {
         return $this->get('period1Amount');
     }
 
-    function getPeriod2Amount(): ?float
+    public function getPeriod2Amount(): ?float
     {
         return $this->get('period2Amount');
     }
 
-    function getPeriod3Amount(): ?float
+    public function getPeriod3Amount(): ?float
     {
         return $this->get('period3Amount');
     }
 
-    function getAgedAsOfDate(): ?Carbon
+    public function getAgedAsOfDate(): ?Carbon
     {
         return $this->getAsDate('agedAsOfDate');
     }
 
-    function getVendor(): ?Vendor\Record
+    public function getVendor(): ?Vendor\Record
     {
         return $this->getAsRelation('vendor');
     }

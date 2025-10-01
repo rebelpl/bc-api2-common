@@ -16,6 +16,8 @@ use Rebel\BCApi2\Entity\SalesQuote;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'id';
+
     protected $classMap = [
         'salesInvoice' => SalesInvoice\Record::class,
         'journalLine' => JournalLine\Record::class,
@@ -28,112 +30,112 @@ class Record extends Entity
         'purchaseCreditMemo' => PurchaseCreditMemo\Record::class,
     ];
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getParentId(): ?string
+    public function getParentId(): ?string
     {
         return $this->get('parentId');
     }
 
-    function setParentId(?string $value): self
+    public function setParentId(?string $value): self
     {
         $this->set('parentId', $value);
         return $this;
     }
 
-    function getFileName(): ?string
+    public function getFileName(): ?string
     {
         return $this->get('fileName');
     }
 
-    function setFileName(?string $value): self
+    public function setFileName(?string $value): self
     {
         $this->set('fileName', $value);
         return $this;
     }
 
-    function getByteSize(): ?int
+    public function getByteSize(): ?int
     {
         return $this->get('byteSize');
     }
 
-    function setByteSize(?int $value): self
+    public function setByteSize(?int $value): self
     {
         $this->set('byteSize', $value);
         return $this;
     }
 
-    function getAttachmentContent(): Entity\DataStream
+    public function getAttachmentContent(): Entity\DataStream
     {
         return $this->get('attachmentContent');
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    function setLastModifiedDateTime(?\DateTime $value): self
+    public function setLastModifiedDateTime(?\DateTime $value): self
     {
         $this->setAsDateTime('lastModifiedDateTime', $value);
         return $this;
     }
 
-    function getParentType(): ?string
+    public function getParentType(): ?string
     {
         return $this->get('parentType');
     }
 
-    function setParentType(?string $value): self
+    public function setParentType(?string $value): self
     {
         $this->set('parentType', $value);
         return $this;
     }
 
-    function getSalesInvoice(): ?SalesInvoice\Record
+    public function getSalesInvoice(): ?SalesInvoice\Record
     {
         return $this->getAsRelation('salesInvoice');
     }
 
-    function getJournalLine(): ?JournalLine\Record
+    public function getJournalLine(): ?JournalLine\Record
     {
         return $this->getAsRelation('journalLine');
     }
 
-    function getGeneralLedgerEntry(): ?GeneralLedgerEntry\Record
+    public function getGeneralLedgerEntry(): ?GeneralLedgerEntry\Record
     {
         return $this->getAsRelation('generalLedgerEntry');
     }
 
-    function getSalesOrder(): ?SalesOrder\Record
+    public function getSalesOrder(): ?SalesOrder\Record
     {
         return $this->getAsRelation('salesOrder');
     }
 
-    function getSalesQuote(): ?SalesQuote\Record
+    public function getSalesQuote(): ?SalesQuote\Record
     {
         return $this->getAsRelation('salesQuote');
     }
 
-    function getSalesCreditMemo(): ?SalesCreditMemo\Record
+    public function getSalesCreditMemo(): ?SalesCreditMemo\Record
     {
         return $this->getAsRelation('salesCreditMemo');
     }
 
-    function getPurchaseInvoice(): ?PurchaseInvoice\Record
+    public function getPurchaseInvoice(): ?PurchaseInvoice\Record
     {
         return $this->getAsRelation('purchaseInvoice');
     }
 
-    function getPurchaseOrder(): ?PurchaseOrder\Record
+    public function getPurchaseOrder(): ?PurchaseOrder\Record
     {
         return $this->getAsRelation('purchaseOrder');
     }
 
-    function getPurchaseCreditMemo(): ?PurchaseCreditMemo\Record
+    public function getPurchaseCreditMemo(): ?PurchaseCreditMemo\Record
     {
         return $this->getAsRelation('purchaseCreditMemo');
     }

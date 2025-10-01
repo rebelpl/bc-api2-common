@@ -7,87 +7,89 @@ use Rebel\BCApi2\Entity;
 
 class Record extends Entity
 {
-    function getId(): ?string
+    protected $primaryKey = 'id';
+
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getJobQueueEntryId(): ?string
+    public function getJobQueueEntryId(): ?string
     {
         return $this->get('jobQueueEntryId');
     }
 
-    function getUserId(): ?string
+    public function getUserId(): ?string
     {
         return $this->get('userId');
     }
 
-    function getStartDateTime(): ?Carbon
+    public function getStartDateTime(): ?Carbon
     {
         return $this->getAsDateTime('startDateTime');
     }
 
-    function getEndDateTime(): ?Carbon
+    public function getEndDateTime(): ?Carbon
     {
         return $this->getAsDateTime('endDateTime');
     }
 
-    function getObjectIdToRun(): ?int
+    public function getObjectIdToRun(): ?int
     {
         return $this->get('objectIdToRun');
     }
 
-    function getObjectTypeToRun(): ?string
+    public function getObjectTypeToRun(): ?string
     {
         return $this->get('objectTypeToRun');
     }
 
-    function getStatus(): ?string
+    public function getStatus(): ?string
     {
         return $this->get('status');
     }
 
-    function getDescription(): ?string
+    public function getDescription(): ?string
     {
         return $this->get('description');
     }
 
-    function getErrorMessage(): ?string
+    public function getErrorMessage(): ?string
     {
         return $this->get('errorMessage');
     }
 
-    function getJobQueueCategoryCode(): ?string
+    public function getJobQueueCategoryCode(): ?string
     {
         return $this->get('jobQueueCategoryCode');
     }
 
-    function getErrorCallStack(): Entity\DataStream
+    public function getErrorCallStack(): Entity\DataStream
     {
         return $this->get('errorCallStack');
     }
 
-    function getParameterString(): ?string
+    public function getParameterString(): ?string
     {
         return $this->get('parameterString');
     }
 
-    function getSystemTaskId(): ?string
+    public function getSystemTaskId(): ?string
     {
         return $this->get('systemTaskId');
     }
 
-    function getUserSessionId(): ?int
+    public function getUserSessionId(): ?int
     {
         return $this->get('userSessionId');
     }
 
-    function getUserServiceInstanceId(): ?int
+    public function getUserServiceInstanceId(): ?int
     {
         return $this->get('userServiceInstanceId');
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }

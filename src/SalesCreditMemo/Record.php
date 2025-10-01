@@ -18,6 +18,8 @@ use Rebel\BCApi2\Entity\ShipmentMethod;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'id';
+
     protected $classMap = [
         'customer' => Customer\Record::class,
         'dimensionValue' => DimensionValue\Record::class,
@@ -32,510 +34,510 @@ class Record extends Entity
         'documentAttachments' => DocumentAttachment\Record::class,
     ];
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getNumber(): ?string
+    public function getNumber(): ?string
     {
         return $this->get('number');
     }
 
-    function setNumber(?string $value): self
+    public function setNumber(?string $value): self
     {
         $this->set('number', $value);
         return $this;
     }
 
-    function getExternalDocumentNumber(): ?string
+    public function getExternalDocumentNumber(): ?string
     {
         return $this->get('externalDocumentNumber');
     }
 
-    function setExternalDocumentNumber(?string $value): self
+    public function setExternalDocumentNumber(?string $value): self
     {
         $this->set('externalDocumentNumber', $value);
         return $this;
     }
 
-    function getCreditMemoDate(): ?Carbon
+    public function getCreditMemoDate(): ?Carbon
     {
         return $this->getAsDate('creditMemoDate');
     }
 
-    function setCreditMemoDate(?\DateTime $value): self
+    public function setCreditMemoDate(?\DateTime $value): self
     {
         $this->setAsDate('creditMemoDate', $value);
         return $this;
     }
 
-    function getPostingDate(): ?Carbon
+    public function getPostingDate(): ?Carbon
     {
         return $this->getAsDate('postingDate');
     }
 
-    function setPostingDate(?\DateTime $value): self
+    public function setPostingDate(?\DateTime $value): self
     {
         $this->setAsDate('postingDate', $value);
         return $this;
     }
 
-    function getDueDate(): ?Carbon
+    public function getDueDate(): ?Carbon
     {
         return $this->getAsDate('dueDate');
     }
 
-    function setDueDate(?\DateTime $value): self
+    public function setDueDate(?\DateTime $value): self
     {
         $this->setAsDate('dueDate', $value);
         return $this;
     }
 
-    function getCustomerId(): ?string
+    public function getCustomerId(): ?string
     {
         return $this->get('customerId');
     }
 
-    function setCustomerId(?string $value): self
+    public function setCustomerId(?string $value): self
     {
         $this->set('customerId', $value);
         return $this;
     }
 
-    function getCustomerNumber(): ?string
+    public function getCustomerNumber(): ?string
     {
         return $this->get('customerNumber');
     }
 
-    function setCustomerNumber(?string $value): self
+    public function setCustomerNumber(?string $value): self
     {
         $this->set('customerNumber', $value);
         return $this;
     }
 
-    function getCustomerName(): ?string
+    public function getCustomerName(): ?string
     {
         return $this->get('customerName');
     }
 
-    function setCustomerName(?string $value): self
+    public function setCustomerName(?string $value): self
     {
         $this->set('customerName', $value);
         return $this;
     }
 
-    function getBillToName(): ?string
+    public function getBillToName(): ?string
     {
         return $this->get('billToName');
     }
 
-    function setBillToName(?string $value): self
+    public function setBillToName(?string $value): self
     {
         $this->set('billToName', $value);
         return $this;
     }
 
-    function getBillToCustomerId(): ?string
+    public function getBillToCustomerId(): ?string
     {
         return $this->get('billToCustomerId');
     }
 
-    function setBillToCustomerId(?string $value): self
+    public function setBillToCustomerId(?string $value): self
     {
         $this->set('billToCustomerId', $value);
         return $this;
     }
 
-    function getBillToCustomerNumber(): ?string
+    public function getBillToCustomerNumber(): ?string
     {
         return $this->get('billToCustomerNumber');
     }
 
-    function setBillToCustomerNumber(?string $value): self
+    public function setBillToCustomerNumber(?string $value): self
     {
         $this->set('billToCustomerNumber', $value);
         return $this;
     }
 
-    function getSellToAddressLine1(): ?string
+    public function getSellToAddressLine1(): ?string
     {
         return $this->get('sellToAddressLine1');
     }
 
-    function setSellToAddressLine1(?string $value): self
+    public function setSellToAddressLine1(?string $value): self
     {
         $this->set('sellToAddressLine1', $value);
         return $this;
     }
 
-    function getSellToAddressLine2(): ?string
+    public function getSellToAddressLine2(): ?string
     {
         return $this->get('sellToAddressLine2');
     }
 
-    function setSellToAddressLine2(?string $value): self
+    public function setSellToAddressLine2(?string $value): self
     {
         $this->set('sellToAddressLine2', $value);
         return $this;
     }
 
-    function getSellToCity(): ?string
+    public function getSellToCity(): ?string
     {
         return $this->get('sellToCity');
     }
 
-    function setSellToCity(?string $value): self
+    public function setSellToCity(?string $value): self
     {
         $this->set('sellToCity', $value);
         return $this;
     }
 
-    function getSellToCountry(): ?string
+    public function getSellToCountry(): ?string
     {
         return $this->get('sellToCountry');
     }
 
-    function setSellToCountry(?string $value): self
+    public function setSellToCountry(?string $value): self
     {
         $this->set('sellToCountry', $value);
         return $this;
     }
 
-    function getSellToState(): ?string
+    public function getSellToState(): ?string
     {
         return $this->get('sellToState');
     }
 
-    function setSellToState(?string $value): self
+    public function setSellToState(?string $value): self
     {
         $this->set('sellToState', $value);
         return $this;
     }
 
-    function getSellToPostCode(): ?string
+    public function getSellToPostCode(): ?string
     {
         return $this->get('sellToPostCode');
     }
 
-    function setSellToPostCode(?string $value): self
+    public function setSellToPostCode(?string $value): self
     {
         $this->set('sellToPostCode', $value);
         return $this;
     }
 
-    function getBillToAddressLine1(): ?string
+    public function getBillToAddressLine1(): ?string
     {
         return $this->get('billToAddressLine1');
     }
 
-    function setBillToAddressLine1(?string $value): self
+    public function setBillToAddressLine1(?string $value): self
     {
         $this->set('billToAddressLine1', $value);
         return $this;
     }
 
-    function getBillToAddressLine2(): ?string
+    public function getBillToAddressLine2(): ?string
     {
         return $this->get('billToAddressLine2');
     }
 
-    function setBillToAddressLine2(?string $value): self
+    public function setBillToAddressLine2(?string $value): self
     {
         $this->set('billToAddressLine2', $value);
         return $this;
     }
 
-    function getBillToCity(): ?string
+    public function getBillToCity(): ?string
     {
         return $this->get('billToCity');
     }
 
-    function setBillToCity(?string $value): self
+    public function setBillToCity(?string $value): self
     {
         $this->set('billToCity', $value);
         return $this;
     }
 
-    function getBillToCountry(): ?string
+    public function getBillToCountry(): ?string
     {
         return $this->get('billToCountry');
     }
 
-    function setBillToCountry(?string $value): self
+    public function setBillToCountry(?string $value): self
     {
         $this->set('billToCountry', $value);
         return $this;
     }
 
-    function getBillToState(): ?string
+    public function getBillToState(): ?string
     {
         return $this->get('billToState');
     }
 
-    function setBillToState(?string $value): self
+    public function setBillToState(?string $value): self
     {
         $this->set('billToState', $value);
         return $this;
     }
 
-    function getBillToPostCode(): ?string
+    public function getBillToPostCode(): ?string
     {
         return $this->get('billToPostCode');
     }
 
-    function setBillToPostCode(?string $value): self
+    public function setBillToPostCode(?string $value): self
     {
         $this->set('billToPostCode', $value);
         return $this;
     }
 
-    function getShortcutDimension1Code(): ?string
+    public function getShortcutDimension1Code(): ?string
     {
         return $this->get('shortcutDimension1Code');
     }
 
-    function setShortcutDimension1Code(?string $value): self
+    public function setShortcutDimension1Code(?string $value): self
     {
         $this->set('shortcutDimension1Code', $value);
         return $this;
     }
 
-    function getShortcutDimension2Code(): ?string
+    public function getShortcutDimension2Code(): ?string
     {
         return $this->get('shortcutDimension2Code');
     }
 
-    function setShortcutDimension2Code(?string $value): self
+    public function setShortcutDimension2Code(?string $value): self
     {
         $this->set('shortcutDimension2Code', $value);
         return $this;
     }
 
-    function getCurrencyId(): ?string
+    public function getCurrencyId(): ?string
     {
         return $this->get('currencyId');
     }
 
-    function setCurrencyId(?string $value): self
+    public function setCurrencyId(?string $value): self
     {
         $this->set('currencyId', $value);
         return $this;
     }
 
-    function getCurrencyCode(): ?string
+    public function getCurrencyCode(): ?string
     {
         return $this->get('currencyCode');
     }
 
-    function setCurrencyCode(?string $value): self
+    public function setCurrencyCode(?string $value): self
     {
         $this->set('currencyCode', $value);
         return $this;
     }
 
-    function getPaymentTermsId(): ?string
+    public function getPaymentTermsId(): ?string
     {
         return $this->get('paymentTermsId');
     }
 
-    function setPaymentTermsId(?string $value): self
+    public function setPaymentTermsId(?string $value): self
     {
         $this->set('paymentTermsId', $value);
         return $this;
     }
 
-    function getShipmentMethodId(): ?string
+    public function getShipmentMethodId(): ?string
     {
         return $this->get('shipmentMethodId');
     }
 
-    function setShipmentMethodId(?string $value): self
+    public function setShipmentMethodId(?string $value): self
     {
         $this->set('shipmentMethodId', $value);
         return $this;
     }
 
-    function getSalesperson(): ?string
+    public function getSalesperson(): ?string
     {
         return $this->get('salesperson');
     }
 
-    function setSalesperson(?string $value): self
+    public function setSalesperson(?string $value): self
     {
         $this->set('salesperson', $value);
         return $this;
     }
 
-    function getPricesIncludeTax(): ?bool
+    public function getPricesIncludeTax(): ?bool
     {
         return $this->get('pricesIncludeTax');
     }
 
-    function setPricesIncludeTax(?bool $value): self
+    public function setPricesIncludeTax(?bool $value): self
     {
         $this->set('pricesIncludeTax', $value);
         return $this;
     }
 
-    function getDiscountAmount(): ?float
+    public function getDiscountAmount(): ?float
     {
         return $this->get('discountAmount');
     }
 
-    function setDiscountAmount(?float $value): self
+    public function setDiscountAmount(?float $value): self
     {
         $this->set('discountAmount', $value);
         return $this;
     }
 
-    function getDiscountAppliedBeforeTax(): ?bool
+    public function getDiscountAppliedBeforeTax(): ?bool
     {
         return $this->get('discountAppliedBeforeTax');
     }
 
-    function setDiscountAppliedBeforeTax(?bool $value): self
+    public function setDiscountAppliedBeforeTax(?bool $value): self
     {
         $this->set('discountAppliedBeforeTax', $value);
         return $this;
     }
 
-    function getTotalAmountExcludingTax(): ?float
+    public function getTotalAmountExcludingTax(): ?float
     {
         return $this->get('totalAmountExcludingTax');
     }
 
-    function setTotalAmountExcludingTax(?float $value): self
+    public function setTotalAmountExcludingTax(?float $value): self
     {
         $this->set('totalAmountExcludingTax', $value);
         return $this;
     }
 
-    function getTotalTaxAmount(): ?float
+    public function getTotalTaxAmount(): ?float
     {
         return $this->get('totalTaxAmount');
     }
 
-    function setTotalTaxAmount(?float $value): self
+    public function setTotalTaxAmount(?float $value): self
     {
         $this->set('totalTaxAmount', $value);
         return $this;
     }
 
-    function getTotalAmountIncludingTax(): ?float
+    public function getTotalAmountIncludingTax(): ?float
     {
         return $this->get('totalAmountIncludingTax');
     }
 
-    function setTotalAmountIncludingTax(?float $value): self
+    public function setTotalAmountIncludingTax(?float $value): self
     {
         $this->set('totalAmountIncludingTax', $value);
         return $this;
     }
 
-    function getStatus(): ?string
+    public function getStatus(): ?string
     {
         return $this->get('status');
     }
 
-    function setStatus(?string $value): self
+    public function setStatus(?string $value): self
     {
         $this->set('status', $value);
         return $this;
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    function setLastModifiedDateTime(?\DateTime $value): self
+    public function setLastModifiedDateTime(?\DateTime $value): self
     {
         $this->setAsDateTime('lastModifiedDateTime', $value);
         return $this;
     }
 
-    function getInvoiceId(): ?string
+    public function getInvoiceId(): ?string
     {
         return $this->get('invoiceId');
     }
 
-    function setInvoiceId(?string $value): self
+    public function setInvoiceId(?string $value): self
     {
         $this->set('invoiceId', $value);
         return $this;
     }
 
-    function getInvoiceNumber(): ?string
+    public function getInvoiceNumber(): ?string
     {
         return $this->get('invoiceNumber');
     }
 
-    function setInvoiceNumber(?string $value): self
+    public function setInvoiceNumber(?string $value): self
     {
         $this->set('invoiceNumber', $value);
         return $this;
     }
 
-    function getPhoneNumber(): ?string
+    public function getPhoneNumber(): ?string
     {
         return $this->get('phoneNumber');
     }
 
-    function setPhoneNumber(?string $value): self
+    public function setPhoneNumber(?string $value): self
     {
         $this->set('phoneNumber', $value);
         return $this;
     }
 
-    function getEmail(): ?string
+    public function getEmail(): ?string
     {
         return $this->get('email');
     }
 
-    function setEmail(?string $value): self
+    public function setEmail(?string $value): self
     {
         $this->set('email', $value);
         return $this;
     }
 
-    function getCustomerReturnReasonId(): ?string
+    public function getCustomerReturnReasonId(): ?string
     {
         return $this->get('customerReturnReasonId');
     }
 
-    function setCustomerReturnReasonId(?string $value): self
+    public function setCustomerReturnReasonId(?string $value): self
     {
         $this->set('customerReturnReasonId', $value);
         return $this;
     }
 
-    function getCustomer(): ?Customer\Record
+    public function getCustomer(): ?Customer\Record
     {
         return $this->getAsRelation('customer');
     }
 
-    function getDimensionValue(): ?DimensionValue\Record
+    public function getDimensionValue(): ?DimensionValue\Record
     {
         return $this->getAsRelation('dimensionValue');
     }
 
-    function getCurrency(): ?Currency\Record
+    public function getCurrency(): ?Currency\Record
     {
         return $this->getAsRelation('currency');
     }
 
-    function getPaymentTerm(): ?PaymentTerm\Record
+    public function getPaymentTerm(): ?PaymentTerm\Record
     {
         return $this->getAsRelation('paymentTerm');
     }
 
-    function getShipmentMethod(): ?ShipmentMethod\Record
+    public function getShipmentMethod(): ?ShipmentMethod\Record
     {
         return $this->getAsRelation('shipmentMethod');
     }
 
-    function getCustomerReturnReason(): ?CustomerReturnReason\Record
+    public function getCustomerReturnReason(): ?CustomerReturnReason\Record
     {
         return $this->getAsRelation('customerReturnReason');
     }
@@ -543,7 +545,7 @@ class Record extends Entity
     /**
      * @return Entity\Collection|DimensionSetLine\Record[]
      */
-    function getDimensionSetLines(): Entity\Collection
+    public function getDimensionSetLines(): Entity\Collection
     {
         return $this->getAsCollection('dimensionSetLines');
     }
@@ -551,12 +553,12 @@ class Record extends Entity
     /**
      * @return Entity\Collection|SalesCreditMemoLine\Record[]
      */
-    function getSalesCreditMemoLines(): Entity\Collection
+    public function getSalesCreditMemoLines(): Entity\Collection
     {
         return $this->getAsCollection('salesCreditMemoLines');
     }
 
-    function getPdfDocument(): ?PdfDocument\Record
+    public function getPdfDocument(): ?PdfDocument\Record
     {
         return $this->getAsRelation('pdfDocument');
     }
@@ -564,7 +566,7 @@ class Record extends Entity
     /**
      * @return Entity\Collection|Attachment\Record[]
      */
-    function getAttachments(): Entity\Collection
+    public function getAttachments(): Entity\Collection
     {
         return $this->getAsCollection('attachments');
     }
@@ -572,32 +574,32 @@ class Record extends Entity
     /**
      * @return Entity\Collection|DocumentAttachment\Record[]
      */
-    function getDocumentAttachments(): Entity\Collection
+    public function getDocumentAttachments(): Entity\Collection
     {
         return $this->getAsCollection('documentAttachments');
     }
 
-    function doCancel(Client $client): void
+    public function doCancel(Client $client): void
     {
         $this->doAction('Microsoft.NAV.cancel', $client);
     }
 
-    function doCancelAndSend(Client $client): void
+    public function doCancelAndSend(Client $client): void
     {
         $this->doAction('Microsoft.NAV.cancelAndSend', $client);
     }
 
-    function doPost(Client $client): void
+    public function doPost(Client $client): void
     {
         $this->doAction('Microsoft.NAV.post', $client);
     }
 
-    function doPostAndSend(Client $client): void
+    public function doPostAndSend(Client $client): void
     {
         $this->doAction('Microsoft.NAV.postAndSend', $client);
     }
 
-    function doSend(Client $client): void
+    public function doSend(Client $client): void
     {
         $this->doAction('Microsoft.NAV.send', $client);
     }

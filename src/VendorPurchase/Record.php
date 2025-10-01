@@ -7,22 +7,24 @@ use Rebel\BCApi2\Entity;
 
 class Record extends Entity
 {
-    function getVendorId(): ?string
+    protected $primaryKey = 'vendorId';
+
+    public function getVendorId(): ?string
     {
         return $this->get('vendorId');
     }
 
-    function getVendorNumber(): ?string
+    public function getVendorNumber(): ?string
     {
         return $this->get('vendorNumber');
     }
 
-    function getName(): ?string
+    public function getName(): ?string
     {
         return $this->get('name');
     }
 
-    function getTotalPurchaseAmount(): ?float
+    public function getTotalPurchaseAmount(): ?float
     {
         return $this->get('totalPurchaseAmount');
     }

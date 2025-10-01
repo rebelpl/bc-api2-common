@@ -8,39 +8,40 @@ use Rebel\BCApi2\Entity\Customer;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'id';
     protected $classMap = ['customer' => Customer\Record::class];
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getNumber(): ?string
+    public function getNumber(): ?string
     {
         return $this->get('number');
     }
 
-    function getBalance(): ?float
+    public function getBalance(): ?float
     {
         return $this->get('balance');
     }
 
-    function getTotalSalesExcludingTax(): ?float
+    public function getTotalSalesExcludingTax(): ?float
     {
         return $this->get('totalSalesExcludingTax');
     }
 
-    function getOverdueAmount(): ?float
+    public function getOverdueAmount(): ?float
     {
         return $this->get('overdueAmount');
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    function getCustomer(): ?Customer\Record
+    public function getCustomer(): ?Customer\Record
     {
         return $this->getAsRelation('customer');
     }

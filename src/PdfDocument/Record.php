@@ -13,6 +13,8 @@ use Rebel\BCApi2\Entity\SalesQuote;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'id';
+
     protected $classMap = [
         'salesInvoice' => SalesInvoice\Record::class,
         'salesQuote' => SalesQuote\Record::class,
@@ -22,52 +24,52 @@ class Record extends Entity
         'customerContact' => CustomerContact\Record::class,
     ];
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getParentId(): ?string
+    public function getParentId(): ?string
     {
         return $this->get('parentId');
     }
 
-    function getParentType(): ?string
+    public function getParentType(): ?string
     {
         return $this->get('parentType');
     }
 
-    function getPdfDocumentContent(): Entity\DataStream
+    public function getPdfDocumentContent(): Entity\DataStream
     {
         return $this->get('pdfDocumentContent');
     }
 
-    function getSalesInvoice(): ?SalesInvoice\Record
+    public function getSalesInvoice(): ?SalesInvoice\Record
     {
         return $this->getAsRelation('salesInvoice');
     }
 
-    function getSalesQuote(): ?SalesQuote\Record
+    public function getSalesQuote(): ?SalesQuote\Record
     {
         return $this->getAsRelation('salesQuote');
     }
 
-    function getSalesCreditMemo(): ?SalesCreditMemo\Record
+    public function getSalesCreditMemo(): ?SalesCreditMemo\Record
     {
         return $this->getAsRelation('salesCreditMemo');
     }
 
-    function getPurchaseInvoice(): ?PurchaseInvoice\Record
+    public function getPurchaseInvoice(): ?PurchaseInvoice\Record
     {
         return $this->getAsRelation('purchaseInvoice');
     }
 
-    function getPurchaseCreditMemo(): ?PurchaseCreditMemo\Record
+    public function getPurchaseCreditMemo(): ?PurchaseCreditMemo\Record
     {
         return $this->getAsRelation('purchaseCreditMemo');
     }
 
-    function getCustomerContact(): ?CustomerContact\Record
+    public function getCustomerContact(): ?CustomerContact\Record
     {
         return $this->getAsRelation('customerContact');
     }

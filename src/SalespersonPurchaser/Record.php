@@ -7,116 +7,118 @@ use Rebel\BCApi2\Entity;
 
 class Record extends Entity
 {
-    function getId(): ?string
+    protected $primaryKey = 'id';
+
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getCode(): ?string
+    public function getCode(): ?string
     {
         return $this->get('code');
     }
 
-    function setCode(?string $value): self
+    public function setCode(?string $value): self
     {
         $this->set('code', $value);
         return $this;
     }
 
-    function getDisplayName(): ?string
+    public function getDisplayName(): ?string
     {
         return $this->get('displayName');
     }
 
-    function setDisplayName(?string $value): self
+    public function setDisplayName(?string $value): self
     {
         $this->set('displayName', $value);
         return $this;
     }
 
-    function getEmail(): ?string
+    public function getEmail(): ?string
     {
         return $this->get('email');
     }
 
-    function setEmail(?string $value): self
+    public function setEmail(?string $value): self
     {
         $this->set('email', $value);
         return $this;
     }
 
-    function getEmail2(): ?string
+    public function getEmail2(): ?string
     {
         return $this->get('email2');
     }
 
-    function setEmail2(?string $value): self
+    public function setEmail2(?string $value): self
     {
         $this->set('email2', $value);
         return $this;
     }
 
-    function getPhoneNo(): ?string
+    public function getPhoneNo(): ?string
     {
         return $this->get('phoneNo');
     }
 
-    function setPhoneNo(?string $value): self
+    public function setPhoneNo(?string $value): self
     {
         $this->set('phoneNo', $value);
         return $this;
     }
 
-    function getJobTitle(): ?string
+    public function getJobTitle(): ?string
     {
         return $this->get('jobTitle');
     }
 
-    function setJobTitle(?string $value): self
+    public function setJobTitle(?string $value): self
     {
         $this->set('jobTitle', $value);
         return $this;
     }
 
-    function getCommisionPercent(): ?float
+    public function getCommisionPercent(): ?float
     {
         return $this->get('commisionPercent');
     }
 
-    function setCommisionPercent(?float $value): self
+    public function setCommisionPercent(?float $value): self
     {
         $this->set('commisionPercent', $value);
         return $this;
     }
 
-    function getPrivacyBlocked(): ?bool
+    public function getPrivacyBlocked(): ?bool
     {
         return $this->get('privacyBlocked');
     }
 
-    function setPrivacyBlocked(?bool $value): self
+    public function setPrivacyBlocked(?bool $value): self
     {
         $this->set('privacyBlocked', $value);
         return $this;
     }
 
-    function getBlocked(): ?bool
+    public function getBlocked(): ?bool
     {
         return $this->get('blocked');
     }
 
-    function setBlocked(?bool $value): self
+    public function setBlocked(?bool $value): self
     {
         $this->set('blocked', $value);
         return $this;
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    function setLastModifiedDateTime(?\DateTime $value): self
+    public function setLastModifiedDateTime(?\DateTime $value): self
     {
         $this->setAsDateTime('lastModifiedDateTime', $value);
         return $this;

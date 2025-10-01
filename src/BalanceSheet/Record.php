@@ -7,32 +7,34 @@ use Rebel\BCApi2\Entity;
 
 class Record extends Entity
 {
-    function getId(): ?string
+    protected $primaryKey = 'id';
+
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getLineNumber(): ?int
+    public function getLineNumber(): ?int
     {
         return $this->get('lineNumber');
     }
 
-    function getDisplay(): ?string
+    public function getDisplay(): ?string
     {
         return $this->get('display');
     }
 
-    function getBalance(): ?float
+    public function getBalance(): ?float
     {
         return $this->get('balance');
     }
 
-    function getLineType(): ?string
+    public function getLineType(): ?string
     {
         return $this->get('lineType');
     }
 
-    function getIndentation(): ?int
+    public function getIndentation(): ?int
     {
         return $this->get('indentation');
     }

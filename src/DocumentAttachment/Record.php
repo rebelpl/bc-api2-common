@@ -19,6 +19,8 @@ use Rebel\BCApi2\Entity\Vendor;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'id';
+
     protected $classMap = [
         'item' => Item\Record::class,
         'customer' => Customer\Record::class,
@@ -34,160 +36,160 @@ class Record extends Entity
         'purchaseCreditMemo' => PurchaseCreditMemo\Record::class,
     ];
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getFileName(): ?string
+    public function getFileName(): ?string
     {
         return $this->get('fileName');
     }
 
-    function setFileName(?string $value): self
+    public function setFileName(?string $value): self
     {
         $this->set('fileName', $value);
         return $this;
     }
 
-    function getByteSize(): ?int
+    public function getByteSize(): ?int
     {
         return $this->get('byteSize');
     }
 
-    function setByteSize(?int $value): self
+    public function setByteSize(?int $value): self
     {
         $this->set('byteSize', $value);
         return $this;
     }
 
-    function getAttachmentContent(): Entity\DataStream
+    public function getAttachmentContent(): Entity\DataStream
     {
         return $this->get('attachmentContent');
     }
 
-    function getParentType(): ?string
+    public function getParentType(): ?string
     {
         return $this->get('parentType');
     }
 
-    function setParentType(?string $value): self
+    public function setParentType(?string $value): self
     {
         $this->set('parentType', $value);
         return $this;
     }
 
-    function getParentId(): ?string
+    public function getParentId(): ?string
     {
         return $this->get('parentId');
     }
 
-    function setParentId(?string $value): self
+    public function setParentId(?string $value): self
     {
         $this->set('parentId', $value);
         return $this;
     }
 
-    function getLineNumber(): ?int
+    public function getLineNumber(): ?int
     {
         return $this->get('lineNumber');
     }
 
-    function setLineNumber(?int $value): self
+    public function setLineNumber(?int $value): self
     {
         $this->set('lineNumber', $value);
         return $this;
     }
 
-    function getDocumentFlowSales(): ?bool
+    public function getDocumentFlowSales(): ?bool
     {
         return $this->get('documentFlowSales');
     }
 
-    function setDocumentFlowSales(?bool $value): self
+    public function setDocumentFlowSales(?bool $value): self
     {
         $this->set('documentFlowSales', $value);
         return $this;
     }
 
-    function getDocumentFlowPurchase(): ?bool
+    public function getDocumentFlowPurchase(): ?bool
     {
         return $this->get('documentFlowPurchase');
     }
 
-    function setDocumentFlowPurchase(?bool $value): self
+    public function setDocumentFlowPurchase(?bool $value): self
     {
         $this->set('documentFlowPurchase', $value);
         return $this;
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    function setLastModifiedDateTime(?\DateTime $value): self
+    public function setLastModifiedDateTime(?\DateTime $value): self
     {
         $this->setAsDateTime('lastModifiedDateTime', $value);
         return $this;
     }
 
-    function getItem(): ?Item\Record
+    public function getItem(): ?Item\Record
     {
         return $this->getAsRelation('item');
     }
 
-    function getCustomer(): ?Customer\Record
+    public function getCustomer(): ?Customer\Record
     {
         return $this->getAsRelation('customer');
     }
 
-    function getVendor(): ?Vendor\Record
+    public function getVendor(): ?Vendor\Record
     {
         return $this->getAsRelation('vendor');
     }
 
-    function getSalesInvoice(): ?SalesInvoice\Record
+    public function getSalesInvoice(): ?SalesInvoice\Record
     {
         return $this->getAsRelation('salesInvoice');
     }
 
-    function getEmployee(): ?Employee\Record
+    public function getEmployee(): ?Employee\Record
     {
         return $this->getAsRelation('employee');
     }
 
-    function getSalesOrder(): ?SalesOrder\Record
+    public function getSalesOrder(): ?SalesOrder\Record
     {
         return $this->getAsRelation('salesOrder');
     }
 
-    function getSalesQuote(): ?SalesQuote\Record
+    public function getSalesQuote(): ?SalesQuote\Record
     {
         return $this->getAsRelation('salesQuote');
     }
 
-    function getSalesCreditMemo(): ?SalesCreditMemo\Record
+    public function getSalesCreditMemo(): ?SalesCreditMemo\Record
     {
         return $this->getAsRelation('salesCreditMemo');
     }
 
-    function getPurchaseInvoice(): ?PurchaseInvoice\Record
+    public function getPurchaseInvoice(): ?PurchaseInvoice\Record
     {
         return $this->getAsRelation('purchaseInvoice');
     }
 
-    function getProject(): ?Project\Record
+    public function getProject(): ?Project\Record
     {
         return $this->getAsRelation('project');
     }
 
-    function getPurchaseOrder(): ?PurchaseOrder\Record
+    public function getPurchaseOrder(): ?PurchaseOrder\Record
     {
         return $this->getAsRelation('purchaseOrder');
     }
 
-    function getPurchaseCreditMemo(): ?PurchaseCreditMemo\Record
+    public function getPurchaseCreditMemo(): ?PurchaseCreditMemo\Record
     {
         return $this->getAsRelation('purchaseCreditMemo');
     }

@@ -8,74 +8,75 @@ use Rebel\BCApi2\Entity\Customer;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'customerId';
     protected $classMap = ['customer' => Customer\Record::class];
 
-    function getCustomerId(): ?string
+    public function getCustomerId(): ?string
     {
         return $this->get('customerId');
     }
 
-    function getCustomerNumber(): ?string
+    public function getCustomerNumber(): ?string
     {
         return $this->get('customerNumber');
     }
 
-    function getName(): ?string
+    public function getName(): ?string
     {
         return $this->get('name');
     }
 
-    function getCurrencyCode(): ?string
+    public function getCurrencyCode(): ?string
     {
         return $this->get('currencyCode');
     }
 
-    function getBalanceDue(): ?float
+    public function getBalanceDue(): ?float
     {
         return $this->get('balanceDue');
     }
 
-    function getCurrentAmount(): ?float
+    public function getCurrentAmount(): ?float
     {
         return $this->get('currentAmount');
     }
 
-    function getPeriod1Label(): ?string
+    public function getPeriod1Label(): ?string
     {
         return $this->get('period1Label');
     }
 
-    function getPeriod1Amount(): ?float
+    public function getPeriod1Amount(): ?float
     {
         return $this->get('period1Amount');
     }
 
-    function getPeriod2Label(): ?string
+    public function getPeriod2Label(): ?string
     {
         return $this->get('period2Label');
     }
 
-    function getPeriod2Amount(): ?float
+    public function getPeriod2Amount(): ?float
     {
         return $this->get('period2Amount');
     }
 
-    function getPeriod3Label(): ?string
+    public function getPeriod3Label(): ?string
     {
         return $this->get('period3Label');
     }
 
-    function getPeriod3Amount(): ?float
+    public function getPeriod3Amount(): ?float
     {
         return $this->get('period3Amount');
     }
 
-    function getAgedAsOfDate(): ?Carbon
+    public function getAgedAsOfDate(): ?Carbon
     {
         return $this->getAsDate('agedAsOfDate');
     }
 
-    function getCustomer(): ?Customer\Record
+    public function getCustomer(): ?Customer\Record
     {
         return $this->getAsRelation('customer');
     }

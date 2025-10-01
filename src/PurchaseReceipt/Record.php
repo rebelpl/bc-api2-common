@@ -9,172 +9,174 @@ use Rebel\BCApi2\Entity\PurchaseReceiptLine;
 
 class Record extends Entity
 {
+    protected $primaryKey = 'id';
+
     protected $classMap = [
         'purchaseReceiptLines' => PurchaseReceiptLine\Record::class,
         'dimensionSetLines' => DimensionSetLine\Record::class,
     ];
 
-    function getId(): ?string
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getNumber(): ?string
+    public function getNumber(): ?string
     {
         return $this->get('number');
     }
 
-    function getInvoiceDate(): ?Carbon
+    public function getInvoiceDate(): ?Carbon
     {
         return $this->getAsDate('invoiceDate');
     }
 
-    function getPostingDate(): ?Carbon
+    public function getPostingDate(): ?Carbon
     {
         return $this->getAsDate('postingDate');
     }
 
-    function getDueDate(): ?Carbon
+    public function getDueDate(): ?Carbon
     {
         return $this->getAsDate('dueDate');
     }
 
-    function getVendorNumber(): ?string
+    public function getVendorNumber(): ?string
     {
         return $this->get('vendorNumber');
     }
 
-    function getVendorName(): ?string
+    public function getVendorName(): ?string
     {
         return $this->get('vendorName');
     }
 
-    function getPayToName(): ?string
+    public function getPayToName(): ?string
     {
         return $this->get('payToName');
     }
 
-    function getPayToContact(): ?string
+    public function getPayToContact(): ?string
     {
         return $this->get('payToContact');
     }
 
-    function getPayToVendorNumber(): ?string
+    public function getPayToVendorNumber(): ?string
     {
         return $this->get('payToVendorNumber');
     }
 
-    function getShipToName(): ?string
+    public function getShipToName(): ?string
     {
         return $this->get('shipToName');
     }
 
-    function getShipToContact(): ?string
+    public function getShipToContact(): ?string
     {
         return $this->get('shipToContact');
     }
 
-    function getBuyFromAddressLine1(): ?string
+    public function getBuyFromAddressLine1(): ?string
     {
         return $this->get('buyFromAddressLine1');
     }
 
-    function getBuyFromAddressLine2(): ?string
+    public function getBuyFromAddressLine2(): ?string
     {
         return $this->get('buyFromAddressLine2');
     }
 
-    function getBuyFromCity(): ?string
+    public function getBuyFromCity(): ?string
     {
         return $this->get('buyFromCity');
     }
 
-    function getBuyFromCountry(): ?string
+    public function getBuyFromCountry(): ?string
     {
         return $this->get('buyFromCountry');
     }
 
-    function getBuyFromState(): ?string
+    public function getBuyFromState(): ?string
     {
         return $this->get('buyFromState');
     }
 
-    function getBuyFromPostCode(): ?string
+    public function getBuyFromPostCode(): ?string
     {
         return $this->get('buyFromPostCode');
     }
 
-    function getShipToAddressLine1(): ?string
+    public function getShipToAddressLine1(): ?string
     {
         return $this->get('shipToAddressLine1');
     }
 
-    function getShipToAddressLine2(): ?string
+    public function getShipToAddressLine2(): ?string
     {
         return $this->get('shipToAddressLine2');
     }
 
-    function getShipToCity(): ?string
+    public function getShipToCity(): ?string
     {
         return $this->get('shipToCity');
     }
 
-    function getShipToCountry(): ?string
+    public function getShipToCountry(): ?string
     {
         return $this->get('shipToCountry');
     }
 
-    function getShipToState(): ?string
+    public function getShipToState(): ?string
     {
         return $this->get('shipToState');
     }
 
-    function getShipToPostCode(): ?string
+    public function getShipToPostCode(): ?string
     {
         return $this->get('shipToPostCode');
     }
 
-    function getPayToAddressLine1(): ?string
+    public function getPayToAddressLine1(): ?string
     {
         return $this->get('payToAddressLine1');
     }
 
-    function getPayToAddressLine2(): ?string
+    public function getPayToAddressLine2(): ?string
     {
         return $this->get('payToAddressLine2');
     }
 
-    function getPayToCity(): ?string
+    public function getPayToCity(): ?string
     {
         return $this->get('payToCity');
     }
 
-    function getPayToCountry(): ?string
+    public function getPayToCountry(): ?string
     {
         return $this->get('payToCountry');
     }
 
-    function getPayToState(): ?string
+    public function getPayToState(): ?string
     {
         return $this->get('payToState');
     }
 
-    function getPayToPostCode(): ?string
+    public function getPayToPostCode(): ?string
     {
         return $this->get('payToPostCode');
     }
 
-    function getCurrencyCode(): ?string
+    public function getCurrencyCode(): ?string
     {
         return $this->get('currencyCode');
     }
 
-    function getOrderNumber(): ?string
+    public function getOrderNumber(): ?string
     {
         return $this->get('orderNumber');
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }
@@ -182,7 +184,7 @@ class Record extends Entity
     /**
      * @return Entity\Collection|PurchaseReceiptLine\Record[]
      */
-    function getPurchaseReceiptLines(): Entity\Collection
+    public function getPurchaseReceiptLines(): Entity\Collection
     {
         return $this->getAsCollection('purchaseReceiptLines');
     }
@@ -190,7 +192,7 @@ class Record extends Entity
     /**
      * @return Entity\Collection|DimensionSetLine\Record[]
      */
-    function getDimensionSetLines(): Entity\Collection
+    public function getDimensionSetLines(): Entity\Collection
     {
         return $this->getAsCollection('dimensionSetLines');
     }

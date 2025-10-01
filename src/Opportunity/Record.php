@@ -7,193 +7,195 @@ use Rebel\BCApi2\Entity;
 
 class Record extends Entity
 {
-    function getId(): ?string
+    protected $primaryKey = 'id';
+
+    public function getId(): ?string
     {
         return $this->get('id');
     }
 
-    function getNumber(): ?string
+    public function getNumber(): ?string
     {
         return $this->get('number');
     }
 
-    function setNumber(?string $value): self
+    public function setNumber(?string $value): self
     {
         $this->set('number', $value);
         return $this;
     }
 
-    function getContactNumber(): ?string
+    public function getContactNumber(): ?string
     {
         return $this->get('contactNumber');
     }
 
-    function setContactNumber(?string $value): self
+    public function setContactNumber(?string $value): self
     {
         $this->set('contactNumber', $value);
         return $this;
     }
 
-    function getContactName(): ?string
+    public function getContactName(): ?string
     {
         return $this->get('contactName');
     }
 
-    function setContactName(?string $value): self
+    public function setContactName(?string $value): self
     {
         $this->set('contactName', $value);
         return $this;
     }
 
-    function getContactCompanyName(): ?string
+    public function getContactCompanyName(): ?string
     {
         return $this->get('contactCompanyName');
     }
 
-    function setContactCompanyName(?string $value): self
+    public function setContactCompanyName(?string $value): self
     {
         $this->set('contactCompanyName', $value);
         return $this;
     }
 
-    function getSalespersonCode(): ?string
+    public function getSalespersonCode(): ?string
     {
         return $this->get('salespersonCode');
     }
 
-    function setSalespersonCode(?string $value): self
+    public function setSalespersonCode(?string $value): self
     {
         $this->set('salespersonCode', $value);
         return $this;
     }
 
-    function getDescription(): ?string
+    public function getDescription(): ?string
     {
         return $this->get('description');
     }
 
-    function setDescription(?string $value): self
+    public function setDescription(?string $value): self
     {
         $this->set('description', $value);
         return $this;
     }
 
-    function getStatus(): ?string
+    public function getStatus(): ?string
     {
         return $this->get('status');
     }
 
-    function setStatus(?string $value): self
+    public function setStatus(?string $value): self
     {
         $this->set('status', $value);
         return $this;
     }
 
-    function getClosed(): ?bool
+    public function getClosed(): ?bool
     {
         return $this->get('closed');
     }
 
-    function setClosed(?bool $value): self
+    public function setClosed(?bool $value): self
     {
         $this->set('closed', $value);
         return $this;
     }
 
-    function getCreationDate(): ?Carbon
+    public function getCreationDate(): ?Carbon
     {
         return $this->getAsDate('creationDate');
     }
 
-    function setCreationDate(?\DateTime $value): self
+    public function setCreationDate(?\DateTime $value): self
     {
         $this->setAsDate('creationDate', $value);
         return $this;
     }
 
-    function getDateClosed(): ?Carbon
+    public function getDateClosed(): ?Carbon
     {
         return $this->getAsDate('dateClosed');
     }
 
-    function setDateClosed(?\DateTime $value): self
+    public function setDateClosed(?\DateTime $value): self
     {
         $this->setAsDate('dateClosed', $value);
         return $this;
     }
 
-    function getCalculatedCurrentValue(): ?float
+    public function getCalculatedCurrentValue(): ?float
     {
         return $this->get('calculatedCurrentValue');
     }
 
-    function setCalculatedCurrentValue(?float $value): self
+    public function setCalculatedCurrentValue(?float $value): self
     {
         $this->set('calculatedCurrentValue', $value);
         return $this;
     }
 
-    function getChancesOfSuccessPrc(): ?float
+    public function getChancesOfSuccessPrc(): ?float
     {
         return $this->get('chancesOfSuccessPrc');
     }
 
-    function setChancesOfSuccessPrc(?float $value): self
+    public function setChancesOfSuccessPrc(?float $value): self
     {
         $this->set('chancesOfSuccessPrc', $value);
         return $this;
     }
 
-    function getCompletedPrc(): ?float
+    public function getCompletedPrc(): ?float
     {
         return $this->get('completedPrc');
     }
 
-    function setCompletedPrc(?float $value): self
+    public function setCompletedPrc(?float $value): self
     {
         $this->set('completedPrc', $value);
         return $this;
     }
 
-    function getEstimatedClosingDate(): ?Carbon
+    public function getEstimatedClosingDate(): ?Carbon
     {
         return $this->getAsDate('estimatedClosingDate');
     }
 
-    function setEstimatedClosingDate(?\DateTime $value): self
+    public function setEstimatedClosingDate(?\DateTime $value): self
     {
         $this->setAsDate('estimatedClosingDate', $value);
         return $this;
     }
 
-    function getEstimatedValue(): ?float
+    public function getEstimatedValue(): ?float
     {
         return $this->get('estimatedValue');
     }
 
-    function setEstimatedValue(?float $value): self
+    public function setEstimatedValue(?float $value): self
     {
         $this->set('estimatedValue', $value);
         return $this;
     }
 
-    function getSystemCreatedAt(): ?Carbon
+    public function getSystemCreatedAt(): ?Carbon
     {
         return $this->getAsDateTime('systemCreatedAt');
     }
 
-    function setSystemCreatedAt(?\DateTime $value): self
+    public function setSystemCreatedAt(?\DateTime $value): self
     {
         $this->setAsDateTime('systemCreatedAt', $value);
         return $this;
     }
 
-    function getLastModifiedDateTime(): ?Carbon
+    public function getLastModifiedDateTime(): ?Carbon
     {
         return $this->getAsDateTime('lastModifiedDateTime');
     }
 
-    function setLastModifiedDateTime(?\DateTime $value): self
+    public function setLastModifiedDateTime(?\DateTime $value): self
     {
         $this->setAsDateTime('lastModifiedDateTime', $value);
         return $this;
