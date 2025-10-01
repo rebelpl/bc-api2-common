@@ -11,6 +11,8 @@ use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
+    protected string $primaryKey = 'id';
+
     public ?string $id {
         get => $this->get('id');
     }

@@ -13,6 +13,8 @@ use Rebel\BCApi2\Entity\VendorPaymentJournal;
 
 class Record extends Entity
 {
+    protected string $primaryKey = 'id';
+
     public ?string $id {
         get => $this->get('id');
     }

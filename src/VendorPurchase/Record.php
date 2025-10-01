@@ -8,6 +8,8 @@ use Rebel\BCApi2\Entity\Enums;
 
 class Record extends Entity
 {
+    protected string $primaryKey = 'vendorId';
+
     public ?string $vendorId {
         get => $this->get('vendorId');
     }

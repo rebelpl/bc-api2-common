@@ -17,6 +17,8 @@ use Rebel\BCApi2\Entity\ShipmentMethod;
 
 class Record extends Entity
 {
+    protected string $primaryKey = 'id';
+
     public ?string $id {
         get => $this->get('id');
     }

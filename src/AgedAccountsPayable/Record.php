@@ -9,6 +9,8 @@ use Rebel\BCApi2\Entity\Vendor;
 
 class Record extends Entity
 {
+    protected string $primaryKey = 'vendorId';
+
     public ?string $vendorId {
         get => $this->get('vendorId');
     }

@@ -10,6 +10,8 @@ use Rebel\BCApi2\Entity\PurchaseReceipt;
 
 class Record extends Entity
 {
+    protected string $primaryKey = 'id';
+
     public ?string $id {
         get => $this->get('id');
     }
